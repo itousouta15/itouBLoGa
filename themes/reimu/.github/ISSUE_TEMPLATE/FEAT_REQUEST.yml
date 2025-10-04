@@ -1,0 +1,12 @@
+name: 功能请求
+description: 对 reimu 的建议或功能请求
+labels: ["enhancement"]
+body:
+  - type: "textarea"
+    id: describe
+    attributes:
+      label: 建议描述
+      description: |
+        详细描述建议，如有参考链接可粘贴于此
+    validations:
+      required: true

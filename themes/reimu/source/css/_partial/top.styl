@@ -1,0 +1,62 @@
+.sidebar-top
+  position: fixed
+  bottom: 30px
+  right: 30px
+  width: 50px
+  height: 50px
+  background-color: var(--color-wrap)
+  border-radius: 50%
+  font-family: font-icon
+  box-shadow: 0 0 10px 4px var(--color-hover-shadow)
+  z-index: 999
+
+  if hexo-config("top.position") == "left"
+    left: 30px
+    right: auto
+
+  .sidebar-top-taichi
+    width: 50px
+    height: 50px
+    transition: .3s
+    border-radius: 50%
+
+    &.rotate
+      animation: rotate-all 3s linear infinite
+
+  .arrow-up
+    transition: .3s
+    opacity: 0
+    &:before
+      width: 50px
+      height: 50px
+      position: absolute
+      color: var(--red-1)
+      font-size: 20px
+      top: 0
+      text-align: center
+      line-height: 50px
+
+  &:hover
+    .sidebar-top-taichi
+      opacity: 0
+    .arrow-up
+      opacity: 1
+
+if hexo-config("top.icon.mask")
+  @supports (-webkit-mask: var(--top-icon) no-repeat center / 100%)
+    .sidebar-top-taichi
+      background-color: var(--red-1)
+      -webkit-mask: var(--top-icon) no-repeat center / 100%
+
+  @supports (mask: var(--top-icon) no-repeat center / 100%)
+    .sidebar-top-taichi
+      background-color: var(--red-1)
+      mask: var(--top-icon) no-repeat center / 100%
+
+  @supports not ((mask: var(--top-icon) no-repeat center / 100%) and (-webkit-mask: var(--top-icon) no-repeat center / 100%))
+    .sidebar-top-taichi
+      background: var(--top-icon) no-repeat center / 100%
+
+else
+  .sidebar-top-taichi
+      background: var(--top-icon) no-repeat center / 100%

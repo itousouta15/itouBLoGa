@@ -1,0 +1,285 @@
+// https://github.com/chriskempson/tomorrow-theme
+$code-block
+  background: var(--highlight-background)
+  padding: 0 article-padding 15px
+  border-radius: 10px
+  color: var(--highlight-foreground)
+  line-height: font-size * line-height
+
+$line-numbers
+  color: #666
+  font-size: 0.85em
+
+.article-entry
+  //remove mermaid
+  .mermaid
+    background: transparent
+
+  figure
+    display: block
+    margin: (line-height / 3 * 2) 0
+    transition: 0.3s
+    box-shadow: 0 0 10px 2px var(--color-hover-shadow)
+    
+    &:hover
+      box-shadow: 0 0 10px 4px var(--color-hover-shadow)
+
+    ::-webkit-scrollbar
+      width: 10px
+      height: 10px
+      background-color: transparent
+
+    ::-webkit-scrollbar-track
+      border-radius: 10px
+      background-color: transparent
+
+
+    ::-webkit-scrollbar-thumb
+      border-radius: 10px
+      background-color: var(--highlight-scrollbar)
+
+  pre, code, kbd
+    font-family: font-code
+    font-size: 95%
+    transition: 0.3s
+    word-break: break-word
+
+  code, kbd
+    background: var(--color-code-background)
+    padding: 1px 5px
+    border-radius: 5px
+    color: var(--color-link)
+
+  pre
+    @extend $code-block
+    border-radius: 0
+
+    code
+      background: none
+      text-shadow: none
+      color: var(--highlight-foreground)
+      padding: 0
+
+  .highlight
+    overflow: hidden
+    interpolate-size: allow-keywords
+    @extend $code-block
+
+    &.code-closed
+      pre
+        height: 0
+        opacity: 0
+        overflow: hidden
+
+    pre
+      border: none
+      margin: 0
+      padding: 0
+      border-radius: 0
+
+    table
+      margin: 0
+      table-layout: fixed
+
+    td
+      border: none
+      padding: 0
+
+    figcaption
+      clearfix()
+      font-size: 0.85em
+      color: var(--highlight-comment)
+      line-height: 1em
+      margin-bottom: 1em
+
+      a
+        float: right
+
+    .gutter
+      width: 30px
+      vertical-align: top
+
+    .gutter pre
+      @extend $line-numbers
+      text-align: right
+      padding-right: 20px
+
+    .line
+      height: font-size * line-height
+
+    .line.marked
+      background: var(--highlight-selection)
+
+    .line .deletion
+      background: #ff5e5e80
+
+    .line .addition
+      background: #5eff667a
+
+  .gist
+    border-style: solid
+    border-color: var(--color-border)
+    border-width: 1px 0
+    background: var(--highlight-background)
+    padding: 15px article-padding 15px 0
+
+    .gist-file
+      border: none
+      font-family: font-code
+      margin: 0
+
+      .gist-data
+        background: none
+        border: none
+
+        .line-numbers
+          @extend $line-numbers
+          background: none
+          border: none
+          padding: 0 20px 0 0
+
+        .line-data
+          padding: 0 !important
+
+      .highlight
+        margin: 0
+        padding: 0
+        border: none
+
+      .gist-meta
+        background: var(--highlight-background)
+        color: var(--highlight-comment)
+        font: 0.85em font-basic
+        text-shadow: 0 0
+        padding: 0
+        margin-top: 1em
+        margin-left: article-padding
+
+        a
+          color: var(--color-link)
+          font-weight: normal
+
+          &:hover
+            text-decoration: underline
+
+pre
+  .comment
+  .title
+    color: var(--highlight-comment)
+
+  .variable
+  .attribute
+  .tag
+  .regexp
+  .ruby .constant
+  .xml .tag .title
+  .xml .pi
+  .xml .doctype
+  .html .doctype
+  .css .id
+  .css .class
+  .css .pseudo
+    color: var(--highlight-red)
+
+  .number
+  .preprocessor
+  .built_in
+  .literal
+  .params
+  .constant
+    color: var(--highlight-orange)
+
+  .class
+  .ruby .class .title
+  .css .rules .attribute
+  .string
+  .value
+  .inheritance
+  .header
+  .ruby .symbol
+  .xml .cdata
+    color: var(--highlight-green)
+
+  .css .hexcolor
+    color: var(--highlight-aqua)
+
+  .function
+  .python .decorator
+  .python .title
+  .ruby .function .title
+  .ruby .title .keyword
+  .perl .sub
+  .javascript .title
+  .coffeescript .title
+    color: var(--highlight-blue)
+
+  .keyword
+  .javascript .function
+    color: var(--highlight-purple)
+
+.code-area
+  width: 100%
+  overflow: auto
+  transition: 0.3s
+
+.code-figcaption
+  width: 100%
+  display: flex
+  justify-content: space-between
+  height: 40px
+
+  align-items: center
+  flex-shrink: 0
+  background: linear-gradient(to right, transparent 0%, var(--highlight-nav) 50%, transparent 100%)
+  margin-bottom: 10px
+
+.code-decoration
+  width: 70px
+
+  &:after
+    content: " ";
+    position: absolute;
+    border-radius: 50%;
+    background: #ff5f56;
+    width: 12px;
+    height: 12px;
+    box-shadow: 20px 0 #ffbd2e, 40px 0 #27c93f;
+
+.code-left-wrap
+.code-right-wrap
+  display: flex
+
+.code-copy
+  margin: 5px
+  z-index: 1
+  filter: invert(50%)
+  cursor: var(--cursor-pointer) !important
+  color: #fff
+  transition: .3s
+
+  &:hover
+    opacity: .7
+
+.code-lang
+  margin: 5px
+  line-height: 0
+  font-weight: bold
+  z-index: 1
+  filter: invert(50%)
+  cursor: var(--cursor-pointer) !important
+
+.code-expand
+  margin: 5px
+  filter: invert(50%)
+  z-index: 1
+  cursor: var(--cursor-pointer) !important
+  transition: .3s
+  transform: rotate(0deg)
+  color: #fff
+
+  &:hover
+    opacity: .7
+
+.code-closed .code-expand
+  transform: rotate(-180deg) !important
+  transition: .3s

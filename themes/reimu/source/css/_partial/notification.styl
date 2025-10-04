@@ -1,0 +1,45 @@
+.notification-wrapper
+  position: fixed
+  z-index: 1000
+  top: 20px
+  right: 20px
+  background: var(--color-header-background)
+  box-shadow: 0 0 10px var(--color-hover-shadow)
+  border-radius: post-radius
+  padding: 10px 20px
+  margin-left: 20px
+  opacity: 0
+  visibility: hidden
+  transition: .5s
+  color: var(--grey-7)
+
+  &.show
+    opacity: 1
+    visibility: visible
+
+  h1
+    padding: 10px 0
+  
+  p
+    padding: 10px 0
+
+  .notification-btn
+    display: flex
+    justify-content: flex-end
+    gap: 15px
+    padding: 10px 0
+
+  button
+    background: var(--red-2)
+    border-radius: 5px
+    color: #fff
+    padding: 5px 10px
+    font-family: font-basic
+    border: none
+    transition: .3s
+
+    &:hover
+      background: var(--red-1)
+
+    &:active
+      background: var(--red-0)

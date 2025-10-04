@@ -1,0 +1,83 @@
+.friend-wrap
+  display: flex
+  flex-wrap: wrap
+  margin-bottom: 30px
+
+.friend-item-wrap
+  width: 48%
+  height: 100px
+  background: var(--color-wrap)
+  box-shadow: 0 0 10px 2px var(--color-hover-shadow)
+  border-radius: post-radius
+  position: relative
+  display: flex
+  margin: 1%
+  transition: 0.3s
+
+  &:hover
+    transform: scale(1.015)
+    box-shadow: 0 0 10px 4px var(--color-hover-shadow)
+
+  @media mg-normal
+    width: 98%
+
+  a
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+
+.friend-icon-wrap
+  width: 100px
+  height: 100%
+  pointer-events: none
+  flex-shrink: 0
+
+.friend-icon
+  height: 0
+  width: 100%
+  padding-bottom: 100%
+  position: relative
+
+  img
+    display: block
+    opacity: 0
+    transition: opacity 0.2s
+    position: absolute
+    left: 15%
+    top: 15%
+    object-fit: cover
+    border-radius: 50%
+    width: 70%
+    height: 70%
+
+  img.lazyloaded
+    opacity: 1
+    animation: blur 0.8s forwards
+
+.friend-info-wrap
+  display: flex
+  justify-content: center
+  flex-direction: column
+  padding: 0 8px
+  overflow: hidden
+
+  div
+    margin: 10px 0
+    overflow: hidden
+    text-overflow: ellipsis
+
+.friend-name
+  color: var(--red-2)
+  font-size: 18px
+  font-weight: bold
+  white-space: nowrap
+
+.friend-desc
+  color: var(--grey-9)
+  font-size: 14px
+  -webkit-line-clamp: 2
+  line-clamp: 2
+  display: -webkit-box
+  -webkit-box-orient: vertical

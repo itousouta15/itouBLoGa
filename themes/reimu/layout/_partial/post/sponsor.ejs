@@ -1,0 +1,22 @@
+<div class="sponsor-wrapper">
+  <div class="sponsor-button-wrapper">
+    <div class="sponsor-icon <%- theme.sponsor.icon?.rotate ? 'rotate' : '' %>"></div>
+    <div class="sponsor-title"><%= __('sponsor') %></div>
+    <div class="sponsor-icon <%- theme.sponsor.icon?.rotate ? 'rotate' : '' %>"></div>
+  </div>
+  <% var sponsorTip = theme.sponsor.tip; %>
+  <% if (typeof sponsorTip !== 'string') { %>
+    <% sponsorTip = sponsorTip[post.lang]; %>
+  <% } %>
+  <div class="sponsor-tip"><%- sponsorTip %></div>
+  <% if (theme.sponsor.qr?.length) { %>
+    <div class="sponsor-qr">
+      <% for (let i of theme.sponsor.qr) { %>
+        <div class="sponsor-qr-image-wrapper">
+          <img src="<%- url_for(i.src, {relative: false}) %>" alt=<%- i.name %> width="200" />
+          <p class="sponsor-qr-name"><%- i.name %></p>
+        </div>
+      <% } %>
+    </div>
+  <% } %>
+</div>

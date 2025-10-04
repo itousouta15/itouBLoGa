@@ -1,0 +1,177 @@
+.archives-outer-wrap
+  background: var(--color-wrap)
+  border-radius: post-radius
+  padding: 15px 0
+
+.archives-wrap
+  padding: 20px block-margin
+
+.archive-year-wrap
+  margin-bottom: 2em
+  position: relative
+
+  &:before
+    content: ""
+    width: 100%
+    border-bottom: 1px solid var(--color-h2-border)
+    position: absolute
+    bottom: -15px
+    transition: 1s
+
+  &:after
+    content: ""
+    position: absolute
+    background: var(--color-h2-after)
+    width: 1em
+    height: 7px
+    bottom: -18px
+    left: 0
+    border-radius: 10px
+    box-shadow: 0 2px 12px var(--color-red-6-shadow)
+    transition: .3s
+
+  &:hover:after
+    width: 3em
+
+.archive-year
+  text-decoration: none
+  color: var(--color-archive-year)
+  margin-bottom: 15px
+  font-weight: bold
+  font-size: 25px
+
+.archive-article
+  padding: 15px 0 15px 25px
+  display: flex
+  align-items: center
+
+  &:before
+    content: ""
+    display: inline-block
+    vertical-align: middle
+    width: 6px
+    height: 15px
+    background: var(--color-h2-after)
+    margin: -2px 11px 0 -25px
+    box-shadow: 0 2px 12px var(--color-red-6-shadow)
+    opacity: .5
+    transition: .2s
+    flex-shrink: 0
+
+  &:hover
+    &:before
+      width: 6px
+      height: 6px
+      border-radius: 50%
+      opacity: 1
+
+    .archive-article-title
+      opacity: 1
+
+.archive-article-date-wrap
+  flex-shrink: 0
+
+  a
+    text-decoration: none
+
+.dt-published
+  color: var(--grey-9)
+  margin-left: 5px
+
+.archive-article-title
+  display: inline-block
+  text-decoration: none
+  font-weight: bold
+  color: var(--red-0)
+  transition: .3s
+  opacity: .7
+  margin-left: 15px
+
+#page-nav
+  margin: block-margin auto
+  background: var(--color-wrap)
+  border-radius: post-radius
+  text-align: center
+  color: var(--grey-9)
+  overflow: hidden
+  transition: 1s
+
+  &:hover
+    box-shadow: 0 0 10px 2px var(--color-hover-shadow)
+
+  a, span
+    padding: 10px 15px
+
+  a
+    color: var(--grey-9)
+    text-decoration: none
+    transition: .2s
+
+    &:hover
+      background: var(--red-2)
+      box-shadow: 0 0 10px var(--color-red-6-shadow)
+      color: #fff
+
+  .prev
+    float: left
+    padding: 15px
+
+  .next
+    float: right
+    padding: 15px
+
+  .page-number
+    display: inline-block
+    border-radius: post-radius
+    margin: 5px
+    @media mq-mobile
+      display: none
+
+  .current
+    background: var(--red-1)
+    color: #fff
+    font-weight: bold
+    box-shadow: 0 0 10px var(--color-red-6-shadow)
+    @media mq-mobile
+      display: inline-block
+
+  .space
+    display: inline-block
+    margin: 5px
+    color: var(--color-border)
+    @media mq-mobile
+      display: none
+
+.tag-wrap, .category-wrap
+  display: flex
+  flex-wrap: wrap
+  padding: 10px block-margin
+
+  a
+    text-decoration: none
+
+.archives-tag-list-item, .archives-category-list-item
+  display: flex
+  text-transform: uppercase
+  background: var(--red-5)
+  border-radius: post-radius
+  padding: 8px 15px
+  margin: 5px
+  box-shadow: 0 0 5px 2px var(--color-meta-shadow)
+
+.archives-tag-list-link, .archives-category-list-link
+  color: var(--red-1)
+  font-size: 12px
+
+  &:before
+    margin-right: 10px
+
+.archives-category-list-item
+  background: var(--red-5-5)
+  padding: 10px 20px
+
+.archives-category-list-link
+  font-size: 14px
+
+  &:before
+    font-weight: 700

@@ -1,0 +1,81 @@
+.post-link-card-wrap
+  display: flex
+  justify-content: center
+  margin: 20px 0
+
+.post-link-card
+  display: flex
+  padding: 10px
+  border-radius: post-radius
+  overflow: hidden
+  position: relative
+  transition: .3s
+  box-shadow: 0 0 10px 2px var(--color-hover-shadow)
+  width: 60%
+
+  @media mg-normal
+    width: 95%
+
+  &:hover
+    transform: scale(1.015)
+    box-shadow: 0 0 10px 4px var(--color-hover-shadow)
+
+  a
+    position: absolute
+    width: 100%
+    height: 100%
+    top: 0
+    left: 0
+
+.post-link-card-cover-wrap
+  height: 66px
+  width: 68px
+  padding-right: 20px
+  flex-shrink: 0
+  pointer-events: none
+
+  img
+    width: 100%
+    height: 100%
+    border-radius: post-radius
+    object-fit: cover
+
+  &.auto
+    background: var(--color-background)
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: post-radius
+    padding-right: 0
+    margin-right: 20px
+
+  .icon-globe
+    font-size: 20px
+
+  @media mg-normal
+    display: none !important
+
+.post-link-card-item-wrap
+  display: flex
+  flex-direction: column
+  justify-content: center
+  overflow: hidden
+
+  div
+    padding: 5px 0
+    text-overflow: ellipsis
+    white-space: nowrap
+    overflow: hidden
+
+.post-link-card-title
+  font-size: 18px
+  font-weight: 700
+  color: var(--red-1)
+
+.post-link-card-excerpt
+  font-size: 14px
+  color: var(--grey-9)
+
+  .icon-link
+    font-size: 12px
+    margin-right: 5px

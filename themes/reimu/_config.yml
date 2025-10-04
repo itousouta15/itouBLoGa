@@ -1,0 +1,841 @@
+########################################
+# Basic Configuration
+########################################
+theme_version_check: true
+theme_config_check: true
+# main menu navigation
+# for more icon information, please visit https://github.com/D-Sketon/hexo-theme-reimu/issues/30
+menu:
+  - name: home
+    url: /
+    icon: # default use taichi icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+  - name: archives
+    url: /archives
+    icon:
+  - name: about
+    url: /about
+    icon:
+  - name: friend
+    url: /friend
+    icon:
+
+banner: "/images/banner.webp" # which means themes/reimu/source/images/banner.webp
+# You can also write it in the form of the following url
+# banner: "https://example.com"
+
+# If you want to use the srcset attribute, please enable it
+banner_srcset:
+  enable: false
+  srcset:
+    - src: "/images/banner-600w.webp"
+      media: "(max-width: 479px)"
+    - src: "/images/banner-800w.webp"
+      media: "(max-width: 799px)"
+    - src: "/images/banner.webp"
+      media: "(min-width: 800px)"
+
+favicon: "/images/favicon.ico" # which means themes/reimu/source/images/favicon.ico
+# You can also write it in the form of the following url
+# favicon: "https://example.com"
+
+avatar: "avatar.webp" # which means source/_data/avatar/avatar.webp
+
+# Control the display of the post cover
+# If not set, the banner image will be displayed by default
+# Its priority is lower than the cover in the Front-matter
+cover: # https://example.com / false / rgb(255,117,117)
+
+# Control the display of the post toc
+# Its priority is lower than the toc in the Front-matter
+toc: true
+toc_options:
+  list_number: true
+  min_depth: 1
+  max_depth: 6
+
+# Open Graph
+# see https://hexo.io/docs/helpers#open-graph
+open_graph:
+  enable: true
+  options:
+    #twitter_card: <twitter:card>
+    #twitter_id: <twitter:creator>
+    #twitter_site: <twitter:site>
+    #twitter_image: <twitter:image>
+    #google_plus: <g+:profile_link>
+    #fb_admins: <fb:admin_id>
+    #fb_app_id: <fb:app_id>
+    default_og_image: /images/banner.webp # the default og:image for Open Graph, support absolute path
+
+# Content
+excerpt_link: Read More
+
+# RSS
+# need https://github.com/hexojs/hexo-generator-feed
+rss: atom.xml
+
+# a very simple alternative for https://hexo.io/api/injector
+injector:
+  head_begin: # Inject code snippet right after <head>
+  head_end: # Inject code snippet right before </head>
+  body_begin: # Inject code snippet right after <body>
+  body_end: # Inject code snippet right before </body>
+  sidebar_begin: # Inject code snippet right after <aside>
+  sidebar_end: # Inject code snippet right before </aside>
+
+# Footer copyright
+copyright: # Inject code snippet right in the footer copyright
+# Need help choosing? Please see...
+# https://creativecommons.org/choose/
+# https://choosealicense.com/
+# copyright: |-
+#   <div style="flex-direction:column;align-items: center;"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+#   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
+
+footer:
+  since: 2020 # 2020-current year
+  powered: true
+  count: true # show word count and reading time
+  busuanzi: true
+  icon:
+    url:  # this path is relative to the css/style.css, so it needs to go up one level to reach the images folder
+    rotate: true
+    mask: true # whether to use the images as a mask
+
+# Sidebar
+sidebar: right
+
+social:
+  # email: mailto:xxx@gmail.com
+  # github: https://github.com/yourname
+  # google: https://plus.google.com/yourname
+  # twitter: https://twitter.com/yourname
+  # facebook: https://www.facebook.com/yourname
+  # instagram: https://www.instagram.com/yourname
+  # linkedin: https://www.linkedin.com/in/yourname
+  # pinterest: https://www.pinterest.com/yourname
+  # youtube: https://www.youtube.com/channel/yourname
+  # vimeo: https://vimeo.com/yourname
+  # flickr: https://www.flickr.com/photos/yourname
+  # dribbble: https://dribbble.com/yourname
+  # behance: https://www.behance.net/yourname
+  # bilibili: https://space.bilibili.com/yourname
+  # weibo: https://weibo.com/yourname
+  # zhihu: https://www.zhihu.com/people/yourname
+  # reddit: https://www.reddit.com/user/yourname
+  # tumblr: https://yourname.tumblr.com
+  # medium: https://medium.com/@yourname
+  # deviantart: https://yourname.deviantart.com
+  # stackoverflow: https://stackoverflow.com/users/yourname
+  # keybase: https://keybase.io/yourname
+  # telegram: https://t.me/yourname
+  # discord: https://discordapp.com/users/yourname
+  # steam: https://steamcommunity.com/id/yourname
+
+widgets:
+  # - category
+  # - tag
+  # - tagcloud
+  # - archive
+  # - recent_posts
+
+# Widget behavior
+archive_type: "monthly"
+show_count: false
+tag_limits:
+recent_posts_limits: 5
+tagcloud_limits:
+
+# Archive behavior
+only_show_capsule_in_index: false # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
+
+i18n:
+  enable: false
+  type: [page, post]
+  generator: [archive, category, tag, index]
+  languages: [zh-TW,en]
+
+########################################
+# CSS
+########################################
+
+anchor_icon: # default use '#' icon, you can use a hexadecimal representation of fontawesome or icon_font, like 'f0c1'
+
+reimu_cursor:
+  enable: true
+  cursor:
+    default: ../images/cursor/reimu-cursor-default.png # this path is relative to the css/style.css, so it needs to go up one level to reach the images folder
+    pointer: ../images/cursor/reimu-cursor-pointer.png
+    text: ../images/cursor/reimu-cursor-text.png
+
+# set to false to enable fontawesome
+icon_font: 4552607_0khxww3tj3q9
+
+# Font loading strategy
+# Custom Font -> Google Fonts -> Local FallBack Font
+
+# Custom Font
+custom_font:
+  enable: false
+  article:
+    # - css: https://fontsapi.zeoseven.com/292/main/result.css
+      # name: LXGW WenKai
+  code:
+
+# https://fonts.google.com/
+# Google Fonts, higher priority than local_font
+font:
+  enable: true
+  article:
+    - Mulish
+    - Noto Serif SC
+  code:
+    # - Ubuntu Mono
+    # - Source Code Pro
+    # - JetBrains Mono
+
+# Local FallBack Font
+local_font:
+  article:
+    - "-apple-system"
+    - PingFang SC
+    - Microsoft YaHei
+    - sans-serif
+  code:
+    - Menlo
+    - Monaco
+    - Consolas
+    - monospace
+
+dark_mode:
+  # true means that the dark mode is enabled by default
+  # false means that the dark mode is disabled by default
+  # auto means that the dark mode is automatically switched according to the system settings
+  enable: auto # true | false | auto
+
+# need https://github.com/D-Sketon/hexo-renderer-markdown-it-plus
+markdown:
+  container: false # whether to enable the container style
+
+########################################
+# Markdown Display
+########################################
+
+# need https://github.com/D-Sketon/hexo-renderer-markdown-it-plus
+math:
+  enable: false
+  # If you don't want to use it, please set `autoRender` to true to enable browser rendering
+  katex:
+    enable: true
+    autoRender: false # whether to render the math in the browser, disabled by default
+  mathjax:
+    enable: false
+    options: # see https://docs.mathjax.org/en/latest/web/configuration.html
+      {
+        tex:
+          {
+            tags: "ams",
+            useLabelIds: true,
+            inlineMath: [["$", "$"], ['\\(', '\\)']],
+            displayMath: [["$$", "$$"], ['\\[', '\\]']],
+            processEscapes: true,
+            processEnvironments: true,
+            autoload: { color: [], colorv2: ["color"] },
+            packages: { "[+]": ["noerrors"] },
+          },
+        options:
+          {
+            skipHtmlTags:
+              ["script", "noscript", "style", "textarea", "pre", "code"],
+            ignoreHtmlClass: "tex2jax_ignore",
+            processHtmlClass: "tex2jax_process",
+          },
+        loader: { load: ["input/asciimath", "[tex]/noerrors"] },
+      }
+
+# mermaid url https://github.com/knsv/mermaid
+# need https://github.com/webappdevelp/hexo-filter-mermaid-diagrams
+mermaid:
+  enable: false
+
+code_block:
+  # whether to expand the code block by default
+  # true means expand all code blocks by default
+  # false means collapse all code blocks by default
+  # number means collapse the code block by default when the number of lines exceeds the specified value
+  expand: true
+
+########################################
+# Analytics
+########################################
+
+baidu_analytics: false
+google_analytics: false
+clarity: false
+
+########################################
+# Comment system
+########################################
+
+# global control of the comment system
+# you can use multiple comment systems at the same time
+# load order: localStorage(user manually selects) -> default
+# -> valine -> waline -> twikoo -> gitalk -> giscus
+comment:
+  # comment system title
+  title:
+    en: Leave a comment
+    zh-TW: 說些什麼吧！
+    ja: コメントを残す
+  default: waline # default comment system, when you enable multiple comment systems
+
+# valine comment system. https://valine.js.org
+# version 1.5.1
+# notify and verify have been deprecated
+valine:
+  enable: false # if you want to use valine,please set this value is true
+  appId: # leancloud application app id
+  appKey: # leancloud application app key
+  pageSize: 10 # comment list page size
+  avatar: mp # gravatar style https://valine.js.org/#/avatar
+  # lang: zh-tw # deprecated, use html.lang instead
+  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info
+  recordIP: true # whether to record the IP address of the commenters
+  highlight: true # whether to highlight the code blocks
+  visitor: false # whether to display the number of visitors
+  serverURLs: # leancloud server url
+
+# https://waline.js.org/
+# version 2.15.8
+waline:
+  enable: false
+  serverURL:
+  # lang: zh-CN # deprecated, use html.lang instead
+  locale: {} # https://waline.js.org/guide/features/i18n.html#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80
+  emoji:
+    - https://unpkg.com/@waline/emojis@1.2.0/weibo
+    - https://unpkg.com/@waline/emojis@1.2.0/alus
+    - https://unpkg.com/@waline/emojis@1.2.0/bilibili
+    - https://unpkg.com/@waline/emojis@1.2.0/qq
+    - https://unpkg.com/@waline/emojis@1.2.0/tieba
+    - https://unpkg.com/@waline/emojis@1.2.0/tw-emoji
+  meta:
+    - nick
+    - mail
+    - link
+  requiredMeta:
+    - nick
+    - mail
+  wordLimit: 0
+  pageSize: 10
+  pageview: true
+
+# https://twikoo.js.org
+twikoo:
+  enable: false
+  envId: # 腾讯云环境填 envId；Vercel 环境填地址（https://xxx.vercel.app）
+  region:
+
+# https://github.com/gitalk/gitalk/blob/master/readme-cn.md
+gitalk:
+  enable: false
+  clientID:
+  clientSecret:
+  repo:
+  owner:
+  admin:
+  md5: false
+
+# https://giscus.app/zh-CN
+giscus:
+  enable: false
+  repo:
+  repoId:
+  category:
+  categoryId:
+  mapping: mapping
+  strict: 0
+  reactionsEnabled: 1
+  emitMetadata: 0
+  inputPosition: bottom
+  # commentTheme: light # deprecated, because the theme is set by the theme itself
+  # lang: zh-CN # deprecated, use html.lang instead
+
+########################################
+# Search
+########################################
+
+# need https://github.com/D-Sketon/hexo-algoliasearch
+# please add the following config in your _config.yml
+# algolia:
+#   appId: 'your applicationID'
+#   apiKey: 'your apiKey'
+#   adminApiKey: 'your adminApiKey'
+#   indexName: 'your indexName'
+#   chunkSize: 5000
+#   fields:
+#     - content:strip:truncate,0,500
+#     - excerpt:strip
+#     - gallery
+#     - permalink
+#     - photos
+#     - slug
+#     - tags
+#     - title
+algolia_search:
+  enable: false
+  hits:
+    per_page: 10
+
+generator_search:
+  enable: false
+  field: post
+  content: true
+
+########################################
+# Animation
+########################################
+
+# Loader animation
+preloader:
+  enable: true
+  text:
+    zh-TW: 少女祈禱中...
+    en: Loading...
+    ja: 少女祈祷中...
+  icon: "/images/taichi.svg"
+  rotate: true # whether to rotate the icon
+
+# see https://github.com/D-Sketon/aos.js
+animation:
+  enable: true
+  options:
+    header:
+      title: slide-up
+      subTitle: slide-down
+    home:
+      post: fade-up
+      widget: fade-up
+      sidebar: fade-up
+    article:
+      whole: fade-up
+      date: zoom-in
+      category: zoom-in
+      tag: zoom-in
+      comment: zoom-in
+      reading: zoom-in
+      nav: fade-up
+    archive:
+      whole: fade-up
+      tag: zoom-in
+      category: zoom-in
+      section: fade-up
+      nav: fade-up
+
+# see https://github.com/D-Sketon/mouse-firework
+firework:
+  enable: true
+  options:
+    excludeElements: ["a", "button"]
+    particles:
+      - shape: circle
+        move: ["emit"]
+        easing: easeOutExpo
+        colors: ["var(--red-1)", "var(--red-2)", "var(--red-3)", "var(--red-4)"]
+        number: 20
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: [16, 32]
+          alpha: [0.3, 0.5]
+      - shape: circle
+        move: ["diffuse"]
+        easing: easeOutExpo
+        colors: ["var(--red-0)"]
+        number: 1
+        duration: [1200, 1800]
+        shapeOptions:
+          radius: 20
+          alpha: [0.2, 0.5]
+          lineWidth: 6
+
+########################################
+# Extended features
+########################################
+
+# Clipboard configuration
+clipboard:
+  success:
+    en: Copy successfully (*^▽^*)
+    zh-TW: 複製成功 (*^▽^*)
+    ja: コピー成功 (*^▽^*)
+  fail:
+    en: Copy failed (ﾟ⊿ﾟ)ﾂ
+    zh-TW: 複製失敗 (ﾟ⊿ﾟ)ﾂ
+    ja: コピー失敗 (ﾟ⊿ﾟ)ﾂ
+  copyright: # whether to add a copyright for the clipped content
+    enable: false
+    count: 50 # The number of characters when the copyright is displayed
+    license_type: by-nc-sa # https://creativecommons.org/licenses
+
+# show categories card on home page
+home_categories:
+  enable: false
+  content:
+    - categories: # string (single-layer category) or array (multi-layer category)
+      cover: # empty means random cover
+    - categories:
+      cover:
+
+# whether to display the notification when the article is outdated
+outdate:
+  enable: false
+  daysAgo: 180 # The number of days after which the article is considered outdated
+  message:
+    en: This article was last updated on {time}. Please note that the content may no longer be applicable.
+    zh-TW: 本文最後更新於 {time}，請注意文中內容可能已不適用。
+    ja: この記事は最終更新日：{time}。記載内容が現在有効でない可能性がありますのでご注意ください。
+
+# Sponsor
+sponsor:
+  enable: false
+  tip:
+    zh-TW: 請作者喝杯咖啡吧
+    en: Buy me a coffee
+    ja: コーヒーを買ってください
+  icon:
+    url: # this path is relative to the css/style.css, so it needs to go up one level to reach the images folder
+    rotate: true
+    mask: true # whether to use the images as a mask
+  qr:
+    # - name: 支付宝
+    #   src: "/sponsor/alipay.jpg"
+    # - name: 微信
+    #   src: "/sponsor/wechat.png"
+
+# ICP 备案
+icp:
+  icpnumber: # ICP备案号
+  beian: # 网安备案号
+  recordcode: # 网安备案链接中的recordcode参数
+
+# show the copyright below each article
+article_copyright:
+  enable: false
+  content:
+    author: true
+    link: true
+    title: false
+    date: false
+    updated: false
+    license: true
+    license_type: by-nc-sa # https://creativecommons.org/licenses
+
+# Back To Top
+top:
+  enable: true
+  position: right # left or right
+  icon:
+    url: # this path is relative to the css/style.css, so it needs to go up one level to reach the images folder
+    rotate: true
+    mask: true # whether to use the images as a mask
+
+share:
+  # - facebook
+  # - twitter
+  # - linkedin
+  # - reddit
+  # - weibo
+  # - qq
+  # - weixin
+
+########################################
+# Experimental features
+########################################
+
+# Experimental, may have a lot of bugs, open with caution!
+pjax:
+  enable: false
+
+# Experimental
+# https://github.com/GoogleChromeLabs/quicklink
+quicklink:
+  enable: false
+  # The `requestIdleCallback` timeout, in milliseconds.
+  timeout: 3000
+  # Whether or not the URLs within the options.el container should be treated as high priority.
+  # When true, quicklink will attempt to use the fetch() API if supported (rather than link[rel=prefetch]).
+  priority: true
+  # Determine if a URL should be prefetched.
+  # Only support string
+  ignores: []
+
+# https://github.com/CodeByZach/pace
+pace:
+  enable: true
+
+# Experimental
+service_worker:
+  enable: false
+
+# Experimental
+live2d:
+  enable: false
+  position: left # left or right
+
+# Experimental
+live2d_widgets:
+  enable: false
+  position: left # left or right
+
+# Experimental
+# Please turn on pjax to use this feature
+player:
+  # if you enable meting, you must enable aplayer first
+  aplayer:
+    # https://github.com/DIYgod/APlayer
+    enable: false
+    options:
+      audio: []
+      fixed:
+      autoplay:
+      loop:
+      order:
+      preload:
+      volume:
+      mutex:
+      listFolded:
+      lrcType:
+  meting:
+    # https://github.com/metowolf/MetingJS
+    # if you want to use meting, please enable aplayer first
+    enable: false
+    meting_api: # custom api
+    options:
+      id: 2265921590
+      server: netease
+      type: playlist
+      auto:
+
+########################################
+# pangu.js
+########################################
+
+pangu:
+  # more information: https://github.com/vinta/pangu.js
+  enable: false # enable pangu.js to add space between Chinese and English
+
+########################################
+# Theme
+########################################
+
+# experimental, may have a lot of bugs, open with caution!
+# A dynamic color generation tool based on Google's Material You design guidelines, capable of extracting primary colors from any image and generating complete light and dark color schemes.
+material_theme:
+  # more information: https://github.com/2061360308/material-theme
+  # notice: when you enable this feature, all the covers will be automatically added "crossorigin" attribute to support the dynamic color scheme
+  # so make sure your custom covers will not be blocked by the browser's CORS policy
+  enable: false # enable material_theme to generate dynamic color schemes based on the banner image
+
+internal_theme:
+  light:
+    --red-0: "#1c6baf"
+    --red-1: "#1f7ecc"
+    --red-2: "#2996e2"
+    --red-3: "#48ace7"
+    --red-4: "#67bef3"
+    --red-5: "#8acef4"
+    --red-5-5: "#95d9fc"
+    --red-6: "#a6daf6"
+    --color-red-6-shadow: "rgba(31,126,204,0.6)"
+    --color-red-3-shadow: "rgba(31,126,204,0.3)"
+
+    --highlight-nav: "#e6e6e6"
+    --highlight-scrollbar: "#d6d6d6"
+    --highlight-background: "#f7f7f7"
+    --highlight-current-line: "#dadada"
+    --highlight-selection: "#e9e9e9"
+    --highlight-foreground: "#4d4d4d"
+    --highlight-comment: "#7d7d7d"
+    --highlight-red: "#c8362b"
+    --highlight-orange: "#b66014"
+    --highlight-yellow: "#cb911d"
+    --highlight-green: "#2ea52e"
+    --highlight-aqua: "#479d9d"
+    --highlight-blue: "#1973b8"
+    --highlight-purple: "#7135ac"
+  dark:
+    --red-4: "rgba(255, 208, 208, 0.5)"
+    --red-5: "rgba(255,228,228,0.15)"
+    --red-5-5: "rgba(255,236,236,0.05)"
+    --red-6: "rgba(255, 243, 243, 0.2)"
+
+    --highlight-nav: "#2e353f"
+    --highlight-scrollbar: "#454d59"
+    --highlight-background: "#22272e"
+    --highlight-current-line: "#393939"
+    --highlight-selection: "#515151"
+    --highlight-foreground: "#cccccc"
+    --highlight-comment: "#999999"
+    --highlight-red: "#f47067"
+    --highlight-orange: "#f69d50"
+    --highlight-yellow: "#ffcc66"
+    --highlight-green: "#99cc99"
+    --highlight-aqua: "#66cccc"
+    --highlight-blue: "#54b6ff"
+    --highlight-purple: "#dcbdfb"
+
+
+########################################
+# Vendor
+########################################
+
+# Dependent cdn links
+# If you change the version of a js library, be sure to modify the corresponding integrity value
+vendor:
+  cdn_jsdelivr_gh: https://cdn.jsdelivr.net/gh/
+  cdn_jsdelivr_npm: https://cdn.jsdelivr.net/npm/
+  fastly_jsdelivr_gh: https://fastly.jsdelivr.net/gh/
+  fastly_jsdelivr_npm: https://fastly.jsdelivr.net/npm/
+  unpkg: https://unpkg.com/
+  webcache: https://npm.webcache.cn/
+  js:
+    clipboard:
+      src: cdn_jsdelivr_npm|clipboard@2.0.11/dist/clipboard.min.js
+      integrity: sha384-J08i8An/QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q
+    lazysizes:
+      src: cdn_jsdelivr_npm|lazysizes@5.3.2/lazysizes.min.js
+      integrity: sha384-3gT/vsepWkfz/ff7PpWNUeMzeWoH3cDhm/A8jM7ouoAK0/fP/9bcHHR5kHq2nf+e
+    photoswipe:
+      src: cdn_jsdelivr_npm|photoswipe@5.4.4/dist/photoswipe.esm.min.js
+      integrity: sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s
+    photoswipe_lightbox:
+      src: cdn_jsdelivr_npm|photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js
+      integrity: sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/
+    valine:
+      src: cdn_jsdelivr_npm|valine@1.5.1/dist/Valine.min.js
+      integrity: sha384-3ma91AExDeMAZ1rjTjaP8V2A2obQE+s5ltKRwYlwdpArz9xVbp0tF3b0VV2ACNPn
+    waline:
+      src: cdn_jsdelivr_npm|@waline/client@2.15.8/dist/waline.mjs
+      integrity: sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5
+    twikoo:
+      src: cdn_jsdelivr_npm|twikoo@1.6.16/dist/twikoo.all.min.js
+      integrity: sha384-lDHsr5aZmkMS0eKnsUu6e9RWP+dRmn7sgjRAKGOAoXfMyzbUK6Qi86zZK7R+KvRV
+    gitalk:
+      src: cdn_jsdelivr_npm|gitalk@1.8.0/dist/gitalk.min.js
+      integrity: sha384-kspnZUWBoSWwoJHa0hBCXYbHGbhvU/lcEH5O8eVbSDhbPwsiVUTp/aGX/z/5EuMA
+    busuanzi:
+      src: cdn_jsdelivr_npm|busuanzi@2.3.0/bsz.pure.mini.js
+      integrity: sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S
+    algolia:
+      src: cdn_jsdelivr_npm|algoliasearch@4.17.1/dist/algoliasearch-lite.umd.js
+      integrity: sha384-xvLS0jfKuoREs7pqkRI/OI8GcqohO5S+jQz7ZBtQXnsXmD+9jDOOY4cL6dCPzlrk
+    instantsearch:
+      src: cdn_jsdelivr_npm|instantsearch.js@4.56.1/dist/instantsearch.production.min.js
+      integrity: sha384-hHJCflT4KBLQyHfKO9vpstIcFKn/Y+KHTORelMMEn7mOp2AVPp+7fr03dLgZiV3J
+    pace:
+      src: cdn_jsdelivr_npm|pace-js@1.2.4/pace.min.js
+      integrity: sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8
+    mermaid:
+      src: cdn_jsdelivr_npm|mermaid@9.4.3/dist/mermaid.min.js
+      integrity: sha384-aG3Gai4tbCHF0iXo48HwLoOZyut7mBl50oMC9GD1m75xyHfJDv6w8hD/kZRD47aJ
+    firework:
+      src: cdn_jsdelivr_npm|mouse-firework@0.1.1/dist/index.umd.js
+      integrity: sha384-8LyaidD9GPxQQgLJO/WRw/O2h3BoNq/ApI/ecpvM6RsrCz2qP2ppBXUKihP4V/2d
+    pjax:
+      src: cdn_jsdelivr_npm|theme-shokax-pjax@0.0.3/dist/index.umd.js
+      integrity: sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE/jMSCxD+jAPU55x/jj3wlf
+    live2d:
+      base: cdn_jsdelivr_gh|D-Sketon/plugin-live2d/
+      js: cdn_jsdelivr_gh|D-Sketon/plugin-live2d/js/live2d-autoload.js
+    live2d_widgets:
+      src: cdn_jsdelivr_npm|live2d-widgets@0.9.0/autoload.js
+      integrity: sha384-poTN7wN/SqNhQqo3jdFeX20ikddWeFGkUkDEzsKjgH/ez8aQLn81oI0Cw6q5xNyB
+    md5:
+      src: cdn_jsdelivr_npm|blueimp-md5@2.19.0/js/md5.min.js
+      integrity: sha384-JmVtRz6RWiXnA14QbIOJzPuU3MidULOpBP66deeLLyyoF4Tr/gZlbkHkL6vTthxH
+    quicklink:
+      src: cdn_jsdelivr_npm|quicklink@2.3.0/dist/quicklink.umd.js
+      integrity: sha384-aD7FsuQkS1ohgFKY41fJfeA+Wd/QRNnrOd9Bs58K3FzKdJJv8yPnYU8Tnp5z1agS
+    katex:
+      src: cdn_jsdelivr_npm|katex@0.16.11/dist/katex.min.js
+      integrity: sha384-7zkQWkzuo3B5mTepMUcHkMB5jZaolc2xDwL6VFqjFALcbeS9Ggm/Yr2r3Dy4lfFg
+    katex_auto_render:
+      src: cdn_jsdelivr_npm|katex@0.16.11/dist/contrib/auto-render.min.js
+      integrity: sha384-43gviWU0YVjaDtb/GhzOouOXtZMP/7XUzwPTstBeZFe/+rCMvRwr4yROQP43s0Xk
+    mathjax:
+      src: cdn_jsdelivr_npm|mathjax@3.2.2/es5/tex-mml-chtml.js
+      integrity: sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6/1Nxveei
+    aplayer:
+      src: cdn_jsdelivr_npm|aplayer@1.10.1/dist/APlayer.min.js
+      integrity: sha384-gdGYZwHnfJM54evoZhpO0s6ZF5BQiybkiyW7VXr+h5UfruuRL/aORyw+5+HZoU6e
+    meting:
+      src: cdn_jsdelivr_npm|meting@2.0.1/dist/Meting.min.js
+      integrity: sha384-ASVlpKF80A22OXTK3tfEjZm1EL6uFMKIC4p8+0maanw1S/IyB+Y4JG+ZDU7GpKE8
+    qrcode:
+      src: cdn_jsdelivr_npm|qrcode@1.4.4/build/qrcode.min.js
+      integrity: sha384-0RsG1yo/crf/1Qc14sho26SXXOTngNCjgJw7fuvXBt9W/OChF/Ijx+aUuBDqQwEk
+    html2image:
+      src: cdn_jsdelivr_npm|html-to-image@1.11.11/dist/html-to-image.js
+      integrity: sha384-UbfRVKN3/elS1r7JcK2FhmPP+KlJ4CvYwbyYD7tH+uTkbT9bNJr9eJeQ0FoFbAgz
+    dompurify:
+      src: cdn_jsdelivr_npm|dompurify@3.2.4/dist/purify.min.js
+      integrity: sha384-eEu5CTj3qGvu9PdJuS+YlkNi7d2XxQROAFYOr59zgObtlcux1ae1Il3u7jvdCSWu
+    pangu:
+      src: cdn_jsdelivr_npm|pangu@4.0.7/dist/browser/pangu.min.js
+      integrity: sha384-HeUHqi0nVsPUm/E0ss7OfnIV/yD96JWB8ehZvUuoVax9DpNHL17jj9pdfXHzqDxm
+    material_theme:
+      src: cdn_jsdelivr_npm|material-theme@1.0.0/dist/material-theme.umd.js
+      integrity: sha384-vLev0II0HKFaxkcm+/7kX5IGwVFBASkGchU311wmU/veIj2bB0UcBkQbW6yw2asK
+  css:
+    photoswipe:
+      src: cdn_jsdelivr_npm|photoswipe@5.4.4/dist/photoswipe.css
+      integrity: sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE
+    katex:
+      src: cdn_jsdelivr_npm|katex@0.16.11/dist/katex.min.css
+      integrity: sha384-nB0miv6/jRmo5UMMR1wu3Gz6NLsoTkbqJghGIsx//Rlm+ZU03BU6SQNC66uf4l5+
+    waline:
+      src: cdn_jsdelivr_npm|@waline/client@2.15.8/dist/waline.css
+      integrity: sha384-vltfZtesCdl6NYVcFVcjEaIi5RpNvZe9t7fXvq8twVtcoy+Ub9QgnxUYJmwOhYCK
+    gitalk:
+      src: cdn_jsdelivr_npm|gitalk@1.8.0/dist/gitalk.css
+      integrity: sha384-X7z7PUv2B67D8sPJyzDyGZSco1ADwmdI7ed4eCGtTKkClfyDFpPL9WgAn9XVr/Io
+    fontawesome:
+      high_priority:
+        - src: cdn_jsdelivr_npm|@fortawesome/fontawesome-free@6.5.1/css/regular.min.css
+          integrity: sha384-k5640LgghgAohDLPwSqVWa96yQwWouT6wsAL+J1g0CFJVITNKYkIh1XpPLYKQe7Y
+        - src: cdn_jsdelivr_npm|@fortawesome/fontawesome-free@6.5.1/css/solid.min.css
+          integrity: sha384-8yO/A/BtltnG0hDxdwmmkza8UAleyDoAD1FhXiH6rsOQQsCho1P6WZP9TpBBH3YP
+      low_priority:
+        - src: cdn_jsdelivr_npm|@fortawesome/fontawesome-free@6.5.1/css/brands.min.css
+          integrity: sha384-/BRyRRN0wxxRgh/DAXU621go9pdoMHl6LFPiX5Pp8PZYZlKBQCDXj9X9DHx6LOud
+        - src: cdn_jsdelivr_npm|@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css
+          integrity: sha384-/mBKnLlGtog8q2qQrgugURRDV+iHWHAPvM5KulYXT1C2ErKOKkBI0vbff8ZPq7rL
+        - src: cdn_jsdelivr_npm|@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css
+          integrity: sha384-d2Yn1/9Iw78r3oqwk5B+EcpRcmepXR5LyhmRF2a+WoSe9mpRGvVk0ZviFwDGDOTO
+    aos:
+      src: cdn_jsdelivr_npm|@reimujs/aos@0.1.0/dist/aos.css
+      integrity: sha384-4NN3fZ5AokFyHuoihl7A9qWaCt+HsAtOaUsXwJGRb4/SMBtFr2vcNSHR5E8dg0Wk
+    aplayer:
+      src: cdn_jsdelivr_npm|aplayer@1.10.1/dist/APlayer.min.css
+      integrity: sha384-tLMkTWh2pfXNWGFlUS0w1TFtRG5xZ9lPWFOooj+vDDLIL+xBGQU/voDBY5XE2lVh
+
+# Performance Optimization
+performance:
+  enable: true
+  # 關鍵資源預載入
+  preload_critical: true
+  # DNS 預解析
+  dns_prefetch: true
+  # 預連接
+  preconnect: true
+  # 內聯關鍵 CSS
+  inline_critical_css: false
+  # 延遲載入非關鍵資源
+  defer_non_critical: true
+  # 資源提示域名
+  resource_hints_domains:
+    - //cdn.jsdelivr.net
+    - //fastly.jsdelivr.net
+    - //unpkg.com
+    - //npm.webcache.cn
