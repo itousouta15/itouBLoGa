@@ -3,15 +3,16 @@
 ## 原始碼： https://github.com/hexojs/hexo/
 
 # 網站
-title: 伊藤蒼太's Blog
-subtitle: 'Coding, Learning, Life'
-description: 'Professional Bug Creator'
+title: 伊藤蒼太's Blog (存檔版)
+subtitle: 'Legacy Archive - Coding, Learning, Life'
+description: 'Professional Bug Creator - Legacy Blog Archive'
 keywords: '伊藤蒼太, Hexo, Blog, Coding, Learning, Life'
 author: 伊藤蒼太
 language: zh-TW
 timezone: 'Asia/Taipei'
 
-url: https://itousouta15.tw
+url: https://itousouta15.github.io/legacy-blog
+root: /legacy-blog/
 permalink: :year/:month/:day/:urlname/
 permalink_defaults:
 pretty_urls:

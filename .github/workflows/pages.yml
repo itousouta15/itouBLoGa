@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main  # 设置要部署的分支
+      - master  # 也支援 master 分支
 
 jobs:
   pages:
