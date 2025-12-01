@@ -14,7 +14,7 @@
     "version": "7.3.0"
   },
   "dependencies": {
-    "@reimujs/hexo-renderer-markdown-it-plus": "^1.2.2",
+    "@reimujs/hexo-renderer-markdown-it-plus": "^1.2.3",
     "hexo": "^7.3.0",
     "hexo-all-minifier": "^0.5.7",
     "hexo-clean-css": "^2.0.0",
