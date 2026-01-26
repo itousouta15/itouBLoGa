@@ -21,9 +21,6 @@ menu:
   - name: friend
     url: /friend
     icon: f0c0
-  - name: 存檔說明
-    url: /archive-info
-    icon: f187
 
 banner: "/img/banner.webp"
 
@@ -60,58 +57,6 @@ rss: atom.xml
 injector:
   head_begin: # 在 <head> 後注入代碼片段
   head_end: # 在 </head> 前注入代碼片段
-  body_begin: |
-    <!-- 存檔網站通知橫幅 -->
-    <div id="archive-notice" style="
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      text-align: center;
-      padding: 12px 20px;
-      font-size: 14px;
-      z-index: 9999;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transform: translateY(-100%);
-      transition: transform 0.3s ease;
-    ">
-      <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 10px;">
-        <span style="font-weight: 500;">📚 您正在瀏覽存檔版本的部落格</span>
-        <span style="opacity: 0.9;">|</span>
-        <a href="https://itousouta15.tw" style="
-          color: #ffeb3b;
-          text-decoration: none;
-          font-weight: 500;
-          padding: 4px 12px;
-          border: 1px solid #ffeb3b;
-          border-radius: 15px;
-          transition: all 0.3s ease;
-        " onmouseover="this.style.background='#ffeb3b'; this.style.color='#333';" 
-           onmouseout="this.style.background='transparent'; this.style.color='#ffeb3b';">
-          前往新版網站 →
-        </a>
-        <button onclick="document.getElementById('archive-notice').style.transform='translateY(-100%)'" style="
-          background: none;
-          border: none;
-          color: white;
-          font-size: 18px;
-          cursor: pointer;
-          padding: 2px 8px;
-          opacity: 0.7;
-          transition: opacity 0.3s ease;
-        " onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">×</button>
-      </div>
-    </div>
-    <script>
-      // 顯示存檔通知
-      setTimeout(() => {
-        document.getElementById('archive-notice').style.transform = 'translateY(0)';
-        // 調整 body 的 padding-top 以避免內容被遮擋
-        document.body.style.paddingTop = '60px';
-      }, 1000);
-    </script>
   body_end: |
     <script>
       console.log('Footer loaded');
