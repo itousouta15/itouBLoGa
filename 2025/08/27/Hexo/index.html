@@ -1,0 +1,945 @@
+  <!DOCTYPE html>
+  <html lang="zh-TW"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    使用 GitHub Pages + Hexo 架設個人BLOG | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。 本篇將帶你從零開始(在windows系統上)，使用 Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 GitHub Pages + Hexo 架設個人BLOG">
+<meta property="og:url" content="https://blog.itousouta15.tw/2025/08/27/Hexo/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。 本篇將帶你從零開始(在windows系統上)，使用 Hexo">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/hexo.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/themes.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/run.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/deploy.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/github.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/page.webp">
+<meta property="article:published_time" content="2025-08-27T06:32:32.000Z">
+<meta property="article:modified_time" content="2026-02-09T10:17:40.602Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.itousouta15.tw/images/Hexo/hexo.webp">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>發現新版本</h1>
+    <p>網站好像有新內容，是否更新？</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">更新</button>
+      <button id="notification-close-btn">取消</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/">首頁</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/archives">歸檔</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/about">關於</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/friend">友鏈</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 訂閱" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">繁體中文</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" class="selected">繁體中文</li>
+          
+            <li data-value="en" >English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2025/08/27/Hexo/';
+            
+              langMap['en'] = '/en/2025/08/27/Hexo/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/Hexo/hexo_github.webp" alt="使用 GitHub Pages + Hexo 架設個人BLOG">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">使用 GitHub Pages + Hexo 架設個人BLOG</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#package-json"><span class="toc-number">2.1.1.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text">scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text">source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text">theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#config-yml"><span class="toc-number">2.1.5.</span> <span class="toc-text">_config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages"><span class="toc-number">3.</span> <span class="toc-text">部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text">SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text">建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-SSH-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-GitHub"><span class="toc-number">3.1.3.</span> <span class="toc-text">將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-SSH-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text">測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%EF%BC%8C%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text">回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text">SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text">Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text">Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LF-%E8%88%87-CRLF-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text">LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text">成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text">日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">進階優化</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">8</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-hexo" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-08-27T06:32:32.000Z" itemprop="datePublished">2025-08-27</time>
+    <time style="display: none;" id="post-update-time">2026-02-09</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <p>在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。</p>
+<p>本篇將帶你從零開始(在windows系統上)，使用 Hexo（一個快速、簡潔的靜態部落格框架）搭配 GitHub Pages（GitHub 提供的免費靜態網頁託管服務），一步步完成屬於自己的部落格架設。</p>
+<h2 id="準備環境"><a href="#準備環境" class="headerlink" title="準備環境"></a>準備環境</h2><p>在正式開始之前，請先確保電腦具備以下環境：</p>
+<ul>
+<li>Node.js（建議安裝 LTS 版本，Hexo 需 Node.js 14+ 支援）  </li>
+<li>npm（Node.js 會一併安裝 npm 套件管理工具）  </li>
+<li>Git（操作 GitHub 版本控管及部署需要）  </li>
+<li>GitHub 帳號（用來存放專案與提供 Pages 網站）</li>
+</ul>
+<h3 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h3><p>前往官網下載介面<br><a target="_blank" rel="noopener" href="https://nodejs.org/zh-tw/download">https://nodejs.org/zh-tw/download</a><br><img src="/images/Hexo/hexo.webp" alt="hexo"><br>如果有 Docker 就複製上面程式碼到終端機裡，沒有就按底下的下載 MSI 檔再執行即可。<br>建議不管 Hexo 或 NodeJS 都能下載最新（至少 LTS）的版本，才能得到官方修補漏洞或優化後的最佳體驗。</p>
+<h2 id="Hexo-實作"><a href="#Hexo-實作" class="headerlink" title="Hexo 實作"></a>Hexo 實作</h2><ol>
+<li>打開終端機，輸入：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br></pre></td></tr></table></figure>
+<p>這會在目前路徑下建立一個名為 <code>my-blog</code> 的資料夾，裡面包含 Hexo 專案的所有基本架構資料夾和檔案。</p>
+<ol start="2">
+<li>進入這個資料夾：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>安裝 Hexo 需要的依賴套件：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+
+<p>這樣子你的 Hexo 專案資料夾就初始化完成了。</p>
+<h3 id="檔案介紹"><a href="#檔案介紹" class="headerlink" title="檔案介紹"></a>檔案介紹</h3><p>檔案介紹<br>這邊有幾個比較重要的檔案&#x2F;資料夾，稍微介紹一下：</p>
+<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>Hexo 的文章內容是使用 ejs 等模板語言來撰寫，經解析後渲染成靜態的 HTML，所以可以在 package.json 的 dependencies 裡面看到 ejs, stylus, markdown 的 renderer-package</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-theme-landscape&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.0.3&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds&#x2F;"></a>scaffolds&#x2F;</h4><p>scaffolds 資料夾中有三個檔案： draft.md, page.md, post.md</p>
+<p>這些是檔案模板，每使用 $ hexo new <type> <name> 創造一個新的貼文或頁面，Hexo 就會使用 scaffolds 中的模板為你建立檔案雛型。</p>
+<h4 id="source"><a href="#source" class="headerlink" title="source&#x2F;"></a>source&#x2F;</h4><p>source 資料夾放著這個網站所有的資源。前綴詞帶有底線的資料夾會被 Hexo 忽略，_post 除外，因為這裡面放的是我們要上架的文章。這些靜態檔案（Markdown, HTML 等）在 build 完後會被放進 public 資料夾，而其他的檔案則是用複製的方式。</p>
+<h4 id="theme"><a href="#theme" class="headerlink" title="theme&#x2F;"></a>theme&#x2F;</h4><p>theme 資料夾用來放佈景主題相關的各種資料，官方預設的佈景主題是 landscape，如果想要換佈景，也可以到官方的 theme shop 去找你喜歡的主題，下載後整包放到 themes&#x2F; 下面來使用</p>
+<p>(主題盡量挑選近期很多人穩定在維護的專案)</p>
+<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>_config.yml 是我們最重要的設定檔，這個檔案中可以針對我們的全站呈現方式做設定</p>
+<h3 id="直接套模板"><a href="#直接套模板" class="headerlink" title="直接套模板"></a>直接套模板</h3><p>接下來找一個你想使用的 Hexo 主題（例如常見的 NexT、Butterfly、Reimu 等），通常主題會放在 GitHub 上，下載或使用 Git clone 複製主題進入你的 Hexo 專案的 <code>themes</code> 目錄內。</p>
+<blockquote>
+<p>如果你不想那麼麻煩可以直接</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/reimu-template</span><br><span class="line"><span class="built_in">cd</span> reimu-template</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>已預先安裝 hexo、hexo-theme-reimu 及其他相關功能套件，只需要按照以下步驟操作：複製倉庫、安裝依賴、修改配置，即可取得一個基本的部落格！<br>完成這步可以直接跳到 <a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages">部署到 GitHub Pages</a></p>
+</blockquote>
+<p>例如以我這blog用的 reimu  為例，執行：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure><br>並且重命名為”reimu”:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName <span class="built_in">test</span> </span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>⚠️ <strong>注意！如果執行主題資料夾重命名指令時，遇到類似以下錯誤：</strong>  </p>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">無法移除 C:\Users\<span class="string">...</span>\<span class="string">.git</span> 項目: 您沒有足夠的存取權限來執行此操作。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>請使用下方指令嘗試解決此問題：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">robocopy .\hexo-theme-reimu .\reimu /E</span><br><span class="line">Remove-Item .\hexo-theme-reimu -Recurse -Force</span><br></pre></td></tr></table></figure>
+<p>這組指令會複製主題資料夾並強制刪除原資料夾的 <code>.git</code> 等被鎖定檔案，常見於 Windows 權限或鎖定導致的無法移除問題。</p>
+</blockquote>
+<p><img src="/images/Hexo/themes.webp" alt="reimu"></p>
+<p>然後在 <code>_config.yml</code> 裡面設定：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">reimu</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>完整流程範例如下：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName reimu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 _config.yml 裡的 theme: reimu</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+
+<p>完成後就可以在本地瀏覽器打開 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 預覽新主題部落格樣貌。<br><img src="/images/Hexo/run.webp" alt="run"></p>
+<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>在開始部署之前，請先完成 SSH 金鑰設定，以避免常見的權限問題：</p>
+<h3 id="SSH-金鑰設定步驟"><a href="#SSH-金鑰設定步驟" class="headerlink" title="SSH 金鑰設定步驟"></a>SSH 金鑰設定步驟</h3><h4 id="建立-ssh-目錄"><a href="#建立-ssh-目錄" class="headerlink" title="建立 .ssh 目錄"></a><strong>建立 <code>.ssh</code> 目錄</strong></h4><p>   在 PowerShell 執行：<br>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure><br>   （如已有此目錄可略過）</p>
+<h4 id="產生-SSH-金鑰"><a href="#產生-SSH-金鑰" class="headerlink" title="產生 SSH 金鑰"></a><strong>產生 SSH 金鑰</strong></h4>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>   按 Enter 使用預設路徑及參數。</p>
+<h4 id="將公鑰加入-GitHub"><a href="#將公鑰加入-GitHub" class="headerlink" title="將公鑰加入 GitHub"></a><strong>將公鑰加入 GitHub</strong></h4><p>   執行：<br>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure><br>   複製顯示內容，前往 GitHub → Settings → SSH and GPG keys → New SSH key，貼上內容並儲存。<br>   註：連結 → <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+<h4 id="測試-SSH-連線"><a href="#測試-SSH-連線" class="headerlink" title="測試 SSH 連線"></a><strong>測試 SSH 連線</strong></h4>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+<p>   若出現<br>   <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;username&gt;! You<span class="symbol">&#x27;ve</span> successfully authenticated</span><br></pre></td></tr></table></figure><br>   表示設定成功。</p>
+<h4 id="回主題目，開始部署"><a href="#回主題目，開始部署" class="headerlink" title="回主題目，開始部署"></a><strong>回主題目，開始部署</strong></h4><p>完成 SSH 設定後，開始進行 Hexo 部署：</p>
+<ul>
+<li><p>建立 GitHub 倉庫，通常命名為 <code>你的帳號.github.io</code>，如 <code>itousouta15.github.io</code>。<br><img src="/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp"></p>
+</li>
+<li><p>在 Hexo 專案根目錄安裝部署外掛：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>先初始化 git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改 <code>_config.yml</code>，增加部署設定：  </p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:itousouta15/&lt;你的-repo&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+<p><img src="/images/Hexo/deploy.webp" alt="deploy"></p>
+</li>
+<li><p>生成靜態檔並部署：  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>確認 GitHub Pages 功能已開啟，等候片刻後瀏覽 <code>https://你的帳號.github.io</code> 即完成線上部署。<br><img src="/images/Hexo/github.webp" alt="github"></p>
+</li>
+</ul>
+<h3 id="常見疑難排解"><a href="#常見疑難排解" class="headerlink" title="常見疑難排解"></a>常見疑難排解</h3><blockquote>
+<h4 id="SSH-金鑰權限錯誤及-ssh-目錄無法建立"><a href="#SSH-金鑰權限錯誤及-ssh-目錄無法建立" class="headerlink" title="SSH 金鑰權限錯誤及 .ssh 目錄無法建立"></a>SSH 金鑰權限錯誤及 <code>.ssh</code> 目錄無法建立</h4><ul>
+<li><strong>錯誤訊息：</strong>  <ul>
+<li><code>git@github.com: Permission denied (publickey)</code>  </li>
+<li><code>Could not create directory &#39;/c/Users/\xxx/.ssh&#39;</code>（亂碼路徑）</li>
+</ul>
+</li>
+<li><strong>原因：</strong><br>Windows 使用者名稱含有中文或特殊符號，系統或 Git 解析路徑時產生亂碼，導致無法建立 <code>.ssh</code> 目錄。  </li>
+<li><strong>解決方法：</strong>  <ol>
+<li>手動建立正確的 <code>.ssh</code> 目錄：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure></li>
+<li>產生 SSH 金鑰並加入 GitHub：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
+將公鑰內容複製貼至 GitHub SSH Keys 頁面。  </li>
+<li>將 Git 指令設定使用絕對路徑載入金鑰，注意路徑要有反斜線：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;ssh -i C:/Users/伊藤蒼太/.ssh/id_ed25519&quot;</span></span><br></pre></td></tr></table></figure></li>
+<li>測試 SSH 連線：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+正常應顯示「Hi <username>! You’ve successfully authenticated」。  </li>
+<li>再試 <code>git push</code> 與 <code>hexo deploy</code>。</li>
+</ol>
+</li>
+</ul>
+<h4 id="Git-倉庫初始化錯誤"><a href="#Git-倉庫初始化錯誤" class="headerlink" title="Git 倉庫初始化錯誤"></a>Git 倉庫初始化錯誤</h4><ul>
+<li><strong>錯誤訊息：</strong><br><code>fatal: Not a git repository (or any of the parent directories): .git</code>  </li>
+<li><strong>原因：</strong><br>執行 Git 指令的資料夾非 Hexo 專案根目錄，或該資料夾尚未初始化 Git。  </li>
+<li><strong>解決方法：</strong>  <ol>
+<li>切換至 Hexo 專案根目錄（含 <code>.git</code>）。  </li>
+<li>若尚未初始化，執行：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:itousouta15/&lt;你的<span class="literal">-repo</span>&gt;.git</span><br></pre></td></tr></table></figure></li>
+<li>再執行 <code>hexo deploy</code>。</li>
+</ol>
+</li>
+</ul>
+<h4 id="Submodule-警告"><a href="#Submodule-警告" class="headerlink" title="Submodule 警告"></a>Submodule 警告</h4><ul>
+<li><strong>內容：</strong><br><code>themes/reimu</code> 資料夾為獨立 git 倉庫，Git 會警告此為 submodule。  </li>
+<li><strong>建議：</strong><br>使用 Git submodule 管理或刪除 <code>themes/reimu</code> 的 <code>.git</code> 資料夾，避免 clone 不完整。</li>
+</ul>
+<h4 id="LF-與-CRLF-行尾格式警告"><a href="#LF-與-CRLF-行尾格式警告" class="headerlink" title="LF 與 CRLF 行尾格式警告"></a>LF 與 CRLF 行尾格式警告</h4><ul>
+<li><strong>說明：</strong><br>Git 在 Windows 環境會提示行尾碼轉換，為正常情況。</li>
+</ul>
+<h4 id="成功部署訊息"><a href="#成功部署訊息" class="headerlink" title="成功部署訊息"></a>成功部署訊息</h4><ul>
+<li>你會看到類似以下內容：  <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Enumerating</span></span> objects... </span><br><span class="line"><span class="function"><span class="title">Writing</span></span> objects... </span><br><span class="line">To github.com:itousouta15/test.github.io.git</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure></li>
+<li>如果出現部分 <code>known_hosts</code> 警告，不影響 Git 操作與 Hexo 部署。</li>
+</ul>
+</blockquote>
+<h3 id="日常使用與維護"><a href="#日常使用與維護" class="headerlink" title="日常使用與維護"></a>日常使用與維護</h3><ul>
+<li>使用 Hexo CLI 管理文章：<br>新增文章  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;文章標題&quot;</span></span><br></pre></td></tr></table></figure>
+編輯完成後產生並部署：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
+<li>定期更新 Hexo、主題與外掛，保持安全與功能正常。  </li>
+<li>依需要自訂主題配置，如風格、選單、評論系統等。</li>
+</ul>
+<h3 id="進階優化"><a href="#進階優化" class="headerlink" title="進階優化"></a>進階優化</h3><ul>
+<li>加入自訂網域，替代預設 GitHub Pages 的網址。  </li>
+<li>使用 CDN 或 Cloudflare 提升全球訪問速度與安全。  </li>
+<li>配置 SSL 證書支援 HTTPS。  </li>
+<li>整合 SEO、網站分析工具。  </li>
+<li>使用 CI&#x2F;CD 工具自動化部署流程。</li>
+</ul>
+<p><img src="/images/Hexo/page.webp" alt="page"></p>
+<p>這篇文章就到此為止!我們下次見!</p>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/2025/08/27/Hexo/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/2025/08/27/Hexo/" itemprop="commentCount"></span>
+          留言
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/2025/08/27/Hexo/">0</span>
+          <em class="post-meta-item-text">閲讀量</em>
+        </span>
+      
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag" title="Hexo">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+    <div class="article-nav-link-wrap right">
+        <img data-src="/images/ais3/ais3.webp" data-sizes="auto" alt="AIS3 pre-exam 2025" class="lazyload">
+      <a href="/2025/07/11/AIS3PE/" aria-label="後一篇: AIS3 pre-exam 2025"  title="後一篇: AIS3 pre-exam 2025"></a>
+      <div class="article-nav-caption">後一篇</div>
+      <h3 class="article-nav-title">
+          AIS3 pre-exam 2025
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">說些什麼吧！</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        基於&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        16.6k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        01:30
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">總訪客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#package-json"><span class="toc-number">2.1.1.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text">scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text">source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text">theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#config-yml"><span class="toc-number">2.1.5.</span> <span class="toc-text">_config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages"><span class="toc-number">3.</span> <span class="toc-text">部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text">SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text">建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-SSH-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-GitHub"><span class="toc-number">3.1.3.</span> <span class="toc-text">將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-SSH-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text">測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%EF%BC%8C%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text">回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text">SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text">Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text">Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LF-%E8%88%87-CRLF-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text">LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text">成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text">日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">進階優化</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">8</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "使用 GitHub Pages + Hexo 架設個人BLOG",
+          url: "https://blog.itousouta15.tw/2025/08/27/Hexo/",
+          excerpt: "",
+          description: "",
+          stripContent: "在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。 本篇將帶你從零開始(在windows系統上)，使用 Hexo（一個快速、簡潔的靜態部落格框架）搭配 GitHub Pages（GitHub 提供的免費靜態網頁託",
+          date: "Wed Aug 27 2025 14:32:32 GMT+0800",
+          updated: "Mon Feb 09 2026 18:17:40 GMT+0800",
+          cover: "/images/Hexo/hexo_github.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>

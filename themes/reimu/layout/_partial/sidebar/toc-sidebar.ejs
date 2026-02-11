@@ -1,8 +1,0 @@
-<h3 class="toc-title"><%= __('toc') %></h3>
-<div class="sidebar-toc-wrapper toc-div-class" <% if (page.encrypt == true) { %>style="display: none" <% } %>>
-  <%_ if (page.encrypt == true) { _%>
-    <%- get_cached_toc(page.origin, page.slug) %>
-  <%_ } else { _%>
-    <%- get_cached_toc(page.content, page.slug) %>
-  <%_ } _%>
-</div>

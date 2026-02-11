@@ -1,0 +1,928 @@
+  <!DOCTYPE html>
+  <html lang="zh-TW"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    AIS3 pre-exam 2025 | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="前言這是我的第一次CTF打得很爛writeup也寫得很爛為了各位的眼睛著想請不要繼續往下看">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AIS3 pre-exam 2025">
+<meta property="og:url" content="https://blog.itousouta15.tw/2025/07/11/AIS3PE/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="前言這是我的第一次CTF打得很爛writeup也寫得很爛為了各位的眼睛著想請不要繼續往下看">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/tomorin.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/MyGO.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E6%88%90%E5%8A%9F%E8%A8%AA%E5%95%8F.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E7%99%BB%E5%85%A5%E7%95%AB%E9%9D%A2.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/FLAGG.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/chal.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E7%99%BC%E7%A5%A8.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/QRcode.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E5%AE%8C%E6%95%B4%E8%B3%87%E8%A8%8A.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/Map.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/Tiny-server.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E7%9B%AE%E9%8C%84.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/FLAG.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/welcome.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/response.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E7%BC%BA%E9%99%B7.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/print.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/FLAGGG.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/ais3/%E7%B5%90%E6%9E%9C.webp">
+<meta property="article:published_time" content="2025-07-11T05:32:32.000Z">
+<meta property="article:modified_time" content="2026-02-09T10:17:34.636Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="AIS3">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.itousouta15.tw/images/ais3/tomorin.webp">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>發現新版本</h1>
+    <p>網站好像有新內容，是否更新？</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">更新</button>
+      <button id="notification-close-btn">取消</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/">首頁</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/archives">歸檔</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/about">關於</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/friend">友鏈</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 訂閱" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">繁體中文</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" class="selected">繁體中文</li>
+          
+            <li data-value="en" >English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2025/07/11/AIS3PE/';
+            
+              langMap['en'] = '/en/2025/07/11/AIS3PE/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/ais3/ais3.webp" alt="AIS3 pre-exam 2025">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">AIS3 pre-exam 2025</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">2.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tomorin-db"><span class="toc-number">2.1.</span> <span class="toc-text">tomorin db</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%80%E5%AF%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">題目觀察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">漏洞分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B9%9E%E9%81%8E%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.3.</span> <span class="toc-text">繞過思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Login-Screen-1"><span class="toc-number">2.2.</span> <span class="toc-text">Login Screen 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A0%81%E9%9D%A2%E5%88%86%E6%9E%90"><span class="toc-number">2.2.1.</span> <span class="toc-text">頁面分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E6%94%BB%E6%93%8A"><span class="toc-number">2.2.2.</span> <span class="toc-text">注入攻擊</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#misc"><span class="toc-number">3.</span> <span class="toc-text">misc</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ramen-CTF"><span class="toc-number">3.1.</span> <span class="toc-text">Ramen CTF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%80%E5%AF%9F-1"><span class="toc-number">3.1.1.</span> <span class="toc-text">題目觀察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E5%B0%8B%E6%89%BE"><span class="toc-number">3.1.2.</span> <span class="toc-text">地址尋找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AIS3-Tiny-Server-Web-Misc"><span class="toc-number">3.2.</span> <span class="toc-text">AIS3 Tiny Server - Web &#x2F; Misc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Welcome"><span class="toc-number">3.3.</span> <span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%B0%B1%E7%9B%B4%E6%8E%A5%E6%89%93%E4%B8%8A%E5%8E%BBowo"><span class="toc-number">3.3.1.</span> <span class="toc-text">我就直接打上去owo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#crypto"><span class="toc-number">4.</span> <span class="toc-text">crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SlowECDSA"><span class="toc-number">4.1.</span> <span class="toc-text">SlowECDSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B6%E9%9B%86%E7%AF%84%E6%9C%AC"><span class="toc-number">4.1.1.</span> <span class="toc-text">收集範本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B8%E5%AD%B8%E9%97%9C%E4%BF%82"><span class="toc-number">4.1.2.</span> <span class="toc-text">數學關係</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3"><span class="toc-number">4.2.</span> <span class="toc-text">求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A0%90%E6%B8%AC"><span class="toc-number">4.2.1.</span> <span class="toc-text">預測</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%BD%E9%80%A0%E7%B0%BD%E5%90%8D"><span class="toc-number">4.2.2.</span> <span class="toc-text">偽造簽名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A"><span class="toc-number">4.2.3.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stream"><span class="toc-number">4.3.</span> <span class="toc-text">Stream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">4.3.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A-1"><span class="toc-number">4.3.2.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hill"><span class="toc-number">4.4.</span> <span class="toc-text">Hill</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-number">4.4.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A-2"><span class="toc-number">4.4.2.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Happy-Happy-Factoring"><span class="toc-number">4.5.</span> <span class="toc-text">Happy Happy Factoring</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B5%90%E5%B0%BE"><span class="toc-number">5.</span> <span class="toc-text">結尾</span></a></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">8</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-ais3preexam" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-07-11T05:32:32.000Z" itemprop="datePublished">2025-07-11</time>
+    <time style="display: none;" id="post-update-time">2026-02-09</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>這是我的第一次CTF<br>打得很爛writeup也寫得很爛<br><del>為了各位的眼睛著想請不要繼續往下看</del></p>
+<span id="more"></span>
+<h1 id="web"><a href="#web" class="headerlink" title="web"></a>web</h1><h2 id="tomorin-db"><a href="#tomorin-db" class="headerlink" title="tomorin db"></a>tomorin db</h2><h3 id="題目觀察"><a href="#題目觀察" class="headerlink" title="題目觀察"></a>題目觀察</h3><p>首先點進題目提供的網址 <a target="_blank" rel="noopener" href="http://chals1.ais3.org:30000/">http://chals1.ais3.org:30000/</a> :<br><img src="/images/ais3/tomorin.webp"><br>可以看到其中有四個檔案</p>
+<ul>
+<li>cute.jpg</li>
+<li>flag</li>
+<li>is.jpg</li>
+<li>tomorin.jpg</li>
+</ul>
+<p>其中三個是圖片,<strong>但flag點進去會跳轉到<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=lQuWN0biOBU">MyGO!!!!!的聿日箋秋</a></strong> <del>又在GO</del><br><img src="/images/ais3/MyGO.webp"></p>
+<h3 id="漏洞分析"><a href="#漏洞分析" class="headerlink" title="漏洞分析"></a>漏洞分析</h3><p>既然flag文件確實存在,但是&#x2F;flag路徑做了特殊處理,那我們可以嘗試繞過&#x2F;flag這個路徑</p>
+<h3 id="繞過思路"><a href="#繞過思路" class="headerlink" title="繞過思路"></a>繞過思路</h3><p>經過嘗試,我發現如果我們用URL編碼 <strong>(%2f)</strong> 再加上flag就不會被轉址<br>所以我在根網址後加上 <em><strong>&#x2F;%2fflag</strong></em><br><img src="/images/ais3/%E6%88%90%E5%8A%9F%E8%A8%AA%E5%95%8F.webp"></p>
+<p>我們就可以得到flag</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AIS3&#123;G01ang_H2v3_a_c0O1_way!!!_Us3ing_C0NN3ct_M3Th07_L0l@T0m0r1n_1s_cute_D0_yo7_L0ve_t0MoRIN?&#125; </span><br></pre></td></tr></table></figure>
+<h2 id="Login-Screen-1"><a href="#Login-Screen-1" class="headerlink" title="Login Screen 1"></a>Login Screen 1</h2><h3 id="頁面分析"><a href="#頁面分析" class="headerlink" title="頁面分析"></a>頁面分析</h3><p>點進網頁後我們看到了一個登入介面<br><img src="/images/ais3/%E7%99%BB%E5%85%A5%E7%95%AB%E9%9D%A2.webp"><br>包含:</p>
+<ul>
+<li>Username 輸入框</li>
+<li>Password 輸入框</li>
+<li>Login 按鈕</li>
+</ul>
+<h3 id="注入攻擊"><a href="#注入攻擊" class="headerlink" title="注入攻擊"></a>注入攻擊</h3><p><img src="/images/ais3/FLAGG.webp"><br>我們就得到FLAG:</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">AIS3</span>&#123;<span class="number">1</span>.Es55y_SQL_1nJ3ct10n_w1th_2fa_IuABDADGeP0&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="misc"><a href="#misc" class="headerlink" title="misc"></a>misc</h1><h2 id="Ramen-CTF"><a href="#Ramen-CTF" class="headerlink" title="Ramen CTF"></a>Ramen CTF</h2><p>這題是我覺得最有趣的</p>
+<h3 id="題目觀察-1"><a href="#題目觀察-1" class="headerlink" title="題目觀察"></a>題目觀察</h3><p>他給我們了一張圖片<br><img src="/images/ais3/chal.webp"><br>裡面有價值的只有那張發票,我就想到用發票的資訊是不是能查到一些資料<br><img src="/images/ais3/%E7%99%BC%E7%A5%A8.webp"></p>
+<p>可以得到以下資訊:</p>
+<ul>
+<li>平和….</li>
+<li>MF開頭</li>
+<li>2025&#x2F;04&#x2F;13的發票</li>
+<li>隨機碼 7095</li>
+<li>賣方編號 3478592…</li>
+</ul>
+<p>接下來用QRcode掃描程式得知:<br><img src="/images/ais3/QRcode.webp"></p>
+<ul>
+<li>發票完整號碼 MF16879911</li>
+<li>餐點是蝦拉麵</li>
+</ul>
+<h3 id="地址尋找"><a href="#地址尋找" class="headerlink" title="地址尋找"></a>地址尋找</h3><p>將上面的資料輸入<a target="_blank" rel="noopener" href="https://www.einvoice.nat.gov.tw/portal/btc/audit/btc601w/search">財政部電子發票整合平台</a></p>
+<p><img src="/images/ais3/%E5%AE%8C%E6%95%B4%E8%B3%87%E8%A8%8A.webp"><br>我們就得到了地址,再把地址輸入Google Map<br>我們可以找到一家 <strong>樂山溫泉拉麵</strong><br><img src="/images/ais3/Map.webp"></p>
+<p>我們就可以得到Flag</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AIS3&#123;樂山溫泉拉麵:蝦拉麵&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="AIS3-Tiny-Server-Web-Misc"><a href="#AIS3-Tiny-Server-Web-Misc" class="headerlink" title="AIS3 Tiny Server - Web &#x2F; Misc"></a>AIS3 Tiny Server - Web &#x2F; Misc</h2><p>首先點進題目提供的網址用好token之後<br>我們會來到 <a target="_blank" rel="noopener" href="http://chals1.ais3.org:20096/index.html">http://chals1.ais3.org:20096/index.html</a><br><img src="/images/ais3/Tiny-server.webp"><br>我就把常見的隱藏路徑都加上去,多次嘗試後發現<strong>加&#x2F;&#x2F;可以叫出文件目錄</strong><br><img src="/images/ais3/%E7%9B%AE%E9%8C%84.webp"><br>裡面有很多檔案,我就點了檔名有flag的<strong>readable_flag_jkO47trw1ctKlOIFC7smx7hivqoCPL8Y</strong><br><img src="/images/ais3/FLAG.webp"><br>我們就得到了flag:</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AIS3&#123;<span class="symbol">tInY_we8_53Rv3R_wi7H_fILe_8R0Ws1nG_AS_@</span>_FeAtURe&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Welcome"><a href="#Welcome" class="headerlink" title="Welcome"></a>Welcome</h2><h3 id="我就直接打上去owo"><a href="#我就直接打上去owo" class="headerlink" title="我就直接打上去owo"></a>我就直接打上去owo</h3><p><img src="/images/ais3/welcome.webp"></p>
+<h1 id="crypto"><a href="#crypto" class="headerlink" title="crypto"></a>crypto</h1><h2 id="SlowECDSA"><a href="#SlowECDSA" class="headerlink" title="SlowECDSA"></a>SlowECDSA</h2><p>看到題目後，我發現這就是一個經典的LCG攻擊題。ECDSA 的安全性完全依賴於隨機數 k 的不可預測性，如果服務器用 LCG 來生成這些隨機數，那就不難了</p>
+<h3 id="收集範本"><a href="#收集範本" class="headerlink" title="收集範本"></a><strong>收集範本</strong></h3><p>既然服務器提供 <code>get_example</code> 功能，我就先調用兩次，獲取兩個不同簽名。這樣我就能得到使用連續 LCG 隨機數的簽名對</p>
+<h3 id="數學關係"><a href="#數學關係" class="headerlink" title="數學關係"></a><strong>數學關係</strong></h3><p>根據Perplexity的資料:<br>ECDSA 簽名公式是：<br>$$ s &#x3D; k^{-1} \times (h + r \times d) \bmod n $$</p>
+<p>如果 k₁ 和 k₂ 有線性關係：k₂ &#x3D; (a × k₁ + c) mod n，那我們就能建一個關於 d 的方程式</p>
+<h2 id="求解"><a href="#求解" class="headerlink" title="求解"></a><strong>求解</strong></h2><p>從兩個簽名的關係中，可以推導出：<br>$$ s₂^{-1} \times (h + r₂ \times d) \equiv a \times s₁^{-1} \times (h + r₁ \times d) + c \pmod{n} $$</p>
+<p>解這個線性方程就能得到 d。</p>
+<h3 id="預測"><a href="#預測" class="headerlink" title="預測"></a><strong>預測</strong></h3><p>有了私鑰，我們就能反推出真正的 k₁，然後利用 LCG 的線性性質預測 k₃。</p>
+<h3 id="偽造簽名"><a href="#偽造簽名" class="headerlink" title="偽造簽名"></a><strong>偽造簽名</strong></h3><p>用預測的 k₃ 和已知的私鑰，為目標消息 “give_me_flag” 生成完全有效的簽名。</p>
+<h3 id="攻擊"><a href="#攻擊" class="headerlink" title="攻擊"></a><strong>攻擊</strong></h3><p>我叫AI寫了一個 Python 腳本來實現這個攻擊：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">from</span> hashlib <span class="keyword">import</span> sha1</span><br><span class="line"><span class="keyword">from</span> sage.<span class="built_in">all</span> <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 橢圓曲線參數 (secp256k1)</span></span><br><span class="line">p = <span class="number">0xfffffffffffffffffffffffffffffffffffffffffffffffffffffffefffffc2f</span></span><br><span class="line">a_curve = <span class="number">0</span></span><br><span class="line">b_curve = <span class="number">7</span></span><br><span class="line">n = <span class="number">0xfffffffffffffffffffffffffffffffebaaedce6af48a03bbfd25e8cd0364141</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># LCG 參數</span></span><br><span class="line">a = <span class="number">0x5deece66d</span></span><br><span class="line">c = <span class="number">0xb</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_example_signature</span>(<span class="params">conn</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;獲取示例簽名&quot;&quot;&quot;</span></span><br><span class="line">    conn.sendline(<span class="string">b&#x27;1&#x27;</span>)</span><br><span class="line">    response = conn.recvuntil(<span class="string">b&#x27;Choice: &#x27;</span>).decode()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 解析 r 和 s 值</span></span><br><span class="line">    r_match = re.search(<span class="string">r&#x27;r=0x([0-9a-f]+)&#x27;</span>, response)</span><br><span class="line">    s_match = re.search(<span class="string">r&#x27;s=0x([0-9a-f]+)&#x27;</span>, response)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> r_match <span class="keyword">and</span> s_match:</span><br><span class="line">        r = <span class="built_in">int</span>(r_match.group(<span class="number">1</span>), <span class="number">16</span>)</span><br><span class="line">        s = <span class="built_in">int</span>(s_match.group(<span class="number">1</span>), <span class="number">16</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[*] Received example: msg=&#x27;example_msg&#x27;, r=0x<span class="subst">&#123;r:x&#125;</span>, s=0x<span class="subst">&#123;s:x&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> &#123;<span class="string">&#x27;r&#x27;</span>: r, <span class="string">&#x27;s&#x27;</span>: s&#125;</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&quot;無法解析簽名&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">solve_for_private_key</span>(<span class="params">sig1, sig2, h, n, a, c</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;求解私鑰&quot;&quot;&quot;</span></span><br><span class="line">    r1, s1 = sig1[<span class="string">&#x27;r&#x27;</span>], sig1[<span class="string">&#x27;s&#x27;</span>]</span><br><span class="line">    r2, s2 = sig2[<span class="string">&#x27;r&#x27;</span>], sig2[<span class="string">&#x27;s&#x27;</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 建立線性同餘方程求解私鑰</span></span><br><span class="line">    <span class="comment"># s2^-1 * (h + r2 * d) ≡ a * s1^-1 * (h + r1 * d) + c (mod n)</span></span><br><span class="line">    </span><br><span class="line">    s1_inv = <span class="built_in">pow</span>(s1, -<span class="number">1</span>, n)</span><br><span class="line">    s2_inv = <span class="built_in">pow</span>(s2, -<span class="number">1</span>, n)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 重新整理方程式</span></span><br><span class="line">    <span class="comment"># s2_inv * h + s2_inv * r2 * d ≡ a * s1_inv * h + a * s1_inv * r1 * d + c (mod n)</span></span><br><span class="line">    <span class="comment"># (s2_inv * r2 - a * s1_inv * r1) * d ≡ a * s1_inv * h - s2_inv * h + c (mod n)</span></span><br><span class="line">    </span><br><span class="line">    coeff_d = (s2_inv * r2 - a * s1_inv * r1) % n</span><br><span class="line">    rhs = (a * s1_inv * h - s2_inv * h + c) % n</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 求解 d</span></span><br><span class="line">    coeff_d_inv = <span class="built_in">pow</span>(coeff_d, -<span class="number">1</span>, n)</span><br><span class="line">    d = (coeff_d_inv * rhs) % n</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> d</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">predict_next_k</span>(<span class="params">sk, sig1, h, n, a, c</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;預測下一個隨機數&quot;&quot;&quot;</span></span><br><span class="line">    r1, s1 = sig1[<span class="string">&#x27;r&#x27;</span>], sig1[<span class="string">&#x27;s&#x27;</span>]</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 計算實際的 k1</span></span><br><span class="line">    s1_inv = <span class="built_in">pow</span>(s1, -<span class="number">1</span>, n)</span><br><span class="line">    k1_actual = (s1_inv * (h + r1 * sk)) % n</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] Calculated k1_actual: 0x<span class="subst">&#123;k1_actual:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 計算 k2</span></span><br><span class="line">    k2_actual = (a * k1_actual + c) % n</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 預測 k3</span></span><br><span class="line">    k3_for_flag = (a * k2_actual + c) % n</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] Predicted k3 for flag signing: 0x<span class="subst">&#123;k3_for_flag:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> k3_for_flag</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">forge_signature</span>(<span class="params">k, h, sk, G, n</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;偽造簽名&quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># 計算 r</span></span><br><span class="line">    point = k * G</span><br><span class="line">    r = point.xy()[<span class="number">0</span>] % n</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 計算 s</span></span><br><span class="line">    k_inv = <span class="built_in">pow</span>(k, -<span class="number">1</span>, n)</span><br><span class="line">    s = (k_inv * (h + r * sk)) % n</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> r, s</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 連接到服務器</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[+] Opening connection to chals1.ais3.org on port 19000: Done&quot;</span>)</span><br><span class="line">    conn = remote(<span class="string">&#x27;chals1.ais3.org&#x27;</span>, <span class="number">19000</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 跳過初始訊息</span></span><br><span class="line">    conn.recvuntil(<span class="string">b&#x27;Choice: &#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 獲取第一個示例簽名</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Getting first example signature...&quot;</span>)</span><br><span class="line">    example1 = get_example_signature(conn)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 獲取第二個示例簽名</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Getting second example signature...&quot;</span>)</span><br><span class="line">    example2 = get_example_signature(conn)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 建立橢圓曲線</span></span><br><span class="line">    E = EllipticCurve(GF(p), [a_curve, b_curve])</span><br><span class="line">    G = E(<span class="number">0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798</span>,</span><br><span class="line">          <span class="number">0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 計算 example_msg 的哈希</span></span><br><span class="line">    h_ex = <span class="built_in">int</span>.from_bytes(sha1(<span class="string">b&quot;example_msg&quot;</span>).digest(), <span class="string">&#x27;big&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] h_ex (for &#x27;example_msg&#x27;) = 0x<span class="subst">&#123;h_ex:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 求解私鑰</span></span><br><span class="line">    sk = solve_for_private_key(example1, example2, h_ex, n, a, c)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[+] Recovered private key (sk): 0x<span class="subst">&#123;sk:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 預測下一個隨機數</span></span><br><span class="line">    k3_predicted = predict_next_k(sk, example1, h_ex, n, a, c)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 計算 give_me_flag 的哈希</span></span><br><span class="line">    h_flag = <span class="built_in">int</span>.from_bytes(sha1(<span class="string">b&quot;give_me_flag&quot;</span>).digest(), <span class="string">&#x27;big&#x27;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[*] h_flag (for &#x27;give_me_flag&#x27;) = 0x<span class="subst">&#123;h_flag:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 偽造簽名</span></span><br><span class="line">    r_flag, s_flag = forge_signature(k3_predicted, h_flag, sk, G, n)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;[+] Forged signature for &#x27;give_me_flag&#x27;: r=0x<span class="subst">&#123;r_flag:x&#125;</span>, s=0x<span class="subst">&#123;s_flag:x&#125;</span>&quot;</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 提交偽造的簽名</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Sending forged signature to verify...&quot;</span>)</span><br><span class="line">    conn.sendline(<span class="string">b&#x27;2&#x27;</span>)</span><br><span class="line">    conn.sendline(<span class="built_in">hex</span>(r_flag)[<span class="number">2</span>:].encode())</span><br><span class="line">    conn.sendline(<span class="built_in">hex</span>(s_flag)[<span class="number">2</span>:].encode())</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 接收回應</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Server response:&quot;</span>)</span><br><span class="line">    response = conn.recvall().decode()</span><br><span class="line">    <span class="built_in">print</span>(response)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 關閉連接</span></span><br><span class="line">    conn.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+
+<p>執行後,我們得到了Flag：<br><img src="/images/ais3/response.webp"></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AIS3&#123;<span class="symbol">Aff1n3_nounc3s_c@</span>N_bE_broke_ezily...&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><p>根據題目提供的python程式,我們看到了這個加密方案的缺陷:<br><strong>當明文相對於密鑰較小時，XOR 運算的結果主要由密鑰決定</strong><br>所以我們可以利用數學關係逆向攻擊<br><img src="/images/ais3/%E7%BC%BA%E9%99%B7.webp"></p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a><strong>思路</strong></h3><p>現在我們知道加密公式為:</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">encrypted_int</span> = flag_int ⊕ (rand_num²)</span><br></pre></td></tr></table></figure>
+<p>當 flag_int 遠小於 rand_num² 時，我們有:</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">encrypted_int</span> ≈ rand_num²</span><br></pre></td></tr></table></figure>
+<p>那我們就可以逆推flag了</p>
+<h3 id="攻擊-1"><a href="#攻擊-1" class="headerlink" title="攻擊"></a><strong>攻擊</strong></h3><p>我們先計算近似隨機數:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">approx_rand_num = math.isqrt(encrypted_int)</span><br></pre></td></tr></table></figure>
+<p>再搜索偏移亮:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> offset <span class="keyword">in</span> <span class="built_in">range</span>(-search_width, search_width + <span class="number">1</span>):</span><br><span class="line">    rand_num_candidate = approx_rand_num + offset</span><br></pre></td></tr></table></figure>
+<p>接下來對每個候選隨機數，計算其平方並嘗試解密:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">key_squared = rand_num_candidate ** <span class="number">2</span></span><br><span class="line">flag_candidate = encrypted_int ^ key_squared</span><br></pre></td></tr></table></figure>
+<p>基本過濾:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 排除無效結果</span></span><br><span class="line"><span class="keyword">if</span> flag_candidate == <span class="number">0</span>:</span><br><span class="line">    <span class="keyword">continue</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 檢查長度合理性</span></span><br><span class="line">num_bits = flag_candidate.bit_length()</span><br><span class="line">byte_len = (num_bits + <span class="number">7</span>) // <span class="number">8</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> (<span class="number">5</span> &lt; byte_len &lt; <span class="number">80</span>):</span><br><span class="line">    <span class="keyword">continue</span></span><br></pre></td></tr></table></figure>
+<p>轉換為字串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">int_to_bytes</span>(<span class="params">n: <span class="built_in">int</span></span>) -&gt; <span class="built_in">bytes</span>:</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">b&#x27;\x00&#x27;</span></span><br><span class="line">    byte_length = (n.bit_length() + <span class="number">7</span>) // <span class="number">8</span></span><br><span class="line">    <span class="keyword">return</span> n.to_bytes(byte_length, <span class="string">&#x27;big&#x27;</span>)</span><br><span class="line"></span><br><span class="line">flag_bytes_candidate = int_to_bytes(flag_candidate)</span><br></pre></td></tr></table></figure>
+<p>最後一部,解碼</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        potential_flag = flag_bytes_candidate.decode(<span class="string">&#x27;ascii&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 檢查 AIS3 格式</span></span><br><span class="line">        <span class="keyword">if</span> (potential_flag.startswith(<span class="string">&#x27;AIS3&#123;&#x27;</span>) <span class="keyword">and</span> </span><br><span class="line">            potential_flag.endswith(<span class="string">&#x27;&#125;&#x27;</span>) <span class="keyword">and</span> </span><br><span class="line">            potential_flag.isprintable()):</span><br><span class="line">            </span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;[成功] 找到 AIS3 flag，offset: <span class="subst">&#123;offset&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;候選 rand_num: <span class="subst">&#123;<span class="built_in">hex</span>(rand_num_candidate)&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;Flag bytes: <span class="subst">&#123;flag_bytes_candidate&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;解密結果: <span class="subst">&#123;potential_flag&#125;</span>&quot;</span>)</span><br><span class="line">            found_flag = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">    <span class="keyword">except</span> UnicodeDecodeError</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;處理 offset <span class="subst">&#123;offset&#125;</span> 時發生錯誤: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> found_flag:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n在範圍 [<span class="subst">&#123;-search_width&#125;</span>, <span class="subst">&#123;search_width&#125;</span>] 內未找到有效 flag&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;建議增加 search_width 或檢查加密假設&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>運行後我們就拿到了flag:<br><img src="/images/ais3/print.webp"></p>
+<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AIS3&#123;no_more_junks.<span class="built_in">..plz</span>&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Hill"><a href="#Hill" class="headerlink" title="Hill"></a>Hill</h2><p>系統使用兩個矩陣 A 和 B：</p>
+<ul>
+<li><p>第一個分組：c₀ &#x3D; A × m₀</p>
+</li>
+<li><p>後續分組：cᵢ &#x3D; A × mᵢ + B × mᵢ₋₁</p>
+</li>
+</ul>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a><strong>思路</strong></h3><p>(伺服器只允許一次 <code>input()</code>)<br>我需要一個特殊的輸入序列來同時恢復 A 和 B 矩陣。我想到用標準基向量:<br><code>載荷 = [e₀, 0, e₁, 0, e₂, 0, ..., e₇, 0]</code></p>
+<p>當服務器處理這個載荷時：</p>
+<ul>
+<li>c₀ &#x3D; A × e₀  得到 A 的 0 </li>
+<li>c₁ &#x3D; A × 0 + B × e₀  得到 B 的 0 </li>
+<li>c₂ &#x3D; A × e₁  得到 A 的 1 </li>
+<li>以此類推…</li>
+</ul>
+<p>恢復 A 和 B 後，計算 A 的逆矩陣，然後逆向解密目標 FLAG</p>
+<h3 id="攻擊-2"><a href="#攻擊-2" class="headerlink" title="攻擊"></a><strong>攻擊</strong></h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> sympy <span class="keyword">import</span> Matrix</span><br><span class="line"><span class="keyword">from</span> pwn <span class="keyword">import</span> *</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"><span class="comment"># 設定參數</span></span><br><span class="line">HOST = <span class="string">&#x27;chals1.ais3.org&#x27;</span></span><br><span class="line">PORT = <span class="number">18000</span></span><br><span class="line">n = <span class="number">8</span>  <span class="comment"># 區塊大小和矩陣維度</span></span><br><span class="line">p_mod = <span class="number">251</span>  <span class="comment"># 模數</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">parse_block_line</span>(<span class="params">line</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;使用正則表達式解析包含8個數字的行&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">isinstance</span>(line, <span class="built_in">bytes</span>):</span><br><span class="line">        line = line.decode().strip()</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        line = line.strip()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 使用正則表達式提取所有數字</span></span><br><span class="line">    nums = re.findall(<span class="string">r&#x27;\d+&#x27;</span>, line)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(nums) == <span class="number">8</span>:</span><br><span class="line">        <span class="keyword">return</span> np.array([<span class="built_in">int</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> nums])</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">inv_mod</span>(<span class="params">matrix, mod</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;計算矩陣的模逆&quot;&quot;&quot;</span></span><br><span class="line">    A_matrix = Matrix(matrix)</span><br><span class="line">    A_inv = np.array(A_matrix.inv_mod(mod), dtype=<span class="built_in">int</span>)</span><br><span class="line">    <span class="keyword">return</span> A_inv</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">solve</span>():</span><br><span class="line">    r = remote(HOST, PORT)</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># 1. 先讀取所有初始輸出</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Reading all initial output...&quot;</span>)</span><br><span class="line">        all_lines = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">                line = r.recvline(timeout=<span class="number">2</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> line:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                decoded_line = line.decode().strip()</span><br><span class="line">                all_lines.append(decoded_line)</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Received: &#x27;<span class="subst">&#123;decoded_line&#125;</span>&#x27;&quot;</span>)</span><br><span class="line">                </span><br><span class="line">                <span class="comment"># 如果看到輸入提示就停止</span></span><br><span class="line">                <span class="keyword">if</span> <span class="built_in">any</span>(keyword <span class="keyword">in</span> decoded_line.lower() <span class="keyword">for</span> keyword <span class="keyword">in</span> [<span class="string">&#x27;input&#x27;</span>, <span class="string">&#x27;enter&#x27;</span>, <span class="string">&#x27;message&#x27;</span>]):</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">        <span class="keyword">except</span> EOFError:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[DEBUG] EOF reached&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 2. 從所有行中解析目標 FLAG</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Parsing target flag from received lines...&quot;</span>)</span><br><span class="line">        C_target_flag = []</span><br><span class="line">        flag_started = <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> all_lines:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Processing line: &#x27;<span class="subst">&#123;line&#125;</span>&#x27;&quot;</span>)</span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 檢查是否開始 flag 區域</span></span><br><span class="line">            <span class="keyword">if</span> <span class="string">&quot;encrypted flag&quot;</span> <span class="keyword">in</span> line.lower():</span><br><span class="line">                flag_started = <span class="literal">True</span></span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果遇到輸入提示就停止解析 flag</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">any</span>(keyword <span class="keyword">in</span> line.lower() <span class="keyword">for</span> keyword <span class="keyword">in</span> [<span class="string">&#x27;input&#x27;</span>, <span class="string">&#x27;enter&#x27;</span>, <span class="string">&#x27;message&#x27;</span>]):</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">            </span><br><span class="line">            <span class="comment"># 如果在 flag 區域，嘗試解析數字</span></span><br><span class="line">            <span class="keyword">if</span> flag_started <span class="keyword">and</span> line.strip():</span><br><span class="line">                block = parse_block_line(line)</span><br><span class="line">                <span class="keyword">if</span> block <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    C_target_flag.append(block)</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Parsed flag block <span class="subst">&#123;<span class="built_in">len</span>(C_target_flag)&#125;</span>: <span class="subst">&#123;<span class="built_in">list</span>(block)&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[*] Target flag has <span class="subst">&#123;<span class="built_in">len</span>(C_target_flag)&#125;</span> blocks&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(C_target_flag) == <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[ERROR] Failed to parse target flag&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 3. 構造 payload M_payload</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Constructing payload...&quot;</span>)</span><br><span class="line">        M_payload_blocks = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            e_i = np.zeros(n, dtype=<span class="built_in">int</span>)</span><br><span class="line">            e_i[i] = <span class="number">1</span></span><br><span class="line">            M_payload_blocks.append(e_i)  <span class="comment"># p_&#123;2i&#125; = e_i</span></span><br><span class="line">            M_payload_blocks.append(np.zeros(n, dtype=<span class="built_in">int</span>))  <span class="comment"># p_&#123;2i+1&#125; = 0</span></span><br><span class="line">        </span><br><span class="line">        payload_bytes_list = []</span><br><span class="line">        <span class="keyword">for</span> block <span class="keyword">in</span> M_payload_blocks:</span><br><span class="line">            payload_bytes_list.extend(<span class="built_in">list</span>(block))</span><br><span class="line">        final_payload = <span class="built_in">bytes</span>(payload_bytes_list)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Payload length: <span class="subst">&#123;<span class="built_in">len</span>(final_payload)&#125;</span> bytes&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 4. 發送 payload</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Sending payload...&quot;</span>)</span><br><span class="line">        r.sendline(final_payload)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 5. 接收 2n 個密文區塊 (C_response)</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Receiving response blocks...&quot;</span>)</span><br><span class="line">        C_response = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="keyword">while</span> <span class="built_in">len</span>(C_response) &lt; <span class="number">2</span> * n:</span><br><span class="line">                line = r.recvline(timeout=<span class="number">3</span>)</span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> line:</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">                </span><br><span class="line">                decoded_line = line.decode().strip()</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Response line: &#x27;<span class="subst">&#123;decoded_line&#125;</span>&#x27;&quot;</span>)</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span> <span class="keyword">not</span> decoded_line:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                </span><br><span class="line">                block = parse_block_line(decoded_line)</span><br><span class="line">                <span class="keyword">if</span> block <span class="keyword">is</span> <span class="keyword">not</span> <span class="literal">None</span>:</span><br><span class="line">                    C_response.append(block)</span><br><span class="line">                    <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Received response block <span class="subst">&#123;<span class="built_in">len</span>(C_response)&#125;</span>: <span class="subst">&#123;<span class="built_in">list</span>(block)&#125;</span>&quot;</span>)</span><br><span class="line">                    </span><br><span class="line">        <span class="keyword">except</span> EOFError:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;[DEBUG] EOF while receiving response&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(C_response) &lt; <span class="number">2</span> * n:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;[ERROR] Expected <span class="subst">&#123;<span class="number">2</span>*n&#125;</span> response blocks, got <span class="subst">&#123;<span class="built_in">len</span>(C_response)&#125;</span>&quot;</span>)</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 6. 從 C_response 提取 A 和 B</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Recovering matrices A and B...&quot;</span>)</span><br><span class="line">        A_recovered_cols = []</span><br><span class="line">        B_recovered_cols = []</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">            A_recovered_cols.append(C_response[<span class="number">2</span>*i])</span><br><span class="line">            B_recovered_cols.append(C_response[<span class="number">2</span>*i+<span class="number">1</span>])</span><br><span class="line">        </span><br><span class="line">        A_recovered = np.array(A_recovered_cols).T % p_mod</span><br><span class="line">        B_recovered = np.array(B_recovered_cols).T % p_mod</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Recovered matrix A:&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(A_recovered)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 7. 計算 A 的模逆</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[*] Calculating inverse of A...&quot;</span>)</span><br><span class="line">        A_inv = inv_mod(A_recovered, p_mod)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[+] Calculated A_inv successfully&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 8. 解密 C_target_flag</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[*] Decrypting <span class="subst">&#123;<span class="built_in">len</span>(C_target_flag)&#125;</span> target flag blocks...&quot;</span>)</span><br><span class="line">        decrypted_blocks_list = []</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 解密第一個區塊</span></span><br><span class="line">        block_0 = (A_inv @ C_target_flag[<span class="number">0</span>]) % p_mod</span><br><span class="line">        decrypted_blocks_list.append(block_0)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Decrypted target flag block 0: <span class="subst">&#123;<span class="built_in">list</span>(block_0)&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 迴圈解密後續區塊</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(C_target_flag)):</span><br><span class="line">            temp = (C_target_flag[i] - B_recovered @ decrypted_blocks_list[i-<span class="number">1</span>] + p_mod) % p_mod</span><br><span class="line">            block_i = (A_inv @ temp) % p_mod</span><br><span class="line">            decrypted_blocks_list.append(block_i)</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;[DEBUG] Decrypted target flag block <span class="subst">&#123;i&#125;</span>: <span class="subst">&#123;<span class="built_in">list</span>(block_i)&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 9. 組裝 FLAG 字串</span></span><br><span class="line">        flag_bytes = <span class="string">b&quot;&quot;</span>.join(<span class="built_in">bytes</span>(<span class="built_in">list</span>(block_array)) <span class="keyword">for</span> block_array <span class="keyword">in</span> decrypted_blocks_list)</span><br><span class="line">        flag_str = flag_bytes.decode(<span class="string">&#x27;utf-8&#x27;</span>, errors=<span class="string">&#x27;ignore&#x27;</span>).rstrip(<span class="string">&#x27;\x00&#x27;</span>)</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[+] Decrypting all target flag blocks.&quot;</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[+] FLAG: <span class="subst">&#123;flag_str&#125;</span>&quot;</span>)</span><br><span class="line">        </span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[ERROR] Attack failed: <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">import</span> traceback</span><br><span class="line">        traceback.print_exc()</span><br><span class="line">    <span class="keyword">finally</span>:</span><br><span class="line">        r.close()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 主程式入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    solve()</span><br></pre></td></tr></table></figure>
+<p>執行後,我們得到:<br><img src="/images/ais3/FLAGGG.webp"><br>FLAG:<br><code>AIS3{b451c_h1ll_c1ph3r_15_2_3z_f0r_u5}</code></p>
+<h2 id="Happy-Happy-Factoring"><a href="#Happy-Happy-Factoring" class="headerlink" title="Happy Happy Factoring"></a>Happy Happy Factoring</h2><p>這是一個經典的多算法組合攻擊:</p>
+<ul>
+<li>wi：Williams’ p+1 算法</li>
+<li>po：Pollard’s p-1 算法</li>
+<li>fp, fq：Fermat 因式分解法</li>
+</ul>
+<p>先用 Pollard’s p-1 找到 po,移除 po² 後用 Williams’ p+1 找到 wi,最後用 Fermat 方法分解剩餘部分</p>
+<p>獲得所有因數後計算歐拉函數並解密。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> gmpy2</span><br><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">read_input</span>(<span class="params">filename=<span class="string">&quot;output.txt&quot;</span></span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename, <span class="string">&quot;r&quot;</span>) <span class="keyword">as</span> f:</span><br><span class="line">        lines = f.read().strip().splitlines()</span><br><span class="line">        n = <span class="built_in">int</span>(lines[<span class="number">0</span>].split(<span class="string">&quot; = &quot;</span>)[<span class="number">1</span>])</span><br><span class="line">        e = <span class="built_in">int</span>(lines[<span class="number">1</span>].split(<span class="string">&quot; = &quot;</span>)[<span class="number">1</span>])</span><br><span class="line">        c = <span class="built_in">int</span>(lines[<span class="number">2</span>].split(<span class="string">&quot; = &quot;</span>)[<span class="number">1</span>])</span><br><span class="line">        <span class="keyword">return</span> n, e, c</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_prime_list</span>():</span><br><span class="line">    <span class="keyword">return</span> [p <span class="keyword">for</span> p <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>, <span class="number">5000</span>) <span class="keyword">if</span> gmpy2.is_prime(p)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">pollard_p_minus_1</span>(<span class="params">n, prime_list</span>):</span><br><span class="line">    a = gmpy2.mpz(<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">86</span>):</span><br><span class="line">        a = gmpy2.powmod(a, <span class="number">2</span>, n)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> prime_list:</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">85</span>):</span><br><span class="line">            a = gmpy2.powmod(a, p, n)</span><br><span class="line">    <span class="keyword">return</span> gmpy2.gcd(a - <span class="number">1</span>, n)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">extract_factor</span>(<span class="params">gcd_val, n, expected_power=<span class="number">1</span></span>):</span><br><span class="line">    <span class="keyword">if</span> gcd_val <span class="keyword">in</span> [<span class="number">1</span>, n]: <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> gmpy2.is_prime(gcd_val): <span class="keyword">return</span> <span class="built_in">int</span>(gcd_val)</span><br><span class="line">    temp = gcd_val</span><br><span class="line">    factors = []</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> [<span class="number">2</span>] + generate_prime_list():</span><br><span class="line">        <span class="keyword">while</span> temp % p == <span class="number">0</span>:</span><br><span class="line">            factors.append(p)</span><br><span class="line">            temp //= p</span><br><span class="line">        <span class="keyword">if</span> temp == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> temp &gt; <span class="number">1</span> <span class="keyword">and</span> gmpy2.is_prime(temp): factors.append(<span class="built_in">int</span>(temp))</span><br><span class="line">    counts = Counter(factors)</span><br><span class="line">    <span class="keyword">for</span> f, count <span class="keyword">in</span> counts.items():</span><br><span class="line">        <span class="keyword">if</span> count &gt;= expected_power <span class="keyword">and</span> gmpy2.is_prime(f):</span><br><span class="line">            <span class="keyword">return</span> f</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">lucas_V</span>(<span class="params">k, P, N</span>):</span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">0</span>: <span class="keyword">return</span> <span class="number">2</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">1</span>: <span class="keyword">return</span> P</span><br><span class="line">    V0, V1 = <span class="number">2</span>, P</span><br><span class="line">    <span class="keyword">for</span> bit <span class="keyword">in</span> <span class="built_in">bin</span>(k)[<span class="number">3</span>:]:</span><br><span class="line">        <span class="keyword">if</span> bit == <span class="string">&quot;0&quot;</span>:</span><br><span class="line">            V1 = (V0 * V1 - P) % N</span><br><span class="line">            V0 = (V0 * V0 - <span class="number">2</span>) % N</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            V0 = (V0 * V1 - P) % N</span><br><span class="line">            V1 = (V1 * V1 - <span class="number">2</span>) % N</span><br><span class="line">    <span class="keyword">return</span> V1</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">williams_p_plus_1</span>(<span class="params">n, prime_list, P=<span class="number">3</span></span>):</span><br><span class="line">    V = P</span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">86</span>):</span><br><span class="line">        V = lucas_V(<span class="number">2</span>, V, n)</span><br><span class="line">    <span class="keyword">for</span> p <span class="keyword">in</span> prime_list:</span><br><span class="line">        <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">85</span>):</span><br><span class="line">            V = lucas_V(p, V, n)</span><br><span class="line">    <span class="keyword">return</span> gmpy2.gcd(V - <span class="number">2</span>, n)</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">fermat</span>(<span class="params">n, max_iter=<span class="number">200_000_000</span></span>):</span><br><span class="line">    a = gmpy2.isqrt(n) + <span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(max_iter):</span><br><span class="line">        b2 = a * a - n</span><br><span class="line">        b = gmpy2.isqrt(b2)</span><br><span class="line">        <span class="keyword">if</span> b * b == b2:</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">int</span>(a + b), <span class="built_in">int</span>(a - b)</span><br><span class="line">        <span class="keyword">if</span> i % <span class="number">1_000_000</span> == <span class="number">0</span> <span class="keyword">and</span> i &gt; <span class="number">0</span>:</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">f&quot;    [Fermat] 嘗試 <span class="subst">&#123;i:,&#125;</span> 次...&quot;</span>)</span><br><span class="line">        a += <span class="number">1</span></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span>, <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">rsa_decrypt</span>(<span class="params">n, e, c, po, wi, fp, fq</span>):</span><br><span class="line">    phi = po * (po - <span class="number">1</span>) * (wi - <span class="number">1</span>) * (fp - <span class="number">1</span>) * (fq - <span class="number">1</span>)</span><br><span class="line">    d = gmpy2.invert(e, phi)</span><br><span class="line">    m = gmpy2.powmod(c, d, n)</span><br><span class="line">    flag = <span class="built_in">int</span>(m).to_bytes((m.bit_length() + <span class="number">7</span>) // <span class="number">8</span>, <span class="string">&#x27;big&#x27;</span>).decode()</span><br><span class="line">    <span class="keyword">return</span> phi, d, m, flag</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] 讀取 RSA 公開參數&quot;</span>)</span><br><span class="line">    n, e, c = read_input()</span><br><span class="line">    primes = generate_prime_list()</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Step 1: Pollard p-1&quot;</span>)</span><br><span class="line">    g = pollard_p_minus_1(n, primes)</span><br><span class="line">    po = extract_factor(g, n, expected_power=<span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> po: <span class="keyword">raise</span> Exception(<span class="string">&quot;找不到 po&quot;</span>)</span><br><span class="line">    n1 = n // (po * po)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Step 2: Williams p+1 or fallback&quot;</span>)</span><br><span class="line">    wi = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">for</span> base <span class="keyword">in</span> [<span class="number">3</span>, <span class="number">5</span>, <span class="number">7</span>, <span class="number">11</span>, <span class="number">13</span>, <span class="number">17</span>, <span class="number">19</span>, <span class="number">23</span>]:</span><br><span class="line">        g = williams_p_plus_1(n1, primes, base)</span><br><span class="line">        candidate = extract_factor(g, n1)</span><br><span class="line">        <span class="keyword">if</span> candidate <span class="keyword">and</span> gmpy2.is_prime(candidate):</span><br><span class="line">            wi = candidate</span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> wi:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[!] Williams p+1 失敗，改用 Fermat&quot;</span>)</span><br><span class="line">        f1, f2 = fermat(n1)</span><br><span class="line">        <span class="keyword">if</span> f1 <span class="keyword">and</span> gmpy2.is_prime(f1):</span><br><span class="line">            wi, n2 = f1, f2</span><br><span class="line">        <span class="keyword">elif</span> f2 <span class="keyword">and</span> gmpy2.is_prime(f2):</span><br><span class="line">            wi, n2 = f2, f1</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">raise</span> Exception(<span class="string">&quot;找不到 wi&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        n2 = n1 // wi</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Step 3: Fermat 分解 fp, fq&quot;</span>)</span><br><span class="line">    fp, fq = fermat(n2)</span><br><span class="line">    <span class="keyword">if</span> fp &lt; fq:</span><br><span class="line">        fp, fq = fq, fp</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;[*] Step 4: RSA 解密&quot;</span>)</span><br><span class="line">    phi, d, m, flag = rsa_decrypt(n, e, c, po, wi, fp, fq)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n🎉 解密成功！以下是詳細資訊：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n已找到因子：&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;po = <span class="subst">&#123;po&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;wi = <span class="subst">&#123;wi&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fp = <span class="subst">&#123;fp&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;fq = <span class="subst">&#123;fq&#125;</span>\n&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;phi_n = <span class="subst">&#123;phi&#125;</span>\n&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;d = <span class="subst">&#123;d&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;m = <span class="subst">&#123;m&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;\n🚩 Flag: <span class="subst">&#123;flag&#125;</span>&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><img src="/images/ais3/%E7%B5%90%E6%9E%9C.webp"><br>我們就得到了FLAG:<br><code>AIS3{H@ppY_#ap9y_CRypT0_F4(7or1n&amp;~~~}</code></p>
+<h1 id="結尾"><a href="#結尾" class="headerlink" title="結尾"></a>結尾</h1><p>很高興,你看到這裡眼睛還沒瞎掉<br>但下面沒東西了,所以我們下次見(?)</p>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/2025/07/11/AIS3PE/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/2025/07/11/AIS3PE/" itemprop="commentCount"></span>
+          留言
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/2025/07/11/AIS3PE/">0</span>
+          <em class="post-meta-item-text">閲讀量</em>
+        </span>
+      
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/AIS3/" rel="tag" title="AIS3">AIS3</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="/images/Hexo/hexo_github.webp" data-sizes="auto" alt="使用 GitHub Pages + Hexo 架設個人BLOG" class="lazyload">
+        <a href="/2025/08/27/Hexo/" aria-label="前一篇: 使用 GitHub Pages + Hexo 架設個人BLOG" title="前一篇: 使用 GitHub Pages + Hexo 架設個人BLOG"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            使用 GitHub Pages + Hexo 架設個人BLOG
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+        <img data-src="/images/ZJ.webp" data-sizes="auto" alt="Zerojudge題解" class="lazyload">
+      <a href="/2025/07/11/Zerojudge/" aria-label="後一篇: Zerojudge題解"  title="後一篇: Zerojudge題解"></a>
+      <div class="article-nav-caption">後一篇</div>
+      <h3 class="article-nav-title">
+          Zerojudge題解
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">說些什麼吧！</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        基於&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        16.6k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        01:30
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">總訪客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#web"><span class="toc-number">2.</span> <span class="toc-text">web</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#tomorin-db"><span class="toc-number">2.1.</span> <span class="toc-text">tomorin db</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%80%E5%AF%9F"><span class="toc-number">2.1.1.</span> <span class="toc-text">題目觀察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90"><span class="toc-number">2.1.2.</span> <span class="toc-text">漏洞分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B9%9E%E9%81%8E%E6%80%9D%E8%B7%AF"><span class="toc-number">2.1.3.</span> <span class="toc-text">繞過思路</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Login-Screen-1"><span class="toc-number">2.2.</span> <span class="toc-text">Login Screen 1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A0%81%E9%9D%A2%E5%88%86%E6%9E%90"><span class="toc-number">2.2.1.</span> <span class="toc-text">頁面分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E5%85%A5%E6%94%BB%E6%93%8A"><span class="toc-number">2.2.2.</span> <span class="toc-text">注入攻擊</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#misc"><span class="toc-number">3.</span> <span class="toc-text">misc</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Ramen-CTF"><span class="toc-number">3.1.</span> <span class="toc-text">Ramen CTF</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A1%8C%E7%9B%AE%E8%A7%80%E5%AF%9F-1"><span class="toc-number">3.1.1.</span> <span class="toc-text">題目觀察</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%B0%E5%9D%80%E5%B0%8B%E6%89%BE"><span class="toc-number">3.1.2.</span> <span class="toc-text">地址尋找</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#AIS3-Tiny-Server-Web-Misc"><span class="toc-number">3.2.</span> <span class="toc-text">AIS3 Tiny Server - Web &#x2F; Misc</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Welcome"><span class="toc-number">3.3.</span> <span class="toc-text">Welcome</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%88%91%E5%B0%B1%E7%9B%B4%E6%8E%A5%E6%89%93%E4%B8%8A%E5%8E%BBowo"><span class="toc-number">3.3.1.</span> <span class="toc-text">我就直接打上去owo</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#crypto"><span class="toc-number">4.</span> <span class="toc-text">crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#SlowECDSA"><span class="toc-number">4.1.</span> <span class="toc-text">SlowECDSA</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B6%E9%9B%86%E7%AF%84%E6%9C%AC"><span class="toc-number">4.1.1.</span> <span class="toc-text">收集範本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B8%E5%AD%B8%E9%97%9C%E4%BF%82"><span class="toc-number">4.1.2.</span> <span class="toc-text">數學關係</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82%E8%A7%A3"><span class="toc-number">4.2.</span> <span class="toc-text">求解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A0%90%E6%B8%AC"><span class="toc-number">4.2.1.</span> <span class="toc-text">預測</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%BD%E9%80%A0%E7%B0%BD%E5%90%8D"><span class="toc-number">4.2.2.</span> <span class="toc-text">偽造簽名</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A"><span class="toc-number">4.2.3.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Stream"><span class="toc-number">4.3.</span> <span class="toc-text">Stream</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-number">4.3.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A-1"><span class="toc-number">4.3.2.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hill"><span class="toc-number">4.4.</span> <span class="toc-text">Hill</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF-1"><span class="toc-number">4.4.1.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%BB%E6%93%8A-2"><span class="toc-number">4.4.2.</span> <span class="toc-text">攻擊</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Happy-Happy-Factoring"><span class="toc-number">4.5.</span> <span class="toc-text">Happy Happy Factoring</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B5%90%E5%B0%BE"><span class="toc-number">5.</span> <span class="toc-text">結尾</span></a></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">8</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">2</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "AIS3 pre-exam 2025",
+          url: "https://blog.itousouta15.tw/2025/07/11/AIS3PE/",
+          excerpt: "前言這是我的第一次CTF打得很爛writeup也寫得很爛為了各位的眼睛著想請不要繼續往下看",
+          description: "",
+          stripContent: "前言這是我的第一次CTF打得很爛writeup也寫得很爛為了各位的眼睛著想請不要繼續往下看  webtomorin db題目觀察首先點進題目提供的網址 http://chals1.ais3.org:30000/ :可以看到其中有四個檔案  cute.jpg flag is.jpg tomorin.jpg  其中三個是圖片,但flag點進去會跳轉到MyGO!!!!!的聿日箋秋 又在GO 漏洞分析既然flag文件確實存在,但是&amp;#x2F;flag路徑做了特殊處理,那我們可以嘗試繞過&amp;#x2F;fla",
+          date: "Fri Jul 11 2025 13:32:32 GMT+0800",
+          updated: "Mon Feb 09 2026 18:17:34 GMT+0800",
+          cover: "/images/ais3/ais3.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>
