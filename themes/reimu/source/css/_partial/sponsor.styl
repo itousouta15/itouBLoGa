@@ -1,97 +1,127 @@
-.sponsor-wrapper
-  display: flex
-  justify-content: center
-  flex-direction: column
-  align-items: center
-  margin: 5px 0
-  margin-top: 10px
+.sponsor-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 8px 0 4px;
+}
 
-.sponsor-title
-  font-size: 18px
-  letter-spacing: 2px
-  color: var(--color-link)
-  opacity: 0.8
-  text-decoration: none
-  display: block
-  padding: 10px 0
-  font-weight: 700
-  user-select: none
+.sponsor-title {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: var(--color-link);
+  opacity: 0.8;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  display: block;
+  padding: 10px 0;
+  font-weight: 700;
+  user-select: none;
+  word-break: break-word;
+}
 
-.sponsor-icon
-  width: 30px
-  margin: 0 10px
-  opacity: 0.8
+.sponsor-icon {
+  width: 30px;
+  margin: 0 10px;
+  opacity: 0.8;
 
-  &.rotate
-    animation: rotate-all 3s linear infinite
+  &.rotate {
+    animation: rotate-all 3s linear infinite;
+  }
+}
 
-if hexo-config("sponsor.icon.mask")
-  @supports (-webkit-mask: var(--sponsor-icon) no-repeat center / 80%)
-    .sponsor-icon
-      background-color: var(--red-1)
-      -webkit-mask: var(--sponsor-icon) no-repeat center / 80%
+if (hexo-config('sponsor.icon.mask')) {
+  @supports (-webkit-mask: var(--sponsor-icon) no-repeat center / 80%) {
+    .sponsor-icon {
+      background-color: var(--red-1);
+      -webkit-mask: var(--sponsor-icon) no-repeat center / 80%;
+    }
+  }
 
-  @supports (mask: var(--sponsor-icon) no-repeat center / 80%)
-    .sponsor-icon
-      background-color: var(--red-1)
-      mask: var(--sponsor-icon) no-repeat center / 80%
+  @supports (mask: var(--sponsor-icon) no-repeat center / 80%) {
+    .sponsor-icon {
+      background-color: var(--red-1);
+      mask: var(--sponsor-icon) no-repeat center / 80%;
+    }
+  }
 
-  @supports not ((mask: var(--sponsor-icon) no-repeat center / 80%) and (-webkit-mask: var(--sponsor-icon) no-repeat center / 80%))
-    .sponsor-icon
-      background: var(--sponsor-icon) no-repeat center / 80%
+  @supports not ( (mask: var(--sponsor-icon) no-repeat center / 80%) and (-webkit-mask: var(--sponsor-icon) no-repeat center / 80%) ) {
+    .sponsor-icon {
+      background: var(--sponsor-icon) no-repeat center / 80%;
+    }
+  }
+} else {
+  .sponsor-icon {
+    background: var(--sponsor-icon) no-repeat center / 80%;
+  }
+}
 
-else
-  .sponsor-icon
-    background: var(--sponsor-icon) no-repeat center / 80%
+.sponsor-button {
+  margin: 8px 48px;
+  display: flex;
+  position: relative;
+  width: fit-content;
+  justify-content: center;
+  border: 10px var(--color-red-3-shadow) double;
+  transition: border 0.5s;
+  cursor: var(--cursor-pointer) !important;
 
-.sponsor-button-wrapper
-  margin: 8px 50px
-  display: flex
-  position: relative
-  width: fit-content
-  justify-content: center
-  border: 10px var(--color-red-3-shadow) double
+  &:hover {
+    border-color: var(--color-h2-after);
+  }
 
-  cursor: var(--cursor-pointer) !important
+  &:hover + .sponsor-tip {
+    opacity: 0.8;
+  }
 
-  &:hover
-    border: 10px var(--color-h2-after) double
+  &.active {
+    border-color: var(--color-h2-after);
+  }
+}
 
-  &:hover + .sponsor-tip
-    opacity: .8
+.sponsor-tip {
+  transition: opacity 0.2s;
+  color: var(--color-link);
+  opacity: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1px;
 
-  &.active
-    border: 10px var(--color-h2-after) double
+  &.active {
+    opacity: 0.8;
+  }
+}
 
+.sponsor-qr {
+  display: flex;
+  interpolate-size: allow-keywords;
+  gap: 4px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease, opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
 
-.sponsor-tip
-  color: var(--color-link)
-  opacity: 0
-  font-size: 14px
-  font-weight: 700
-  letter-spacing: 1px
+  &.active {
+    height: auto;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
-  &.active
-    opacity: .8
+.sponsor-qr-image-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-.sponsor-qr
-  gap: 5px
-  width: 100%
-  flex-wrap: wrap
-  justify-content: center
-  display: none
-  margin-top: 5px
-
-  &.active
-    display: flex
-
-.sponsor-qr-image-wrapper
-  display: flex
-  flex-direction: column
-  align-items: center
-
-.sponsor-qr-name
-  font-size: 14px
-  opacity: 0.9
-  color: var(--color-default)
-  margin-top: 8px
+.sponsor-qr-name {
+  font-size: 14px;
+  opacity: 0.9;
+  color: var(--color-default);
+  margin-top: 8px;
+}

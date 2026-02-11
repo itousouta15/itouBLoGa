@@ -6,7 +6,7 @@ tags:
 categories:
   - 前端
 sticky: false
-cover: /img/mainweb.webp
+cover: /images/mainweb.webp
 urlname: firstblog
 lang: en
 ---
@@ -16,7 +16,7 @@ lang: en
 I started programming quite late compared to other experts, around the first semester of 10th grade when I began learning C++. I decided to pursue this path to get into a top university. Although my goal is in cybersecurity and competitive programming (mostly because I’m afraid of struggling if I go frontend), I still challenged myself to learn web development (for university admission requirements). However, this time, **I didn’t build the website from scratch but used the Hexo framework with a pre-made template** (my skills weren’t enough). Although the process was relatively simple, it gave me a basic understanding of website architecture (I plan to rewrite everything in 11th grade).
 
 ## Why Choose Hexo?
-![hexo](/img/FB/hexo.webp) 
+![hexo](/images/FB/hexo.webp) 
 At the beginning of learning web development, I faced a question: where should I start? After checking many top developers’ sites, I found Hexo, a fast, simple, and efficient static site generator, especially suitable for beginners like me who have little technical background. Its advantages are:  
 > **Eazy to use**: Just install Node.js and npm (more Linux-friendly) to quickly set up a site.
 
@@ -92,7 +92,7 @@ From setting up a blog, learning Hexo, customizing themes and styles, then resea
 
 Finally, I want to encourage all beginners not to fear trying new things. Even if you start by using templates or AI help, **every effort is part of your growth.** In the future, I look forward to creating an entirely my own site, combining my cybersecurity and competitive programming background to realize more possibilities.
 
-![Homepage](/img/FB/主頁.webp)
+![Homepage](/images/FB/主頁.webp)
 (captured on 2025/8/21)
 
 # Special Thanks
@@ -100,7 +100,7 @@ Finally, I want to encourage all beginners not to fear trying new things. Even i
   <a href="https://smallr-portfolio.vercel.app/en" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/img/smallR.webp">
+        <img data-src="/images/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/images/smallR.webp">
       </div>
     </div>
     <div class="friend-info-wrap">

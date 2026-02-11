@@ -4,7 +4,7 @@ date: 2025-04-04 18:29:32
 tags: 
   - Hexo
 sticky: false
-cover: /img/mainweb.webp
+cover: /images/mainweb.webp
 urlname: firstblog
 ---
 
@@ -13,7 +13,7 @@ urlname: firstblog
 
 # Hexo框架的選擇與準備
 ## 為什麼選擇Hexo？
-![hexo](/img/FB/hexo.webp)
+![hexo](/images/FB/hexo.webp)
 剛開始接觸網站開發時，我面臨了一個問題：應該從哪裡開始？在看了很多電神的網站後，我發現了Hexo這個框架。Hexo是一個快速、簡單且高效的靜態網站生成器，特別適合像我這樣~~沒有技術的人~~。它的優勢在於：
 > **簡單易用**：只需要安裝Node.js和npm(~~對linux相對友善~~)，就可以快速搭建網站。
 
@@ -89,7 +89,7 @@ urlname: firstblog
 
 最後，我想鼓勵所有初學者，不要害怕嘗試新事物。即使一開始只是套用模板或依賴AI輔助，**每一次努力都是成長的一部分**。未來，我期待自己能創造出完全屬於自己的網站，並結合資安與競程背景，實現更多可能性。
 
-![主頁](/img/FB/主頁.webp)
+![主頁](/images/FB/主頁.webp)
 主頁截圖(截自2025/8/21)
 
 # 特別感謝
@@ -97,7 +97,7 @@ urlname: firstblog
   <a href="https://smallr-portfolio.vercel.app/en" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/img/smallR.webp">
+        <img data-src="/images/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/images/smallR.webp">
       </div>
     </div>
     <div class="friend-info-wrap">

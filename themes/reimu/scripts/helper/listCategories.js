@@ -7,7 +7,6 @@ function listCategoriesHelper(categories, options) {
     options = categories;
     categories = this.site.categories;
   }
-  categories = categories;
   if (!categories || !categories.length) return "";
   options = options || {};
   const { style = "list", transform, separator = ", ", suffix = "" } = options;
@@ -59,7 +58,7 @@ function listCategoriesHelper(categories, options) {
       result += `<li class="${className}-list-item${additionalClassName}">`;
       result += `<a class="${className}-list-link${
         isCurrent ? " current" : ""
-      }" href="${this.url_for_lang(cat.path)}${suffix}">`;
+      }" href="${this.url_for_lang(cat.path)}${suffix}" title="${cat.name}">`;
       result += transform ? transform(cat.name) : cat.name;
       result += "</a>";
       if (showCount) {
@@ -78,7 +77,7 @@ function listCategoriesHelper(categories, options) {
       if (i || level) result += separator;
       result += `<a class="${className}-link" href="${this.url_for_lang(
         cat.path
-      )}${suffix}">`;
+      )}${suffix}" title="${cat.name}">`;
       result += transform ? transform(cat.name) : cat.name;
       if (showCount) {
         result += `<span class="${className}-count">${cat.length}</span>`;
@@ -100,8 +99,8 @@ hexo.extend.helper.register("listCategories", function (...args) {
   const result = listCategoriesHelper.apply(this, args);
   if (args[2]) {
     return result.replace(
-      /<a class="([^"]+)" href="([^"]+)">/g,
-      `<a class="$1" href="$2" data-aos="${args[2]}">`
+      /<a class="([^"]+)" href="([^"]+)" title="([^"]+)">/g,
+      `<a class="$1" href="$2" title="$3" data-aos="${args[2]}">`
     );
   }
   return result;

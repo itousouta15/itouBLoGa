@@ -1,18 +1,19 @@
-<img src="https://cdn.jsdelivr.net/gh/D-Sketon/hexo-theme-reimu@main/_screenshot/Reimu_dark.png"/>
+
 <div align = center>
+  <img src="https://fastly.jsdelivr.net/gh/D-Sketon/blog-img/icon.png"/>
   <h1>hexo-theme-reimu</h1>
   <img alt="NPM License" src="https://img.shields.io/npm/l/hexo-theme-reimu">
   <img alt="NPM Version" src="https://img.shields.io/npm/v/hexo-theme-reimu">
+  <img alt="NPM Downloads" src="https://img.shields.io/npm/dm/hexo-theme-reimu">
   <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hexo-theme-reimu">
-  <img src="https://wakatime.com/badge/user/a6ea8444-9e83-48bb-9744-09a19ac07114/project/fe59c195-6633-4ee8-89c0-e1b24fa1fff4.svg" alt="wakatime">
-  <p align="center">
-  💘 Hakurei Reimu 💘
-  </p>
+
+💘 Hakurei Reimu 💘
 
 [Demo](https://d-sketon.github.io)
 
 [简体中文](https://github.com/D-Sketon/hexo-theme-reimu/blob/main/README.md) | English
 
+<img src="https://cdn.jsdelivr.net/gh/D-Sketon/hexo-theme-reimu@main/_screenshot/Reimu.png"/>
 </div>
 
 ---
@@ -23,25 +24,25 @@
 A Hakurei Reimu style Hexo theme.  
 A combination of [landscape](https://github.com/hexojs/hexo-theme-landscape)、[Tangyuxian](https://github.com/tangyuxian/hexo-theme-tangyuxian) and [Shoka](https://github.com/amehime/hexo-theme-shoka) themes.
 
-|framework|repository|version|stars|
-|-|-|-|-|
-|[Hexo](https://hexo.io/)|[hexo-theme-reimu](https://github.com/D-Sketon/hexo-theme-reimu)|<img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fhexo-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">|<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hexo-theme-reimu">|
-|[Astro](https://astro.build)|[astro-theme-reimu](https://github.com/D-Sketon/astro-theme-reimu)|<img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fastro-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">|<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/astro-theme-reimu">|
-|[Hugo](https://gohugo.io)|[hugo-theme-reimu](https://github.com/D-Sketon/hugo-theme-reimu)|<img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fhugo-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">|<img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hugo-theme-reimu">|
+| framework                    | repository                                                         | version                                                                                                                                                                                     | stars                                                                                              |
+| ---------------------------- | ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
+| [Hexo](https://hexo.io/)     | [hexo-theme-reimu](https://github.com/D-Sketon/hexo-theme-reimu)   | <img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fhexo-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">  | <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hexo-theme-reimu">  |
+| [Hugo](https://gohugo.io)    | [hugo-theme-reimu](https://github.com/D-Sketon/hugo-theme-reimu)   | <img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fhugo-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version">  | <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/hugo-theme-reimu">  |
+| [Astro](https://astro.build) | [astro-theme-reimu](https://github.com/D-Sketon/astro-theme-reimu) | <img alt="version" src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fgithub.com%2FD-Sketon%2Fastro-theme-reimu%2Fraw%2Fmain%2Fpackage.json&query=%24.version&label=version"> | <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/D-Sketon/astro-theme-reimu"> |
 
 **ISSUE and PR Welcome!**
 
 ## Features
 
-### Basic Functions
+### Basic Features
 - ✨ Full blog functionality
-- 🔄 Compatible with Hexo6+
+- 🔄 Compatible with Hexo 6+
 - 📱 Responsive layout
 - 🌙 Dark mode support
 - 🅰️ i18n support
 
 ### Code & Math
-- 🖥️ Code highlighting and copying
+- 🖥️ Code highlighting & copying
 - ➗ KaTeX / MathJax3 math formula support
 - 📊 Mermaid flowchart support
 
@@ -54,6 +55,8 @@ A combination of [landscape](https://github.com/hexojs/hexo-theme-landscape)、[
   - Twikoo
   - Gitalk
   - Giscus
+  - Disqus
+  - Utterances
 
 ### Statistics & Analytics
 - 📊 Article reading statistics (Valine / Waline)
@@ -71,7 +74,7 @@ A combination of [landscape](https://github.com/hexojs/hexo-theme-landscape)、[
 - 👾 Live2D / Live2D-widgets integration
 
 ### Navigation & Structure
-- 📑 Table of Contents (TOC)
+- 📑 Table of Contents
 - 🔄 PJAX support
 - 🔧 ServiceWorker implementation
 - 📰 RSS feed
@@ -79,12 +82,15 @@ A combination of [landscape](https://github.com/hexojs/hexo-theme-landscape)、[
 ### Design & Customization
 - 🎨 Icon support:
   - Iconfont
-  - FontAwesome
-- 🔗 Custom tag plugins for:
+  - FontAwesome7
+- 🔗 Built-in tag plugins:
   - Internal links
   - External links
   - Friend links
   - Heatmap
+  - Tag Roulette
+  - Tabs
+  - Gallery
 - 🎨 Dynamic theme color adaptation
 - 🎨 Custom Containers
 - ©️ Article copyright declaration
@@ -111,9 +117,6 @@ git clone https://github.com/D-Sketon/hexo-theme-reimu.git
 And modify the theme in `_config.yml`
 
 ```yaml
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
 theme: reimu
 ```
 
@@ -125,6 +128,26 @@ theme: reimu
 ### Basic structure
 
 To ensure correct display, please refer to `_example` and create `_data`, `about`, and `friend` folders in `source` (Note: This is the `source` folder in your blog's root directory, not the one in the theme!)
+
+**Directory Structure Example:**
+
+```
+source/
+├── images/
+│   └── favicon.ico        # Website favicon
+├── _data/
+│   ├── avatar/
+│   │   └── avatar.webp    # Avatar file
+│   ├── covers.yml         # Article cover URL list
+│   └── covers/            # Article cover folder
+├── about/                 # About page
+│   └── index.md
+├── friend/                # Friend links page
+│   ├── index.md
+│   └── _data.yml          # Friend links data
+└── _posts/                # Posts folder
+    └── xxxx.md
+```
 
 #### \_data
 
@@ -164,7 +187,7 @@ cover: https://example.com
 ---
 ```
 
-- If the article's Front matter contains cover: `false`, no header image will be displayed for that article (the homepage will still show a random image)
+- If the article's Front matter contains cover: `false`, no header image will be displayed for that article (the homepage thumbnail will still show a random image)
 
 ```yaml
 ---
@@ -173,7 +196,7 @@ cover: false
 ---
 ```
 
-- If the article's Front matter contains cover: `rgb(xxx,xxx,xxx)`, the article's header image will be a gradient of that solid color (the homepage will still show a random image)
+- If the article's Front matter contains cover: `rgb(xxx,xxx,xxx)`, the article's header image will be a gradient of that solid color (the homepage thumbnail will still show a random image)
 
 ```yaml
 ---
@@ -182,8 +205,8 @@ cover: rgb(255,117,117)
 ---
 ```
 
-- Otherwise, it will search for images in the `covers` folder and `covers.yml` and randomly select one
-- If none of the above files exist, it will display the default banner image
+- Otherwise, the homepage thumbnail will search for images in the `covers` folder and `covers.yml` and randomly select one; the in-article header image will look for the `cover` configuration in the inner `_config.yml`
+- If none of the above files/configurations exist, it will display the `banner` header image as a fallback
 
 #### banner
 
@@ -212,7 +235,146 @@ sticky: true
 ---
 ```
 
+#### Article Summary
+
+Disabled by default. You can choose to display the article summary in the subtitle or at the beginning of the article.
+
+```yaml
+summary:
+  enable: false
+  style: 'subtitle' # 'subtitle' or 'blockquote'
+```
+
 </details>
+
+<details>
+
+<summary>Sidebar</summary>
+
+### Sidebar
+
+#### Sidebar Position
+
+Default on the right. You can modify it in the inner `_config.yml`.
+
+```yaml
+sidebar:
+  position: right # left | right | false
+  menu: true # whether to show the sidebar menu button, ignored on mobile devices
+  article:
+    show_common: true # whether to show common sidebar on article pages, ignored on mobile devices
+```
+
+Additionally, you can control it through the article's front-matter, which takes precedence over the global configuration.
+
+```yaml
+---
+sidebar: left # left | right | false
+---
+```
+
+> When sidebar is set to false, the sidebar will be hidden, and the aplayer player and widgets will not be displayed at the same time.
+
+#### TOC
+
+Default enabled. You can modify it in the inner `_config.yml`.
+
+```yaml
+toc: true # true | false
+```
+
+Additionally, you can control it through the article's front-matter, which takes precedence over the global configuration.
+
+```yaml
+---
+toc: true # true | false
+---
+```
+
+You can also configure the behavior of the TOC through the following configuration:
+
+```yaml
+toc_options:
+  list_number: true # Whether to display the list number
+  min_depth: 1 # Minimum depth
+  max_depth: 6 # Maximum depth
+```
+
+#### Social Links
+
+You can configure the social links in the sidebar in the inner `_config.yml`.
+
+```yaml
+social:
+  # github: https://github.com/yourname
+  # bilibili: https://space.bilibili.com/yourname
+  # ...
+```
+
+#### Widgets
+
+You can configure the widgets in the sidebar in the inner `_config.yml`.
+
+```yaml
+widgets:
+  # - category
+  # - tag
+  # - tagcloud
+  # - archive
+  # - recent_posts
+```
+
+You can also configure the behavior of the widgets through the following configuration:
+
+```yaml
+archive_type: "monthly" # monthly | yearly, archive type
+show_count: false # whether to show count in archive
+tag_limits:
+recent_posts_limits: 5
+tagcloud_limits:
+```
+
+</details>
+
+<details>
+<summary>Footer</summary>
+
+### Footer
+
+#### Basic Information
+
+The footer section allows you to configure basic display information and statistics.
+
+```yaml
+footer:
+  since: 2020 # The starting year displayed in the copyright information (e.g., 2020-current year)
+  powered: true # Whether to display copyright information
+  count: true # Whether to display word count and reading time statistics
+  busuanzi: true # Whether to enable Busuanzi visitor counting statistics
+```
+
+#### ICP Filing
+
+For websites hosted in mainland China, you can display ICP filing information as required by regulations.
+
+```yaml
+icp:
+  icpnumber: # ICP filing number
+  beian: # Public Security Bureau filing number
+  recordcode: # Record code parameter from the Public Security Bureau filing link
+```
+
+#### Moe ICP Filing (v1.9.1+)
+
+[Moe ICP Filing](https://icp.gov.moe/)
+
+```yaml
+moe_icp:
+  icpnumber: # Moe ICP filing number
+```
+
+</details>
+
 <details>
 <summary>Code Blocks</summary>
 
@@ -295,6 +457,15 @@ valine:
   enable: true
   appId: "your appId"
   appKey: "your appKey"
+  pageSize: 10 # comment list page size
+  avatar: mp # gravatar style https://valine.js.org/#/avatar
+  # lang: zh-cn # deprecated, use html.lang instead
+  placeholder: Just go go # valine comment input placeholder(like: Please leave your footprints )
+  guest_info: nick,mail,link #valine comment header info
+  recordIP: true # whether to record the IP address of the commenters
+  highlight: true # whether to highlight the code blocks
+  visitor: false # whether to display the number of visitors
+  serverURLs: # leancloud server url
 ```
 
 If using [Waline](https://waline.js.org/)  
@@ -365,11 +536,33 @@ gitalk:
   md5: false # Whether to use md5 to encrypt the path
 ```
 
+If using [Disqus](https://disqus.com/)  
+Please set `disqus.enable` to `true` in the inner `_config.yml`, and fill in your `shortname`
+
+```yml
+disqus:
+  enable: true
+  shortname: "your shortname"
+  count: true # Whether to enable comment count statistics
+```
+
+If using utterance [utterances](https://utteranc.es/)
+Please set `utterances.enable` to `true `in your theme's `_config.yml` and fill in your own `repo`
+```yml
+utterances:
+  enable: true
+  repo: owner/repo # Change this to "Your GitHub Username/The Repository Name" used for storing blog comments
+  issue_term: title
+  theme: github-light # You can use auto to automatically adapt to dark and light themes
+```
+
 </details>
 <details>
 <summary>Site search</summary>
 
 ### Site search
+
+> Note: Do not enable both Algolia search and local search at the same time.
 
 If choosing [Algolia](https://www.algolia.com/), please install [@reimujs/hexo-algoliasearch](https://github.com/D-Sketon/hexo-algoliasearch)
 
@@ -406,6 +599,12 @@ algolia_search:
   enable: true
 ```
 
+And run the following command to generate the search index
+
+```bash
+hexo algolia
+```
+
 > After version 1.5.0, the theme has built-in `hexo-generator-search`, so there is no need to install `hexo-generator-search` separately.
 
 This theme comes with `hexo-generator-search` built-in. If you choose to use local search, please set `generator_search.enable` to `true` in the inner `_config.yml`. For other configurations, refer to [hexo-generator-search](https://github.com/wzpan/hexo-generator-search).
@@ -432,7 +631,7 @@ npm install @reimujs/hexo-renderer-markdown-it-plus --save
 
 Mathematical formula support is disabled by default. To enable it, set `math.enable` to `true` in the inner `_config.yml`
 
-> Note: Do not enable both KaTeX and MathJax3 simultaneously
+> Note: Do not enable both KaTeX and MathJax3 at the same time.
 
 #### KaTeX
 
@@ -499,6 +698,7 @@ Set `mermaid.enable` to `true` in the inner `_config.yml`
 ```yaml
 mermaid:
   enable: true
+  zoom: false # whether to enable zoom
 ```
 
 And add `mermaid: true` to the front-matter of any article where you want to use mermaid diagrams
@@ -537,7 +737,7 @@ rss: atom.xml
 
 ### i18n
 
-This theme provides four languages by default: `en`, `zh-CN`, `zh-TW`, and `ja`. You can switch the language by modifying the `language` in the outer `_config.yml`.
+This theme provides five languages by default: `en`, `zh-CN`, `zh-TW`, `ja` and `pt-BR`. You can switch the language by modifying the `language` in the outer `_config.yml`.
 
 ```yaml
 language: zh-CN
@@ -585,12 +785,17 @@ If you want to continue using fontawesome icons, set `icon_font` to `false`. Thi
 ```yml
 fontawesome:
   high_priority:
-    - webcache|@fortawesome/fontawesome-free@6.5.1/css/regular.min.css
-    - webcache|@fortawesome/fontawesome-free@6.5.1/css/solid.min.css
+    - src: webcache|@fortawesome/fontawesome-free@7.1.0/css/regular.min.css
+      integrity: sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU
+    - src: webcache|@fortawesome/fontawesome-free@7.1.0/css/solid.min.css
+      integrity: sha384-wbMWab3UDSPm2kvIgVOn/d9KPTecgPU1+Nb3zoQrm/oVu0EkPL6IaKinjbwW0rum
   low_priority:
-    - webcache|@fortawesome/fontawesome-free@6.5.1/css/brands.min.css
-    - webcache|@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css
-    - webcache|@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css
+    - src: webcache|@fortawesome/fontawesome-free@7.1.0/css/brands.min.css
+      integrity: sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih
+    - src: webcache|@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css
+      integrity: sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd
+    - src: webcache|@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css
+      integrity: sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq
 ```
 
 </details>
@@ -599,6 +804,16 @@ fontawesome:
 <summary>Extended features</summary>
 
 ### Extended features
+
+#### Back to Top
+
+Enabled by default
+
+```yaml
+top:
+  enable: true
+  position: right # left | right
+```
 
 #### Dark Mode
 
@@ -610,6 +825,16 @@ dark_mode:
   # false means that the dark mode is disabled by default
   # auto means that the dark mode is automatically switched according to the system settings
   enable: auto # true | false | auto
+```
+
+#### Analytics
+
+Disabled by default, supports Baidu Analytics, Google Analytics and Microsoft Clarity
+
+```yaml
+baidu_analytics: false
+google_analytics: false
+clarity: false
 ```
 
 #### Pace Progress Bar
@@ -628,6 +853,8 @@ Enabled by default
 ```yaml
 firework:
   enable: true
+  disable_on_mobile: false # whether to disable on mobile devices, which can improve performance
+  options: # mouse-firework options
 ```
 
 For detailed configuration, please check [mouse-firework](https://github.com/D-Sketon/mouse-firework)
@@ -640,8 +867,6 @@ Disabled by default
 pjax:
   enable: false
 ```
-
-> PJAX was introduced in v0.0.10 for users who need SPA features like music players. After several iterations, it's mostly stable but may still cause issues like **script execution failures**, **script duplicate execution**, or **page rendering problems**. Please consider carefully!
 
 > PJAX cannot be used with `relative_link: true`!
 
@@ -699,7 +924,9 @@ srcset:
     media: "(max-width: 479px)"
   - src: "/images/banner-800w.webp"
     media: "(max-width: 799px)"
-  - src: "/images/banner.webp"
+  - src: 
+    - "/images/banner.avif"
+    - "/images/banner.webp" # support array format
     media: "(min-width: 800px)"
 ```
 
@@ -737,7 +964,7 @@ quicklink:
   enable: false
   timeout: 3000 # Preload timeout
   priority: true # Whether to prioritize loading the page
-  ignores: [] # Ignore the specified link, supports strings only
+  ignores: [] # Ignore the specified link, supports string array only
 ```
 
 #### Outdate Content Warning (v0.2.4+)
@@ -804,6 +1031,15 @@ home_categories:
 
 Uses Aplayer + Meting (optional), disabled by default
 
+##### Music Player Position (v1.9.1+)
+
+Default is after sidebar
+
+```yml
+player:
+  position: before_sidebar # before_sidebar / after_sidebar / after_widget
+```
+
 ##### Pure Aplayer
 
 Set `player.aplayer.enable` to `true` and configure `player.aplayer.options` according to [Aplayer Docs](https://aplayer.js.org/#/home?id=options)
@@ -869,49 +1105,178 @@ share:
   # - weixin
 ```
 
-For `weixin`, it generates a share card with QR code that can be saved locally and shared to WeChat Moments (Note: when the article cover has cross-origin issues, html-to-image cannot correctly generate cards with images!)
+For `weixin`, it generates a share card with QR code that can be saved locally and shared to WeChat Moments (Note: when the article cover has cross-origin issues, snapdom cannot correctly generate cards with images!)
+
+#### Injector (v1.5.1+)
+
+Used to inject custom code, similar to [Hexo#Injector](https://hexo.io/api/injector), supports `head`, `body` and `sidebar` injection
+
+```yaml
+injector:
+  head_begin: # Inject code snippet right after <head>
+  head_end: # Inject code snippet right before </head>
+  body_begin: # Inject code snippet right after <body>
+  body_end: # Inject code snippet right before </body>
+  sidebar_begin: # Inject code snippet right after <aside>
+  sidebar_end: # Inject code snippet right before </aside>
+```
+
+#### Triangle Badge (v1.10.2+)
+
+Disabled by default. When enabled, it will display a triangle badge in the upper right corner, supporting custom links and icons.
+
+```yaml
+triangle_badge:
+  enable: false
+  icon: github # Same as the icon in the social config
+  link: https://github.com/D-Sketon/hexo-theme-reimu
+```
 
 </details>
 
 <details>
-<summary>Built-in Card Tags</summary>
+<summary>Built-in Tag Plugins</summary>
 
-### Built-in Card Tags
+### Built-in Tag Plugins
 
 #### friendLink - Friend Link Card
 
-```yaml
+```markdown
 {% friendsLink path %}
 ```
 
 The first parameter `path` indicates the path to the friend links yaml file
 
-#### postLinkCard - Internal Link Card
+#### postLinkCard - Internal Link Card (Not recommended, use `link` instead)
 
-```yaml
+```markdown
 {% postLinkCard slug [cover]|"auto" [escape] %}
 ```
+
+Not recommended to use this tag. It is advised to use the `link` tag instead.
 
 The first parameter is the article's `slug`; the second parameter (optional) is the cover image displayed on the card, if set to `auto` it will automatically use the blog's `banner`; the third parameter (optional) indicates whether the article title should be escaped
 
 > Slug generation algorithm: https://github.com/hexojs/hexo-util/blob/master/lib/slugize.ts
 > In simple terms, it removes invisible characters from the article title and replaces special characters `\s~!@#$%^&*()\-_+=[]{}|\;:"'<>,.?/` with the separator `-`, merges consecutive separators and removes leading/trailing separators
 
-#### externalLinkCard - External Link Card
+#### externalLinkCard - External Link Card (Not recommended, use `link` instead)
 
-```yaml
+```markdown
 {% externalLinkCard title link [cover]|"auto" %}
 ```
 
+Not recommended to use this tag. It is advised to use the `link` tag instead.
+
 The first parameter is the article title; the second parameter is the external link to the article; the third parameter (optional) is the cover image displayed on the card, if set to `auto` it will automatically use the default cover
 
-#### Heat Map Card Article Heatmap (Experimental Feature in v1.7.0+)
+#### Heat Map Card Article Heatmap (v1.7.0+)
 
-```yaml
+```markdown
 {% heatMapCard levelStandard %}
 ```
 
 The first parameter is the level standard for the heatmap (graded based on the word count of the articles), with the default value being `"1000,5000,10000"`. 
+
+#### tagRoulette (v1.9.0+)
+
+```markdown
+{% heatMapCard tags icon %}
+```
+
+tagRoulette is an interactive element that provides a random tag display feature. When the button is clicked, a tag is randomly selected and displayed from a predefined pool of tags.  
+
+- tags: Optional parameter specifying the tag pool. Multiple tags should be separated by English commas (,). If not provided, a few example tags will be used by default. Example: `tags="memory decline, loss of expression, increased laziness, numbness, so sleepy"`  
+- icon: Optional parameter to customize the trigger button's icon. Default: 🕹️ (game controller emoji). Can be replaced with any emoji or text, such as 🎲, 🎯, 🔄, etc.
+
+#### link (v1.11.0+)
+
+```markdown
+{% link slug|title [title] [cover]|"auto" [escape] %}
+```
+
+Upgraded version of `externalLinkCard` and `postLinkCard`. It is recommended to use this tag.
+
+The first parameter is the `slug` of the article or the `title` of the external link;  
+The second parameter (optional) is the title displayed on the card;  
+The third parameter (optional) is the cover image displayed on the card. If set to `auto`, the blog's `banner` or default cover will be used automatically;  
+The fourth parameter (optional) indicates whether the article title is escaped.
+
+#### tabs (v1.11.0+)
+
+```markdown
+{% tabs [activeTab] ["center"] %}
+<!-- tabName -->
+Tab content
+<!-- tabName -->
+Tab content
+{% endtabs %}
+```
+
+Adapted from the next, volantis, and stellar themes, this feature supports creating tabbed switching effects within articles.
+
+- activeTab: Optional parameter, specifies the default active tab index (counting starts from 1). Default is 1.
+- "center": Optional parameter, specifies that tab titles should be center-aligned. Default is left-aligned.
+- tabName: The title of each tab, must be wrapped in `<!-- tabName -->`. Supports displaying icons using `@` + icon hexadecimal code. Examples:
+  - Title only: `<!-- Title -->`
+  - Icon only: `<!-- @e60c -->`
+  - Icon + Title: `<!-- Title@e60c -->`
+
+#### Gallery Photo Wall (v1.11.0+)
+
+```markdown
+{% gallery %}
+![alt text](image_url1)
+![alt text](image_url2)
+...
+{% endgallery %}
+```
+
+Display multiple images in a photo wall format, supporting automatic arrangement and responsive layout.
+
+#### grid Grid Layout (v1.11.1+)
+
+```markdown
+{% grid [width] [col] %}
+<!-- cell -->
+Content 1
+<!-- cell -->
+Content 2
+<!-- cell -->
+Content 3
+{% endgrid %}
+```
+
+Display content in a grid layout with responsive design.
+
+- width: Optional parameter, sets the minimum column width, e.g., `300` means a minimum column width of 300px. Default is `240`
+- col: Optional parameter, sets a fixed number of columns, e.g., `col:3` means a fixed 3-column layout. Default is auto column count
+- Use `<!-- cell -->` to separate each grid cell, and each cell's content will be rendered independently
+
+#### alertBlockquote Warning Quote Block (v1.11.1+)
+
+```markdown
+{% alertBlockquote [type] [title] %}
+Quote content
+{% endalertBlockquote %}
+```
+
+Fallback version of the custom container, suitable for renderers that do not support custom containers.
+
+- type: Optional parameter, specifies the warning type, optional values are `info`, `tip`, `important`, `warning`, `danger`, default is `info`
+- title: Optional parameter, specifies the warning title, if not provided, the default title will be used
+
+#### details Collapsible Details Block (v1.11.1+)
+
+```markdown
+{% details [summary] %}
+Details content
+{% enddetails %}
+```
+
+Fallback version of the custom container, suitable for renderers that do not support custom containers.
+
+- summary: Optional parameter, specifies the details title, if not provided, the default title will be used
 
 </details>
 
@@ -920,12 +1285,7 @@ The first parameter is the level standard for the heatmap (graded based on the w
 
 ### Custom Containers
 
-This theme provides custom container functionality similar to Vitepress. Before using it, you need to install [@reimujs/hexo-renderer-markdown-it-plus](https://github.com/D-Sketon/hexo-renderer-markdown-it-plus) and set `markdown.container` to `true` in the inner `_config.yml`.
-
-```yaml
-markdown:
-  container: true
-```
+This theme provides custom container functionality similar to Vitepress. Before using it, you need to install [@reimujs/hexo-renderer-markdown-it-plus](https://github.com/D-Sketon/hexo-renderer-markdown-it-plus).
 
 Usage is as follows:
 
@@ -936,6 +1296,10 @@ This is an info box.
 
 ::: tip
 This is a tip.
+:::
+
+::: important
+This is an important box.
 :::
 
 ::: warning
@@ -950,7 +1314,7 @@ This is a dangerous warning.
 Danger zone, do not proceed
 :::
 
-::: details
+::: details INFO
 This is a details block.
 :::
 ```
@@ -959,6 +1323,8 @@ This is a details block.
 
 <details>
 <summary>Customize theme</summary>
+
+### Customize theme
 
 The hexo-theme-reimu theme supports extensive customization. You can customize your theme by modifying `_config.yml`.
 
@@ -982,51 +1348,57 @@ v1.8.0 added `internal_theme` configuration to customize theme colors. You can c
 ```yaml
 internal_theme:
   light:
-    --red-0: '#ff0000'
-    --red-1: '#ff5252'
-    --red-2: '#ff7c7c'
-    --red-3: '#ffafaf'
-    --red-4: '#ffd0d0'
-    --red-5: '#ffecec'
-    --red-5-5: '#fff3f3'
-    --red-6: '#fff7f7'
-    --color-red-6-shadow: 'rgba(255, 78, 78, 0.6)'
-    --color-red-3-shadow: 'rgba(255, 78, 78, 0.3)'
+    --red-0: "#ff0000"
+    --red-1: "#ff5252"
+    --red-2: "#ff7c7c"
+    --red-3: "#ffafaf"
+    --red-4: "#ffd0d0"
+    --red-5: "#ffecec"
+    --red-5-5: "#fff3f3"
+    --red-6: "#fff7f7"
+    --color-red-6-shadow: "rgba(255, 78, 78, 0.6)"
+    --color-red-3-shadow: "rgba(255, 78, 78, 0.3)"
 
-    --highlight-nav: '#e6e6e6'
-    --highlight-scrollbar: '#d6d6d6'
-    --highlight-background: '#f7f7f7'
-    --highlight-current-line: '#dadada'
-    --highlight-selection: '#e9e9e9'
-    --highlight-foreground: '#4d4d4d'
-    --highlight-comment: '#7d7d7d'
-    --highlight-red: '#c8362b'
-    --highlight-orange: '#b66014'
-    --highlight-yellow: '#cb911d'
-    --highlight-green: '#2ea52e'
-    --highlight-aqua: '#479d9d'
-    --highlight-blue: '#1973b8'
-    --highlight-purple: '#7135ac'
+    --highlight-nav: "#f5f5f5"
+    --highlight-scrollbar: "#d6d6d6"
+    --highlight-background: "#fdfdfd"
+    --highlight-selection: "#e9e9e988"
+    --highlight-foreground: "#24292e"
+    --highlight-comment: "#7d7d7d"
+    --highlight-red: "#d73a49"
+    --highlight-orange: "#e36209"
+    --highlight-yellow: "#cb911d"
+    --highlight-green: "#22863a"
+    --highlight-aqua: "#005cc5"
+    --highlight-blue: "#032f62"
+    --highlight-purple: "#6f42c1"
+    --highlight-deletion: "#b31d28"
+    --highlight-deletion-bg: "#ffeef0"
+    --highlight-addition: "#22863a"
+    --highlight-addition-bg: "#f0fff4"
   dark:
-    --red-4: 'rgba(255, 208, 208, 0.5)'
-    --red-5: 'rgba(255,228,228,0.15)'
-    --red-5-5: 'rgba(255,236,236,0.05)'
-    --red-6: 'rgba(255, 243, 243, 0.2)'
+    --red-4: "rgba(255, 208, 208, 0.5)"
+    --red-5: "rgba(255,228,228,0.15)"
+    --red-5-5: "rgba(255,236,236,0.05)"
+    --red-6: "rgba(255, 243, 243, 0.2)"
 
-    --highlight-nav: '#2e353f'
-    --highlight-scrollbar: '#454d59'
-    --highlight-background: '#22272e'
-    --highlight-current-line: '#393939'
-    --highlight-selection: '#515151'
-    --highlight-foreground: '#cccccc'
-    --highlight-comment: '#999999'
-    --highlight-red: '#f47067'
-    --highlight-orange: '#f69d50'
-    --highlight-yellow: '#ffcc66'
-    --highlight-green: '#99cc99'
-    --highlight-aqua: '#66cccc'
-    --highlight-blue: '#54b6ff'
-    --highlight-purple: '#dcbdfb'
+    --highlight-nav: "#222830"
+    --highlight-scrollbar: "#454d59"
+    --highlight-background: "#1e2027"
+    --highlight-selection: "#51515155"
+    --highlight-foreground: "#c9d1d9"
+    --highlight-comment: "#8b949e"
+    --highlight-red: "#ff7b72"
+    --highlight-orange: "#ffa657"
+    --highlight-yellow: "#ffcc66"
+    --highlight-green: "#7ee787"
+    --highlight-aqua: "#a5d6ff"
+    --highlight-blue: "#79c0ff"
+    --highlight-purple: "#d2a8ff"
+    --highlight-deletion: "#ffa198"
+    --highlight-deletion-bg: "#490202"
+    --highlight-addition: "#7ee787"
+    --highlight-addition-bg: "#04260f"
 ```
 
 #### Custom Fonts
@@ -1079,7 +1451,9 @@ v1.0.0 underwent significant refactoring and exposed many configurations for cha
 
 ##### Header / Sidebar Icons
 
-The `menu` configuration structure changed in v1.0.0, allowing users to customize icons. When icon is empty, it defaults to the Taichi icon. You can fill in a hexadecimal number to customize the icon, supporting both FontAwesome and icon font.
+The `menu` configuration structure changed in v1.0.0, allowing users to customize icons. When icon is empty, it defaults to the Taichi icon. You can fill in a hexadecimal number to customize the icon, supporting both FontAwesome, icon font and `false`.
+
+v1.8.4 icon supports image path, such as `/avatar/avatar.webp`.
 
 ```yaml
 menu:
@@ -1088,7 +1462,7 @@ menu:
     icon: # Defaults to Taichi icon when empty
   - name: archives
     url: /archives
-    icon: f0c1 # You can fill in a hexadecimal number to customize the icon, supports FontAwesome and icon font
+    icon: f0c1 # You can fill in a hexadecimal number to customize the icon, supports FontAwesome and icon font. If set to false, no icon will be displayed.
   - name: about
     url: /about
     icon:
@@ -1108,7 +1482,7 @@ v1.0.0 added `icon` configuration to `footer`, `top`, and `sponsor` configuratio
 ```yaml
 footer:
   icon:
-    url: "../images/taichi.png"
+    url: "../images/taichi.png" # If set to false, no icon will be displayed
     rotate: true
     mask: true
 
@@ -1120,7 +1494,7 @@ top:
 
 sponsor:
   icon:
-    url: "../images/taichi.png"
+    url: "../images/taichi.png" # If set to false, no icon will be displayed
     rotate: true
     mask: true
 ```
@@ -1134,8 +1508,13 @@ It's not recommended to use oversized icons to avoid affecting loading speed.
 ```yaml
 preloader:
   enable: true
-  text: 少女祈祷中...
+  text:
+    zh-CN: 少女祈祷中...
+    zh-TW: 少女祈禱中...
+    en: Loading...
+    ja: 少女祈祷中...
   icon: # if the icon is empty, the default svg is used, which is inlined to ensure the loading speed of the first screen. You can fill in a link to customize the loading icon, such as '/images/taichi.png'
+  rotate: true
 ```
 
 ##### Anchor Icon
@@ -1145,6 +1524,8 @@ v1.0.0 added `anchor_icon` configuration for customizing anchor icons, defaults 
 ```yaml
 anchor_icon: # if the icon is empty, the default # icon is used
 ```
+
+v1.8.5 `anchor_icon` supports passing `false` to hide anchor icon.
 
 ##### Cursor Icon (v1.3.0+)
 
@@ -1157,6 +1538,36 @@ reimu_cursor:
     default: ../images/cursor/reimu-cursor-default.png
     pointer: ../images/cursor/reimu-cursor-pointer.png
     text: ../images/cursor/reimu-cursor-text.png
+```
+
+#### Custom Scroll Animation
+
+Based on [AOS.js](https://github.com/D-Sketon/aos.js) scroll animation effects, default is `true`, you can enable or disable through the following configuration, and set different animation effects for different pages.
+
+```yaml
+animation:
+  enable: true
+  options:
+    header:
+    home:
+    article:
+    archive:
+```
+
+**Available Animation Effects:**
+
+- **Fade**: fade, fade-up, fade-down, fade-left, fade-right, fade-up-right, fade-up-left, fade-down-right, fade-down-left
+- **Flip**: flip-up, flip-down, flip-left, flip-right
+- **Slide**: slide-up, slide-down, slide-left, slide-right
+- **Zoom**: zoom-in, zoom-in-up, zoom-in-down, zoom-in-left, zoom-in-right, zoom-out, zoom-out-up, zoom-out-down, zoom-out-left, zoom-out-right
+
+#### Custom Styles
+
+You can customize the maximum width of the main content area by modifying `layout.max_width`, default is `1350px`.
+
+```yaml
+layout:
+  max_width: 1350px # Maximum width of the main content area
 ```
 
 </details>
@@ -1195,9 +1606,59 @@ js:
 Both formats are supported. It's recommended to use SRI verification for external CDN resources to ensure resource integrity.
 </details>
 
+<details>
+<summary>Front-matter Fields</summary>
+
+### Front-matter Fields
+
+| meta        | Description                                                              | Type                                               | Value Logic                               | Version       |
+| ----------- | ------------------------------------------------------------------------ | -------------------------------------------------- | ----------------------------------------- | ------------- |
+| title       | Title                                                                    | `string`                                           | Article file name                         | Hexo Built-in |
+| date        | Creation Date                                                            | `date`                                             | File creation date                        | Hexo Built-in |
+| updated     | Update Date                                                              | `date`                                             | File update date                          | Hexo Built-in |
+| tags        | Tags                                                                     | `string[] \| string[][]`                           | -                                         | Hexo Built-in |
+| categories  | Categories                                                               | `string[] \| string[][]`                           | -                                         | Hexo Built-in |
+| permalink   | Override the article's permanent link                                    | `string`                                           | -                                         | Hexo Built-in |
+| excerpt     | Article Excerpt                                                          | `string`                                           | -                                         | Hexo Built-in |
+| description | Article Description                                                      | `string`                                           | -                                         | 0.0.1         |
+| link        | Directs the article to an external link                                  | `string`                                           | -                                         | 0.0.1         |
+| sticky      | Whether to pin the article                                               | `boolean`                                          | `false`                                   | 0.0.1         |
+| photos      | Article photo gallery                                                    | `string[]`                                         | -                                         | 0.0.1         |
+| mermaid     | Whether to enable mermaid (requires configuration with `mermaid` config) | `boolean`                                          | `false`                                   | 0.2.0         |
+| copyright   | Whether to enable article copyright notice                               | `boolean`                                          | Defaults to global config if not provided | 0.3.1         |
+| sponsor     | Whether to enable article sponsorship                                    | `boolean`                                          | Defaults to global config if not provided | 0.3.2         |
+| comments    | Whether to enable article comments                                       | `boolean`                                          | Defaults to global config if not provided | 0.3.2         |
+| cover       | Article cover                                                            | `https://example.com \| false \| rgb(255,117,117)` | Defaults to global config if not provided | 0.0.7         |
+| sidebar     | Article sidebar position                                                 | `false \| 'left' \| 'right'`                       | Defaults to global config if not provided | 1.3.0         |
+| lang        | Article language (requires configuration with `i18n` config)             | `string`                                           | -                                         | 1.4.0         |
+| toc         | Whether to enable article table of contents                              | `boolean`                                          | Defaults to global config if not provided | 1.6.0         |
+| outdated    | Whether the article is outdated                                          | `boolean`                                          | Defaults to global config if not provided | 1.10.1        |
+| author      | Article author (used for article copyright and sharing cards)            | `string`                                           | Defaults to global config if not provided | 1.10.2        |
+| keywords    | Article keywords for SEO                                                 | `string[] \| string`                               | Defaults to global config if not provided | 1.10.4        |
+
+</details>
+
 ## Contributors
 
 [![](https://contributors-img.web.app/image?repo=D-Sketon/hexo-theme-reimu)](https://github.com/D-Sketon/hexo-theme-reimu/graphs/contributors)
+
+## Related Projects
+
+| package name                                                                                          | version                                                                              | npm                                                                                     | jsdelivr                                                                                         |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| [hexo-theme-reimu](https://github.com/D-Sketon/hexo-theme-reimu)                                      | ![NPM Version](https://img.shields.io/npm/v/hexo-theme-reimu)                        | ![NPM Downloads](https://img.shields.io/npm/dm/hexo-theme-reimu)                        | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/hexo-theme-reimu)                        |
+| [theme-shokax-pjax](https://github.com/theme-shoka-x/theme-shokax-pjax)                               | ![NPM Version](https://img.shields.io/npm/v/theme-shokax-pjax)                       | ![NPM Downloads](https://img.shields.io/npm/dm/theme-shokax-pjax)                       | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/theme-shokax-pjax)                       |
+| [theme-shokax-anime](https://github.com/theme-shoka-x/theme-shokax-anime)                             | ![NPM Version](https://img.shields.io/npm/v/theme-shokax-anime)                      | ![NPM Downloads](https://img.shields.io/npm/dm/theme-shokax-anime)                      | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/theme-shokax-anime)                      |
+| [mouse-firework](https://github.com/D-Sketon/mouse-firework)                                          | ![NPM Version](https://img.shields.io/npm/v/mouse-firework)                          | ![NPM Downloads](https://img.shields.io/npm/dm/mouse-firework)                          | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/mouse-firework)                          |
+| [@reimujs/aos](https://github.com/D-Sketon/aos.js)                                                    | ![NPM Version](https://img.shields.io/npm/v/@reimujs/aos)                            | ![NPM Downloads](https://img.shields.io/npm/dm/@reimujs/aos)                            | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@reimujs/aos)                            |
+| [@reimujs/hexo-algoliasearch](https://github.com/D-Sketon/hexo-algoliasearch)                         | ![NPM Version](https://img.shields.io/npm/v/@reimujs/hexo-algoliasearch)             | ![NPM Downloads](https://img.shields.io/npm/dm/@reimujs/hexo-algoliasearch)             | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@reimujs/hexo-algoliasearch)             |
+| [@reimujs/hexo-renderer-markdown-it-plus](https://github.com/D-Sketon/hexo-renderer-markdown-it-plus) | ![NPM Version](https://img.shields.io/npm/v/@reimujs/hexo-renderer-markdown-it-plus) | ![NPM Downloads](https://img.shields.io/npm/dm/@reimujs/hexo-renderer-markdown-it-plus) | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@reimujs/hexo-renderer-markdown-it-plus) |
+| [@reimujs/instantsearch.js](https://github.com/D-Sketon/instantsearch)                                | ![NPM Version](https://img.shields.io/npm/v/@reimujs/instantsearch.js)               | ![NPM Downloads](https://img.shields.io/npm/dm/@reimujs/instantsearch.js)               | ![jsDelivr Hits](https://img.shields.io/jsdelivr/npm/hm/@reimujs/instantsearch.js)               |
+| [plugin-live2d](https://github.com/D-Sketon/plugin-live2d)                                            | -                                                                                    | -                                                                                       | ![jsDelivr hits (GitHub)](https://img.shields.io/jsdelivr/gh/hm/D-Sketon/plugin-live2d)          |
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=D-Sketon/hexo-theme-reimu&type=date&legend=top-left)](https://www.star-history.com/#D-Sketon/hexo-theme-reimu&type=date&legend=top-left)
 
 ## License
 

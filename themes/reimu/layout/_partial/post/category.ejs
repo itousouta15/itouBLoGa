@@ -1,5 +1,8 @@
-<% if (post.categories && typeof post.categories.find === 'function' && post.categories.length) { %>
-  <div class="article-category">
-    <%- listCategories(post.categories, { show_count: false, class: 'article-category', style: 'none' }) %>
-  </div>
-<% } %>
+<%_ if (post.categories && post.categories.length) { _%>
+  <%- listCategories(post.categories, {
+    show_count: false,
+    class: 'article-category',
+    style: 'none',
+    separator: ''
+  }, theme.animation.options.article.category) %>
+<%_ } _%>

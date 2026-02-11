@@ -1,17 +1,14 @@
 ########################################
-# 基本配置
+# Basic Configuration
 ########################################
 theme_version_check: true
 theme_config_check: true
-# 主選單導航
-# 更多圖標資訊，請訪問 https://github.com/D-Sketon/hexo-theme-reimu/issues/30
+# main menu navigation
+# for more icon information, please visit https://github.com/D-Sketon/hexo-theme-reimu/issues/30
 menu:
   - name: home
     url: /
     icon: f015
-  - name: portfolio
-    url: /portfolio
-    icon: f02e
   - name: archives
     url: /archives
     icon: f07c
@@ -22,50 +19,72 @@ menu:
     url: /friend
     icon: f0c0
 
-banner: "/img/banner.webp"
+banner: "/images/banner.webp" # which means themes/reimu/source/images/banner.webp
+# You can also write it in the form of the following url
+# banner: "https://example.com"
 
-# 如果您想使用 srcset 屬性，請啟用它
+# If you want to use the srcset attribute, please enable it
 banner_srcset:
-  enable: true
+  enable: false
   srcset:
-    - src: "/img/banner-600w.webp"
+    - src: "/images/banner-600w.webp"
       media: "(max-width: 479px)"
-    - src: "/img/banner-800w.webp"
+    - src: "/images/banner-800w.webp"
       media: "(max-width: 799px)"
-    - src: "/img/banner.webp"
+    - src: "/images/banner.webp"
       media: "(min-width: 800px)"
 
-favicon: "/images/favicon.ico"
+favicon: "/images/favicon.ico" # which means themes/reimu/source/images/favicon.ico
+# You can also write it in the form of the following url
+# favicon: "https://example.com"
 
-avatar: "avatar.webp" 
+avatar: "avatar.webp" # which means source/_data/avatar/avatar.webp
+
+# Control the display of the post cover
+# If not set, the banner image will be displayed by default
+# Its priority is lower than the cover in the Front-matter
+cover: # https://example.com / false / rgb(255,117,117)
+
+# Control the display of the post toc
+# Its priority is lower than the toc in the Front-matter
+toc: true
+toc_options:
+  list_number: true
+  min_depth: 1
+  max_depth: 6
 
 # Open Graph
-# 參見 https://hexo.io/docs/helpers#open-graph
+# see https://hexo.io/docs/helpers#open-graph
 open_graph:
   enable: true
   options:
-    default_og_image: /img/banner.webp 
+    #twitter_card: <twitter:card>
+    #twitter_id: <twitter:creator>
+    #twitter_site: <twitter:site>
+    #twitter_image: <twitter:image>
+    #google_plus: <g+:profile_link>
+    #fb_admins: <fb:admin_id>
+    #fb_app_id: <fb:app_id>
+    default_og_image: /images/banner.webp # the default og:image for Open Graph, support absolute path
 
-# 內容
-excerpt_link: 閱讀更多
+# Content
+excerpt_link: Read More
 
 # RSS
-# 需要 https://github.com/hexojs/hexo-generator-feed
+# need https://github.com/hexojs/hexo-generator-feed
 rss: atom.xml
 
-# 一個非常簡單的替代方案，適用於 https://hexo.io/api/injector
-injector:
-  head_begin: # 在 <head> 後注入代碼片段
-  head_end: # 在 </head> 前注入代碼片段
-  body_end: |
-    <script>
-      console.log('Footer loaded');
-    </script>
-  sidebar_begin: # 在 <aside> 後注入代碼片段
-  sidebar_end: # 在 </aside> 前注入代碼片段
+# Footer copyright
+copyright: # Inject code snippet right in the footer copyright
+# Need help choosing? Please see...
+# https://creativecommons.org/choose/
+# https://choosealicense.com/
+# copyright: |-
+#   <div style="flex-direction:column;align-items: center;"><a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>
+#   All website licensed under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">CC BY 4.0</a></div>
 
 footer:
-  since: 2025 
+  since: 2026
   powered: true
   count: true # 顯示字數和閱讀時間
   busuanzi: true
@@ -74,11 +93,16 @@ footer:
     rotate: true
     mask: true
 
-# 側邊欄
-sidebar: left
+# Sidebar
+# sidebar: right # deprecated, use sidebar.position instead
+sidebar:
+  position: left
+  menu: true  # whether to show the sidebar menu button, ignored on mobile devices
+  article:
+    show_common: true # whether to show common sidebar, ignored on mobile devices
 
 social:
-  email: mailto:kuoray333@gmail.com
+  email: mailto:me@itousouta15.tw
   github: https://github.com/itousouta15
   instagram: https://www.instagram.com/itou.souta15
   discord: https://discord.gg/GVhwRRVJ7F
@@ -86,72 +110,105 @@ social:
 widgets:
   - category
   - tag
+  - tagcloud
   - archive
   - recent_posts
 
-# Widget 行為
-archive_type: "每月"
+# Widget behavior
+archive_type: "monthly"
 show_count: false
+tag_limits:
 recent_posts_limits: 5
+tagcloud_limits:
 
+# Archive behavior
+only_show_capsule_in_index: false # If you have hugo amounts of tags and categories, you can set this to true to only show the capsule in the index page for better performance
+uppercase_capsule: true # If you want to keep taxonomic capsule unchanged, please set this to false
+
+show_update_time: false # If you want to show the update time, please set this to true
+
+# Summary content
+summary:
+  enable: false
+  style: 'subtitle' # 'subtitle' or 'blockquote'
+
+# Internationalization
 i18n:
   enable: true
-  languages:
-    - zh-TW
-    - en
+  type: [page, post]
+  generator: [archive, category, tag, index]
+  languages: [zh-TW, en]
+
 ########################################
 # CSS
 ########################################
-anchor_icon: f0c1
+anchor_icon:
+
+triangle_badge:
+  enable: false
+  icon: github # same as the icon in the social config
+  link: https://github.com/D-Sketon/hexo-theme-reimu
+
+layout:
+  max_width: 1350px # the max width of the main content area
 
 reimu_cursor:
   enable: true
   cursor:
-    default: ../img/cursor/1.png  # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
-    pointer: ../img/cursor/2.png
-    text: ../img/cursor/3.png
+    default: ../images/cursor/1.png  # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
+    pointer: ../images/cursor/2.png
+    text: ../images/cursor/3.png
 
-# 設置為 false 以啟用 fontawesome
+# set to false to enable fontawesome
 icon_font: false
 
-# Google 字體，優先於本地字體
+# Font loading strategy
+# Custom Font -> Google Fonts -> Local FallBack Font
+
+# Custom Font
+custom_font:
+  enable: false
+  article:
+    # - css: https://fontsapi.zeoseven.com/292/main/result.css
+      # name: LXGW WenKai
+  code:
+
+# https://fonts.google.com/
+# Google Fonts, higher priority than local_font
 font:
+  enable: true
   article:
     - Mulish
-  #  - Noto Serif SC
+    - Noto Serif SC
   code:
-    - Ubuntu Mono
-  #  - Source Code Pro
-  #  - JetBrains Mono
+    # - Ubuntu Mono
+    # - Source Code Pro
+    # - JetBrains Mono
 
-# 本地備選字體
+# Local FallBack Font
 local_font:
   article:
     - "-apple-system"
-  #  - PingFang SC
-  #  - Microsoft YaHei
-  #  - sans-serif
+    - PingFang SC
+    - Microsoft YaHei
+    - sans-serif
   code:
-  #  - Menlo
-  #  - Monaco
-  #  - Consolas
-  #  - monospace
+    - Menlo
+    - Monaco
+    - Consolas
+    - monospace
 
 dark_mode:
-  # true 表示默認啟用深色模式
-  # false 表示默認禁用深色模式
-  # auto 表示根據系統設置自動切換深色模式
+  # true means that the dark mode is enabled by default
+  # false means that the dark mode is disabled by default
+  # auto means that the dark mode is automatically switched according to the system settings
   enable: ture # true | false | auto
 
-# 需要 https://github.com/D-Sketon/hexo-renderer-markdown-it-plus
-markdown:
-  container: false # 是否啟用容器樣式
-
 ########################################
-# Markdown 顯示
+# Markdown Display
 ########################################
 
-# 需要 https://github.com/D-Sketon/hexo-renderer-markdown-it-plus
+# need https://github.com/D-Sketon/hexo-renderer-markdown-it-plus
 math:
   enable: true 
   katex:
@@ -181,24 +238,48 @@ math:
         loader: { load: ["input/asciimath", "[tex]/noerrors"] },
       }
 
-# mermaid 圖表 https://github.com/knsv/mermaid
-# 需要 https://github.com/webappdevelp/hexo-filter-mermaid-diagrams
+# mermaid url https://github.com/mermaid-js/mermaid
+# need https://github.com/webappdevelp/hexo-filter-mermaid-diagrams
 mermaid:
   enable: true
+  zoom: false # whether to enable zoom for mermaid diagrams
 
 code_block:
+  # whether to expand the code block by default
+  # true means expand all code blocks by default
+  # false means collapse all code blocks by default
+  # number means collapse the code block by default when the number of lines exceeds the specified value
   expand: true
 
-##########################################################
-# 分析
-##########################################################
+# Clipboard configuration
+clipboard:
+  success:
+    en: Copy successfully (*^▽^*)
+    zh-CN: 复制成功 (*^▽^*)
+    zh-TW: 複製成功 (*^▽^*)
+    ja: コピー成功 (*^▽^*)
+    pt-BR: Copiado com sucesso (*^▽^*)
+  fail:
+    en: Copy failed (ﾟ⊿ﾟ)ﾂ
+    zh-CN: 复制失败 (ﾟ⊿ﾟ)ﾂ
+    zh-TW: 複製失敗 (ﾟ⊿ﾟ)ﾂ
+    ja: コピー失敗 (ﾟ⊿ﾟ)ﾂ
+    pt-BR: Falha ao copiar (ﾟ⊿ﾟ)ﾂ
+  copyright: # whether to add a copyright for the clipped content
+    enable: false
+    count: 50 # The number of characters when the copyright is displayed
+    license_type: by-nc-sa # https://creativecommons.org/licenses
+
+########################################
+# Analytics
+########################################
 
 baidu_analytics: false
 google_analytics: false
 clarity: false
 
 ########################################
-# 評論系統
+# Comment system
 ########################################
 
 waline:
@@ -225,15 +306,11 @@ waline:
   pageview: true
 
 ########################################
-# 搜索
+# Search
 ########################################
 
-# 需要 https://github.com/D-Sketon/hexo-algoliasearch
-# 請在您的 _config.yml 中添加以下配置
-algolia:
-  appId: 'your_application_id' # 替換為您的 Algolia 應用 ID
-  apiKey: 'your_search_only_api_key' # 替換為您的 Algolia 搜索 API 密鑰
-  indexName: 'your_index_name' # 替換為您的索引名稱
+# need https://github.com/D-Sketon/hexo-algoliasearch
+# please add the following config in your _config.yml
 # algolia:
 #   appId: 'your applicationID'
 #   apiKey: 'your apiKey'
@@ -253,10 +330,6 @@ algolia_search:
   enable: false
   hits:
     per_page: 10
-  labels:
-    input_placeholder: "搜索....."
-    hits_empty: "未發現與 「${query}」相關內容"
-    hits_stats: "找到${hits}條結果（用時 ${time} ms）"
 
 generator_search:
   enable: false
@@ -264,7 +337,7 @@ generator_search:
   content: true
 
 ########################################
-# 動畫
+# Animation
 ########################################
 
 # 加載動畫
@@ -274,7 +347,7 @@ preloader:
   icon:
     url: "../images/taichi.svg" # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
 
-# 參見 https://github.com/D-Sketon/aos.js
+# see https://github.com/D-Sketon/aos.js
 animation:
   enable: true
   options:
@@ -300,16 +373,17 @@ animation:
       section: fade-up
       nav: fade-up
 
-# 參見 https://github.com/D-Sketon/mouse-firework
+# see https://github.com/D-Sketon/mouse-firework
 firework:
   enable: true
+  disable_on_mobile: false
   options:
     excludeElements: ["a", "button"]
     particles:
       - shape: circle
         move: ["emit"]
         easing: easeOutExpo
-        colors: ["#ADD8E6", "#B0E0E6", "#87CEEB", "#E0FFFF"]
+        colors: ["var(--red-1)", "var(--red-2)", "var(--red-3)", "var(--red-4)"]
         number: 20
         duration: [1200, 1800]
         shapeOptions:
@@ -318,7 +392,7 @@ firework:
       - shape: circle
         move: ["diffuse"]
         easing: easeOutExpo
-        colors: ["#ADD8E6"]
+        colors: ["var(--red-0)"]
         number: 1
         duration: [1200, 1800]
         shapeOptions:
@@ -327,76 +401,8 @@ firework:
           lineWidth: 6
 
 ########################################
-# 擴展功能
-########################################
-
-# 剪貼板配置
-clipboard:
-  success: 複製成功(*^▽^*)
-  fail: 複製失敗(ﾟ⊿ﾟ)ﾂ
-  copyright: # 是否為剪貼內容添加版權
-    enable: true
-    count: 50 # 顯示版權時的字符數
-    content: 本文版權：本部落格所有文章除特別聲明外，均使用 BY-NC-SA 許可協議。轉載請註明出處！
-
-# 在首頁顯示分類卡片
-home_categories:
-  enable: false
-  content:
-    - categories: hexo # 字符串（單層分類）或數組（多層分類）
-      cover:  # 空表示隨機封面
-
-# 是否在文章過期時顯示通知
-outdate:
-  enable: true
-  daysAgo: 180 # 文章被認為過期的天數
-  message: 本文最后更新于 {time}，请注意文中内容可能已经发生变化。
-
-# 贊助
-sponsor:
-  enable: false
-  tip: 请作者喝杯咖啡吧！
-  icon:
-    url: "../images/taichi.svg" # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
-    rotate: true
-    mask: true # 是否將圖片用作遮罩
-  qr:
-    # - name: 支付宝
-    #   src: "/sponsor/alipay.jpg"
-    # - name: 微信
-    #   src: "/sponsor/wechat.png"
-
-# 在每篇文章下顯示版權
-article_copyright:
-  enable: true
-  content:
-    author: true
-    link: true
-    title: false
-    date: false
-    updated: false
-    license: true
-
-# 返回頂部
-top:
-  enable: true
-  position: right # left or right
-  icon:
-    url: "../images/taichi.svg" # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
-    rotate: true
-    mask: true # 是否將圖片用作遮罩
-
-
-share:
-  # - facebook
-  # - twitter
-  # - linkedin
-  # - reddit
-  # - weibo
-  # - qq
-  # - weixin
-
-########################################
+# Extended features
+##########################################
 # 實驗性功能
 ########################################
 

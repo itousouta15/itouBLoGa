@@ -6,7 +6,13 @@ const moize = require("moize");
 const getPostsByLangCache = new Cache();
 
 function getPostsByLangHelper(lang) {
-  const pageMap = { default: {}, en: {}, ja: {}, "zh-TW": {} };
+  const pageMap = {
+    default: {},
+    en: {},
+    ja: {},
+    "zh-TW": {},
+    "pt-BR": {},
+  };
   this.site.posts.each((post) => {
     if (post.lang) {
       pageMap[post.lang][post.permalink] = post;
@@ -83,6 +89,10 @@ hexo.extend.helper.register("switch_lang", function (lang) {
     trailing_index: false,
     trailing_html: false,
   });
+});
+
+hexo.extend.helper.register("full_url_for_lang", function (path, language) {
+  return this.full_url_for(this.url_for_lang(path, undefined, language));
 });
 
 hexo.extend.helper.register("url_for_lang", function (path, opt, language) {

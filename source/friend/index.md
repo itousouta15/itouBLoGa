@@ -36,7 +36,7 @@ comments: true
     <a href="https://smallr-portfolio.vercel.app/en" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/img/smallR.webp">
+        <img data-src="/images/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/images/smallR.webp">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -48,7 +48,7 @@ comments: true
     <a href="https://peppersauce0712.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/3.webp" data-sizes="auto" alt="PepperSauce" class="lazyautosizes lazyloaded" sizes="70px" src="/img/3.webp">
+        <img data-src="/images/3.webp" data-sizes="auto" alt="PepperSauce" class="lazyautosizes lazyloaded" sizes="70px" src="/images/3.webp">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -60,7 +60,7 @@ comments: true
     <a href="https://yuzen9622.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/smallZ.webp" data-sizes="auto" alt="Small Z" class="lazyautosizes lazyloaded" sizes="70px" src="/img/smallZ.webp">
+        <img data-src="/images/smallZ.webp" data-sizes="auto" alt="Small Z" class="lazyautosizes lazyloaded" sizes="70px" src="/images/smallZ.webp">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -72,7 +72,7 @@ comments: true
     <a href="https://nangong5421.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/南宮.webp" data-sizes="auto" alt="南宮柳信" class="lazyautosizes lazyloaded" sizes="70px" src="/img/南宮.webp">
+        <img data-src="/images/南宮.webp" data-sizes="auto" alt="南宮柳信" class="lazyautosizes lazyloaded" sizes="70px" src="/images/南宮.webp">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -96,7 +96,7 @@ comments: true
     <a href="https://frankk.uk/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="/img/frank.webp" data-sizes="auto" alt="Frank" class="lazyautosizes lazyloaded" sizes="70px" src="/img/frank.webp">
+        <img data-src="/images/frank.webp" data-sizes="auto" alt="Frank" class="lazyautosizes lazyloaded" sizes="70px" src="/images/frank.webp">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -228,7 +228,7 @@ comments: true
     <a href="https://justin0711.com/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="https://justin0711.com/static/img/profile.jpg" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://justin0711.com/static/img/profile.jpg">
+        <img data-src="https://justin0711.com/static/images/profile.jpg" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://justin0711.com/static/images/profile.jpg">
       </div>
     </div>
     <div class="friend-info-wrap">

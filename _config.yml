@@ -3,16 +3,17 @@
 ## 原始碼： https://github.com/hexojs/hexo/
 
 # 網站
-title: 伊藤蒼太's Blog
-subtitle: 'Coding, Learning, Life'
+title: itouBLoGa
+subtitle: '唯一的願望是睡滿8小時'
 description: 'Professional Bug Creator'
 keywords: '伊藤蒼太, Hexo, Blog, Coding, Learning, Life'
 author: 伊藤蒼太
 language: zh-TW
 timezone: 'Asia/Taipei'
 
-url: https://itousouta15.github.io/legacy-blog
-root: /legacy-blog/
+# _config.yml
+url: https://blog.itousouta15.tw
+root: /                       
 permalink: :year/:month/:day/:urlname/
 permalink_defaults:
 pretty_urls:
@@ -150,9 +151,6 @@ theme_config:
     - name: home
       url: /
       icon: f015
-    - name: portfolio
-      url: /portfolio
-      icon: f02e
     - name: archives
       url: /archives
       icon: f07c
@@ -193,15 +191,15 @@ theme_config:
 
 
   # 錨點圖標
-  anchor_icon: f292 # 預設使用 '#' 圖標，您可以使用 fontawesome 或 icon_font 的十六進制表示，例如 'f0c1'
+  anchor_icon: # 預設使用 '#' 圖標，您可以使用 fontawesome 或 icon_font 的十六進制表示，例如 'f0c1'
 
   # 滑鼠指針配置
   reimu_cursor:
     enable: true
     cursor:
-      default: /img/cursor/1.png
-      pointer: /img/cursor/2.png
-      text: /img/cursor/3.png
+      default: /images/cursor/1.png
+      pointer: /images/cursor/2.png
+      text: /images/cursor/3.png
 
   covers:
     enable: true
@@ -230,3 +228,10 @@ markdown_it_plus:
   typographer: true
   quotes: '""'''''
   rawLaTeX: false
+
+# 確保前面沒有空格
+i18n: 
+  enable: true
+  type: [page, post]
+  generator: [archive, category, tag, index]
+  languages: [zh-TW, en]

@@ -3,7 +3,7 @@ title: Using GitHub Pages + Hexo to Set Up a Personal Blog
 date: 2025-08-27 14:32:32
 tags:
   - Hexo
-cover: /img/Hexo/hexo_github.webp
+cover: /images/Hexo/hexo_github.webp
 urlname: Hexo
 lang: en
 ---
@@ -24,7 +24,7 @@ Before we start, ensure your computer is equipped with the following:
 
 Go to the official website:
 [https://nodejs.org/zh-tw/download](https://nodejs.org/zh-tw/download)
-![hexo](/img/Hexo/hexo.webp)
+![hexo](/images/Hexo/hexo.webp)
 If you already have Docker, copy the code above into your terminal; otherwise, download the MSI file below and run it.
 It’s recommended to always install the latest (at least LTS) versions of both Hexo and Node.js to receive the best security patches and performance updates.
 
@@ -139,7 +139,7 @@ Rename-Item -Path .\hexo-theme-reimu -NewName test
 >
 > This copies the theme folder and forcefully deletes the original, often resolving Windows permission or locked file issues.
 
-![reimu](/img/Hexo/themes.webp)
+![reimu](/images/Hexo/themes.webp)
 
 Then edit `_config.yml`:
 
@@ -168,7 +168,7 @@ hexo s
 ```
 
 Open your browser to `http://localhost:4000` to preview the blog.
-![run](/img/Hexo/run.webp)
+![run](/images/Hexo/run.webp)
 
 ## Deploying to GitHub Pages
 
@@ -220,7 +220,7 @@ It’s working.
 #### **Back to deployment**
 
 * Create a GitHub repository, typically named `username.github.io` (e.g., `itousouta15.github.io`).
-  ![](/img/Hexo/創建repo.webp)
+  ![](/images/Hexo/創建repo.webp)
 
 * Install the Hexo deployment plugin:
 
@@ -243,7 +243,7 @@ It’s working.
     branch: main
   ```
 
-![deploy](/img/Hexo/deploy.webp)
+![deploy](/images/Hexo/deploy.webp)
 
 * Generate and deploy:
 
@@ -254,7 +254,7 @@ It’s working.
   ```
 
 * Ensure GitHub Pages is enabled and visit `https://yourusername.github.io`.
-  ![github](/img/Hexo/github.webp)
+  ![github](/images/Hexo/github.webp)
 
 ### Common Troubleshooting
 
@@ -348,6 +348,6 @@ It’s working.
 * Integrate SEO and analytics tools.
 * Use CI/CD tools for automated deployment.
 
-![page](/img/Hexo/page.webp)
+![page](/images/Hexo/page.webp)
 
 That’s it for this article! See you next time!

@@ -3,7 +3,7 @@ title: AIS3 pre-exam 2025
 date: 2025-07-11 13:32:32
 tags:
   - AIS3
-cover: /img/ais3/ais3.webp
+cover: /images/ais3/ais3.webp
 urlname: AIS3PE
 lang: en
 ---
@@ -20,7 +20,7 @@ I played very poorly and the writeup is also very bad.
 ### Problem Observation
 
 First, click on the URL provided by the problem [http://chals1.ais3.org:30000/](http://chals1.ais3.org:30000/):
-![](/img/ais3/tomorin.webp)
+![](/images/ais3/tomorin.webp)
 You can see four files:
 
   - cute.jpg
@@ -29,7 +29,7 @@ You can see four files:
   - tomorin.jpg
 
 Three of them are images, **but clicking on `flag` redirects to [MyGO\!\!\!\!\!'s Yurisenshu](https://www.youtube.com/watch?v=lQuWN0biOBU)** ~~MyGO again~~
-![](/img/ais3/MyGO.webp)
+![](/images/ais3/MyGO.webp)
 
 ### Vulnerability Analysis
 
@@ -39,7 +39,7 @@ Since the flag file does exist, but the `/flag` path is specially handled, we ca
 
 After trying, I found that if we use URL encoding **(%2f)** plus `flag`, it will not be redirected.
 So I added ***/%2fflag*** after the root URL.
-![](/img/ais3/成功訪問.webp)
+![](/images/ais3/成功訪問.webp)
 
 We can then get the flag:
 
@@ -52,7 +52,7 @@ AIS3{G01ang_H2v3_a_c0O1_way!!!_Us3ing_C0NN3ct_M3Th07_L0l@T0m0r1n_1s_cute_D0_yo7_
 ### Page Analysis
 
 After entering the webpage, we see a login interface:
-![](/img/ais3/登入畫面.webp)
+![](/images/ais3/登入畫面.webp)
 Including:
 
   - Username input box
@@ -60,7 +60,7 @@ Including:
   - Login button
 
 ### Injection Attack
-![](/img/ais3/FLAGG.webp)
+![](/images/ais3/FLAGG.webp)
 We then get the FLAG:
 
 ```
@@ -76,9 +76,9 @@ This was the most interesting problem for me.
 ### Problem Observation
 
 They gave us an image:
-![](/img/ais3/chal.webp)
+![](/images/ais3/chal.webp)
 The only valuable thing in it is the receipt, so I thought about whether I could find some information using the receipt's details.
-![](/img/ais3/發票.webp)
+![](/images/ais3/發票.webp)
 We can get the following information:
 
   - 平和.... (Heihwa....)
@@ -88,14 +88,14 @@ We can get the following information:
   - Seller number 3478592...
 
 Next, using a QR code scanner, we found:
-![](/img/ais3/QRcode.webp)
+![](/images/ais3/QRcode.webp)
   - Full receipt number MF16879911
   - The meal was shrimp ramen
 
 ### Address Search
 
 Enter the above information into the [Ministry of Finance Electronic Invoice Integration Service Platform](https://www.einvoice.nat.gov.tw/portal/btc/audit/btc601w/search)
-![](/img/ais3/完整資訊.webp)
+![](/images/ais3/完整資訊.webp)
 We then got the address, and entered the address into Google Maps.
 We found a restaurant called **樂山溫泉拉麵 (Leshan Hot Spring Ramen)**
 
@@ -109,11 +109,11 @@ AIS3{樂山溫泉拉麵:蝦拉麵}
 
 First, click on the URL provided by the problem and after getting the token:
 We arrive at http://chals1.ais3.org:20096/index.html
-![](/img/ais3/Tiny-server.webp)
+![](/images/ais3/Tiny-server.webp)
 I tried adding common hidden paths, and after multiple attempts, I found that **adding `//` can bring up the file directory**.
-![](/img/ais3/目錄.webp)
+![](/images/ais3/目錄.webp)
 There are many files inside. I clicked on the one with "flag" in the filename: **readable_flag_jkO47trw1ctKlOIFC7smx7hivqoCPL8Y**
-![](/img/ais3/FLAG.webp)
+![](/images/ais3/FLAG.webp)
 We then got the flag:
 
 ```
@@ -123,7 +123,7 @@ AIS3{tInY_we8_53Rv3R_wi7H_fILe_8R0Ws1nG_AS_@_FeAtURe}
 ## Welcome
 
 ### I'll just type it directly owo
-![](/img/ais3/welcome.webp)
+![](/images/ais3/welcome.webp)
 
 # crypto
 
@@ -308,7 +308,7 @@ if __name__ == "__main__":
 ```
 
 After execution, we got the Flag:
-![](/img/ais3/response.webp)
+![](/images/ais3/response.webp)
 ```
 AIS3{Aff1n3_nounc3s_c@N_bE_broke_ezily...}
 ```
@@ -318,7 +318,7 @@ AIS3{Aff1n3_nounc3s_c@N_bE_broke_ezily...}
 According to the Python program provided by the problem, we saw the flaw in this encryption scheme:
 **When the plaintext is small relative to the key, the result of the XOR operation is mainly determined by the key.**
 So we can use the mathematical relationship to reverse attack.
-![](/img/ais3/缺陷.webp)
+![](/images/ais3/缺陷.webp)
 ### **Idea**
 
 Now we know the encryption formula is:
@@ -412,7 +412,7 @@ if not found_flag:
 ```
 
 After running, we got the flag:
-![](/img/ais3/print.webp)
+![](/images/ais3/print.webp)
 ```
 AIS3{no_more_junks...plz}
 ```
@@ -631,7 +631,7 @@ if __name__ == "__main__":
 ```
 
 After execution, we got:
-![](/img/ais3/FLAGGG.webp)
+![](/images/ais3/FLAGGG.webp)
 FLAG:
 `AIS3{b451c_h1ll_c1ph3r_15_2_3z_f0r_u5}`
 
@@ -783,7 +783,7 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-![](/img/ais3/結果.webp)
+![](/images/ais3/結果.webp)
 We then got the FLAG:
 `AIS3{H@ppY_#ap9y_CRypT0_F4(7or1n&~~~}`
 
