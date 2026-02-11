@@ -22,7 +22,7 @@ a img:hover {
 </style>
 <br>
 <div align="center">
-  <img src="/img/avatar.webp" alt="avatar" width="120" style="border-radius:50%;margin-bottom:1em;" />
+  <img src="/images/avatar.webp" alt="avatar" width="120" style="border-radius:50%;margin-bottom:1em;" />
   <h1>伊藤蒼太</h1>
   <p>天生的BUG製造機</p>
   <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.5em;">
@@ -43,8 +43,8 @@ a img:hover {
     </a>
   </div>
   <picture>
-    <source srcset="/img/github-user-contributiond.svg" media="(prefers-color-scheme: dark)">
-    <img src="/img/github-user-contribution.svg" alt="GitHub 貢獻圖" style="max-width:100%;margin:1em auto;display:block;" />
+    <source srcset="/images/github-user-contributiond.svg" media="(prefers-color-scheme: dark)">
+    <img src="/images/github-user-contribution.svg" alt="GitHub 貢獻圖" style="max-width:100%;margin:1em auto;display:block;" />
   </picture>
 </div>
 

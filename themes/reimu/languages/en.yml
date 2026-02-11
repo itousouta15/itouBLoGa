@@ -1,8 +1,3 @@
-home: Home
-portfolio: program
-archives: Archives
-about: About
-friend: Friend
 categories: Categories
 search: Search
 tags: Tags
@@ -16,14 +11,19 @@ archive_a: Archives
 archive_b: "Archives: %s"
 page: Page %d
 recent_posts: Recent Posts
-newer: Newer
-older: Older
+newer: Prev
+older: Next
 share: Share
 powered_by: Powered by
 rss_feed: RSS Feed
 category: Category
 tag: Tag
 toc: Contents
+
+home: Home
+about: About
+friend: Friend
+archives: Archives
 
 sidebar:
   post: Post
@@ -69,12 +69,6 @@ article_copyright:
   updated: "Updated: "
   license: "License: "
   license_content: "All articles on this blog are licensed under the %s license agreement unless otherwise stated. Please indicate the source when reprinting!"
-
-comments:
-  title: "Say something!"
-
-outdate:
-  message: This article was last updated on {time}. Please note that the content may no longer be applicable.
 
 algolia:
   input_placeholder: "Search....."

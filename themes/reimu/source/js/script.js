@@ -93,7 +93,9 @@ window.throttle = (func, limit) => {
     }-btn`;
 
     document.body.dispatchEvent(
-      new CustomEvent(`${isDark ? "dark" : "light"}-theme-set`)
+      new CustomEvent("reimu:theme-set", {
+        detail: { isDark, mode: config },
+      })
     );
   }
   const savedMode =
@@ -184,11 +186,11 @@ window.throttle = (func, limit) => {
       const scheme = await extractor.generateThemeSchemeFromImage(imageFile);
       document.documentElement.style.setProperty(
         "--md-sys-color-primary-light",
-        extractor.hexFromArgb(scheme.schemes.light.props.primary),
+        extractor.hexFromArgb(scheme.schemes.light.props.primary)
       );
       document.documentElement.style.setProperty(
         "--md-sys-color-primary-dark",
-        extractor.hexFromArgb(scheme.schemes.dark.props.primary),
+        extractor.hexFromArgb(scheme.schemes.dark.props.primary)
       );
 
       const existingStyle = _$("#reimu-generated-theme-style");
@@ -208,7 +210,7 @@ window.throttle = (func, limit) => {
             () => {
               generateScheme(bannerElement);
             },
-            { once: true },
+            { once: true }
           );
         }
       } else if (window.bannerElement?.style.background) {
@@ -220,11 +222,11 @@ window.throttle = (func, limit) => {
         });
         document.documentElement.style.setProperty(
           "--md-sys-color-primary-light",
-          extractor.hexFromArgb(scheme.schemes.light.props.primary),
+          extractor.hexFromArgb(scheme.schemes.light.props.primary)
         );
         document.documentElement.style.setProperty(
           "--md-sys-color-primary-dark",
-          extractor.hexFromArgb(scheme.schemes.dark.props.primary),
+          extractor.hexFromArgb(scheme.schemes.dark.props.primary)
         );
         appendStylesheet();
       }

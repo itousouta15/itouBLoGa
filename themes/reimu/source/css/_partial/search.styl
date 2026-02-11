@@ -1,186 +1,211 @@
-.popup
-  visibility: hidden
-  position: fixed
-  top: 10%
-  left: 50%
-  width: 700px
-  max-height: 80%
-  margin-left: -350px
-  padding: 3px 0 0 10px
-  background: var(--color-wrap)
-  color: var(--grey-9)
-  z-index: 9999
-  border-radius: post-radius
-  opacity: 0
-  transform: scale(0.5)
-  transition: 0.3s
-  box-shadow: 0 0 10px var(--color-meta-shadow)
+.popup {
+  visibility: hidden;
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 700px;
+  max-height: 80%;
+  margin-left: -350px;
+  background: var(--color-wrap);
+  color: var(--grey-9);
+  z-index: 9999;
+  border-radius: post-radius;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: 0.3s;
+  box-shadow: 0 0 10px var(--color-meta-shadow);
 
-  &.show
-    visibility: visible
-    opacity: 1
-    transform: scale(1)
+  &.show {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
 
-  @media mg-normal
-    padding: 5px
-    top: 0
-    left: 0
-    margin: 0
-    width: 100%
-    height: 100%
-    border-radius: 0
-    max-height: 100%
+  @media mg-normal {
+    top: 0;
+    left: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    max-height: 100%;
+  }
 
-.reimu-popup
-  overflow: hidden
-  padding: 0
+  @media mq-normal {
+    min-height: 350px;
+  }
+}
 
-.popup-btn-close
-  color: var(--red-1)
-  font: 20px bold
-  cursor: var(--cursor-pointer) !important
-  padding-left: 15px
-  transition: 0.3s
+.reimu-popup {
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
 
-  &:hover
-    opacity: .8
+.popup-btn-close {
+  color: var(--red-1);
+  font: 20px bold;
+  cursor: var(--cursor-pointer) !important;
+  padding-left: 8px;
+  transition: 0.3s;
 
-.reimu-search
-  display: flex
-  align-items: center
-  padding: 8px 15px
-  max-height: 50px
-  border-bottom: 1px solid #ccc
+  &:hover {
+    opacity: 0.8;
+  }
+}
 
-.reimu-search-input-icon
-  display: inline-block
-  width: 20px
-  font-size: 18px
-  vertical-align: middle
-  margin-right: 5px
+.reimu-search {
+  display: flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid var(--grey-9);
+  flex-shrink: 0;
+}
 
-.reimu-search-input
-  flex: 1
+.reimu-search-input-icon {
+  display: inline-block;
+  width: 20px;
+  font-size: 18px;
+  vertical-align: middle;
+  margin-right: 8px;
+}
 
-  input
-    width: 100%
-    outline: none
-    border: none
-    background: transparent
-    color: var(--grey-9)
-    font-size: 16px
-    vertical-align: middle
-    font-family: font-basic
+#reimu-search-input {
+  flex: 1;
 
-  input[type=search]::-webkit-search-cancel-button
-    -webkit-appearance: none
+  input {
+    width: 100%;
+    outline: none;
+    border: none;
+    background: transparent;
+    color: var(--grey-9);
+    font-size: 16px;
+    vertical-align: middle;
+    font-family: font-basic;
+  }
 
-.reimu-powered
-  float: right
-  cursor: var(--cursor-default) !important
+  input[type=search]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+  }
+}
 
-  img
-    display: inline-block
-    height: 18px
-    vertical-align: middle
+.reimu-powered {
+  float: right;
+  cursor: var(--cursor-default) !important;
 
-.reimu-results
-  position: relative
-  overflow: auto
-  padding: 15px 30px
-  box-sizing: border-box
-  max-height: calc(100% - 50px)
+  img {
+    display: inline-block;
+    height: 18px;
+    vertical-align: middle;
+  }
+}
 
-  @media mq-normal
-    min-height: 300px
+.reimu-results {
+  position: relative;
+  overflow: auto;
+  padding: 16px 32px;
+  box-sizing: border-box;
 
-  hr
-    margin: 10px 0
+  hr {
+    margin: 16px 0 8px 0;
+    border: none;
+    height: 1px;
+    background: var(--grey-9);
+  }
+}
 
-  em
-    font-weight: bold
-    margin: 0
-    padding: 0 2px
-    color: var(--red-1)
+#reimu-hits {
+  margin-top: 12px;
 
-#reimu-hits
-  margin: 10px 0 0 10px
+  mark {
+    background: var(--red-1);
+    color: #fff;
+  }
+}
 
-  mark
-    background: var(--red-1)
-    color: #fff
+.reimu-hit-item-link {
+  display: block;
+  text-decoration: none;
+  color: var(--red-2);
+  padding: 12px 0 12px 24px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 
-.reimu-hit-item-link
-  display: block
-  text-decoration: none
-  color: var(--red-2)
-  padding: 12px 0 12px 25px
-  white-space: nowrap
-  text-overflow: ellipsis
-  overflow: hidden
+  &:before {
+    content: '';
+    width: 6px;
+    height: 12px;
+    background: var(--color-h2-after);
+    display: inline-block;
+    vertical-align: middle;
+    margin: -2px 12px 0 -24px;
+    box-shadow: var(--shadow-red-6-shadow);
+    opacity: 0.5;
+    transition: 0.2s;
+  }
 
-  &:before
-    content: ""
-    width: 6px
-    height: 12px
-    background: var(--color-h2-after)
-    display: inline-block
-    vertical-align: middle
-    margin: -2px 11px 0 -25px
-    box-shadow: 0 2px 12px var(--color-red-6-shadow)
-    opacity: 0.5
-    transition: 0.2s
+  &:hover:before, &:focus:before {
+    height: 6px;
+    border-radius: 50%;
+    opacity: 1;
+  }
+}
 
-  &:hover:before
-    height: 6px
-    border-radius: 50%
-    opacity: 1
+.reimu-pagination {
+  margin: 8px auto;
+  text-align: center;
+  color: var(--grey-9);
+  overflow: hidden;
 
-.reimu-pagination
-  margin: 10px auto
-  border-radius: post-radius
-  text-align: center
-  color: var(--grey-9)
-  overflow: hidden
+  a {
+    padding: 10px 16px;
+    color: var(--grey-9);
+    text-decoration: none;
+    transition: 0.2s;
 
-  a
-    padding: 10px 15px
-    color: var(--grey-9)
-    text-decoration: none
-    transition: 0.2s
+    &:hover, &:focus {
+      background: var(--red-2);
+      box-shadow: var(--shadow-red-6-shadow);
+      color: #fff;
+    }
+  }
 
-    &:hover
-      background: var(--red-2)
-      box-shadow: 0 0 10px var(--color-red-6-shadow)
-      color: #fff
+  .pagination-item {
+    display: inline-block;
+  }
 
-  .pagination-item
-    display: inline-block
+  .page-number {
+    display: inline-block;
+    border-radius: tag-radius;
+    margin: 6px;
+  }
 
-  .page-number
-    display: inline-block
-    border-radius: post-radius
-    margin: 5px
+  .current {
+    .page-number {
+      color: #fff;
+      background: var(--red-1);
+      font-weight: bold;
+      box-shadow: var(--shadow-red-6-shadow);
+    }
+  }
 
-  .current
-    .page-number
-      color: #fff
-      background: var(--red-1)
-      font-weight: bold
-      box-shadow: 0 0 10px var(--color-red-6-shadow)
+  .disabled-item {
+    display: none;
+  }
+}
 
-  .disabled-item
-    display: none
+.reimu-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.5;
+}
 
-
-.reimu-bg
-  position: absolute
-  right: 0
-  bottom: 0
-  z-index: -1
-  opacity: .5
-
-#reimu-hits-empty
-  overflow: hidden
-  text-overflow: ellipsis
-  white-space: nowrap
+#reimu-hits-empty {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

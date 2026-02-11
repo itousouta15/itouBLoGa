@@ -28,17 +28,21 @@ var scrollIntoViewAndWait = (element) => {
 
 // anchor
 _$$(
-  ".article-entry h1>a, .article-entry h2>a, .article-entry h3>a, .article-entry h4>a, .article-entry h5>a, .article-entry h6>a"
+  ".article-entry h1>a:first-of-type, .article-entry h2>a:first-of-type, .article-entry h3>a:first-of-type, .article-entry h4>a:first-of-type, .article-entry h5>a:first-of-type, .article-entry h6>a:first-of-type"
 ).forEach((element) => {
   if (window.REIMU_CONFIG.icon_font) {
     // iconfont
     element.innerHTML = window.REIMU_CONFIG.anchor_icon
       ? `&#x${window.REIMU_CONFIG.anchor_icon};`
+      : window.REIMU_CONFIG.anchor_icon === false
+      ? ""
       : "&#xe635;";
   } else {
     // fontawesome
     element.innerHTML = window.REIMU_CONFIG.anchor_icon
       ? `&#x${window.REIMU_CONFIG.anchor_icon};`
+      : window.REIMU_CONFIG.anchor_icon === false
+      ? ""
       : "&#xf292;";
   }
 });
@@ -71,8 +75,32 @@ _$$(".article-entry img").forEach((element) => {
   element.parentNode.removeChild(element);
   a.appendChild(element);
 });
-window.lightboxStatus = "ready";
-window.dispatchEvent(new Event("lightbox:ready"));
+
+// table wrap
+_$$(".article-entry table").forEach((element) => {
+  if (element.closest("figure.highlight")) return;
+  const wrapper = document.createElement("div");
+  wrapper.classList.add("table-wrapper");
+  element.parentNode?.insertBefore(wrapper, element);
+  element.parentNode?.removeChild(element);
+  wrapper.appendChild(element);
+});
+
+// wrap details content for old @reimujs/hexo-renderer-markdown-it-plus
+_$$(".article-entry details.custom-block").forEach((element) => {
+  if (element.querySelector(".detail-content")) return;
+  const summary = element.querySelector("summary");
+  if (!summary) return;
+  const detailContent = document.createElement("div");
+  detailContent.classList.add("detail-content");
+
+  const range = document.createRange();
+  range.setStartAfter(summary);
+  range.setEndAfter(element.lastChild);
+  detailContent.appendChild(range.extractContents());
+
+  element.appendChild(detailContent);
+});
 
 // Mobile nav
 var isMobileNavAnim = false;
@@ -258,7 +286,7 @@ function tocInit() {
 
     let parent = target.parentNode;
 
-    while (!parent.matches(".sidebar-toc")) {
+    while (!parent.matches(".sidebar-toc-sidebar")) {
       if (parent.matches("li")) {
         parent.classList.add("active");
         const t = document.getElementById(
@@ -331,13 +359,34 @@ window
   });
 tocInit();
 
-_$(".sponsor-button-wrapper")
+_$(".sponsor-button")
   ?.off("click")
   .on("click", () => {
-    _$(".sponsor-button-wrapper")?.classList.toggle("active");
+    _$(".sponsor-button")?.classList.toggle("active");
     _$(".sponsor-tip")?.classList.toggle("active");
     _$(".sponsor-qr")?.classList.toggle("active");
   });
+
+var shareWeixinHandler;
+if (shareWeixinHandler) {
+  document.off("click", shareWeixinHandler);
+}
+shareWeixinHandler = (e) => {
+  if (e.target.closest(".share-icon.icon-weixin")) return;
+  const sw = _$("#share-weixin");
+  if (sw && sw.classList.contains("active")) {
+    sw.classList.remove("active");
+    sw.addEventListener(
+      "transitionend",
+      function handler() {
+        sw.style.display = "none";
+        sw.removeEventListener("transitionend", handler);
+      },
+      { once: true }
+    );
+  }
+};
+document.on("click", shareWeixinHandler);
 
 _$(".share-icon.icon-weixin")
   ?.off("click")
@@ -353,7 +402,23 @@ _$(".share-icon.icon-weixin")
       shareWeixin.style.left = "-138px";
     }
     if (e.target === this) {
-      shareWeixin.classList.toggle("active");
+      const el = shareWeixin;
+      if (!el) return;
+      if (!el.classList.contains("active")) {
+        el.style.display = "block";
+        requestAnimationFrame(() => {
+          el.classList.add("active");
+        });
+      } else {
+        el.classList.remove("active");
+        const onEnd = (ev) => {
+          if (ev.propertyName === "opacity") {
+            el.style.display = "none";
+            el.removeEventListener("transitionend", onEnd);
+          }
+        };
+        el.addEventListener("transitionend", onEnd);
+      }
     }
     // if contains img return
     if (_$(".share-weixin-canvas").children.length) {
@@ -371,30 +436,18 @@ _$(".share-icon.icon-weixin")
         return;
       }
       _$("#share-weixin-qr").src = dataUrl;
-      htmlToImage
-        .toPng(_$(".share-weixin-dom"), {
-          skipFonts: true,
-          preferredFontFormat: "woff2",
-          backgroundColor: "white",
-        })
-        .then((dataUrl) => {
-          const img = new Image();
-          img.src = dataUrl;
+      snapdom
+        .toPng(_$(".share-weixin-dom"))
+        .then((img) => {
           _$(".share-weixin-canvas").appendChild(img);
         })
         .catch(() => {
           // we assume that the error is caused by the browser's security policy
           // so we will remove the banner and try again
           _$("#share-weixin-banner").remove();
-          htmlToImage
-            .toPng(_$(".share-weixin-dom"), {
-              skipFonts: true,
-              preferredFontFormat: "woff2",
-              backgroundColor: "white",
-            })
-            .then((dataUrl) => {
-              const img = new Image();
-              img.src = dataUrl;
+          snapdom
+            .toPng(_$(".share-weixin-dom"))
+            .then((img) => {
               _$(".share-weixin-canvas").appendChild(img);
             })
             .catch(() => {
@@ -403,7 +456,6 @@ _$(".share-icon.icon-weixin")
         });
     });
   });
-
 
 var imgElement = _$("#header > img");
 if (imgElement.src || imgElement.style.background) {

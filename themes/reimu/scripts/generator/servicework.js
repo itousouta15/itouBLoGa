@@ -9,7 +9,7 @@ hexo.extend.generator.register("ServiceWorker", (locals) => {
   let content = fs.readFileSync(filePath);
 
   const preCache = [
-    url_for.call(hexo, "/images/taichi.svg"),
+    url_for.call(hexo, "/images/taichi.png"),
     url_for.call(hexo, hexo.theme.config.banner),
     url_for.call(hexo, "/css/loader.css"),
     url_for.call(hexo, "/css/style.css"),

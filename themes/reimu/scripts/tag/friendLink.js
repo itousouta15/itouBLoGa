@@ -2,7 +2,7 @@
  * - name: D-Sketon
  *   url: https://d-sketon.top/
  *   desc: 东方音mader
- *   image: https://d-sketon.top/img/icon/icon.png
+ *   image: https://d-sketon.top/images/icon/icon.png
  */
 const fs = require("fs");
 const path = require("path");
@@ -10,11 +10,9 @@ const yaml = require("js-yaml");
 
 const template = ({ name, url, desc, image }) => {
   return `<div class="friend-item-wrap">
-    <a href="${url}" rel="noopener external nofollow noreferrer" target="_blank"></a>
+    <a href="${url}" rel="noopener nofollow noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
-      <div class="friend-icon">
-          <img data-src="${image}" data-sizes="auto" alt="${name}" class="lazyload">
-      </div>
+      <img class="no-lightbox" src="${image}" alt="${name}">
     </div>
     <div class="friend-info-wrap">
       <div class="friend-name">
@@ -49,6 +47,9 @@ const insertHtml = (load) => {
   return content;
 };
 
+/**
+ * {% friendsLink filePath %}
+ */
 hexo.extend.tag.register("friendsLink", (args) => {
   return loadFile(args[0]);
 });
