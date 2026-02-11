@@ -1,5 +1,5 @@
 ---
-title: Zerojudge題解
+title: Zerojudge 
 cover: /images/ZJ.webp
 date: 2025-07-11 12:00:00
 tags:
@@ -7,7 +7,7 @@ tags:
 category: program
 urlname: Zerojudge
 ---
-一個放ZJ題解的地方
+just....Zerojudge
 <!-- more -->
 ## Easy
 ### a001.哈囉
