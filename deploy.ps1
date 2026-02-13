@@ -9,7 +9,7 @@ Write-Host "========================================" -ForegroundColor Cyan
 # Check if on source branch
 $currentBranch = git rev-parse --abbrev-ref HEAD
 if ($currentBranch -ne "source") {
-    Write-Host "❌ Error: Currently on $currentBranch branch. Must be on source branch to deploy!" -ForegroundColor Red
+    Write-Host "Error: Currently on $currentBranch branch. Must be on source branch to deploy!" -ForegroundColor Red
     exit 1
 }
 
@@ -22,7 +22,7 @@ Write-Host "Step 1️: Committing source code to source branch..." -ForegroundCo
 if (git status --porcelain) {
     Write-Host "Changes detected, committing..." -ForegroundColor Gray
     
-    $message = Read-Host "📝 Enter commit message (default: 'Update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')')"
+    $message = Read-Host "Enter commit message (default: 'Update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')')"
     if ([string]::IsNullOrWhiteSpace($message)) {
         $message = "Update: $(Get-Date -Format 'yyyy-MM-dd HH:mm')"
     }
@@ -46,13 +46,13 @@ Write-Host "Step 2️: Generating static website..." -ForegroundColor Yellow
 
 hexo clean
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ hexo clean failed" -ForegroundColor Red
+    Write-Host "hexo clean failed" -ForegroundColor Red
     exit 1
 }
 
 hexo generate
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ hexo generate failed" -ForegroundColor Red
+    Write-Host "hexo generate failed" -ForegroundColor Red
     exit 1
 }
 
@@ -64,7 +64,7 @@ Write-Host "Step 3️: Switching to main branch..." -ForegroundColor Yellow
 
 git checkout main
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "❌ Failed to switch to main branch" -ForegroundColor Red
+    Write-Host "Failed to switch to main branch" -ForegroundColor Red
     exit 1
 }
 
@@ -97,20 +97,20 @@ git push origin main --force
 if ($LASTEXITCODE -eq 0) {
     Write-Host "✓ Pushed to main branch (GitHub Pages)" -ForegroundColor Green
 } else {
-    Write-Host "❌ Push failed" -ForegroundColor Red
+    Write-Host "Push failed" -ForegroundColor Red
     exit 1
 }
 
 # Step 6: Return to source branch
 Write-Host ""
-Write-Host "Step 6️⃣  : Returning to source branch..." -ForegroundColor Yellow
+Write-Host "Step 6️: Returning to source branch..." -ForegroundColor Yellow
 
 git checkout source
 Write-Host "✓ Returned to source branch" -ForegroundColor Green
 
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
-Write-Host "✅ Deployment Complete!" -ForegroundColor Cyan
+Write-Host "Deployment Complete!" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 Write-Host "Website should update in a few seconds at:" -ForegroundColor Gray
