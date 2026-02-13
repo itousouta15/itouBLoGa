@@ -1,0 +1,11 @@
+import moment from 'moment-timezone';
+declare function isMatch(path: string, patterns?: string | string[]): boolean;
+declare function isTmpFile(path: string): boolean;
+declare function isHiddenFile(path: string): boolean;
+declare function isExcludedFile(path: string, config: any): boolean;
+export { isTmpFile };
+export { isHiddenFile };
+export { isExcludedFile };
+export declare function toDate(date?: string | number | Date | moment.Moment): Date | undefined | moment.Moment;
+export declare function adjustDateForTimezone(date: Date | moment.Moment, timezone: string): Date;
+export { isMatch };

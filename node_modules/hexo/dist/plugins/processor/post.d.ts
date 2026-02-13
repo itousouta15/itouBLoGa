@@ -1,0 +1,9 @@
+import Promise from 'bluebird';
+import { Pattern } from 'hexo-util';
+import type { _File } from '../../box';
+import type Hexo from '../../hexo';
+declare const _default: (ctx: Hexo) => {
+    pattern: Pattern;
+    process: (file: _File) => Promise<any>;
+};
+export = _default;
