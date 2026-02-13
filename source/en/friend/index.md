@@ -4,7 +4,7 @@ comments: true
 ---
 
 ## About This Site
-- 站名： 伊藤蒼太's blog
+- 站名： itouBLoGa
 - 站長： 伊藤蒼太
 - 網址： https://itousouta15.tw
 
@@ -168,7 +168,7 @@ Leave a comment on this page with the following format:
     <a href="https://ya-ya-12.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="https://cdn.discordapp.com/avatars/1124954310527164456/66d8378f5e4b614d2a4c81e99c944468.png?size=512" data-sizes="auto" alt="鴨鴨" class="lazyautosizes lazyloaded" sizes="70px" src="https://cdn.discordapp.com/avatars/1124954310527164456/66d8378f5e4b614d2a4c81e99c944468.png?size=512">
+        <img data-src="https://cdn.discordapp.com/avatars/1124954310527164456/66d8378f5e4b614d2a4c81e99c944468.png?size=512" data-sizes="auto" alt="鴨鴨" class="lazyautosizes lazyloaded" sizes="70px" src="https://ya-ya-12.github.io/image/head.png">
       </div>
     </div>
     <div class="friend-info-wrap">
@@ -216,7 +216,7 @@ Leave a comment on this page with the following format:
     <a href="https://justin0711.com/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="https://justin0711.com/static/images/profile.jpg" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://justin0711.com/static/images/profile.jpg">
+        <img data-src="https://justin0711.com/static/images/profile.jpg" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://justin0711.com/static/img/profile.jpg">
       </div>
     </div>
     <div class="friend-info-wrap">
