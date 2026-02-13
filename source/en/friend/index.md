@@ -160,18 +160,6 @@ Leave a comment on this page with the following format:
       </div>
     </div>
     <div class="friend-info-wrap">
-      <div class="friend-name">伊藤有梄</div>
-      <div class="friend-desc">Competitive programming beginner</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://www.instagram.com/littleonechung/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://avatars.githubusercontent.com/u/67142736?v=4" data-sizes="auto" alt="小一" class="lazyautosizes lazyloaded" sizes="70px" src="https://avatars.githubusercontent.com/u/67142736?v=4">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
       <div class="friend-name">小一</div>
       <div class="friend-desc">A human who enjoys game development</div>
     </div>
@@ -247,5 +235,18 @@ Leave a comment on this page with the following format:
       <div class="friend-name">jackoha</div>
       <div class="friend-desc">Touhou enthusiast</div>
     </div>
+  </div>
+  <div class="friend-item-wrap">
+    <a href="https://casperlin100w.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://casperlin100w.github.io/image/sidebar/avatar.jpg" data-sizes="auto" alt="凡凡FanFan" class="lazyautosizes lazyloaded" sizes="70px" src="https://casperlin100w.github.io/image/sidebar/avatar.jpg">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">凡凡FanFan</div>
+      <div class="friend-desc">可愛小男娘</div>
+    </div>
+  </div>
 </div>
 </div>

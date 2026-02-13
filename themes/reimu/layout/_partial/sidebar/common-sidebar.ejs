@@ -11,7 +11,7 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div><%= __("sidebar.post") %></div>
-    <div class="sidebar-state-number"><%= site.posts.length %></div>
+    <div class="sidebar-state-number"><%= Math.floor(site.posts.length / 2) %></div>
   </div>
   <div class="sidebar-state-category">
     <div><%= __("sidebar.category") %></div>

@@ -153,18 +153,6 @@ comments: true
     </div>
   </div>
   <div class="friend-item-wrap">
-    <a href="https://siewilly.github.io" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://cdn.discordapp.com/avatars/1340926461749629011/4fc9caf6dcc197a3137319f2885f2eee.png?size=512" data-sizes="auto" alt="伊藤有梄" class="lazyautosizes lazyloaded" sizes="70px" src="https://cdn.discordapp.com/avatars/1340926461749629011/4fc9caf6dcc197a3137319f2885f2eee.png?size=512">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">伊藤有梄</div>
-      <div class="friend-desc">競程新手</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
     <a href="https://www.instagram.com/littleonechung/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
@@ -246,6 +234,18 @@ comments: true
     <div class="friend-info-wrap">
       <div class="friend-name">jackoha</div>
       <div class="friend-desc">東方廚</div>
+    </div>
+  </div>
+  <div class="friend-item-wrap">
+    <a href="https://casperlin100w.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://casperlin100w.github.io/image/sidebar/avatar.jpg" data-sizes="auto" alt="凡凡FanFan" class="lazyautosizes lazyloaded" sizes="70px" src="https://casperlin100w.github.io/image/sidebar/avatar.jpg">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">凡凡FanFan</div>
+      <div class="friend-desc">可愛小男娘</div>
     </div>
   </div>
 </div>

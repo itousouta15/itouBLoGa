@@ -54,63 +54,33 @@ a img:hover {
 
 ---
 
-# `cout << "hello world!";`
-## 👋 Hi, I'm Itou Souta!
+# `cout<<"hello! world";`
+## Hi, I'm Itou Souta!
 > *“The world goes quiet when I write code.”*  
 
 I'm a **high school student from Taiwan** passionate about **C++**, **web development**, and **cybersecurity**.  
 Here, I share my projects, experiments, and learning notes. For me, every line of code is a step toward understanding both the world — and myself — a little better.  
 
-## 🌟 About Me
-- 🏫 High school student (Grade 11) from Taiwan  
-- 🌏 Multilingual: Mandarin (native), English (fluent reading), Japanese (reading)  
-- 🎮 Enjoys challenging algorithmic & geometry problems, especially those with creative or visual twists  
-- 💡 Fascinated by the intersection of **code**, **security**, and **creativity**  
-- 📚 Passionate lifelong learner, always exploring new technical horizons  
+
+## About Me
+- Enjoys challenging algorithmic & geometry problems, especially those with creative or visual twists  
+- Fascinated by the intersection of **code**, **security**, and **creativity**  
+- Passionate lifelong learner, always exploring new technical horizons  
 
 
-## 🎓 Experiences:
+## Tech Toolbox
 
-### 🏆 Competitions:
-- **Scrapyard Taiwan Hackathon — 9th Place**
-- **APCS (first attempt was pretty miserable 🙃)**
-- **AIS3 Pre-exam 2025 — Rank 67**
+[![My Skills](https://skillicons.dev/icons?i=c,cpp,cs,py,html,css,js,ts,git,github,vscode,docker,unity,godot,linux)](https://skillicons.dev)
 
-### 📚 Courses:
-- **AIS3 2025: Software, Web, and ToI Security - 1**
-- **Feng Chia University: Smart Chip and Sensor Applications**
-- **Feng Chia University: Simple AI Control and Design**
-- **SCAICT 2025: "Keep Going Despite Difficulties"**
+## Communities & Clubs
+- SCAICT — (https://scaict.org/)
+- SCINT — (https://scint.org/)
+- THJCC — (IG: @thjcc.tw)
+- DLHIT — (IG: @dlhit_)
 
-### 🌐 Communities:
-- **5th SCAICT 中部高中電資社團聯合會議 — Information Division Leader and Vice President"**
-- **2st DLHIT 大里高中資訊校隊 — Teaching**
-- **3rd THJCC CTF — Network Administration**
-- **2nd SCINT 北臺灣學生資訊社群 — Media & Design**
-- **1st std_dllm — Media & Design**
+## Connect
+- Blog: [GitHub Pages](https://itousouta15.tw) (My technical notes & learning journey)  
+- Instagram: [itou.souta15](https://www.instagram.com/itou.souta15) (Life & creativity)  
+- Threads: [@itou.souta15](https://www.threads.net/@itou.souta15)  
+- Discord https://discord.gg/WD6gVTRQWA
 
-
-## 🗓️ My Coding Roadmap
-- **2024**: Start C++, join first CTF
-- **2025**: Web security, launch blog, hackathon awards
-
-## 🤝 Communities & Clubs
-- [SCAICT](https://scaict.org/)
-- [SCINT](https://scint.org/)
-- [THJCC CTF](https://www.instagram.com/thjcc.tw/)
-- [std_dllm](https://www.instagram.com/std_dllm_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
-- [DLHIT](https://www.instagram.com/dlhit_?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==)
-
-## 🎯 Goals for 2025
-- 🏆 Compete in more **programming contests** and **CTFs**  
-- 📖 Master advanced **C++ concepts** & design patterns  
-- 🌍 Launch a **trilingual tech blog** (Mandarin, English, Japanese)  
-- 🛡️ Contribute to **open-source cybersecurity tools**  
-- 🤝 Collaborate with like-minded developers and communities  
-
-## 🤗 Open to Collaborate On
-- Security research (CTF/Web/AI X Security)
-- Open source tools
-- Joint blog or tech talks (Mandarin/English)
-
-⭐ If you find my work interesting, feel free to **star my repos**, open an issue, or DM me!

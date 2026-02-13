@@ -17,7 +17,7 @@ Write-Host "✓ Confirmed on source branch" -ForegroundColor Green
 
 # Step 1: Commit source code to source branch
 Write-Host ""
-Write-Host "Step 1️⃣  : Committing source code to source branch..." -ForegroundColor Yellow
+Write-Host "Step 1️: Committing source code to source branch..." -ForegroundColor Yellow
 
 if (git status --porcelain) {
     Write-Host "Changes detected, committing..." -ForegroundColor Gray
@@ -34,7 +34,7 @@ if (git status --porcelain) {
     if ($LASTEXITCODE -eq 0) {
         Write-Host "✓ Source code committed to source branch" -ForegroundColor Green
     } else {
-        Write-Host "⚠️  Issue during commit, but continuing with generation..." -ForegroundColor Yellow
+        Write-Host "Issue during commit, but continuing with generation..." -ForegroundColor Yellow
     }
 } else {
     Write-Host "✓ No changes to commit" -ForegroundColor Green
@@ -42,7 +42,7 @@ if (git status --porcelain) {
 
 # Step 2: Generate static website
 Write-Host ""
-Write-Host "Step 2️⃣  : Generating static website..." -ForegroundColor Yellow
+Write-Host "Step 2️: Generating static website..." -ForegroundColor Yellow
 
 hexo clean
 if ($LASTEXITCODE -ne 0) {
@@ -60,7 +60,7 @@ Write-Host "✓ Static website generated" -ForegroundColor Green
 
 # Step 3: Switch to main branch
 Write-Host ""
-Write-Host "Step 3️⃣  : Switching to main branch..." -ForegroundColor Yellow
+Write-Host "Step 3️: Switching to main branch..." -ForegroundColor Yellow
 
 git checkout main
 if ($LASTEXITCODE -ne 0) {
@@ -72,7 +72,7 @@ Write-Host "✓ Switched to main branch" -ForegroundColor Green
 
 # Step 4: Clean and copy public directory content
 Write-Host ""
-Write-Host "Step 4️⃣  : Copying public directory content..." -ForegroundColor Yellow
+Write-Host "Step 4️: Copying public directory content..." -ForegroundColor Yellow
 
 # Remove tracked files from git index
 git rm -r --cached * -q 2>$null
@@ -87,7 +87,7 @@ Write-Host "✓ Public directory contents copied" -ForegroundColor Green
 
 # Step 5: Commit and push to main branch
 Write-Host ""
-Write-Host "Step 5️⃣  : Committing and pushing to main branch..." -ForegroundColor Yellow
+Write-Host "Step 5️: Committing and pushing to main branch..." -ForegroundColor Yellow
 
 git add -A
 $deployMessage = "Deploy: Update $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"
