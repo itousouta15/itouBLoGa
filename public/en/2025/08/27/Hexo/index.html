@@ -1,0 +1,1007 @@
+  <!DOCTYPE html>
+  <html lang="en"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    Using GitHub Pages + Hexo to Set Up a Personal Blog | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="In today’s information-overloaded era, the term “blog” might seem outdated, but it remains a sanctuary for developers, researchers, and creators. Unlike the fragmented information found on social medi">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using GitHub Pages + Hexo to Set Up a Personal Blog">
+<meta property="og:url" content="https://blog.itousouta15.tw/en/2025/08/27/Hexo/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="In today’s information-overloaded era, the term “blog” might seem outdated, but it remains a sanctuary for developers, researchers, and creators. Unlike the fragmented information found on social medi">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/hexo.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/themes.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/run.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/deploy.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/github.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/page.webp">
+<meta property="article:published_time" content="2025-08-27T06:32:32.000Z">
+<meta property="article:modified_time" content="2026-02-13T12:53:24.040Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.itousouta15.tw/images/Hexo/hexo.webp">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>New version found</h1>
+    <p>The website seems to have new content, do you want to update?</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">Update</button>
+      <button id="notification-close-btn">Cancel</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/en/">Home</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/en/about">About</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/en/friend">Friend</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">English</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" >繁體中文</li>
+          
+            <li data-value="en" class="selected">English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2025/08/27/Hexo/';
+            
+              langMap['en'] = '/en/2025/08/27/Hexo/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/Hexo/hexo_github.webp" alt="Using GitHub Pages + Hexo to Set Up a Personal Blog">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">Using GitHub Pages + Hexo to Set Up a Personal Blog</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-up-the-environment"><span class="toc-number">1.</span> <span class="toc-text"> Setting Up the Environment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#installing-nodejs"><span class="toc-number">1.1.</span> <span class="toc-text"> Installing Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-implementation"><span class="toc-number">2.</span> <span class="toc-text"> Hexo Implementation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#file-introduction"><span class="toc-number">2.1.</span> <span class="toc-text"> File Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#packagejson"><span class="toc-number">2.1.1.</span> <span class="toc-text"> package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text"> scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text"> source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text"> theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#_configyml"><span class="toc-number">2.1.5.</span> <span class="toc-text"> _config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#using-a-template"><span class="toc-number">2.2.</span> <span class="toc-text"> Using a Template</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deploying-to-github-pages"><span class="toc-number">3.</span> <span class="toc-text"> Deploying to GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key-setup-steps"><span class="toc-number">3.1.</span> <span class="toc-text"> SSH Key Setup Steps</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#create-ssh-directory"><span class="toc-number">3.1.1.</span> <span class="toc-text"> Create .ssh directory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#generate-ssh-key"><span class="toc-number">3.1.2.</span> <span class="toc-text"> Generate SSH key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-public-key-to-github"><span class="toc-number">3.1.3.</span> <span class="toc-text"> Add public key to GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#test-ssh-connection"><span class="toc-number">3.1.4.</span> <span class="toc-text"> Test SSH connection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#back-to-deployment"><span class="toc-number">3.1.5.</span> <span class="toc-text"> Back to deployment</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#common-troubleshooting"><span class="toc-number">3.2.</span> <span class="toc-text"> Common Troubleshooting</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh-key-or-ssh-directory-issues"><span class="toc-number">3.2.1.</span> <span class="toc-text"> SSH Key or .ssh directory issues</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-repository-initialization-error"><span class="toc-number">3.2.2.</span> <span class="toc-text"> Git repository initialization error</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#submodule-warning"><span class="toc-number">3.2.3.</span> <span class="toc-text"> Submodule warning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lfcrlf-line-ending-warnings"><span class="toc-number">3.2.4.</span> <span class="toc-text"> LF&#x2F;CRLF line-ending warnings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#successful-deployment-message"><span class="toc-number">3.2.5.</span> <span class="toc-text"> Successful deployment message</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#daily-usage-and-maintenance"><span class="toc-number">3.3.</span> <span class="toc-text"> Daily Usage and Maintenance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advanced-optimization"><span class="toc-number">3.4.</span> <span class="toc-text"> Advanced Optimization</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-hexoen" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-08-27T06:32:32.000Z" itemprop="datePublished">2025-08-27</time>
+    <time style="display: none;" id="post-update-time">2026-02-13</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <p>In today’s information-overloaded era, the term <strong>“blog”</strong> might seem outdated, but it remains a sanctuary for developers, researchers, and creators. Unlike the fragmented information found on social media platforms, blogs are better suited for systematic knowledge organization and technical sharing, allowing content to be searchable, preserved, and continuously read. Especially for learners in programming or cybersecurity, owning a personal technical blog not only documents growth but also helps build a personal brand for the future.</p>
+<p>This article will guide you step by step, starting from zero (on a Windows system), to set up your own blog using <strong>Hexo</strong> (a fast and concise static blog framework) combined with <strong>GitHub Pages</strong> (GitHub’s free static website hosting service).</p>
+<h2 id="setting-up-the-environment"><a class="markdownIt-Anchor" href="#setting-up-the-environment"></a> Setting Up the Environment</h2>
+<p>Before we start, ensure your computer is equipped with the following:</p>
+<ul>
+<li><strong>Node.js</strong> (LTS version recommended; Hexo requires Node.js 14+)</li>
+<li><strong>npm</strong> (comes bundled with Node.js)</li>
+<li><strong>Git</strong> (needed for GitHub version control and deployment)</li>
+<li><strong>GitHub account</strong> (to store your project and host your Pages site)</li>
+</ul>
+<h3 id="installing-nodejs"><a class="markdownIt-Anchor" href="#installing-nodejs"></a> Installing Node.js</h3>
+<p>Go to the official website:<br />
+<a target="_blank" rel="noopener" href="https://nodejs.org/zh-tw/download">https://nodejs.org/zh-tw/download</a><br />
+<img src="/images/Hexo/hexo.webp" alt="hexo" /><br />
+If you already have Docker, copy the code above into your terminal; otherwise, download the MSI file below and run it.<br />
+It’s recommended to always install the latest (at least LTS) versions of both Hexo and Node.js to receive the best security patches and performance updates.</p>
+<h2 id="hexo-implementation"><a class="markdownIt-Anchor" href="#hexo-implementation"></a> Hexo Implementation</h2>
+<ol>
+<li>Open a terminal and run:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br></pre></td></tr></table></figure>
+<p>This will create a folder named <code>my-blog</code> in your current directory, containing the basic Hexo project structure and files.</p>
+<ol start="2">
+<li>Move into this folder:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>Install Hexo dependencies:</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>Your Hexo project directory is now initialized.</p>
+<h3 id="file-introduction"><a class="markdownIt-Anchor" href="#file-introduction"></a> File Introduction</h3>
+<p>Here are some important files and folders worth noting:</p>
+<h4 id="packagejson"><a class="markdownIt-Anchor" href="#packagejson"></a> package.json</h4>
+<p>Hexo uses template engines like <strong>ejs</strong> to render content into static HTML. You’ll see dependencies such as ejs, stylus, and markdown renderers in <code>package.json</code>:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-theme-landscape&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.0.3&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="scaffolds"><a class="markdownIt-Anchor" href="#scaffolds"></a> scaffolds/</h4>
+<p>This folder contains three files: <strong><a target="_blank" rel="noopener" href="http://draft.md">draft.md</a></strong>, <strong><a target="_blank" rel="noopener" href="http://page.md">page.md</a></strong>, <strong><a target="_blank" rel="noopener" href="http://post.md">post.md</a></strong>.</p>
+<p>When you run <code>$ hexo new &lt;type&gt; &lt;name&gt;</code>, Hexo uses these templates to create a new draft, page, or post.</p>
+<h4 id="source"><a class="markdownIt-Anchor" href="#source"></a> source/</h4>
+<p>This folder stores all the website resources. Directories starting with an underscore are ignored by Hexo, except <code>_posts</code>, where your articles are stored. Static files (Markdown, HTML, etc.) are compiled into the <code>public</code> folder during the build.</p>
+<h4 id="theme"><a class="markdownIt-Anchor" href="#theme"></a> theme/</h4>
+<p>This folder stores theme files. The default theme is <strong>landscape</strong>, but you can change themes by downloading them (e.g., from Hexo’s official theme repository) and placing them under <code>themes/</code>.</p>
+<p><em>(Choose themes that are actively maintained for better stability.)</em></p>
+<h4 id="_configyml"><a class="markdownIt-Anchor" href="#_configyml"></a> _config.yml</h4>
+<p>This is the main configuration file. Here you can adjust the entire site’s settings and behavior.</p>
+<h3 id="using-a-template"><a class="markdownIt-Anchor" href="#using-a-template"></a> Using a Template</h3>
+<p>Next, choose a Hexo theme (e.g., NexT, Butterfly, Reimu). Themes are usually hosted on GitHub. Download or clone the theme into the <code>themes</code> directory of your Hexo project.</p>
+<blockquote>
+<p>If you prefer a quicker setup:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/reimu-template</span><br><span class="line"><span class="built_in">cd</span> reimu-template</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p>This repository already includes Hexo, <strong>hexo-theme-reimu</strong>, and other essential plugins. Simply clone, install, and modify the configurations to get a basic blog up and running.<br />
+You can then skip directly to <a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages">Deploying to GitHub Pages</a>.</p>
+</blockquote>
+<p>For example, if using the <strong>Reimu</strong> theme:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
+<p>Rename it to &quot;reimu&quot;:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>⚠️ <strong>Note! If you encounter errors while renaming the theme folder, such as:</strong></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot <span class="built_in">remove</span> C:\Users\<span class="built_in">..</span>.\.git item: You <span class="keyword">do</span> <span class="keyword">not</span> have sufficient permissions.</span><br></pre></td></tr></table></figure>
+<p>Try this instead:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">robocopy .\hexo-theme-reimu .\reimu /E</span><br><span class="line">Remove-Item .\hexo-theme-reimu -Recurse -Force</span><br></pre></td></tr></table></figure>
+<p>This copies the theme folder and forcefully deletes the original, often resolving Windows permission or locked file issues.</p>
+</blockquote>
+<p><img src="/images/Hexo/themes.webp" alt="reimu" /></p>
+<p>Then edit <code>_config.yml</code>:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">reimu</span></span><br></pre></td></tr></table></figure>
+<hr />
+<p>Complete example flow:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName reimu</span><br><span class="line"></span><br><span class="line"><span class="comment"># Edit _config.yml to set theme: reimu</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p>Open your browser to <code>http://localhost:4000</code> to preview the blog.<br />
+<img src="/images/Hexo/run.webp" alt="run" /></p>
+<h2 id="deploying-to-github-pages"><a class="markdownIt-Anchor" href="#deploying-to-github-pages"></a> Deploying to GitHub Pages</h2>
+<p>Before deploying, complete SSH key setup to avoid permission issues:</p>
+<h3 id="ssh-key-setup-steps"><a class="markdownIt-Anchor" href="#ssh-key-setup-steps"></a> SSH Key Setup Steps</h3>
+<h4 id="create-ssh-directory"><a class="markdownIt-Anchor" href="#create-ssh-directory"></a> <strong>Create <code>.ssh</code> directory</strong></h4>
+<p>In PowerShell:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure>
+<p>(Skip if it already exists.)</p>
+<h4 id="generate-ssh-key"><a class="markdownIt-Anchor" href="#generate-ssh-key"></a> <strong>Generate SSH key</strong></h4>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Press Enter to accept defaults.</p>
+<h4 id="add-public-key-to-github"><a class="markdownIt-Anchor" href="#add-public-key-to-github"></a> <strong>Add public key to GitHub</strong></h4>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
+<p>Copy the output and go to <strong>GitHub → Settings → SSH and GPG keys → New SSH key</strong>, paste it, and save.<br />
+Link: <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+<h4 id="test-ssh-connection"><a class="markdownIt-Anchor" href="#test-ssh-connection"></a> <strong>Test SSH connection</strong></h4>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+<p>If you see:</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;username&gt;! You<span class="symbol">&#x27;ve</span> successfully authenticated</span><br></pre></td></tr></table></figure>
+<p>It’s working.</p>
+<h4 id="back-to-deployment"><a class="markdownIt-Anchor" href="#back-to-deployment"></a> <strong>Back to deployment</strong></h4>
+<ul>
+<li>
+<p>Create a GitHub repository, typically named <code>username.github.io</code> (e.g., <code>itousouta15.github.io</code>).<br />
+<img src="/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp" alt="" /></p>
+</li>
+<li>
+<p>Install the Hexo deployment plugin:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Initialize Git:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Edit <code>_config.yml</code> and add:</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:itousouta15/&lt;your-repo&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/Hexo/deploy.webp" alt="deploy" /></p>
+<ul>
+<li>
+<p>Generate and deploy:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Ensure GitHub Pages is enabled and visit <code>https://yourusername.github.io</code>.<br />
+<img src="/images/Hexo/github.webp" alt="github" /></p>
+</li>
+</ul>
+<h3 id="common-troubleshooting"><a class="markdownIt-Anchor" href="#common-troubleshooting"></a> Common Troubleshooting</h3>
+<blockquote>
+<h4 id="ssh-key-or-ssh-directory-issues"><a class="markdownIt-Anchor" href="#ssh-key-or-ssh-directory-issues"></a> SSH Key or <code>.ssh</code> directory issues</h4>
+<p><strong>Error:</strong></p>
+<ul>
+<li><code>git@github.com: Permission denied (publickey)</code></li>
+<li><code>Could not create directory '/c/Users/\xxx/.ssh'</code><br />
+<strong>Cause:</strong><br />
+Windows username contains non-ASCII characters, causing path issues.<br />
+<strong>Fix:</strong></li>
+</ul>
+<ol>
+<li>
+<p>Manually create <code>.ssh</code>:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Generate SSH key and add to GitHub:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Configure Git to use the absolute path:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;ssh -i C:/Users/伊藤蒼太/.ssh/id_ed25519&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Test connection:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<h4 id="git-repository-initialization-error"><a class="markdownIt-Anchor" href="#git-repository-initialization-error"></a> Git repository initialization error</h4>
+<p><strong>Error:</strong><br />
+<code>fatal: Not a git repository (or any of the parent directories): .git</code><br />
+<strong>Fix:</strong><br />
+Ensure you are in the Hexo project root. If not initialized:</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:itousouta15/&lt;your<span class="literal">-repo</span>&gt;.git</span><br></pre></td></tr></table></figure>
+</blockquote>
+<blockquote>
+<h4 id="submodule-warning"><a class="markdownIt-Anchor" href="#submodule-warning"></a> Submodule warning</h4>
+<p>If <code>themes/reimu</code> is a submodule, either manage it as a submodule or remove its <code>.git</code> folder to avoid warnings.</p>
+</blockquote>
+<blockquote>
+<h4 id="lfcrlf-line-ending-warnings"><a class="markdownIt-Anchor" href="#lfcrlf-line-ending-warnings"></a> LF/CRLF line-ending warnings</h4>
+<p>Normal on Windows; safe to ignore.</p>
+</blockquote>
+<blockquote>
+<h4 id="successful-deployment-message"><a class="markdownIt-Anchor" href="#successful-deployment-message"></a> Successful deployment message</h4>
+<p>Expect output like:</p>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Enumerating</span></span> objects...</span><br><span class="line"><span class="function"><span class="title">Writing</span></span> objects...</span><br><span class="line">To github.com:itousouta15/test.github.io.git</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="daily-usage-and-maintenance"><a class="markdownIt-Anchor" href="#daily-usage-and-maintenance"></a> Daily Usage and Maintenance</h3>
+<ul>
+<li>
+<p>Use Hexo CLI to manage posts:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;Post Title&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Then generate and deploy:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>Regularly update Hexo, themes, and plugins to stay secure and functional.</p>
+</li>
+<li>
+<p>Customize the theme as needed (style, menus, comment system, etc.).</p>
+</li>
+</ul>
+<h3 id="advanced-optimization"><a class="markdownIt-Anchor" href="#advanced-optimization"></a> Advanced Optimization</h3>
+<ul>
+<li>Add a custom domain to replace the default GitHub Pages URL.</li>
+<li>Use a CDN or Cloudflare to improve global access speed and security.</li>
+<li>Enable HTTPS with SSL certificates.</li>
+<li>Integrate SEO and analytics tools.</li>
+<li>Use CI/CD tools for automated deployment.</li>
+</ul>
+<p><img src="/images/Hexo/page.webp" alt="page" /></p>
+<p>That’s it for this article! See you next time!</p>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/en/2025/08/27/Hexo/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/en/2025/08/27/Hexo/" itemprop="commentCount"></span>
+          Comments
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/en/2025/08/27/Hexo/">0</span>
+          <em class="post-meta-item-text">Readings</em>
+        </span>
+      
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/en/tags/Hexo/" rel="tag" title="Hexo">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="/images/FhCTF.png" data-sizes="auto" alt="FhCTF 11401" class="lazyload">
+        <a href="/en/2026/01/01/undefined/" aria-label="Prev: FhCTF 11401" title="Prev: FhCTF 11401"></a>
+        <div class="article-nav-caption">Prev</div>
+        <h3 class="article-nav-title">
+            FhCTF 11401
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+        <img data-src="/images/ais3/ais3.webp" data-sizes="auto" alt="AIS3 pre-exam 2025" class="lazyload">
+      <a href="/en/2025/07/11/AIS3PE/" aria-label="Next: AIS3 pre-exam 2025"  title="Next: AIS3 pre-exam 2025"></a>
+      <div class="article-nav-caption">Next</div>
+      <h3 class="article-nav-title">
+          AIS3 pre-exam 2025
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">Leave a comment</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        29k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        02:28
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#setting-up-the-environment"><span class="toc-number">1.</span> <span class="toc-text"> Setting Up the Environment</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#installing-nodejs"><span class="toc-number">1.1.</span> <span class="toc-text"> Installing Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-implementation"><span class="toc-number">2.</span> <span class="toc-text"> Hexo Implementation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#file-introduction"><span class="toc-number">2.1.</span> <span class="toc-text"> File Introduction</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#packagejson"><span class="toc-number">2.1.1.</span> <span class="toc-text"> package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text"> scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text"> source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text"> theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#_configyml"><span class="toc-number">2.1.5.</span> <span class="toc-text"> _config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#using-a-template"><span class="toc-number">2.2.</span> <span class="toc-text"> Using a Template</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#deploying-to-github-pages"><span class="toc-number">3.</span> <span class="toc-text"> Deploying to GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-key-setup-steps"><span class="toc-number">3.1.</span> <span class="toc-text"> SSH Key Setup Steps</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#create-ssh-directory"><span class="toc-number">3.1.1.</span> <span class="toc-text"> Create .ssh directory</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#generate-ssh-key"><span class="toc-number">3.1.2.</span> <span class="toc-text"> Generate SSH key</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#add-public-key-to-github"><span class="toc-number">3.1.3.</span> <span class="toc-text"> Add public key to GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#test-ssh-connection"><span class="toc-number">3.1.4.</span> <span class="toc-text"> Test SSH connection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#back-to-deployment"><span class="toc-number">3.1.5.</span> <span class="toc-text"> Back to deployment</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#common-troubleshooting"><span class="toc-number">3.2.</span> <span class="toc-text"> Common Troubleshooting</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh-key-or-ssh-directory-issues"><span class="toc-number">3.2.1.</span> <span class="toc-text"> SSH Key or .ssh directory issues</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-repository-initialization-error"><span class="toc-number">3.2.2.</span> <span class="toc-text"> Git repository initialization error</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#submodule-warning"><span class="toc-number">3.2.3.</span> <span class="toc-text"> Submodule warning</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lfcrlf-line-ending-warnings"><span class="toc-number">3.2.4.</span> <span class="toc-text"> LF&#x2F;CRLF line-ending warnings</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#successful-deployment-message"><span class="toc-number">3.2.5.</span> <span class="toc-text"> Successful deployment message</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#daily-usage-and-maintenance"><span class="toc-number">3.3.</span> <span class="toc-text"> Daily Usage and Maintenance</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#advanced-optimization"><span class="toc-number">3.4.</span> <span class="toc-text"> Advanced Optimization</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "Using GitHub Pages + Hexo to Set Up a Personal Blog",
+          url: "https://blog.itousouta15.tw/2025/08/27/Hexo/",
+          excerpt: "",
+          description: "",
+          stripContent: "In today’s information-overloaded era, the term “blog” might seem outdated, but it remains a sanctuary for developers, researchers, and creators. Unlike the fragmented information found on social media platforms, blogs are better suited for systemati",
+          date: "Wed Aug 27 2025 14:32:32 GMT+0800",
+          updated: "Fri Feb 13 2026 20:53:24 GMT+0800",
+          cover: "/images/Hexo/hexo_github.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>
