@@ -1,0 +1,957 @@
+  <!DOCTYPE html>
+  <html lang="en"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    FhCTF 11401 | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="Rank 1!!! But all I can say is we finished it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="FhCTF 11401">
+<meta property="og:url" content="https://blog.itousouta15.tw/en/2026/01/01/undefined/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="Rank 1!!! But all I can say is we finished it.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FhCTF/1.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FhCTF/2.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FhCTF/4.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FhCTF/5.webp">
+<meta property="article:published_time" content="2025-12-31T16:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-13T06:37:57.518Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="資安">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.itousouta15.tw/images/FhCTF/1.webp">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>New version found</h1>
+    <p>The website seems to have new content, do you want to update?</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">Update</button>
+      <button id="notification-close-btn">Cancel</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/en/">Home</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/en/archives">Archives</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/en/about">About</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/en/friend">Friend</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">English</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" >繁體中文</li>
+          
+            <li data-value="en" class="selected">English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2026/01/01/undefined/';
+            
+              langMap['en'] = '/en/2026/01/01/undefined/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/FhCTF.png" alt="FhCTF 11401">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">FhCTF 11401</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-number">1.</span> <span class="toc-text"> Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sanity-check"><span class="toc-number">1.1.</span> <span class="toc-text"> Sanity Check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#christmas-tree"><span class="toc-number">1.2.</span> <span class="toc-text"> Christmas Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hackers-password-recipe"><span class="toc-number">1.3.</span> <span class="toc-text"> Hacker’s Password Recipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#joke-master"><span class="toc-number">1.4.</span> <span class="toc-text"> Joke Master</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-gallery"><span class="toc-number">1.5.</span> <span class="toc-text"> Image Gallery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-gallery-revenge"><span class="toc-number">1.6.</span> <span class="toc-text"> Image Gallery Revenge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-compile"><span class="toc-number">1.7.</span> <span class="toc-text"> Python Compile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#survey"><span class="toc-number">2.</span> <span class="toc-text"> Survey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#survey-2"><span class="toc-number">2.1.</span> <span class="toc-text"> Survey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web"><span class="toc-number">3.</span> <span class="toc-text"> Web</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#internal-login"><span class="toc-number">3.1.</span> <span class="toc-text"> INTERNAL LOGIN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-robots"><span class="toc-number">3.2.</span> <span class="toc-text"> Web Robots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doors-open"><span class="toc-number">3.3.</span> <span class="toc-text"> Doors Open</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-visual-blind-spot"><span class="toc-number">3.4.</span> <span class="toc-text"> The Visual Blind Spot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#system-root-shell"><span class="toc-number">3.5.</span> <span class="toc-text"> SYSTEM ROOT SHELL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#welcome-to-cybersecurity-jungle"><span class="toc-number">3.6.</span> <span class="toc-text"> Welcome to Cybersecurity Jungle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#templating-danger"><span class="toc-number">3.7.</span> <span class="toc-text"> Templating Danger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#documents"><span class="toc-number">3.8.</span> <span class="toc-text"> Documents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-access"><span class="toc-number">3.9.</span> <span class="toc-text"> LOG ACCESS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathway-leak"><span class="toc-number">3.10.</span> <span class="toc-text"> Pathway-leak</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kid"><span class="toc-number">3.11.</span> <span class="toc-text"> KID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#something-you-put-into"><span class="toc-number">3.12.</span> <span class="toc-text"> Something You Put Into</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-number">4.</span> <span class="toc-text"> Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simple-script-reader"><span class="toc-number">4.1.</span> <span class="toc-text"> Simple Script Reader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#obf"><span class="toc-number">4.2.</span> <span class="toc-text"> OBF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-lock"><span class="toc-number">4.3.</span> <span class="toc-text"> The Lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#broken-decoder"><span class="toc-number">4.4.</span> <span class="toc-text"> Broken Decoder</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto"><span class="toc-number">5.</span> <span class="toc-text"> Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#secure-encryption"><span class="toc-number">5.1.</span> <span class="toc-text"> Secure Encryption</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#encode-by-py"><span class="toc-number">5.2.</span> <span class="toc-text"> Encode By Py 😘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des-lv1-old-captains-treasure"><span class="toc-number">5.3.</span> <span class="toc-text"> DES Lv.1 - Old Captain’s Treasure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des-lv2-treasure-revisited"><span class="toc-number">5.4.</span> <span class="toc-text"> DES Lv.2 – Treasure Revisited</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#admins-password-onion"><span class="toc-number">5.5.</span> <span class="toc-text"> Admin’s Password Onion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osint"><span class="toc-number">6.</span> <span class="toc-text"> OSINT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#art-work"><span class="toc-number">6.1.</span> <span class="toc-text"> Art Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trace-the-landmark"><span class="toc-number">6.2.</span> <span class="toc-text"> Trace the Landmark</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#island-1"><span class="toc-number">6.3.</span> <span class="toc-text"> Island 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-fh-gift"><span class="toc-number">6.4.</span> <span class="toc-text"> The FH Gift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#business-time-1"><span class="toc-number">6.5.</span> <span class="toc-text"> Business Time 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#business-time-2"><span class="toc-number">6.6.</span> <span class="toc-text"> Business Time 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lithium-exploration"><span class="toc-number">6.7.</span> <span class="toc-text"> Lithium Exploration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#srl"><span class="toc-number">6.8.</span> <span class="toc-text"> SRL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#island-2"><span class="toc-number">6.9.</span> <span class="toc-text"> Island 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beautiful-dome-1"><span class="toc-number">6.10.</span> <span class="toc-text"> Beautiful Dome 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beautiful-dome-2"><span class="toc-number">6.11.</span> <span class="toc-text"> Beautiful Dome 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rider-without-helmet"><span class="toc-number">6.12.</span> <span class="toc-text"> Rider without Helmet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exif-photo-coordinates"><span class="toc-number">6.13.</span> <span class="toc-text"> EXIF &quot;Photo Coordinates&quot;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blue-team"><span class="toc-number">7.</span> <span class="toc-text"> Blue Team</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#large-order"><span class="toc-number">7.1.</span> <span class="toc-text"> Large Order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#users-bad-day"><span class="toc-number">7.2.</span> <span class="toc-text"> User’s Bad Day</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-FhCTFen" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-12-31T16:00:00.000Z" itemprop="datePublished">2026-01-01</time>
+    <time style="display: none;" id="post-update-time">2026-02-13</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <p>Rank 1!!! But all I can say is we finished it.</p>
+<span id="more"></span>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">2026</span> FhCTF / Team CTF</span><br><span class="line"><span class="attribute">01</span>.<span class="number">01</span> – <span class="number">01</span>.<span class="number">05</span></span><br><span class="line"></span><br><span class="line"><span class="attribute">Group</span> - Open group McDonald&#x27;s reservations, leave a comment +<span class="number">1</span></span><br><span class="line"><span class="attribute">Final</span> — Rank <span class="number">1</span>（Top <span class="number">1</span>）</span><br></pre></td></tr></table></figure>
+<h2 id="misc"><a class="markdownIt-Anchor" href="#misc"></a> Misc</h2>
+<h3 id="sanity-check"><a class="markdownIt-Anchor" href="#sanity-check"></a> Sanity Check</h3>
+<p><img src="/images/FhCTF/1.webp" alt="image" /></p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">And</span> <span class="keyword">to</span> see how prizes are distributed.</span><br><span class="line"></span><br><span class="line">    FhCTF&#123;S3n1ty_Ch3ck1ng<span class="params">...</span>.😝&#125;</span><br><span class="line"></span><br><span class="line">Thanks <span class="keyword">to</span> ISIP.HS for supporting <span class="literal">and</span> sponsoring this event.</span><br></pre></td></tr></table></figure>
+<h3 id="christmas-tree"><a class="markdownIt-Anchor" href="#christmas-tree"></a> Christmas Tree</h3>
+<p>Classic Huffman encoding problem</p>
+<p>The correct answer is</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Hoffman_is_<span class="built_in">a_great</span>_Christmas_tree&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>Note: The English spelling of Huffman encoding is &quot;Huffman&quot;, not &quot;Hoffman&quot;</strong></p>
+<h3 id="hackers-password-recipe"><a class="markdownIt-Anchor" href="#hackers-password-recipe"></a> Hacker’s Password Recipe</h3>
+<p>Convert the value of each ingredient to ASCII characters:</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;cooking<span class="number">_</span><span class="keyword">is</span><span class="number">_f</span>un&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="joke-master"><a class="markdownIt-Anchor" href="#joke-master"></a> Joke Master</h3>
+<p><strong>Congratulations this problem was rated as the worst one</strong><br />
+<img src="/images/FhCTF/2.webp" alt="image" /></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;thisi_Prompt_Injection&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="image-gallery"><a class="markdownIt-Anchor" href="#image-gallery"></a> Image Gallery</h3>
+<p>When entering, we can see the interface only allows PNG uploads. PNG has a fixed 8-byte header, so we can add PHP code after the header.</p>
+<figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;png_format?Cannot_stop_php!&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="image-gallery-revenge"><a class="markdownIt-Anchor" href="#image-gallery-revenge"></a> Image Gallery Revenge</h3>
+<p>The problem combines Directory Traversal + JWT Algorithm Confusion. By manipulating the PNG’s IDAT chunk, creating special images that retain PHP code even after GD library reprocessing.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;But_I_CAN_WRITE_PHP_IN_IDAT_CHUNK&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="python-compile"><a class="markdownIt-Anchor" href="#python-compile"></a> Python Compile</h3>
+<p>The program shows <code>Syntax Error</code> when there is code error, which means the file will still be read when handling errors. This suggests it might be an <code>LFI</code> (Local File Inclusion) problem.</p>
+<p>By entering code that causes Python syntax errors and modifying the <code>filename</code> parameter to <code>/proc/self/environ</code>, we can read system environment variables.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;N0t_s4f3_t0_ou7put_th3_err0r_m5g&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="survey"><a class="markdownIt-Anchor" href="#survey"></a> Survey</h2>
+<h3 id="survey-2"><a class="markdownIt-Anchor" href="#survey-2"></a> Survey</h3>
+<p><img src="/images/FhCTF/4.webp" alt="image" /></p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Th4nk_y0u_f0r_y0ur_f33db4ck_7hCTF&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="web"><a class="markdownIt-Anchor" href="#web"></a> Web</h2>
+<h3 id="internal-login"><a class="markdownIt-Anchor" href="#internal-login"></a> INTERNAL LOGIN</h3>
+<p><img src="/images/FhCTF/5.webp" alt="image" /></p>
+<p>Client-side SQL injection simulation. Enter in the Username field:</p>
+<ul>
+<li>’ or 1=1–</li>
+<li>’ OR '1'='1</li>
+<li>admin’ or 1=1–</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;SQL_1nj_42_&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="web-robots"><a class="markdownIt-Anchor" href="#web-robots"></a> Web Robots</h3>
+<p>Check robots.txt and access the disallowed paths:</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;r0b075_4r3_n0t_v15ible_in_tx7&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="doors-open"><a class="markdownIt-Anchor" href="#doors-open"></a> Doors Open</h3>
+<p>Check robots.txt and try different door numbers. The solution involves trying negative numbers.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;N3g4t1v3_numb3r5_in_URLs_4r3_fun&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="the-visual-blind-spot"><a class="markdownIt-Anchor" href="#the-visual-blind-spot"></a> The Visual Blind Spot</h3>
+<p>Calculate the correct RGB key and decrypt sys-config data using the formula: charCode = (n / 3) - 13</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Stn3am_C1ph3p&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="system-root-shell"><a class="markdownIt-Anchor" href="#system-root-shell"></a> SYSTEM ROOT SHELL</h3>
+<p>Decode ASCII code arrays from the JavaScript source code and trigger RCE with special characters.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;RCE__v3&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="welcome-to-cybersecurity-jungle"><a class="markdownIt-Anchor" href="#welcome-to-cybersecurity-jungle"></a> Welcome to Cybersecurity Jungle</h3>
+<p>Find the encoded cookie name <code>aXNGbGFnU2hvdzJ1</code> (isFlagShow2u) and value <code>44Go44GF44KL44O8</code> (Japanese &quot;true&quot;), then set them in the browser.</p>
+<figure class="highlight ceylon"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Th<span class="number">3_</span>e<span class="number">553n</span>c<span class="number">3_</span><span class="keyword">of</span><span class="number">_p</span>r<span class="number">0</span>gramm<span class="number">1n</span><span class="number">6_</span><span class="keyword">is</span><span class="number">_</span>ind<span class="number">3p</span><span class="number">3n</span>den<span class="number">7_</span><span class="keyword">of</span><span class="number">_</span>the<span class="number">_</span>languag<span class="number">3_u</span><span class="number">53</span>d&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="templating-danger"><a class="markdownIt-Anchor" href="#templating-danger"></a> Templating Danger</h3>
+<p>SSTI vulnerability. Use Unicode encoding to bypass parenthesis filtering:</p>
+<figure class="highlight moonscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\u007b\u007bcycler.__init__.__globals__.<span class="built_in">os</span>.environ[<span class="string">&#x27;FLAG&#x27;</span>]\u007d\u007d</span><br></pre></td></tr></table></figure>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;T3mpl371ng_n33d_t0_b3_m0r3_c4r3full🥹&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="documents"><a class="markdownIt-Anchor" href="#documents"></a> Documents</h3>
+<p>Check HTTP headers to find &quot;powerby: FastAPI&quot;, then access /openapi.json to discover /flag.html endpoint that requires Referer header forgery.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;URL_encod3d_m337_p47h_d15cl0sure😱😱&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="log-access"><a class="markdownIt-Anchor" href="#log-access"></a> LOG ACCESS</h3>
+<p>Input must contain more than 3 dots and the word &quot;flag&quot; (case-insensitive) to generate the flag.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Path_Tr4v_535&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="pathway-leak"><a class="markdownIt-Anchor" href="#pathway-leak"></a> Pathway-leak</h3>
+<p>Cross-tenant access allows reading secret_admin/flag.txt without authentication.</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;p4th_tr4v3rs4l_w3_w4n7_t0_av01d&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="kid"><a class="markdownIt-Anchor" href="#kid"></a> KID</h3>
+<p>JWT algorithm confusion attack: Change <code>alg</code> to <code>HS256</code>, <code>kid</code> to <code>../../../../../../dev/null</code>, and sign with empty string.</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Th3_k1d_u53d_JWT_t0_tr4v3rs3_p4th5&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="something-you-put-into"><a class="markdownIt-Anchor" href="#something-you-put-into"></a> Something You Put Into</h3>
+<p>Flag is stored in environment variables exposed in Docker configuration.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;🐷B3_c4r3ful_y0ur_SQL_synt4x🐷&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="reverse"><a class="markdownIt-Anchor" href="#reverse"></a> Reverse</h2>
+<h3 id="simple-script-reader"><a class="markdownIt-Anchor" href="#simple-script-reader"></a> Simple Script Reader</h3>
+<p>Input &quot;JUMP 0&quot; to restart the script from the beginning.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;f1l3_10_and_jumb_m4st3r&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="obf"><a class="markdownIt-Anchor" href="#obf"></a> OBF</h3>
+<p>Complex obfuscation using state machine. The key is composed of 4 16-character parts combined from different operations (XOR, character subtraction, Base64, reversal).</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;P0lym0rph1c_Crypt0&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="the-lock"><a class="markdownIt-Anchor" href="#the-lock"></a> The Lock</h3>
+<p>Use IDA Pro to reverse engineer: Extract the XOR key array [85, 51, 102, 17] and target array, then reverse the formula.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;R3v3rs3_Eng1n33r1ng_1s_Ar7&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="broken-decoder"><a class="markdownIt-Anchor" href="#broken-decoder"></a> Broken Decoder</h3>
+<p>ELF binary with stream cipher: Use LCG generator with rotation and XOR operations. Key: &quot;I_just_afraid_someday_i_will_forget_the_password&quot;</p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Why_not_use_std::<span class="built_in">string</span>_instead_of_char_arrays?&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="crypto"><a class="markdownIt-Anchor" href="#crypto"></a> Crypto</h2>
+<h3 id="secure-encryption"><a class="markdownIt-Anchor" href="#secure-encryption"></a> Secure Encryption</h3>
+<p>ECB mode weakness: Same plaintext blocks produce identical ciphertext blocks, revealing data structure through color mapping.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;<span class="number">3</span>C13_m0d3_1s_z0_S3cur17y_&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="encode-by-py"><a class="markdownIt-Anchor" href="#encode-by-py"></a> Encode By Py 😘</h3>
+<p>Emoji encryption is reversible using key recovery from repeated patterns. Key: [49, 57, 49, 35, 19, 44, 42, 37, 41, 23, 22, 21]</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;S1mpl3_FL46_We4k_P4ss&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="des-lv1-old-captains-treasure"><a class="markdownIt-Anchor" href="#des-lv1-old-captains-treasure"></a> DES Lv.1 - Old Captain’s Treasure</h3>
+<p>Part 1: Fix JPEG height in SOF header. Part 2: DES-ECB brute force with known key prefix &quot;r5K9&quot;.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;D0n7_c0un7_7h3_d4y5_m4k3_7h3_d4y5_c0un7&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="des-lv2-treasure-revisited"><a class="markdownIt-Anchor" href="#des-lv2-treasure-revisited"></a> DES Lv.2 – Treasure Revisited</h3>
+<p>Try multiple schemes (CBC/ECB with different IVs) and key structures simultaneously. Key: &quot;r5K9bB2x&quot;</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;<span class="number">23</span>.<span class="number">257735309160896</span>_119.<span class="number">66758643893687</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="admins-password-onion"><a class="markdownIt-Anchor" href="#admins-password-onion"></a> Admin’s Password Onion</h3>
+<p>3 levels: MD5 hash (qwerty), SHA-1 (admin), Base64 (FsCTF{Happy Day})</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;CrYpt0_W3b_M4st3r_2025&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="osint"><a class="markdownIt-Anchor" href="#osint"></a> OSINT</h2>
+<h3 id="art-work"><a class="markdownIt-Anchor" href="#art-work"></a> Art Work</h3>
+<p>Image search reveals 2022 Pingtung Luoshan Wind Art Festival (2022屏東落山風藝術季)</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;屏東縣_落山風藝術季_1111104-<span class="number">1120205</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="trace-the-landmark"><a class="markdownIt-Anchor" href="#trace-the-landmark"></a> Trace the Landmark</h3>
+<p>Image search identifies Piazza della Rotonda in Rome, Italy</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Piazz<span class="built_in">a_della</span>_Rotond<span class="built_in">a_00186</span>_Rom<span class="built_in">a_RM</span>_Italy&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="island-1"><a class="markdownIt-Anchor" href="#island-1"></a> Island 1</h3>
+<p>Identify restaurant &quot;新大廟口活海鮮&quot; and dish &quot;炒千佛手&quot;</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;新大廟口活海鮮_炒千佛手&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="the-fh-gift"><a class="markdownIt-Anchor" href="#the-fh-gift"></a> The FH Gift</h3>
+<p>EML file contains disguised ZIP file (DOCX). Check file signatures (magic bytes).</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;M1M3_Typ3s_C4n_B3_D3c3pt1v3&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="business-time-1"><a class="markdownIt-Anchor" href="#business-time-1"></a> Business Time 1</h3>
+<p>EXIF metadata and GitHub repository leads to T-SCHOOL STUDENTS EXPO 2026 event.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;T-SCHOOL_STUDENTS_EXPO&#x27;<span class="number">26</span>_2026-<span class="number">01</span>-<span class="number">18</span>T09:<span class="number">00</span>_2026-<span class="number">01</span>-<span class="number">19</span>T16:<span class="number">00</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="business-time-2"><a class="markdownIt-Anchor" href="#business-time-2"></a> Business Time 2</h3>
+<p>Event location at 台北市中山區吉林路110號. Convert to coordinates.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;<span class="number">25</span>.<span class="number">0541</span>_121.<span class="number">5338</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="lithium-exploration"><a class="markdownIt-Anchor" href="#lithium-exploration"></a> Lithium Exploration</h3>
+<p>Identify Salar de Uyuni salt flat in Bolivia as major lithium source</p>
+<figure class="highlight autohotkey"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FhCTF&#123;Bolivi<span class="built_in">a_SalardeUyuni</span>_Lithium&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="srl"><a class="markdownIt-Anchor" href="#srl"></a> SRL</h3>
+<p>Location: Near Giants dome with Taipei 101 and National Sun Yat-sen Mausoleum in background.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Nanjing_Fuxing_Road&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="island-2"><a class="markdownIt-Anchor" href="#island-2"></a> Island 2</h3>
+<p>Jianggong Islet, historical leper colony in Kinmen.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Jianggong_Islet_Kinmen&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="beautiful-dome-1"><a class="markdownIt-Anchor" href="#beautiful-dome-1"></a> Beautiful Dome 1</h3>
+<p>Requires OSINT and deduction to identify location.</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Blue_Mosque&#125;</span></span><br></pre></td></tr></table></figure>
+<h3 id="beautiful-dome-2"><a class="markdownIt-Anchor" href="#beautiful-dome-2"></a> Beautiful Dome 2</h3>
+<p>Turkish Airlines free ferry service in Bosphorus Strait: T06 18:30-23:00 (April 1 - October 31)</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;<span class="number">1830</span>-<span class="number">2300</span>_0401-<span class="number">1031</span>&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="rider-without-helmet"><a class="markdownIt-Anchor" href="#rider-without-helmet"></a> Rider without Helmet</h3>
+<p>Image reverse search identifies 2014 Kymco Many50 motorcycle</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;<span class="number">2014</span>_Kymco_Many50&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="exif-photo-coordinates"><a class="markdownIt-Anchor" href="#exif-photo-coordinates"></a> EXIF &quot;Photo Coordinates&quot;</h3>
+<p>Extract GPS coordinates from EXIF metadata</p>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;Latitude_Longitude_Coordinates&#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="blue-team"><a class="markdownIt-Anchor" href="#blue-team"></a> Blue Team</h2>
+<h3 id="large-order"><a class="markdownIt-Anchor" href="#large-order"></a> Large Order</h3>
+<p>Hex string encrypted with XOR using key &quot;FhCTF&quot;. Decode to get MD5 hash, then query VirusTotal for C2 server.</p>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">FhCTF</span>&#123;http://<span class="number">171.22.28.221</span>/<span class="number">5</span>c06c05b7b34e8e6.php&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="users-bad-day"><a class="markdownIt-Anchor" href="#users-bad-day"></a> User’s Bad Day</h3>
+<p>LLMNR Poisoning attack. Analyze network traffic to find:</p>
+<ul>
+<li>Hostname: fulesrv</li>
+<li>Username: Bob</li>
+<li>Filename: test</li>
+</ul>
+<figure class="highlight dust"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml">FhCTF</span><span class="template-variable">&#123;fulesrv_Bob_test&#125;</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/en/2026/01/01/undefined/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/en/2026/01/01/undefined/" itemprop="commentCount"></span>
+          Comments
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/en/2026/01/01/undefined/">0</span>
+          <em class="post-meta-item-text">Readings</em>
+        </span>
+        <a class="article-category-link" href="/en/categories/%E6%8A%80%E8%A1%93%E5%88%86%E4%BA%AB/" title="技術分享" data-aos="zoom-in">技術分享</a>
+
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/en/tags/%E8%B3%87%E5%AE%89/" rel="tag" title="資安">資安</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+    <div class="article-nav-link-wrap right">
+        <img data-src="/images/Hexo/hexo_github.webp" data-sizes="auto" alt="Using GitHub Pages + Hexo to Set Up a Personal Blog" class="lazyload">
+      <a href="/en/2025/08/27/Hexo/" aria-label="Next: Using GitHub Pages + Hexo to Set Up a Personal Blog"  title="Next: Using GitHub Pages + Hexo to Set Up a Personal Blog"></a>
+      <div class="article-nav-caption">Next</div>
+      <h3 class="article-nav-title">
+          Using GitHub Pages + Hexo to Set Up a Personal Blog
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">Leave a comment</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        Powered by&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        30.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        02:35
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">Number of visits&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">Number of visitors&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">Contents</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#misc"><span class="toc-number">1.</span> <span class="toc-text"> Misc</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#sanity-check"><span class="toc-number">1.1.</span> <span class="toc-text"> Sanity Check</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#christmas-tree"><span class="toc-number">1.2.</span> <span class="toc-text"> Christmas Tree</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hackers-password-recipe"><span class="toc-number">1.3.</span> <span class="toc-text"> Hacker’s Password Recipe</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#joke-master"><span class="toc-number">1.4.</span> <span class="toc-text"> Joke Master</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-gallery"><span class="toc-number">1.5.</span> <span class="toc-text"> Image Gallery</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#image-gallery-revenge"><span class="toc-number">1.6.</span> <span class="toc-text"> Image Gallery Revenge</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#python-compile"><span class="toc-number">1.7.</span> <span class="toc-text"> Python Compile</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#survey"><span class="toc-number">2.</span> <span class="toc-text"> Survey</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#survey-2"><span class="toc-number">2.1.</span> <span class="toc-text"> Survey</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#web"><span class="toc-number">3.</span> <span class="toc-text"> Web</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#internal-login"><span class="toc-number">3.1.</span> <span class="toc-text"> INTERNAL LOGIN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#web-robots"><span class="toc-number">3.2.</span> <span class="toc-text"> Web Robots</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#doors-open"><span class="toc-number">3.3.</span> <span class="toc-text"> Doors Open</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-visual-blind-spot"><span class="toc-number">3.4.</span> <span class="toc-text"> The Visual Blind Spot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#system-root-shell"><span class="toc-number">3.5.</span> <span class="toc-text"> SYSTEM ROOT SHELL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#welcome-to-cybersecurity-jungle"><span class="toc-number">3.6.</span> <span class="toc-text"> Welcome to Cybersecurity Jungle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#templating-danger"><span class="toc-number">3.7.</span> <span class="toc-text"> Templating Danger</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#documents"><span class="toc-number">3.8.</span> <span class="toc-text"> Documents</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#log-access"><span class="toc-number">3.9.</span> <span class="toc-text"> LOG ACCESS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pathway-leak"><span class="toc-number">3.10.</span> <span class="toc-text"> Pathway-leak</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#kid"><span class="toc-number">3.11.</span> <span class="toc-text"> KID</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#something-you-put-into"><span class="toc-number">3.12.</span> <span class="toc-text"> Something You Put Into</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#reverse"><span class="toc-number">4.</span> <span class="toc-text"> Reverse</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#simple-script-reader"><span class="toc-number">4.1.</span> <span class="toc-text"> Simple Script Reader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#obf"><span class="toc-number">4.2.</span> <span class="toc-text"> OBF</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-lock"><span class="toc-number">4.3.</span> <span class="toc-text"> The Lock</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#broken-decoder"><span class="toc-number">4.4.</span> <span class="toc-text"> Broken Decoder</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#crypto"><span class="toc-number">5.</span> <span class="toc-text"> Crypto</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#secure-encryption"><span class="toc-number">5.1.</span> <span class="toc-text"> Secure Encryption</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#encode-by-py"><span class="toc-number">5.2.</span> <span class="toc-text"> Encode By Py 😘</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des-lv1-old-captains-treasure"><span class="toc-number">5.3.</span> <span class="toc-text"> DES Lv.1 - Old Captain’s Treasure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#des-lv2-treasure-revisited"><span class="toc-number">5.4.</span> <span class="toc-text"> DES Lv.2 – Treasure Revisited</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#admins-password-onion"><span class="toc-number">5.5.</span> <span class="toc-text"> Admin’s Password Onion</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#osint"><span class="toc-number">6.</span> <span class="toc-text"> OSINT</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#art-work"><span class="toc-number">6.1.</span> <span class="toc-text"> Art Work</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#trace-the-landmark"><span class="toc-number">6.2.</span> <span class="toc-text"> Trace the Landmark</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#island-1"><span class="toc-number">6.3.</span> <span class="toc-text"> Island 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#the-fh-gift"><span class="toc-number">6.4.</span> <span class="toc-text"> The FH Gift</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#business-time-1"><span class="toc-number">6.5.</span> <span class="toc-text"> Business Time 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#business-time-2"><span class="toc-number">6.6.</span> <span class="toc-text"> Business Time 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#lithium-exploration"><span class="toc-number">6.7.</span> <span class="toc-text"> Lithium Exploration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#srl"><span class="toc-number">6.8.</span> <span class="toc-text"> SRL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#island-2"><span class="toc-number">6.9.</span> <span class="toc-text"> Island 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beautiful-dome-1"><span class="toc-number">6.10.</span> <span class="toc-text"> Beautiful Dome 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#beautiful-dome-2"><span class="toc-number">6.11.</span> <span class="toc-text"> Beautiful Dome 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rider-without-helmet"><span class="toc-number">6.12.</span> <span class="toc-text"> Rider without Helmet</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exif-photo-coordinates"><span class="toc-number">6.13.</span> <span class="toc-text"> EXIF &quot;Photo Coordinates&quot;</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#blue-team"><span class="toc-number">7.</span> <span class="toc-text"> Blue Team</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#large-order"><span class="toc-number">7.1.</span> <span class="toc-text"> Large Order</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#users-bad-day"><span class="toc-number">7.2.</span> <span class="toc-text"> User’s Bad Day</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>Post</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>Category</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>Tag</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/" aria-label="Home"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">Home</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/archives" aria-label="Archives"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">Archives</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/about" aria-label="About"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">About</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/en/friend" aria-label="Friend"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">Friend</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "FhCTF 11401",
+          url: "https://blog.itousouta15.tw/2026/01/01/undefined/",
+          excerpt: "Rank 1!!! But all I can say is we finished it.",
+          description: "",
+          stripContent: "Rank 1!!! But all I can say is we finished it.  123452026 FhCTF / Team CTF01.01 – 01.05Group - Open group McDonald&amp;#x27;s reservations, leave a comment +1Final — Rank 1（Top 1）  Misc  Sanity Check  12345And to see how prizes are distributed.    FhCTF&amp;",
+          date: "Thu Jan 01 2026 00:00:00 GMT+0800",
+          updated: "Fri Feb 13 2026 14:37:57 GMT+0800",
+          cover: "/images/FhCTF.png",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>

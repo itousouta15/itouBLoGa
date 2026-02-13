@@ -1,0 +1,843 @@
+  <!DOCTYPE html>
+  <html lang="zh-TW"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    Zerojudge | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="一個放ZJ題解的地方">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Zerojudge">
+<meta property="og:url" content="https://blog.itousouta15.tw/2025/07/11/Zerojudge/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="一個放ZJ題解的地方">
+<meta property="og:locale" content="zh_TW">
+<meta property="article:published_time" content="2025-07-11T04:00:00.000Z">
+<meta property="article:modified_time" content="2026-02-13T06:37:57.528Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="Zerojudge">
+<meta name="twitter:card" content="summary">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>發現新版本</h1>
+    <p>網站好像有新內容，是否更新？</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">更新</button>
+      <button id="notification-close-btn">取消</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/">首頁</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/archives">歸檔</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/about">關於</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/friend">友鏈</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 訂閱" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">繁體中文</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" class="selected">繁體中文</li>
+          
+            <li data-value="en" >English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2025/07/11/Zerojudge/';
+            
+              langMap['en'] = '/en/2025/07/11/Zerojudge/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/ZJ.webp" alt="Zerojudge">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">Zerojudge</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#easy"><span class="toc-number">1.</span> <span class="toc-text"> Easy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a001%E5%93%88%E5%9B%89"><span class="toc-number">1.1.</span> <span class="toc-text"> a001.哈囉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> a002. 簡易加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93"><span class="toc-number">1.3.</span> <span class="toc-text"> a003. 兩光法師占卜術</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A"><span class="toc-number">1.4.</span> <span class="toc-text"> a004. 文文的求婚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a005-eva-%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD"><span class="toc-number">1.5.</span> <span class="toc-text"> a005. Eva 的回家作業</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text"> a006. 一元二次方程式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8"><span class="toc-number">1.7.</span> <span class="toc-text"> a040. 阿姆斯壯數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8gcd"><span class="toc-number">1.8.</span> <span class="toc-text"> a024. 最大公因數(GCD)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC"><span class="toc-number">1.9.</span> <span class="toc-text"> a065. 提款卡密碼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c315-i-robot-%E5%89%8D%E5%82%B3"><span class="toc-number">1.10.</span> <span class="toc-text"> c315. I, ROBOT 前傳</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toi"><span class="toc-number">2.</span> <span class="toc-text"> TOI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n630-%E9%9B%BB%E5%BD%B1%E9%99%A2-cinema"><span class="toc-number">2.1.</span> <span class="toc-text"> n630. 電影院 (Cinema)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n631-%E6%92%B2%E5%85%8B-poker"><span class="toc-number">2.2.</span> <span class="toc-text"> n631. 撲克 (Poker)</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-zerojudge" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-07-11T04:00:00.000Z" itemprop="datePublished">2025-07-11</time>
+    <time style="display: none;" id="post-update-time">2026-02-13</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <p>一個放ZJ題解的地方</p>
+<span id="more"></span>
+<h2 id="easy"><a class="markdownIt-Anchor" href="#easy"></a> Easy</h2>
+<h3 id="a001哈囉"><a class="markdownIt-Anchor" href="#a001哈囉"></a> a001.哈囉</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a001">https://zerojudge.tw/ShowProblem?problemid=a001</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">string s;</span><br><span class="line"> <span class="keyword">while</span>(cin &gt;&gt; s)&#123;</span><br><span class="line">  cout &lt;&lt; <span class="string">&quot;hello, &quot;</span>&lt;&lt; s &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line"> &#125;</span><br><span class="line"> <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a002-簡易加法"><a class="markdownIt-Anchor" href="#a002-簡易加法"></a> a002. 簡易加法</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a002">https://zerojudge.tw/ShowProblem?problemid=a002</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a,b;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line">    cout&lt;&lt; a+b;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a003-兩光法師占卜術"><a class="markdownIt-Anchor" href="#a003-兩光法師占卜術"></a> a003. 兩光法師占卜術</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a003">https://zerojudge.tw/ShowProblem?problemid=a003</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> a, b;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> result = (a * <span class="number">2</span> + b) % <span class="number">3</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result == <span class="number">0</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;普通&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">1</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;吉&quot;</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (result == <span class="number">2</span>) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;大吉&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a004-文文的求婚"><a class="markdownIt-Anchor" href="#a004-文文的求婚"></a> a004. 文文的求婚</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a004">https://zerojudge.tw/ShowProblem?problemid=a004</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="type">int</span> a;</span><br><span class="line">	<span class="keyword">while</span>(cin&gt;&gt;a)&#123;</span><br><span class="line">    <span class="type">bool</span> isleapa= (a % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; a % <span class="number">100</span> != <span class="number">0</span>) || (a % <span class="number">400</span> == <span class="number">0</span>);</span><br><span class="line">    <span class="keyword">if</span>(isleapa)&#123;</span><br><span class="line">      cout&lt;&lt;<span class="string">&quot;閏年\n&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">     cout&lt;&lt;<span class="string">&quot;平年\n&quot;</span>;</span><br><span class="line">     &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a005-eva-的回家作業"><a class="markdownIt-Anchor" href="#a005-eva-的回家作業"></a> a005. Eva 的回家作業</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a005">https://zerojudge.tw/ShowProblem?problemid=a005</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> t;</span><br><span class="line">    cin &gt;&gt; t; </span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; t; i++) &#123;</span><br><span class="line">        <span class="type">int</span> a, b, c, d; </span><br><span class="line">        </span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b &gt;&gt; c &gt;&gt; d;</span><br><span class="line">        <span class="keyword">if</span> (b - a == c - b &amp;&amp; c - b == d - c) &#123;</span><br><span class="line">        </span><br><span class="line">            <span class="type">int</span> e = d + (d - c);</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; c &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; d &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; e &lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (b / a == c / b &amp;&amp; c / b == d / c) &#123;</span><br><span class="line">        </span><br><span class="line">            <span class="type">int</span> e = d * (d / c);</span><br><span class="line">            cout &lt;&lt; a &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; b &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; c &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; d &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; e &lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a006-一元二次方程式"><a class="markdownIt-Anchor" href="#a006-一元二次方程式"></a> a006. 一元二次方程式</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a006">https://zerojudge.tw/ShowProblem?problemid=a006</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">int</span> a,b,c;</span><br><span class="line">    cin&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">    <span class="type">int</span> d = b*b<span class="number">-4</span>*a*c;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span> (d&lt;<span class="number">0</span>) &#123;</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;No real root&quot;</span>&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(d==<span class="number">0</span>)&#123;</span><br><span class="line">    <span class="type">double</span> x1= -b/(<span class="number">2.0</span>*a);</span><br><span class="line">    cout&lt;&lt;<span class="string">&quot;Two same roots x=&quot;</span>&lt;&lt;x1&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span>&#123; </span><br><span class="line">    <span class="type">double</span> x1= (-b+<span class="built_in">sqrt</span>(d))/(<span class="number">2</span>*a);</span><br><span class="line">    <span class="type">double</span> x2= (-b-<span class="built_in">sqrt</span>(d))/(<span class="number">2</span>*a);</span><br><span class="line">          </span><br><span class="line">    cout &lt;&lt;<span class="string">&quot;Two different roots &quot;</span>&lt;&lt;<span class="string">&quot;x1=&quot;</span>&lt;&lt;x1&lt;&lt;<span class="string">&quot; , x2=&quot;</span>&lt;&lt;x2&lt;&lt;<span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a040-阿姆斯壯數"><a class="markdownIt-Anchor" href="#a040-阿姆斯壯數"></a> a040. 阿姆斯壯數</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a040">https://zerojudge.tw/ShowProblem?problemid=a040</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> have =<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">sp</span><span class="params">(<span class="type">int</span> i)</span></span>&#123;</span><br><span class="line">    string s = <span class="built_in">to_string</span>(i);</span><br><span class="line">    <span class="type">int</span> sum=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> j=<span class="number">0</span>;j&lt;s.<span class="built_in">size</span>();j++)&#123;</span><br><span class="line">        <span class="type">int</span> spn=<span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> d = s[j] - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        spn = <span class="built_in">pow</span>(d,s.<span class="built_in">size</span>());</span><br><span class="line">        sum+=spn;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(sum==i)&#123;</span><br><span class="line">        have =<span class="number">1</span>;</span><br><span class="line">        cout &lt;&lt; i &lt;&lt; <span class="string">&quot; &quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> s,e;</span><br><span class="line">    cin &gt;&gt; s &gt;&gt; e;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = s;i &lt;= e;++i)&#123;</span><br><span class="line">        <span class="built_in">sp</span>(i);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(have == <span class="number">0</span>)&#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;none&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a024-最大公因數gcd"><a class="markdownIt-Anchor" href="#a024-最大公因數gcd"></a> a024. 最大公因數(GCD)</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a024">https://zerojudge.tw/ShowProblem?problemid=a024</a></p>
+<p>偷懶大法(use __gcd())</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> a,b,c;</span><br><span class="line">    cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">    c = __gcd(a,b);</span><br><span class="line">    cout &lt;&lt; c ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="a065-提款卡密碼"><a class="markdownIt-Anchor" href="#a065-提款卡密碼"></a> a065. 提款卡密碼</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=a065">https://zerojudge.tw/ShowProblem?problemid=a065</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    string a;</span><br><span class="line">    cin &gt;&gt; a;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">1</span>;i&lt;a.<span class="built_in">size</span>();i++)&#123;</span><br><span class="line">        <span class="type">int</span> far = <span class="built_in">abs</span>(a[i]-a[i<span class="number">-1</span>]);</span><br><span class="line">        cout &lt;&lt; far ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="c315-i-robot-前傳"><a class="markdownIt-Anchor" href="#c315-i-robot-前傳"></a> c315. I, ROBOT 前傳</h3>
+<p><a target="_blank" rel="noopener" href="https://zerojudge.tw/ShowProblem?problemid=c315">https://zerojudge.tw/ShowProblem?problemid=c315</a></p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,a,b;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">0</span>,y=<span class="number">0</span>;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; a &gt;&gt; b;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">0</span>)&#123;</span><br><span class="line">            y+=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">1</span>)&#123;</span><br><span class="line">            x+=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">2</span>)&#123;</span><br><span class="line">            y-=b;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(a==<span class="number">3</span>)&#123;</span><br><span class="line">            x-=b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; x &lt;&lt;<span class="string">&quot; &quot;</span>&lt;&lt; y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="toi"><a class="markdownIt-Anchor" href="#toi"></a> TOI</h2>
+<h3 id="n630-電影院-cinema"><a class="markdownIt-Anchor" href="#n630-電影院-cinema"></a> n630. 電影院 (Cinema)</h3>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">struct</span> <span class="title class_">movtime</span> &#123;</span><br><span class="line">    <span class="type">int</span> h;</span><br><span class="line">    <span class="type">int</span> m;</span><br><span class="line">    <span class="function"><span class="type">int</span> <span class="title">tm</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> h * <span class="number">60</span> + m;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span> <span class="type">const</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="built_in">setw</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>) &lt;&lt; h &lt;&lt; <span class="string">&quot; &quot;</span></span><br><span class="line">            &lt;&lt; <span class="built_in">setw</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">setfill</span>(<span class="string">&#x27;0&#x27;</span>) &lt;&lt; m &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;movtime&gt; <span class="title">times</span><span class="params">(n)</span></span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        cin &gt;&gt; times[i].h &gt;&gt; times[i].m;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    movtime now;</span><br><span class="line">    cin &gt;&gt; now.h &gt;&gt; now.m;</span><br><span class="line">    <span class="type">int</span> ntm = now.<span class="built_in">tm</span>() + <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">bool</span> found = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">const</span> movtime&amp; movie : times) &#123;</span><br><span class="line">        <span class="keyword">if</span> (movie.<span class="built_in">tm</span>() &gt;= ntm) &#123;</span><br><span class="line">            movie.<span class="built_in">print</span>();</span><br><span class="line">            found = <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (!found) &#123;</span><br><span class="line">        cout &lt;&lt; <span class="string">&quot;Too Late&quot;</span> &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="n631-撲克-poker"><a class="markdownIt-Anchor" href="#n631-撲克-poker"></a> n631. 撲克 (Poker)</h3>
+<p>這題我一整個讀錯題義<br />
+我用觀察排序後的關係，去估算可湊出幾副牌和缺了多少張；這題應該是要用「每個牌號出現幾次」來精準對應牌組數量與缺少數。直接套用組合的數學關係即可。</p>
+<figure class="highlight cpp"><figcaption><span>錯誤寫法</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n,cnt=<span class="number">52</span>,r=<span class="number">0</span>;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    vector&lt;<span class="type">int</span>&gt;<span class="built_in">poker</span>(n);</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i=<span class="number">0</span>;i&lt;n;i++)&#123;</span><br><span class="line">        cin &gt;&gt; poker[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> d = n/<span class="number">52</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; poker.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (poker[i] ==poker[i - <span class="number">1</span>]<span class="number">+1</span>) cnt--;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">sort</span>(poker.<span class="built_in">begin</span>(), poker.<span class="built_in">end</span>());</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt; poker.<span class="built_in">size</span>(); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (poker[i] == poker[i - <span class="number">1</span>])&#123;</span><br><span class="line">                r++;</span><br><span class="line">                cnt+=<span class="number">52</span>-r;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout &lt;&lt; d &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; cnt &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><figcaption><span>正解</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="type">int</span> n;</span><br><span class="line">    cin &gt;&gt; n;</span><br><span class="line">    <span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">cnt</span><span class="params">(<span class="number">53</span>, <span class="number">0</span>)</span></span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; n; ++i)&#123;</span><br><span class="line">        <span class="type">int</span> k;</span><br><span class="line">        cin &gt;&gt; k;</span><br><span class="line">        cnt[k]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="type">int</span> last = *<span class="built_in">min_element</span>(cnt.<span class="built_in">begin</span>() + <span class="number">1</span>, cnt.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> most = *<span class="built_in">max_element</span>(cnt.<span class="built_in">begin</span>() + <span class="number">1</span>, cnt.<span class="built_in">end</span>());</span><br><span class="line">    <span class="type">int</span> tn = most * <span class="number">52</span>;</span><br><span class="line">    <span class="type">int</span> add = tn - n;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; last &lt;&lt; <span class="string">&quot; &quot;</span> &lt;&lt; add &lt;&lt; <span class="string">&quot;\n&quot;</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/2025/07/11/Zerojudge/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/2025/07/11/Zerojudge/" itemprop="commentCount"></span>
+          留言
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/2025/07/11/Zerojudge/">0</span>
+          <em class="post-meta-item-text">閲讀量</em>
+        </span>
+        <a class="article-category-link" href="/categories/program/" title="program" data-aos="zoom-in">program</a>
+
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Zerojudge/" rel="tag" title="Zerojudge">Zerojudge</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="/images/ZJ.webp" data-sizes="auto" alt="Zerojudge" class="lazyload">
+        <a href="/2025/07/11/Zerojudge/" aria-label="前一篇: Zerojudge" title="前一篇: Zerojudge"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            Zerojudge
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+        <img data-src="/images/mainweb.webp" data-sizes="auto" alt="第一次架網站的心得" class="lazyload">
+      <a href="/2025/04/04/firstblog/" aria-label="後一篇: 第一次架網站的心得"  title="後一篇: 第一次架網站的心得"></a>
+      <div class="article-nav-caption">後一篇</div>
+      <h3 class="article-nav-title">
+          第一次架網站的心得
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">說些什麼吧！</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        基於&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        30.1k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        02:35
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">總訪客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#easy"><span class="toc-number">1.</span> <span class="toc-text"> Easy</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#a001%E5%93%88%E5%9B%89"><span class="toc-number">1.1.</span> <span class="toc-text"> a001.哈囉</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a002-%E7%B0%A1%E6%98%93%E5%8A%A0%E6%B3%95"><span class="toc-number">1.2.</span> <span class="toc-text"> a002. 簡易加法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a003-%E5%85%A9%E5%85%89%E6%B3%95%E5%B8%AB%E5%8D%A0%E5%8D%9C%E8%A1%93"><span class="toc-number">1.3.</span> <span class="toc-text"> a003. 兩光法師占卜術</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a004-%E6%96%87%E6%96%87%E7%9A%84%E6%B1%82%E5%A9%9A"><span class="toc-number">1.4.</span> <span class="toc-text"> a004. 文文的求婚</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a005-eva-%E7%9A%84%E5%9B%9E%E5%AE%B6%E4%BD%9C%E6%A5%AD"><span class="toc-number">1.5.</span> <span class="toc-text"> a005. Eva 的回家作業</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a006-%E4%B8%80%E5%85%83%E4%BA%8C%E6%AC%A1%E6%96%B9%E7%A8%8B%E5%BC%8F"><span class="toc-number">1.6.</span> <span class="toc-text"> a006. 一元二次方程式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a040-%E9%98%BF%E5%A7%86%E6%96%AF%E5%A3%AF%E6%95%B8"><span class="toc-number">1.7.</span> <span class="toc-text"> a040. 阿姆斯壯數</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a024-%E6%9C%80%E5%A4%A7%E5%85%AC%E5%9B%A0%E6%95%B8gcd"><span class="toc-number">1.8.</span> <span class="toc-text"> a024. 最大公因數(GCD)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#a065-%E6%8F%90%E6%AC%BE%E5%8D%A1%E5%AF%86%E7%A2%BC"><span class="toc-number">1.9.</span> <span class="toc-text"> a065. 提款卡密碼</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#c315-i-robot-%E5%89%8D%E5%82%B3"><span class="toc-number">1.10.</span> <span class="toc-text"> c315. I, ROBOT 前傳</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#toi"><span class="toc-number">2.</span> <span class="toc-text"> TOI</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#n630-%E9%9B%BB%E5%BD%B1%E9%99%A2-cinema"><span class="toc-number">2.1.</span> <span class="toc-text"> n630. 電影院 (Cinema)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#n631-%E6%92%B2%E5%85%8B-poker"><span class="toc-number">2.2.</span> <span class="toc-text"> n631. 撲克 (Poker)</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">10</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "Zerojudge",
+          url: "https://blog.itousouta15.tw/2025/07/11/Zerojudge/",
+          excerpt: "一個放ZJ題解的地方",
+          description: "",
+          stripContent: "一個放ZJ題解的地方   Easy  a001.哈囉 https://zerojudge.tw/ShowProblem?problemid=a001 12345678910#include &amp;lt;iostream&amp;gt;using namespace std;int main() &amp;#123;string s; while(cin &amp;gt;&amp;gt; s)&amp;#123;  cout &amp;lt;&amp;lt; &amp;quot;hello, &amp;quot;&amp;lt;&amp;lt; s &amp;lt;&amp;lt; &amp;quot;\n&amp;q",
+          date: "Fri Jul 11 2025 12:00:00 GMT+0800",
+          updated: "Fri Feb 13 2026 14:37:57 GMT+0800",
+          cover: "/images/ZJ.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>

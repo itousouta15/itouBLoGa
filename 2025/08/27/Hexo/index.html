@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/github.webp">
 <meta property="og:image" content="https://blog.itousouta15.tw/images/Hexo/page.webp">
 <meta property="article:published_time" content="2025-08-27T06:32:32.000Z">
-<meta property="article:modified_time" content="2026-02-09T10:17:40.602Z">
+<meta property="article:modified_time" content="2026-02-13T06:37:57.525Z">
 <meta property="article:author" content="伊藤蒼太">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -246,7 +246,7 @@
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#package-json"><span class="toc-number">2.1.1.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text">scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text">source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text">theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#config-yml"><span class="toc-number">2.1.5.</span> <span class="toc-text">_config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages"><span class="toc-number">3.</span> <span class="toc-text">部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text">SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text">建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-SSH-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-GitHub"><span class="toc-number">3.1.3.</span> <span class="toc-text">將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-SSH-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text">測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%EF%BC%8C%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text">回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text">SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text">Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text">Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LF-%E8%88%87-CRLF-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text">LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text">成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text">日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">進階優化</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-nodejs"><span class="toc-number">1.1.</span> <span class="toc-text"> 安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text"> Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#packagejson"><span class="toc-number">2.1.1.</span> <span class="toc-text"> package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text"> scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text"> source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text"> theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#_configyml"><span class="toc-number">2.1.5.</span> <span class="toc-text"> _config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text"> 直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages"><span class="toc-number">3.</span> <span class="toc-text"> 部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-ssh-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-github"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-ssh-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text"> 回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text"> 常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text"> SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text"> Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text"> Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lf-%E8%88%87-crlf-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text"> LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text"> 日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text"> 進階優化</span></a></li></ol></li></ol>
 </div>
 </div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -257,15 +257,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">10</div>
   </div>
   <div class="sidebar-state-category">
     <div>分類</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-tag">
     <div>標籤</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">4</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -330,7 +330,7 @@
       <div class="article-date">
   <span class="article-date-link icon-calendar" data-aos="zoom-in">
     <time datetime="2025-08-27T06:32:32.000Z" itemprop="datePublished">2025-08-27</time>
-    <time style="display: none;" id="post-update-time">2026-02-09</time>
+    <time style="display: none;" id="post-update-time">2026-02-13</time>
   </span>
 </div>
 
@@ -341,15 +341,22 @@
     <div class="e-content article-entry" itemprop="articleBody">
         <p>在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。</p>
 <p>本篇將帶你從零開始(在windows系統上)，使用 Hexo（一個快速、簡潔的靜態部落格框架）搭配 GitHub Pages（GitHub 提供的免費靜態網頁託管服務），一步步完成屬於自己的部落格架設。</p>
-<h2 id="準備環境"><a href="#準備環境" class="headerlink" title="準備環境"></a>準備環境</h2><p>在正式開始之前，請先確保電腦具備以下環境：</p>
+<h2 id="準備環境"><a class="markdownIt-Anchor" href="#準備環境"></a> 準備環境</h2>
+<p>在正式開始之前，請先確保電腦具備以下環境：</p>
 <ul>
-<li>Node.js（建議安裝 LTS 版本，Hexo 需 Node.js 14+ 支援）  </li>
-<li>npm（Node.js 會一併安裝 npm 套件管理工具）  </li>
-<li>Git（操作 GitHub 版本控管及部署需要）  </li>
+<li>Node.js（建議安裝 LTS 版本，Hexo 需 Node.js 14+ 支援）</li>
+<li>npm（Node.js 會一併安裝 npm 套件管理工具）</li>
+<li>Git（操作 GitHub 版本控管及部署需要）</li>
 <li>GitHub 帳號（用來存放專案與提供 Pages 網站）</li>
 </ul>
-<h3 id="安裝-Node-js"><a href="#安裝-Node-js" class="headerlink" title="安裝 Node.js"></a>安裝 Node.js</h3><p>前往官網下載介面<br><a target="_blank" rel="noopener" href="https://nodejs.org/zh-tw/download">https://nodejs.org/zh-tw/download</a><br><img src="/images/Hexo/hexo.webp" alt="hexo"><br>如果有 Docker 就複製上面程式碼到終端機裡，沒有就按底下的下載 MSI 檔再執行即可。<br>建議不管 Hexo 或 NodeJS 都能下載最新（至少 LTS）的版本，才能得到官方修補漏洞或優化後的最佳體驗。</p>
-<h2 id="Hexo-實作"><a href="#Hexo-實作" class="headerlink" title="Hexo 實作"></a>Hexo 實作</h2><ol>
+<h3 id="安裝-nodejs"><a class="markdownIt-Anchor" href="#安裝-nodejs"></a> 安裝 Node.js</h3>
+<p>前往官網下載介面<br />
+<a target="_blank" rel="noopener" href="https://nodejs.org/zh-tw/download">https://nodejs.org/zh-tw/download</a><br />
+<img src="/images/Hexo/hexo.webp" alt="hexo" /><br />
+如果有 Docker 就複製上面程式碼到終端機裡，沒有就按底下的下載 MSI 檔再執行即可。<br />
+建議不管 Hexo 或 NodeJS 都能下載最新（至少 LTS）的版本，才能得到官方修補漏洞或優化後的最佳體驗。</p>
+<h2 id="hexo-實作"><a class="markdownIt-Anchor" href="#hexo-實作"></a> Hexo 實作</h2>
+<ol>
 <li>打開終端機，輸入：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br></pre></td></tr></table></figure>
@@ -358,130 +365,183 @@
 <li>進入這個資料夾：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> my-blog</span><br></pre></td></tr></table></figure>
-
 <ol start="3">
 <li>安裝 Hexo 需要的依賴套件：</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-
 <p>這樣子你的 Hexo 專案資料夾就初始化完成了。</p>
-<h3 id="檔案介紹"><a href="#檔案介紹" class="headerlink" title="檔案介紹"></a>檔案介紹</h3><p>檔案介紹<br>這邊有幾個比較重要的檔案&#x2F;資料夾，稍微介紹一下：</p>
-<h4 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h4><p>Hexo 的文章內容是使用 ejs 等模板語言來撰寫，經解析後渲染成靜態的 HTML，所以可以在 package.json 的 dependencies 裡面看到 ejs, stylus, markdown 的 renderer-package</p>
+<h3 id="檔案介紹"><a class="markdownIt-Anchor" href="#檔案介紹"></a> 檔案介紹</h3>
+<p>檔案介紹<br />
+這邊有幾個比較重要的檔案/資料夾，稍微介紹一下：</p>
+<h4 id="packagejson"><a class="markdownIt-Anchor" href="#packagejson"></a> package.json</h4>
+<p>Hexo 的文章內容是使用 ejs 等模板語言來撰寫，經解析後渲染成靜態的 HTML，所以可以在 package.json 的 dependencies 裡面看到 ejs, stylus, markdown 的 renderer-package</p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;dependencies&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;hexo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^5.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-archive&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-category&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-index&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-generator-tag&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^1.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-ejs&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-marked&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^4.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-renderer-stylus&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-server&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;hexo-theme-landscape&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^0.0.3&quot;</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<h4 id="scaffolds"><a href="#scaffolds" class="headerlink" title="scaffolds&#x2F;"></a>scaffolds&#x2F;</h4><p>scaffolds 資料夾中有三個檔案： draft.md, page.md, post.md</p>
+<h4 id="scaffolds"><a class="markdownIt-Anchor" href="#scaffolds"></a> scaffolds/</h4>
+<p>scaffolds 資料夾中有三個檔案： <a target="_blank" rel="noopener" href="http://draft.md">draft.md</a>, <a target="_blank" rel="noopener" href="http://page.md">page.md</a>, <a target="_blank" rel="noopener" href="http://post.md">post.md</a></p>
 <p>這些是檔案模板，每使用 $ hexo new <type> <name> 創造一個新的貼文或頁面，Hexo 就會使用 scaffolds 中的模板為你建立檔案雛型。</p>
-<h4 id="source"><a href="#source" class="headerlink" title="source&#x2F;"></a>source&#x2F;</h4><p>source 資料夾放著這個網站所有的資源。前綴詞帶有底線的資料夾會被 Hexo 忽略，_post 除外，因為這裡面放的是我們要上架的文章。這些靜態檔案（Markdown, HTML 等）在 build 完後會被放進 public 資料夾，而其他的檔案則是用複製的方式。</p>
-<h4 id="theme"><a href="#theme" class="headerlink" title="theme&#x2F;"></a>theme&#x2F;</h4><p>theme 資料夾用來放佈景主題相關的各種資料，官方預設的佈景主題是 landscape，如果想要換佈景，也可以到官方的 theme shop 去找你喜歡的主題，下載後整包放到 themes&#x2F; 下面來使用</p>
+<h4 id="source"><a class="markdownIt-Anchor" href="#source"></a> source/</h4>
+<p>source 資料夾放著這個網站所有的資源。前綴詞帶有底線的資料夾會被 Hexo 忽略，_post 除外，因為這裡面放的是我們要上架的文章。這些靜態檔案（Markdown, HTML 等）在 build 完後會被放進 public 資料夾，而其他的檔案則是用複製的方式。</p>
+<h4 id="theme"><a class="markdownIt-Anchor" href="#theme"></a> theme/</h4>
+<p>theme 資料夾用來放佈景主題相關的各種資料，官方預設的佈景主題是 landscape，如果想要換佈景，也可以到官方的 theme shop 去找你喜歡的主題，下載後整包放到 themes/ 下面來使用</p>
 <p>(主題盡量挑選近期很多人穩定在維護的專案)</p>
-<h4 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h4><p>_config.yml 是我們最重要的設定檔，這個檔案中可以針對我們的全站呈現方式做設定</p>
-<h3 id="直接套模板"><a href="#直接套模板" class="headerlink" title="直接套模板"></a>直接套模板</h3><p>接下來找一個你想使用的 Hexo 主題（例如常見的 NexT、Butterfly、Reimu 等），通常主題會放在 GitHub 上，下載或使用 Git clone 複製主題進入你的 Hexo 專案的 <code>themes</code> 目錄內。</p>
+<h4 id="_configyml"><a class="markdownIt-Anchor" href="#_configyml"></a> _config.yml</h4>
+<p>_config.yml 是我們最重要的設定檔，這個檔案中可以針對我們的全站呈現方式做設定</p>
+<h3 id="直接套模板"><a class="markdownIt-Anchor" href="#直接套模板"></a> 直接套模板</h3>
+<p>接下來找一個你想使用的 Hexo 主題（例如常見的 NexT、Butterfly、Reimu 等），通常主題會放在 GitHub 上，下載或使用 Git clone 複製主題進入你的 Hexo 專案的 <code>themes</code> 目錄內。</p>
 <blockquote>
 <p>如果你不想那麼麻煩可以直接</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/reimu-template</span><br><span class="line"><span class="built_in">cd</span> reimu-template</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>已預先安裝 hexo、hexo-theme-reimu 及其他相關功能套件，只需要按照以下步驟操作：複製倉庫、安裝依賴、修改配置，即可取得一個基本的部落格！<br>完成這步可以直接跳到 <a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages">部署到 GitHub Pages</a></p>
+<p>已預先安裝 hexo、hexo-theme-reimu 及其他相關功能套件，只需要按照以下步驟操作：複製倉庫、安裝依賴、修改配置，即可取得一個基本的部落格！<br />
+完成這步可以直接跳到 <a href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages">部署到 GitHub Pages</a></p>
 </blockquote>
-<p>例如以我這blog用的 reimu  為例，執行：<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure><br>並且重命名為”reimu”:<br>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName <span class="built_in">test</span> </span><br></pre></td></tr></table></figure></p>
+<p>例如以我這blog用的 reimu  為例，執行：</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br></pre></td></tr></table></figure>
+<p>並且重命名為&quot;reimu&quot;:</p>
+  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName <span class="built_in">test</span> </span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>⚠️ <strong>注意！如果執行主題資料夾重命名指令時，遇到類似以下錯誤：</strong>  </p>
+<p>⚠️ <strong>注意！如果執行主題資料夾重命名指令時，遇到類似以下錯誤：</strong></p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">無法移除 C:\Users\<span class="string">...</span>\<span class="string">.git</span> 項目: 您沒有足夠的存取權限來執行此操作。</span><br></pre></td></tr></table></figure>
-
-
-
-<p>請使用下方指令嘗試解決此問題：  </p>
+<p>請使用下方指令嘗試解決此問題：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">robocopy .\hexo-theme-reimu .\reimu /E</span><br><span class="line">Remove-Item .\hexo-theme-reimu -Recurse -Force</span><br></pre></td></tr></table></figure>
 <p>這組指令會複製主題資料夾並強制刪除原資料夾的 <code>.git</code> 等被鎖定檔案，常見於 Windows 權限或鎖定導致的無法移除問題。</p>
 </blockquote>
-<p><img src="/images/Hexo/themes.webp" alt="reimu"></p>
-<p>然後在 <code>_config.yml</code> 裡面設定：  </p>
+<p><img src="/images/Hexo/themes.webp" alt="reimu" /></p>
+<p>然後在 <code>_config.yml</code> 裡面設定：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">reimu</span></span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>完整流程範例如下：  </p>
+<hr />
+<p>完整流程範例如下：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">hexo init my-blog</span><br><span class="line"><span class="built_in">cd</span> my-blog</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> themes</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/D-Sketon/hexo-theme-reimu.git</span><br><span class="line">Rename-Item -Path .\hexo-theme-reimu -NewName reimu</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改 _config.yml 裡的 theme: reimu</span></span><br><span class="line"></span><br><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-
-<p>完成後就可以在本地瀏覽器打開 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 預覽新主題部落格樣貌。<br><img src="/images/Hexo/run.webp" alt="run"></p>
-<h2 id="部署到-GitHub-Pages"><a href="#部署到-GitHub-Pages" class="headerlink" title="部署到 GitHub Pages"></a>部署到 GitHub Pages</h2><p>在開始部署之前，請先完成 SSH 金鑰設定，以避免常見的權限問題：</p>
-<h3 id="SSH-金鑰設定步驟"><a href="#SSH-金鑰設定步驟" class="headerlink" title="SSH 金鑰設定步驟"></a>SSH 金鑰設定步驟</h3><h4 id="建立-ssh-目錄"><a href="#建立-ssh-目錄" class="headerlink" title="建立 .ssh 目錄"></a><strong>建立 <code>.ssh</code> 目錄</strong></h4><p>   在 PowerShell 執行：<br>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure><br>   （如已有此目錄可略過）</p>
-<h4 id="產生-SSH-金鑰"><a href="#產生-SSH-金鑰" class="headerlink" title="產生 SSH 金鑰"></a><strong>產生 SSH 金鑰</strong></h4>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
-<p>   按 Enter 使用預設路徑及參數。</p>
-<h4 id="將公鑰加入-GitHub"><a href="#將公鑰加入-GitHub" class="headerlink" title="將公鑰加入 GitHub"></a><strong>將公鑰加入 GitHub</strong></h4><p>   執行：<br>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure><br>   複製顯示內容，前往 GitHub → Settings → SSH and GPG keys → New SSH key，貼上內容並儲存。<br>   註：連結 → <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
-<h4 id="測試-SSH-連線"><a href="#測試-SSH-連線" class="headerlink" title="測試 SSH 連線"></a><strong>測試 SSH 連線</strong></h4>   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
-<p>   若出現<br>   <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;username&gt;! You<span class="symbol">&#x27;ve</span> successfully authenticated</span><br></pre></td></tr></table></figure><br>   表示設定成功。</p>
-<h4 id="回主題目，開始部署"><a href="#回主題目，開始部署" class="headerlink" title="回主題目，開始部署"></a><strong>回主題目，開始部署</strong></h4><p>完成 SSH 設定後，開始進行 Hexo 部署：</p>
+<p>完成後就可以在本地瀏覽器打開 <a target="_blank" rel="noopener" href="http://localhost:4000">http://localhost:4000</a> 預覽新主題部落格樣貌。<br />
+<img src="/images/Hexo/run.webp" alt="run" /></p>
+<h2 id="部署到-github-pages"><a class="markdownIt-Anchor" href="#部署到-github-pages"></a> 部署到 GitHub Pages</h2>
+<p>在開始部署之前，請先完成 SSH 金鑰設定，以避免常見的權限問題：</p>
+<h3 id="ssh-金鑰設定步驟"><a class="markdownIt-Anchor" href="#ssh-金鑰設定步驟"></a> SSH 金鑰設定步驟</h3>
+<h4 id="建立-ssh-目錄"><a class="markdownIt-Anchor" href="#建立-ssh-目錄"></a> <strong>建立 <code>.ssh</code> 目錄</strong></h4>
+<p>在 PowerShell 執行：</p>
+   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure>
+<p>（如已有此目錄可略過）</p>
+<h4 id="產生-ssh-金鑰"><a class="markdownIt-Anchor" href="#產生-ssh-金鑰"></a> <strong>產生 SSH 金鑰</strong></h4>
+   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br></pre></td></tr></table></figure>
+<p>按 Enter 使用預設路徑及參數。</p>
+<h4 id="將公鑰加入-github"><a class="markdownIt-Anchor" href="#將公鑰加入-github"></a> <strong>將公鑰加入 GitHub</strong></h4>
+<p>執行：</p>
+   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
+<p>複製顯示內容，前往 GitHub → Settings → SSH and GPG keys → New SSH key，貼上內容並儲存。<br />
+註：連結 → <a target="_blank" rel="noopener" href="https://github.com/settings/keys">https://github.com/settings/keys</a></p>
+<h4 id="測試-ssh-連線"><a class="markdownIt-Anchor" href="#測試-ssh-連線"></a> <strong>測試 SSH 連線</strong></h4>
+   <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+<p>若出現</p>
+   <figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hi &lt;username&gt;! You<span class="symbol">&#x27;ve</span> successfully authenticated</span><br></pre></td></tr></table></figure>
+<p>表示設定成功。</p>
+<h4 id="回主題目開始部署"><a class="markdownIt-Anchor" href="#回主題目開始部署"></a> <strong>回主題目，開始部署</strong></h4>
+<p>完成 SSH 設定後，開始進行 Hexo 部署：</p>
 <ul>
-<li><p>建立 GitHub 倉庫，通常命名為 <code>你的帳號.github.io</code>，如 <code>itousouta15.github.io</code>。<br><img src="/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp"></p>
+<li>
+<p>建立 GitHub 倉庫，通常命名為 <code>你的帳號.github.io</code>，如 <code>itousouta15.github.io</code>。<br />
+<img src="/images/Hexo/%E5%89%B5%E5%BB%BArepo.webp" alt="" /></p>
 </li>
-<li><p>在 Hexo 專案根目錄安裝部署外掛：  </p>
+<li>
+<p>在 Hexo 專案根目錄安裝部署外掛：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>先初始化 git</p>
+<li>
+<p>先初始化 git</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>修改 <code>_config.yml</code>，增加部署設定：  </p>
+<li>
+<p>修改 <code>_config.yml</code>，增加部署設定：</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">git@github.com:itousouta15/&lt;你的-repo&gt;.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
-<p><img src="/images/Hexo/deploy.webp" alt="deploy"></p>
 </li>
-<li><p>生成靜態檔並部署：  </p>
+</ul>
+<p><img src="/images/Hexo/deploy.webp" alt="deploy" /></p>
+<ul>
+<li>
+<p>生成靜態檔並部署：</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>確認 GitHub Pages 功能已開啟，等候片刻後瀏覽 <code>https://你的帳號.github.io</code> 即完成線上部署。<br><img src="/images/Hexo/github.webp" alt="github"></p>
+<li>
+<p>確認 GitHub Pages 功能已開啟，等候片刻後瀏覽 <code>https://你的帳號.github.io</code> 即完成線上部署。<br />
+<img src="/images/Hexo/github.webp" alt="github" /></p>
 </li>
 </ul>
-<h3 id="常見疑難排解"><a href="#常見疑難排解" class="headerlink" title="常見疑難排解"></a>常見疑難排解</h3><blockquote>
-<h4 id="SSH-金鑰權限錯誤及-ssh-目錄無法建立"><a href="#SSH-金鑰權限錯誤及-ssh-目錄無法建立" class="headerlink" title="SSH 金鑰權限錯誤及 .ssh 目錄無法建立"></a>SSH 金鑰權限錯誤及 <code>.ssh</code> 目錄無法建立</h4><ul>
-<li><strong>錯誤訊息：</strong>  <ul>
-<li><code>git@github.com: Permission denied (publickey)</code>  </li>
-<li><code>Could not create directory &#39;/c/Users/\xxx/.ssh&#39;</code>（亂碼路徑）</li>
+<h3 id="常見疑難排解"><a class="markdownIt-Anchor" href="#常見疑難排解"></a> 常見疑難排解</h3>
+<blockquote>
+<h4 id="ssh-金鑰權限錯誤及-ssh-目錄無法建立"><a class="markdownIt-Anchor" href="#ssh-金鑰權限錯誤及-ssh-目錄無法建立"></a> SSH 金鑰權限錯誤及 <code>.ssh</code> 目錄無法建立</h4>
+<ul>
+<li><strong>錯誤訊息：</strong>
+<ul>
+<li><code>git@github.com: Permission denied (publickey)</code></li>
+<li><code>Could not create directory '/c/Users/\xxx/.ssh'</code>（亂碼路徑）</li>
 </ul>
 </li>
-<li><strong>原因：</strong><br>Windows 使用者名稱含有中文或特殊符號，系統或 Git 解析路徑時產生亂碼，導致無法建立 <code>.ssh</code> 目錄。  </li>
-<li><strong>解決方法：</strong>  <ol>
-<li>手動建立正確的 <code>.ssh</code> 目錄：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure></li>
-<li>產生 SSH 金鑰並加入 GitHub：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
-將公鑰內容複製貼至 GitHub SSH Keys 頁面。  </li>
-<li>將 Git 指令設定使用絕對路徑載入金鑰，注意路徑要有反斜線：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;ssh -i C:/Users/伊藤蒼太/.ssh/id_ed25519&quot;</span></span><br></pre></td></tr></table></figure></li>
-<li>測試 SSH 連線：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
-正常應顯示「Hi <username>! You’ve successfully authenticated」。  </li>
+<li><strong>原因：</strong><br />
+Windows 使用者名稱含有中文或特殊符號，系統或 Git 解析路徑時產生亂碼，導致無法建立 <code>.ssh</code> 目錄。</li>
+<li><strong>解決方法：</strong>
+<ol>
+<li>手動建立正確的 <code>.ssh</code> 目錄：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir <span class="variable">$env:USERPROFILE</span>\.ssh</span><br></pre></td></tr></table></figure>
+</li>
+<li>產生 SSH 金鑰並加入 GitHub：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh<span class="literal">-keygen</span> <span class="literal">-t</span> ed25519 <span class="literal">-C</span> <span class="string">&quot;your_email@example.com&quot;</span></span><br><span class="line"><span class="built_in">cat</span> <span class="variable">$env:USERPROFILE</span>\.ssh\id_ed25519.pub</span><br></pre></td></tr></table></figure>
+將公鑰內容複製貼至 GitHub SSH Keys 頁面。</li>
+<li>將 Git 指令設定使用絕對路徑載入金鑰，注意路徑要有反斜線：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="literal">--global</span> core.sshCommand <span class="string">&quot;ssh -i C:/Users/伊藤蒼太/.ssh/id_ed25519&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>測試 SSH 連線：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-T</span> git@github.com</span><br></pre></td></tr></table></figure>
+正常應顯示「Hi <username>! You’ve successfully authenticated」。</li>
 <li>再試 <code>git push</code> 與 <code>hexo deploy</code>。</li>
 </ol>
 </li>
 </ul>
-<h4 id="Git-倉庫初始化錯誤"><a href="#Git-倉庫初始化錯誤" class="headerlink" title="Git 倉庫初始化錯誤"></a>Git 倉庫初始化錯誤</h4><ul>
-<li><strong>錯誤訊息：</strong><br><code>fatal: Not a git repository (or any of the parent directories): .git</code>  </li>
-<li><strong>原因：</strong><br>執行 Git 指令的資料夾非 Hexo 專案根目錄，或該資料夾尚未初始化 Git。  </li>
-<li><strong>解決方法：</strong>  <ol>
-<li>切換至 Hexo 專案根目錄（含 <code>.git</code>）。  </li>
-<li>若尚未初始化，執行：  <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:itousouta15/&lt;你的<span class="literal">-repo</span>&gt;.git</span><br></pre></td></tr></table></figure></li>
+<h4 id="git-倉庫初始化錯誤"><a class="markdownIt-Anchor" href="#git-倉庫初始化錯誤"></a> Git 倉庫初始化錯誤</h4>
+<ul>
+<li><strong>錯誤訊息：</strong><br />
+<code>fatal: Not a git repository (or any of the parent directories): .git</code></li>
+<li><strong>原因：</strong><br />
+執行 Git 指令的資料夾非 Hexo 專案根目錄，或該資料夾尚未初始化 Git。</li>
+<li><strong>解決方法：</strong>
+<ol>
+<li>切換至 Hexo 專案根目錄（含 <code>.git</code>）。</li>
+<li>若尚未初始化，執行：<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br><span class="line">git remote add origin git@github.com:itousouta15/&lt;你的<span class="literal">-repo</span>&gt;.git</span><br></pre></td></tr></table></figure>
+</li>
 <li>再執行 <code>hexo deploy</code>。</li>
 </ol>
 </li>
 </ul>
-<h4 id="Submodule-警告"><a href="#Submodule-警告" class="headerlink" title="Submodule 警告"></a>Submodule 警告</h4><ul>
-<li><strong>內容：</strong><br><code>themes/reimu</code> 資料夾為獨立 git 倉庫，Git 會警告此為 submodule。  </li>
-<li><strong>建議：</strong><br>使用 Git submodule 管理或刪除 <code>themes/reimu</code> 的 <code>.git</code> 資料夾，避免 clone 不完整。</li>
+<h4 id="submodule-警告"><a class="markdownIt-Anchor" href="#submodule-警告"></a> Submodule 警告</h4>
+<ul>
+<li><strong>內容：</strong><br />
+<code>themes/reimu</code> 資料夾為獨立 git 倉庫，Git 會警告此為 submodule。</li>
+<li><strong>建議：</strong><br />
+使用 Git submodule 管理或刪除 <code>themes/reimu</code> 的 <code>.git</code> 資料夾，避免 clone 不完整。</li>
 </ul>
-<h4 id="LF-與-CRLF-行尾格式警告"><a href="#LF-與-CRLF-行尾格式警告" class="headerlink" title="LF 與 CRLF 行尾格式警告"></a>LF 與 CRLF 行尾格式警告</h4><ul>
-<li><strong>說明：</strong><br>Git 在 Windows 環境會提示行尾碼轉換，為正常情況。</li>
+<h4 id="lf-與-crlf-行尾格式警告"><a class="markdownIt-Anchor" href="#lf-與-crlf-行尾格式警告"></a> LF 與 CRLF 行尾格式警告</h4>
+<ul>
+<li><strong>說明：</strong><br />
+Git 在 Windows 環境會提示行尾碼轉換，為正常情況。</li>
 </ul>
-<h4 id="成功部署訊息"><a href="#成功部署訊息" class="headerlink" title="成功部署訊息"></a>成功部署訊息</h4><ul>
-<li>你會看到類似以下內容：  <figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Enumerating</span></span> objects... </span><br><span class="line"><span class="function"><span class="title">Writing</span></span> objects... </span><br><span class="line">To github.com:itousouta15/test.github.io.git</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure></li>
+<h4 id="成功部署訊息"><a class="markdownIt-Anchor" href="#成功部署訊息"></a> 成功部署訊息</h4>
+<ul>
+<li>你會看到類似以下內容：<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">Enumerating</span></span> objects... </span><br><span class="line"><span class="function"><span class="title">Writing</span></span> objects... </span><br><span class="line">To github.com:itousouta15/test.github.io.git</span><br><span class="line">INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+</li>
 <li>如果出現部分 <code>known_hosts</code> 警告，不影響 Git 操作與 Hexo 部署。</li>
 </ul>
 </blockquote>
-<h3 id="日常使用與維護"><a href="#日常使用與維護" class="headerlink" title="日常使用與維護"></a>日常使用與維護</h3><ul>
-<li>使用 Hexo CLI 管理文章：<br>新增文章  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;文章標題&quot;</span></span><br></pre></td></tr></table></figure>
-編輯完成後產生並部署：  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></li>
-<li>定期更新 Hexo、主題與外掛，保持安全與功能正常。  </li>
+<h3 id="日常使用與維護"><a class="markdownIt-Anchor" href="#日常使用與維護"></a> 日常使用與維護</h3>
+<ul>
+<li>使用 Hexo CLI 管理文章：<br />
+新增文章<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new post <span class="string">&quot;文章標題&quot;</span></span><br></pre></td></tr></table></figure>
+編輯完成後產生並部署：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure>
+</li>
+<li>定期更新 Hexo、主題與外掛，保持安全與功能正常。</li>
 <li>依需要自訂主題配置，如風格、選單、評論系統等。</li>
 </ul>
-<h3 id="進階優化"><a href="#進階優化" class="headerlink" title="進階優化"></a>進階優化</h3><ul>
-<li>加入自訂網域，替代預設 GitHub Pages 的網址。  </li>
-<li>使用 CDN 或 Cloudflare 提升全球訪問速度與安全。  </li>
-<li>配置 SSL 證書支援 HTTPS。  </li>
-<li>整合 SEO、網站分析工具。  </li>
-<li>使用 CI&#x2F;CD 工具自動化部署流程。</li>
+<h3 id="進階優化"><a class="markdownIt-Anchor" href="#進階優化"></a> 進階優化</h3>
+<ul>
+<li>加入自訂網域，替代預設 GitHub Pages 的網址。</li>
+<li>使用 CDN 或 Cloudflare 提升全球訪問速度與安全。</li>
+<li>配置 SSL 證書支援 HTTPS。</li>
+<li>整合 SEO、網站分析工具。</li>
+<li>使用 CI/CD 工具自動化部署流程。</li>
 </ul>
-<p><img src="/images/Hexo/page.webp" alt="page"></p>
+<p><img src="/images/Hexo/page.webp" alt="page" /></p>
 <p>這篇文章就到此為止!我們下次見!</p>
 
     </div>
@@ -500,6 +560,14 @@
     </footer>
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="/images/FhCTF.png" data-sizes="auto" alt="FhCTF 11401" class="lazyload">
+        <a href="/2026/01/01/undefined/" aria-label="前一篇: FhCTF 11401" title="前一篇: FhCTF 11401"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            FhCTF 11401
+        </h3>
+      </div>
     <div class="article-nav-link-wrap right">
         <img data-src="/images/ais3/ais3.webp" data-sizes="auto" alt="AIS3 pre-exam 2025" class="lazyload">
       <a href="/2025/07/11/AIS3PE/" aria-label="後一篇: AIS3 pre-exam 2025"  title="後一篇: AIS3 pre-exam 2025"></a>
@@ -550,10 +618,10 @@
       </div>
       <div>
         <span class="icon-brush"></span>
-        16.6k
+        30.1k
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        01:30
+        02:35
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -575,7 +643,7 @@
   <div class="sidebar-wrap">
         <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text">準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-Node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text">檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#package-json"><span class="toc-number">2.1.1.</span> <span class="toc-text">package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text">scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text">source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text">theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#config-yml"><span class="toc-number">2.1.5.</span> <span class="toc-text">_config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text">直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-GitHub-Pages"><span class="toc-number">3.</span> <span class="toc-text">部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text">SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text">建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-SSH-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text">產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-GitHub"><span class="toc-number">3.1.3.</span> <span class="toc-text">將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-SSH-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text">測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%EF%BC%8C%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text">回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text">常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#SSH-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text">SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text">Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text">Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LF-%E8%88%87-CRLF-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text">LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text">成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text">日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text">進階優化</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%96%E5%82%99%E7%92%B0%E5%A2%83"><span class="toc-number">1.</span> <span class="toc-text"> 準備環境</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%9D-nodejs"><span class="toc-number">1.1.</span> <span class="toc-text"> 安裝 Node.js</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo-%E5%AF%A6%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text"> Hexo 實作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AA%94%E6%A1%88%E4%BB%8B%E7%B4%B9"><span class="toc-number">2.1.</span> <span class="toc-text"> 檔案介紹</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#packagejson"><span class="toc-number">2.1.1.</span> <span class="toc-text"> package.json</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#scaffolds"><span class="toc-number">2.1.2.</span> <span class="toc-text"> scaffolds&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#source"><span class="toc-number">2.1.3.</span> <span class="toc-text"> source&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#theme"><span class="toc-number">2.1.4.</span> <span class="toc-text"> theme&#x2F;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#_configyml"><span class="toc-number">2.1.5.</span> <span class="toc-text"> _config.yml</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B4%E6%8E%A5%E5%A5%97%E6%A8%A1%E6%9D%BF"><span class="toc-number">2.2.</span> <span class="toc-text"> 直接套模板</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E5%88%B0-github-pages"><span class="toc-number">3.</span> <span class="toc-text"> 部署到 GitHub Pages</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#ssh-%E9%87%91%E9%91%B0%E8%A8%AD%E5%AE%9A%E6%AD%A5%E9%A9%9F"><span class="toc-number">3.1.</span> <span class="toc-text"> SSH 金鑰設定步驟</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BB%BA%E7%AB%8B-ssh-%E7%9B%AE%E9%8C%84"><span class="toc-number">3.1.1.</span> <span class="toc-text"> 建立 .ssh 目錄</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A2%E7%94%9F-ssh-%E9%87%91%E9%91%B0"><span class="toc-number">3.1.2.</span> <span class="toc-text"> 產生 SSH 金鑰</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B0%87%E5%85%AC%E9%91%B0%E5%8A%A0%E5%85%A5-github"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 將公鑰加入 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B8%AC%E8%A9%A6-ssh-%E9%80%A3%E7%B7%9A"><span class="toc-number">3.1.4.</span> <span class="toc-text"> 測試 SSH 連線</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9E%E4%B8%BB%E9%A1%8C%E7%9B%AE%E9%96%8B%E5%A7%8B%E9%83%A8%E7%BD%B2"><span class="toc-number">3.1.5.</span> <span class="toc-text"> 回主題目，開始部署</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A6%8B%E7%96%91%E9%9B%A3%E6%8E%92%E8%A7%A3"><span class="toc-number">3.2.</span> <span class="toc-text"> 常見疑難排解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#ssh-%E9%87%91%E9%91%B0%E6%AC%8A%E9%99%90%E9%8C%AF%E8%AA%A4%E5%8F%8A-ssh-%E7%9B%AE%E9%8C%84%E7%84%A1%E6%B3%95%E5%BB%BA%E7%AB%8B"><span class="toc-number">3.2.1.</span> <span class="toc-text"> SSH 金鑰權限錯誤及 .ssh 目錄無法建立</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#git-%E5%80%89%E5%BA%AB%E5%88%9D%E5%A7%8B%E5%8C%96%E9%8C%AF%E8%AA%A4"><span class="toc-number">3.2.2.</span> <span class="toc-text"> Git 倉庫初始化錯誤</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#submodule-%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.3.</span> <span class="toc-text"> Submodule 警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lf-%E8%88%87-crlf-%E8%A1%8C%E5%B0%BE%E6%A0%BC%E5%BC%8F%E8%AD%A6%E5%91%8A"><span class="toc-number">3.2.4.</span> <span class="toc-text"> LF 與 CRLF 行尾格式警告</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%88%90%E5%8A%9F%E9%83%A8%E7%BD%B2%E8%A8%8A%E6%81%AF"><span class="toc-number">3.2.5.</span> <span class="toc-text"> 成功部署訊息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%97%A5%E5%B8%B8%E4%BD%BF%E7%94%A8%E8%88%87%E7%B6%AD%E8%AD%B7"><span class="toc-number">3.3.</span> <span class="toc-text"> 日常使用與維護</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%B2%E9%9A%8E%E5%84%AA%E5%8C%96"><span class="toc-number">3.4.</span> <span class="toc-text"> 進階優化</span></a></li></ol></li></ol>
 </div>
 </div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -586,15 +654,15 @@
 <div class="sidebar-state">
   <div class="sidebar-state-article">
     <div>文章</div>
-    <div class="sidebar-state-number">8</div>
+    <div class="sidebar-state-number">10</div>
   </div>
   <div class="sidebar-state-category">
     <div>分類</div>
-    <div class="sidebar-state-number">2</div>
+    <div class="sidebar-state-number">3</div>
   </div>
   <div class="sidebar-state-tag">
     <div>標籤</div>
-    <div class="sidebar-state-number">3</div>
+    <div class="sidebar-state-number">4</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -724,7 +792,7 @@
           description: "",
           stripContent: "在這個資訊爆炸的時代，「部落格」這一個看似已經過時的名詞，其實依然是屬於個人開發者、研究者與創作者的一塊淨土。與社群平台的碎片化資訊不同，部落格更適合進行系統性的知識整理與技術分享，讓內容能夠被搜尋、被保存、被持續閱讀。尤其對程式設計或網路安全領域的學習者來說，一個屬於自己的技術部落格，不僅能夠紀錄成長歷程，也有助於在未來建立個人品牌。 本篇將帶你從零開始(在windows系統上)，使用 Hexo（一個快速、簡潔的靜態部落格框架）搭配 GitHub Pages（GitHub 提供的免費靜態網頁託",
           date: "Wed Aug 27 2025 14:32:32 GMT+0800",
-          updated: "Mon Feb 09 2026 18:17:40 GMT+0800",
+          updated: "Fri Feb 13 2026 14:37:57 GMT+0800",
           cover: "/images/Hexo/hexo_github.webp",
         };
       </script>
