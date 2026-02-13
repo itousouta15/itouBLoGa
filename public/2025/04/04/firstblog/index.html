@@ -1,0 +1,883 @@
+  <!DOCTYPE html>
+  <html lang="zh-TW"  
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-TW":"複製成功 (*^▽^*)","en":"Copy successfully (*^▽^*)"},"fail":{"zh-TW":"複製失敗 (ﾟ⊿ﾟ)ﾂ","en":"Copy failed (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本部落格所有文章除特別聲明外，均採用 BY-NC-SA 授權協議。轉載請註明出處！';window.REIMU_CONFIG.swPath = '/sw.js';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://blog.itousouta15.tw';window.REIMU_CONFIG.i18n_languages = ["en"];</script>
+  <title>
+    第一次架網站的心得 | itouBLoGa
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic|JetBrains Mono:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/regular.min.css" integrity="sha384-4qYppzjH8EiA+cGdaubu2vL7Rk8WGiqCSj7oRuP1uwtFWkfKNHD20lPfcrbQc8dU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/solid.min.css" integrity="sha384-wbMWab3UDSPm2kvIgVOn&#x2F;d9KPTecgPU1+Nb3zoQrm&#x2F;oVu0EkPL6IaKinjbwW0rum" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/regular.min.css" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" crossorigin="anonymous">
+
+    <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/brands.min.css" integrity="sha384-KTGeC2hIMzpeQakhsmzB9bZfhCD5xZZCgI1iZH6f/O457SxzlkzTQg/WXFNoi3ih" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v5-font-face.min.css" integrity="sha384-nJ1ThfldViXoLpJ6jlKcP2beas8BMbYq26SG9Hi8cH89bZi4RZ644v7helMCqJxd" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/@fortawesome/fontawesome-free@7.1.0/css/v4-font-face.min.css" integrity="sha384-UlkrhOIvZxJFd4MElSUp7ow6/RUeYKi/orfCZIRRiOENFuQPIAA3T3HjYfmBRhNq" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v5-font-face.min.css" integrity="null" crossorigin="anonymous">
+<link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/v4-font-face.min.css" integrity="null" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="C++到前端的跨界初體驗 我開始寫程式和其他電神比已經算很晚了，約莫是高一上第一學期開始學C++，並決定用這條路走特選上大學，雖然目標是資安競程領域（主要是怕走前端會吃土）但我還是決定挑戰自己，嘗試學習網站開發（升學需要），不過，這次的網站製作並不是從零開始，而是使用了Hexo框架並套用了現成的模板。（技術不夠）雖然過程相對簡單，但仍然讓我對網站架構有了初步的了解（高二再來全部重寫）  Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第一次架網站的心得">
+<meta property="og:url" content="https://blog.itousouta15.tw/2025/04/04/firstblog/">
+<meta property="og:site_name" content="itouBLoGa">
+<meta property="og:description" content="C++到前端的跨界初體驗 我開始寫程式和其他電神比已經算很晚了，約莫是高一上第一學期開始學C++，並決定用這條路走特選上大學，雖然目標是資安競程領域（主要是怕走前端會吃土）但我還是決定挑戰自己，嘗試學習網站開發（升學需要），不過，這次的網站製作並不是從零開始，而是使用了Hexo框架並套用了現成的模板。（技術不夠）雖然過程相對簡單，但仍然讓我對網站架構有了初步的了解（高二再來全部重寫）  Hexo">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FB/hexo.webp">
+<meta property="og:image" content="https://camo.githubusercontent.com/f64a6ac5d574730263df80812a6bb4c603a25a9563440b45c9cc37c1b228df65/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f442d536b65746f6e2f6865786f2d7468656d652d7265696d75406d61696e2f5f73637265656e73686f742f5265696d755f6461726b2e706e67">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/FB/%E4%B8%BB%E9%A0%81.webp">
+<meta property="og:image" content="https://blog.itousouta15.tw/images/smallR.webp">
+<meta property="article:published_time" content="2025-04-04T10:29:32.000Z">
+<meta property="article:modified_time" content="2026-02-13T12:53:24.039Z">
+<meta property="article:author" content="伊藤蒼太">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://blog.itousouta15.tw/images/FB/hexo.webp">
+      <meta name="keywords" content="伊藤蒼太, Hexo, Blog, Coding, Learning, Life">
+    <link rel="alternate" href="/atom.xml" title="itouBLoGa" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.css" integrity="null" crossorigin="anonymous">
+      
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.css" crossorigin="anonymous">
+
+    
+<script src="https://cdn.jsdelivr.net/npm/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@reimujs/aos@0.1.0/dist/aos.css" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <img src="/images/taichi.svg" alt="loading" />
+      </div>
+      <div class="loading-word">載入中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+  <div class="notification-wrapper">
+    <h1>發現新版本</h1>
+    <p>網站好像有新內容，是否更新？</p>
+    <div class="notification-btn">
+      <button id="notification-update-btn">更新</button>
+      <button id="notification-close-btn">取消</button>
+    </div>
+  </div>
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav">
+    
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf015;
+          </div>
+          <a class="main-nav-link" href="/">首頁</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf07c;
+          </div>
+          <a class="main-nav-link" href="/archives">歸檔</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf2bd;
+          </div>
+          <a class="main-nav-link" href="/about">關於</a>
+        </span>
+      
+        <span class="main-nav-link-wrap">
+          <div class="main-nav-icon icon ">
+            &#xf0c0;
+          </div>
+          <a class="main-nav-link" href="/friend">友鏈</a>
+        </span>
+      
+    
+    <a id="main-nav-toggle" class="nav-icon"></a>
+  </nav>
+  <nav id="sub-nav">
+    
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 訂閱" target="_blank"></a>
+    
+    
+    
+  </nav>
+  
+    
+    <nav id="i18n-nav">
+      <div class="custom-dropdown">
+        <div class="select-selected" id="select-selected">
+          <span id="nav-language-btn" class="nav-icon" style="padding: 0 20px 0 0"></span>
+          <span id="selected-lang">繁體中文</span>
+        </div>
+        <ul class="select-items" id="select-items">
+          
+            <li data-value="zh-TW" class="selected">繁體中文</li>
+          
+            <li data-value="en" >English</li>
+          
+        </ul>
+      </div>
+      <script>
+        var selectSelected = document.getElementById("select-selected");
+        var selectedLang = document.getElementById("selected-lang");
+        var selectItems = document.getElementById("select-items");
+        var selectOptions = selectItems.querySelectorAll("li");
+
+        selectSelected.addEventListener("click", () => {
+          selectItems.classList.toggle("show");
+        });
+
+        selectOptions.forEach((item) => {
+          item.addEventListener("click", () => {
+            const langMap = {};
+            
+              langMap['zh-TW'] = '/2025/04/04/firstblog/';
+            
+              langMap['en'] = '/en/2025/04/04/firstblog/';
+            
+            selectedLang.textContent = item.textContent;
+            selectItems.classList.remove("show");
+            selectOptions.forEach((option) => {
+              option.classList.remove("selected");
+            });
+            item.classList.add("selected");
+            window.location = langMap[item.dataset.value];
+          });
+        });
+
+        document.addEventListener("click", (event) => {
+          if (!event.target.closest(".custom-dropdown")) {
+            selectItems.classList.remove("show");
+          }
+        });
+      </script>
+    </nav>
+  
+</div>
+<header id="header">
+  
+    <picture></picture>
+    <img crossorigin="anonymous" fetchpriority="high" src="/images/mainweb.webp" alt="第一次架網站的心得">
+  
+  <div id="header-outer">
+    <div id="header-title">
+      
+        
+        
+          <a href="/" id="logo">
+            <h1 data-aos="slide-up">第一次架網站的心得</h1>
+          </a>
+        
+      
+      
+        
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+          
+        </h2>
+      
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content" class="sidebar-left"  >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E5%88%B0%E5%89%8D%E7%AB%AF%E7%9A%84%E8%B7%A8%E7%95%8C%E5%88%9D%E9%AB%94%E9%A9%97"><span class="toc-number">1.</span> <span class="toc-text"> C++到前端的跨界初體驗</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E7%9A%84%E9%81%B8%E6%93%87%E8%88%87%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text"> Hexo框架的選擇與準備</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87hexo"><span class="toc-number">2.1.</span> <span class="toc-text"> 為什麼選擇Hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%97%E6%A8%A1%E6%9D%BF%E7%9A%84%E9%81%8E%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text"> 套模板的過程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%A6%E9%9A%9B%E6%93%8D%E4%BD%9C%E8%88%87%E5%BF%83%E5%BE%97"><span class="toc-number">3.</span> <span class="toc-text"> 實際操作與心得</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%8D%A1%E9%97%9C"><span class="toc-number">3.1.</span> <span class="toc-text"> 大卡關</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="toc-number">3.2.</span> <span class="toc-text"> AI的影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B1%E6%96%87%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text"> 英文的重要性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E6%80%9D%E8%88%87%E6%9C%AA%E4%BE%86"><span class="toc-number">4.</span> <span class="toc-text"> 反思與未來</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%B0%B1%E6%84%9F%E8%88%87%E4%B8%8D%E8%B6%B3%E4%B9%8B%E8%99%95"><span class="toc-number">4.1.</span> <span class="toc-text"> 成就感與不足之處</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E4%BE%86%E8%A8%88%E5%8A%83"><span class="toc-number">4.2.</span> <span class="toc-text"> 未來計劃</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B5%90%E5%B0%BE"><span class="toc-number">5.</span> <span class="toc-text"> 結尾</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E5%88%A5%E6%84%9F%E8%AC%9D"><span class="toc-number">6.</span> <span class="toc-text"> 特別感謝</span></a></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-firstblog" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2025-04-04T10:29:32.000Z" itemprop="datePublished">2025-04-04</time>
+    <time style="display: none;" id="post-update-time">2026-02-13</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h1 id="c到前端的跨界初體驗"><a class="markdownIt-Anchor" href="#c到前端的跨界初體驗"></a> C++到前端的跨界初體驗</h1>
+<p>我開始寫程式和其他電神比已經算很晚了，約莫是高一上第一學期開始學C++，並決定用這條路走特選上大學，雖然目標是資安競程領域（<s>主要是怕走前端會吃土</s>）但我還是決定挑戰自己，嘗試學習網站開發（升學需要），不過，<strong>這次的網站製作並不是從零開始，而是使用了Hexo框架並套用了現成的模板。</strong>（<s>技術不夠</s>）雖然過程相對簡單，但仍然讓我對網站架構有了初步的了解（高二再來全部重寫）</p>
+<h1 id="hexo框架的選擇與準備"><a class="markdownIt-Anchor" href="#hexo框架的選擇與準備"></a> Hexo框架的選擇與準備</h1>
+<h2 id="為什麼選擇hexo"><a class="markdownIt-Anchor" href="#為什麼選擇hexo"></a> 為什麼選擇Hexo？</h2>
+<p><img src="/images/FB/hexo.webp" alt="hexo" /><br />
+剛開始接觸網站開發時，我面臨了一個問題：應該從哪裡開始？在看了很多電神的網站後，我發現了Hexo這個框架。Hexo是一個快速、簡單且高效的靜態網站生成器，特別適合像我這樣<s>沒有技術的人</s>。它的優勢在於：</p>
+<blockquote>
+<p><strong>簡單易用</strong>：只需要安裝Node.js和npm(<s>對linux相對友善</s>)，就可以快速搭建網站。</p>
+</blockquote>
+<blockquote>
+<p><strong>支持Markdown</strong>：對於不熟悉HTML的初學者來說，用Markdown撰寫內容非常友好。</p>
+</blockquote>
+<blockquote>
+<p><strong>模板豐富</strong>：有大量現成的模板可供選擇，能輕鬆打造一個美觀的網站。</p>
+</blockquote>
+<p>此外，用Hexo可以讓我專注於創作，而不花太多時間在技術細節上。這對於剛開始探索網站開發的我來說，是一個理想的選擇。</p>
+<h2 id="套模板的過程"><a class="markdownIt-Anchor" href="#套模板的過程"></a> 套模板的過程</h2>
+<p>在決定要用Hexo當下我就已經找好要用的模板了，在茫茫模板中D-Sketon大大所製作的Reimu模板風格一下就吸引到了我~~（我只是看到東方就進來了）~~的注意。但此時的我並不知道接下來才是地獄的開始…<br />
+<img src="https://camo.githubusercontent.com/f64a6ac5d574730263df80812a6bb4c603a25a9563440b45c9cc37c1b228df65/68747470733a2f2f63646e2e6a7364656c6976722e6e65742f67682f442d536b65746f6e2f6865786f2d7468656d652d7265696d75406d61696e2f5f73637265656e73686f742f5265696d755f6461726b2e706e67" alt="reimu" /></p>
+<h1 id="實際操作與心得"><a class="markdownIt-Anchor" href="#實際操作與心得"></a> 實際操作與心得</h1>
+<h2 id="大卡關"><a class="markdownIt-Anchor" href="#大卡關"></a> 大卡關</h2>
+<p>首先我遇到的第一個問題是：「要怎麼在 Linux 上寫 Hexo 網站？」<br />
+由於我的電腦是 Linux 系統，而我過去從來沒在 Linux 上從 GitHub 抓過東西、也沒用過 Hexo，光是環境安裝就讓我摸了好一陣子。什麼 Node.js、npm、Hexo CLI、權限設定……全都要自己慢慢爬文摸索。</p>
+<p>但真正的問題是，是部署到 GitHub Pages 的時候，後台一直報錯「找不到 Reimu 模板」。我反覆確認檔案都有傳上去、路徑也正確,但就是怎麼都過不了。<strong>當時的我顯然不知道<code>GitHub Pages 預設會啟用 Jekyll 處理器，而我寫的是hexo架構....能跑才有鬼。</code></strong></p>
+<p>我在這個問題上卡了快一個月，試了各種方法都沒用。直到有一天我腦袋突然清醒去問AI，對方建議我：「在根目錄放一個名為 .nojekyll 的空檔案。」<br />
+雖然我也不清楚為什麼這樣可以跑，但至少他過了(◉３◉)</p>
+<h2 id="ai的影響"><a class="markdownIt-Anchor" href="#ai的影響"></a> <code>AI</code>的影響</h2>
+<p>最近引起討論的<code>Vibe Coding</code>強調的是 <strong>「完全順應感覺（vibes）、擁抱AI帶來的進步，並忘記程式碼本身的存在」</strong> 這種寫法某種程度上解放了開發者的思維，讓創作過程更像是在畫畫、作曲，而不是一行一行的尻程式碼( ´•̥̥̥ω•̥̥̥` )</p>
+<p>雖然這次開發還算不上真正的<code>vibe coding</code>，但實際上，大約有<strong>將近4成以上的問題</strong>，都是透過人工智慧幫我發現與排除的。例如 CSS 的語法錯誤、 YAML 格式錯誤、甚至是 Hexo 設定檔的小細節，很多我根本還沒注意到的 bug，AI 都能即時提醒我，甚至提供修正建議。</p>
+<p>雖然在很多情境下它能提供即時且精準的協助，<strong>但在某些複雜或需要細膩判斷的地方，它反而會越走越偏。</strong></p>
+<p>例如有幾次我遇到 YAML 語法錯誤時，AI 給的建議看起來正確，但實際上只是 <strong>「表面正確」</strong> —— 縮排雖然對了，邏輯卻錯了，導致 Hexo 仍然無法正確運作。此外，它有時候會給出 「過時」 的解法或是 「看似合理但根本不存在的語法」 ，特別是在處理一些偏門功能或自定義元件時。</p>
+<p>還有一個問題，就是 <strong>「太依賴 AI」</strong>。一旦開始習慣問 AI，自己動手查資料、查文件的機會就會變少，也容易讓自己的 debugging 能力退化。尤其是當 AI 的回答沒有命中問題時，<strong>如果自己也不知道該怎麼 debug，就會卡得更久</strong>。<br />
+(<s>現在有一堆人甚至連git都不會用</s>)</p>
+<h2 id="英文的重要性"><a class="markdownIt-Anchor" href="#英文的重要性"></a> 英文的重要性</h2>
+<p>在AI的浪潮之下，我常常忽視了英文的重要性，總覺得只要程式寫得好，就可以輕鬆應對所有挑戰。但從這次的開發過程中<code>github</code>它們的介面和文檔幾乎全是英文。每當遇到問題時，我不得不花大量時間研讀英文說明和錯誤訊息，試圖理解它們的意思（<s>真的看不懂阿…</s>）</p>
+<p>這些經歷讓我深刻意識到，英文對於資工科系學生的重要性<strong>不僅僅是「加分項」</strong>，而是 <strong>「必備技能」</strong>。從技術文檔到程式語言的關鍵字，再到國際開發者社群的交流，英文無處不在。如果沒有基本的英文能力，不僅學習進度會被拖慢，甚至可能錯失許多寶貴的資源與機會。</p>
+<p>這次開發告訴我：之後英文課再也不敢睡覺了~~(´◓Д◔`)</p>
+<h1 id="反思與未來"><a class="markdownIt-Anchor" href="#反思與未來"></a> 反思與未來</h1>
+<h2 id="成就感與不足之處"><a class="markdownIt-Anchor" href="#成就感與不足之處"></a> 成就感與不足之處</h2>
+<p>這次使用Hexo框架搭建網站並套用模板的過程，讓我感受到了一種前所未有的成就感(膨脹)。從無到有的過程中，每一步都充滿了樂趣(<s>和痛苦</s>)。尤其是在LLM的幫助下，我能快速解決問題，並完成一些之前認為很複雜的功能。</p>
+<p>然而，這次的開發過程仍有許多不足之處：</p>
+<blockquote>
+<p><strong>依賴模板與AI</strong>：由於主要是套用模板和使用AI輔助，我對網站的底層架構和程式邏輯的理解還不夠深入。</p>
+</blockquote>
+<blockquote>
+<p><strong>缺乏自主性</strong>：雖然AI幫助我解決了許多問題，但有些代碼是由AI生成的，自己並未完全掌握其邏輯，這可能導致未來的維護困難(<s>大不了在重寫一個</s>)。</p>
+</blockquote>
+<h2 id="未來計劃"><a class="markdownIt-Anchor" href="#未來計劃"></a> 未來計劃</h2>
+<p>這次經驗讓我對網站開發產生了興趣(<s>離吃土進了一步</s>)，也為我未來的學習指明了一些方向。我希望能在以下幾個方面來提升自己的能力：</p>
+<blockquote>
+<p><strong>從零開始撰寫網站</strong> :<br />
+下一次，我計劃從頭學HTML、CSS和JavaScript，嘗試從零開始寫一個簡單的靜態網站(<s>or 動態?</s>)。這將幫我更深入地理解網站開發的基礎知識，並提升我的自主開發能力。</p>
+</blockquote>
+<blockquote>
+<p><strong>探索後端技術</strong> :<br />
+除了前端開發，我也希望學習後端技術(反正都學一點就對了)，如Node.js或Python Flask，了解如何處理伺服器端邏輯和數據庫操作。</p>
+</blockquote>
+<blockquote>
+<p><strong>結合資安與競程背景</strong> :<br />
+作為一名熟悉C++且對資安和競程感興趣的學生，我希望能將這些技能結合起來。例如，在學習網站開發時，嘗試了解常見漏洞（如XSS、SQL注入）以及如何防範它們。同時，也可以研究如何將高效算法應用於網站功能中。</p>
+</blockquote>
+<blockquote>
+<p><strong>減少對AI工具的依賴</strong> :<br />
+雖然<code>AI</code>提供了極大的便利，但我希望能逐步減少對它的依賴，更多地依靠自己的能力完成開發工作。</p>
+</blockquote>
+<h1 id="結尾"><a class="markdownIt-Anchor" href="#結尾"></a> 結尾</h1>
+<p><strong>這次開發讓我認識了很多人，學會了很多事，也讓我第一次體會到把一個想法慢慢實現出來的過程。</strong></p>
+<p>從架設部落格、學習 Hexo、改主題、調整樣式，到後來研究部署、踩坑除錯、學著寫 Markdown，我發現其實做網站並不只是寫程式而已，更是一種表達、整理與分享的方式。<strong>雖然這個部落格還有很多可以改進的地方，但它代表了我這段時間的努力與成長</strong>。未來我會繼續更新內容，記錄學習歷程，也希望能<strong>認識更多志同道合的朋友，一起寫、一起分享、一起進步</strong>。</p>
+<p>最後，我想鼓勵所有初學者，不要害怕嘗試新事物。即使一開始只是套用模板或依賴AI輔助，<strong>每一次努力都是成長的一部分</strong>。未來，我期待自己能創造出完全屬於自己的網站，並結合資安與競程背景，實現更多可能性。</p>
+<p><img src="/images/FB/%E4%B8%BB%E9%A0%81.webp" alt="主頁" /><br />
+主頁截圖(截自2025/8/21)</p>
+<h1 id="特別感謝"><a class="markdownIt-Anchor" href="#特別感謝"></a> 特別感謝</h1>
+<div class="friend-item-wrap">
+  <a href="https://smallr-portfolio.vercel.app/en" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="/images/smallR.webp" data-sizes="auto" alt="Small R" class="lazyautosizes lazyloaded" sizes="70px" src="/images/smallR.webp">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">Small R</div>
+      <div class="friend-desc">A Full-Stack Developer</div>
+    </div>
+  </div>
+<p><strong>幫助我順利修復了Waline留言系統前後端的Bug</strong></p>
+
+    </div>
+    <footer class="article-footer">
+        <a data-aos="zoom-in" href="/2025/04/04/firstblog/#comments" class="article-comment-link">
+          <span class="post-comments-count waline-comment-count" data-path="/2025/04/04/firstblog/" itemprop="commentCount"></span>
+          留言
+        </a>
+        <span data-aos="zoom-in" class="article-visitor-link">
+          <span class="waline-pageview-count" data-path="/2025/04/04/firstblog/">0</span>
+          <em class="post-meta-item-text">閲讀量</em>
+        </span>
+      
+        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/Hexo/" rel="tag" title="Hexo">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+          <img data-src="/images/ZJ.webp" data-sizes="auto" alt="Zerojudge" class="lazyload">
+        <a href="/2025/07/11/Zerojudge/" aria-label="前一篇: Zerojudge" title="前一篇: Zerojudge"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            Zerojudge
+        </h3>
+      </div>
+  </nav>
+
+</article>
+
+  <section id="comments" data-aos="fade-up">
+    <div class="comment-header">
+        
+      <h2 class="comment-title">說些什麼吧！</h2>
+      <div class="comment-selector">
+        <div class="comment-selector-wrap">
+            <div class="selector-item" data-selector="waline">
+              <span>waline</span>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="comment-content">
+          <div class="comment waline-comment" data-aos="fade-up"
+            id="waline-comment">
+          </div>
+    </div>
+  </section>
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2026
+        <span class="footer-info-sep rotate"></span>
+      伊藤蒼太
+    </div>
+      <div>
+        基於&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        29k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        02:28
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">總訪問量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">總訪客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目錄</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#c%E5%88%B0%E5%89%8D%E7%AB%AF%E7%9A%84%E8%B7%A8%E7%95%8C%E5%88%9D%E9%AB%94%E9%A9%97"><span class="toc-number">1.</span> <span class="toc-text"> C++到前端的跨界初體驗</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo%E6%A1%86%E6%9E%B6%E7%9A%84%E9%81%B8%E6%93%87%E8%88%87%E6%BA%96%E5%82%99"><span class="toc-number">2.</span> <span class="toc-text"> Hexo框架的選擇與準備</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87hexo"><span class="toc-number">2.1.</span> <span class="toc-text"> 為什麼選擇Hexo？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A5%97%E6%A8%A1%E6%9D%BF%E7%9A%84%E9%81%8E%E7%A8%8B"><span class="toc-number">2.2.</span> <span class="toc-text"> 套模板的過程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%A6%E9%9A%9B%E6%93%8D%E4%BD%9C%E8%88%87%E5%BF%83%E5%BE%97"><span class="toc-number">3.</span> <span class="toc-text"> 實際操作與心得</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%A7%E5%8D%A1%E9%97%9C"><span class="toc-number">3.1.</span> <span class="toc-text"> 大卡關</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ai%E7%9A%84%E5%BD%B1%E9%9F%BF"><span class="toc-number">3.2.</span> <span class="toc-text"> AI的影響</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8B%B1%E6%96%87%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="toc-number">3.3.</span> <span class="toc-text"> 英文的重要性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%8D%E6%80%9D%E8%88%87%E6%9C%AA%E4%BE%86"><span class="toc-number">4.</span> <span class="toc-text"> 反思與未來</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%B0%B1%E6%84%9F%E8%88%87%E4%B8%8D%E8%B6%B3%E4%B9%8B%E8%99%95"><span class="toc-number">4.1.</span> <span class="toc-text"> 成就感與不足之處</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E4%BE%86%E8%A8%88%E5%8A%83"><span class="toc-number">4.2.</span> <span class="toc-text"> 未來計劃</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%B5%90%E5%B0%BE"><span class="toc-number">5.</span> <span class="toc-text"> 結尾</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%89%B9%E5%88%A5%E6%84%9F%E8%AC%9D"><span class="toc-number">6.</span> <span class="toc-text"> 特別感謝</span></a></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="伊藤蒼太" class="lazyload">
+  <div class="sidebar-author-name">伊藤蒼太</div>
+  <div class="sidebar-description">Professional Bug Creator</div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分類</div>
+    <div class="sidebar-state-number">3</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>標籤</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+    <div class="icon-email sidebar-social-icon">
+      <a href=mailto:me@itousouta15.tw itemprop="url" target="_blank" aria-label="email" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-github sidebar-social-icon">
+      <a href=https://github.com/itousouta15 itemprop="url" target="_blank" aria-label="github" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-instagram sidebar-social-icon">
+      <a href=https://www.instagram.com/itou.souta15 itemprop="url" target="_blank" aria-label="instagram" rel="noopener nofollow noreferrer"></a>
+    </div>
+    <div class="icon-discord sidebar-social-icon">
+      <a href=https://discord.gg/GVhwRRVJ7F itemprop="url" target="_blank" aria-label="discord" rel="noopener nofollow noreferrer"></a>
+    </div>
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首頁"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf015;
+          </div>
+        <div class="sidebar-menu-link">首頁</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="歸檔"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf07c;
+          </div>
+        <div class="sidebar-menu-link">歸檔</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="關於"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf2bd;
+          </div>
+        <div class="sidebar-menu-link">關於</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友鏈"></a>
+          <div class="sidebar-menu-icon icon ">
+                &#xf0c0;
+          </div>
+        <div class="sidebar-menu-link">友鏈</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+  
+<script src="https://npm.webcache.cn/material-theme@1.0.0/dist/material-theme.umd.js" integrity="sha384-vLev0II0HKFaxkcm+&#x2F;7kX5IGwVFBASkGchU311wmU&#x2F;veIj2bB0UcBkQbW6yw2asK" crossorigin="anonymous"></script>
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://cdn.jsdelivr.net/npm/mouse-firework@0.1.1/dist/index.umd.js" integrity="sha384-8LyaidD9GPxQQgLJO&#x2F;WRw&#x2F;O2h3BoNq&#x2F;ApI&#x2F;ecpvM6RsrCz2qP2ppBXUKihP4V&#x2F;2d" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/theme-shokax-pjax@0.0.3/dist/index.umd.js" integrity="sha384-xneY1WY8hOfUzswrE4CrYq35N4BdVcxqxwHPr9zawE&#x2F;jMSCxD+jAPU55x&#x2F;jj3wlf" crossorigin="anonymous"></script>
+
+  
+<script src="/js/pjax.js"></script>
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "伊藤蒼太",
+          title: "第一次架網站的心得",
+          url: "https://blog.itousouta15.tw/2025/04/04/firstblog/",
+          excerpt: "",
+          description: "",
+          stripContent: " C++到前端的跨界初體驗 我開始寫程式和其他電神比已經算很晚了，約莫是高一上第一學期開始學C++，並決定用這條路走特選上大學，雖然目標是資安競程領域（主要是怕走前端會吃土）但我還是決定挑戰自己，嘗試學習網站開發（升學需要），不過，這次的網站製作並不是從零開始，而是使用了Hexo框架並套用了現成的模板。（技術不夠）雖然過程相對簡單，但仍然讓我對網站架構有了初步的了解（高二再來全部重寫）  Hexo框架的選擇與準備  為什麼選擇Hexo？  剛開始接觸網站開發時，我面臨了一個問題：應該從哪裡開始？",
+          date: "Fri Apr 04 2025 18:29:32 GMT+0800",
+          updated: "Fri Feb 13 2026 20:53:24 GMT+0800",
+          cover: "/images/mainweb.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://cdn.jsdelivr.net/npm/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+<script data-pjax>
+  var loadScript = (src, integrity) => {
+    const script = document.createElement('script');
+    script.src = src;
+    if (integrity) script.integrity = integrity;
+    script.crossOrigin = 'anonymous';
+    return script;
+  };
+
+  var commentConfigKeys = ["waline"];
+  var commentConfig = {
+    waline: {
+      enable: true,
+      load: async () => {
+        const container = document.querySelector('.waline-comment');
+        if (!container) return;
+        container.style.display = 'block';
+
+        let walineInit;
+        const walineCdn = 'https://cdn.jsdelivr.net/npm/@waline/client@2.15.8/dist/waline.mjs';
+        const walineIntegrity = 'sha384-9sbqJjrfGjbkI6/PI4nU/MvBfEmkkPC4YK9I4zBeMIf1CVCZdCMH/KinBEAZII/5';
+
+        const module = await safeImport(walineCdn, walineIntegrity);
+        walineInit = module.init;
+
+        window.walineInstance = walineInit({
+          el: '.waline-comment',
+          serverURL: 'https://web-eight-weld-65.vercel.app',
+          lang: document.documentElement.lang || 'en',
+          locale: {},
+          emoji: ["https://unpkg.com/@waline/emojis@1.2.0/weibo","https://unpkg.com/@waline/emojis@1.2.0/alus","https://unpkg.com/@waline/emojis@1.2.0/bilibili","https://unpkg.com/@waline/emojis@1.2.0/qq","https://unpkg.com/@waline/emojis@1.2.0/tieba","https://unpkg.com/@waline/emojis@1.2.0/tw-emoji"],
+          meta: ["nick","mail","link"],
+          requiredMeta: ["nick","mail"],
+          wordLimit: JSON.parse('0'),
+          comment: true,
+          pageSize: JSON.parse('10'),
+          dark: 'html[data-theme="dark"]',
+          pageview: JSON.parse('true'),
+        });
+      }
+    },
+  }
+  commentConfig.enable = commentConfigKeys.some(key => commentConfig[key].enable);
+
+  var defaultComment = '';
+  if (commentConfig.enable) {
+    // 1. 首先检查localStorage中是否有保存的评论类型
+    var savedCommentType = localStorage.getItem('commentType');
+    
+    // 2. 如果localStorage中有值且对应的评论系统可用，就使用它
+    if (savedCommentType) {
+      if (commentConfig[savedCommentType]?.enable) {
+        defaultComment = savedCommentType;
+      }
+    }
+    
+    // 3. 如果localStorage无效，检查配置的默认评论系统
+    if (!defaultComment) {
+      var configDefault = 'waline';
+      if (commentConfig[configDefault]?.enable) {
+        defaultComment = configDefault;
+      }
+    }
+    
+    // 4. 如果前两项都无效，按指定顺序找到第一个可用的评论系统
+    if (!defaultComment) {
+      defaultComment = commentConfigKeys.find(sys => commentConfig[sys].enable) || '';
+    }
+  }
+  function loadComments() {
+    if (!commentConfig.enable) return;
+    const loadedComments = {
+      valine: false,
+      waline: false,
+      twikoo: false,
+      gitalk: false,
+      giscus: false
+    };
+
+    // 隐藏所有评论容器
+    const hideAllComments = () => {
+      const commentContainers = document.querySelectorAll('.comment');
+      commentContainers.forEach(container => {
+        container.style.display = 'none';
+      });
+    };
+
+    // 按需加载评论系统
+    const loadCommentSystem = (type) => {
+      if (loadedComments[type]) {
+        // 如果已加载，只需显示对应容器
+        document.querySelector(`.${type}-comment`).style.display = 'block';
+        return;
+      }
+
+      // 根据类型加载对应的脚本
+      commentConfig[type]?.load();
+      loadedComments[type] = true;
+    };
+
+    // 评论组件选择器
+    const changeActiveCommentItems = (item) => {
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let i = 0; i < commentItems.length; i++) {
+        commentItems[i].classList.remove('active');
+      }
+      item.classList.add('active');
+
+      // 获取要加载的评论系统类型
+      const commentType = item.getAttribute('data-selector');
+
+      // 隐藏所有评论系统
+      hideAllComments();
+
+      // 加载选中的评论系统
+      loadCommentSystem(commentType);
+    };
+
+    const commentInit = () => {
+      // 评论组件选择器点击事件
+      const commentItems = document.querySelectorAll('.selector-item');
+      for (let item of commentItems) {
+        item.addEventListener('click', () => {
+          // 保存选择器状态
+          const commentType = item.getAttribute('data-selector');
+          window.localStorage.setItem('commentType', commentType);
+          // 切换选中状态
+          changeActiveCommentItems(item);
+        });
+      }
+
+      // 检查是否需要加载默认评论系统
+      if (defaultComment) {
+        const defaultSelectorItem = document.querySelector(`[data-selector="${defaultComment}"]`);
+        if (!defaultSelectorItem) return;
+        defaultSelectorItem.style.display = 'block';
+        defaultSelectorItem.classList.add('active');
+        loadCommentSystem(defaultComment);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', commentInit);
+    } else {
+      commentInit();
+    }
+  };
+  loadComments();
+</script>
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+  
+<script src="/js/service_worker.js"></script>
+
+
+
+    
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3.2.2/es5/tex-mml-chtml.js" integrity="sha384-Wuix6BuhrWbjDBs24bXrjf4ZQ5aFeFWBuKkFekO2t8xFU0iNaLQfp2K6&#x2F;1Nxveei" crossorigin="anonymous" defer data-pjax></script>
+
+    <script data-pjax>
+      window.MathJax = {"tex":{"tags":"ams","useLabelIds":true,"inlineMath":[["$","$"],["\\\\(","\\\\)"]],"displayMath":[["$$","$$"],["\\\\[","\\\\]"]],"processEscapes":true,"processEnvironments":true,"autoload":{"color":[],"colorv2":["color"]},"packages":{"[+]":["noerrors"]}},"options":{"skipHtmlTags":["script","noscript","style","textarea","pre","code"],"ignoreHtmlClass":"tex2jax_ignore","processHtmlClass":"tex2jax_process"},"loader":{"load":["input/asciimath","[tex]/noerrors"]}};
+    </script>
+
+
+
+  </body>
+  </html>
