@@ -6,7 +6,7 @@ comments: true
 ## 本站資訊
 - 站名： itouBLoGa
 - 站長： 伊藤蒼太
-- 網址： https://itousouta15.tw
+- 網址： https://blog.itousouta15.tw
 
 ## 申請方法
 - 增加本站後，在本頁留言，格式如下
@@ -246,6 +246,18 @@ comments: true
     <div class="friend-info-wrap">
       <div class="friend-name">凡凡FanFan</div>
       <div class="friend-desc">可愛小男娘</div>
+    </div>
+  </div>
+  <div class="friend-item-wrap">
+    <a href="https://walnut8569.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://cdn.rafled.com/anime-icons/images/iWW9c1VjhALFAWMhNLsQ3VdPojw0O9J7.jpg" data-sizes="auto" alt="WalNut" class="lazyautosizes lazyloaded" sizes="70px" src="https://cdn.rafled.com/anime-icons/images/iWW9c1VjhALFAWMhNLsQ3VdPojw0O9J7.jpg">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">WalNut</div>
+      <div class="friend-desc">中一中電神，前輩</div>
     </div>
   </div>
 </div>
