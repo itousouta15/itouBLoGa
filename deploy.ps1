@@ -74,9 +74,11 @@ Write-Host "✓ Switched to main branch" -ForegroundColor Green
 Write-Host ""
 Write-Host "Step 4️⃣  : Copying public directory content..." -ForegroundColor Yellow
 
-# Remove all old files (except .git)
+# Remove tracked files from git index
 git rm -r --cached * -q 2>$null
-Remove-Item * -Recurse -Force -Exclude @('.git', '.gitignore', '.nojekyll', 'public')
+
+# Remove all old files except git directory and public folder
+Get-ChildItem -Force | Where-Object { $_.Name -notin @('.git', '.gitignore', '.nojekyll', 'public', 'CNAME') } | Remove-Item -Recurse -Force 2>$null
 
 # Copy all content from public directory to root
 Copy-Item -Path "public\*" -Destination "." -Recurse -Force

@@ -22,7 +22,7 @@ hexo generate
 # Deploy
 git checkout main
 git rm -r --cached * -q 2>$null
-Remove-Item * -Recurse -Force -Exclude @('.git', '.gitignore', '.nojekyll', 'public')
+Get-ChildItem -Force | Where-Object { $_.Name -notin @('.git', '.gitignore', '.nojekyll', 'public', 'CNAME') } | Remove-Item -Recurse -Force 2>$null
 Copy-Item -Path "public\*" -Destination "." -Recurse -Force
 
 git add -A
