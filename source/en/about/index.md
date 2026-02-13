@@ -37,7 +37,7 @@ a img:hover {
     <a href="https://www.threads.net/@itou.souta15" target="_blank">
       <img src="https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads" />
     </a>
-    <a href="https://discord.gg/uAX6h9VmA4" target="_blank">
+    <a href="https://discord.gg/sUu5TjhGTe" target="_blank">
       <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
     </a>
     <a href="https://instagram.com/itousouta15" target="_blank">
