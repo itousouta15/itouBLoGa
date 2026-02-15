@@ -2,6 +2,7 @@
 title: about
 date: 2025-07-28 09:58:09
 ---
+<!-- more -->
 <style>
 a[target="_blank"]::after,
 a.external-link::after {
@@ -57,7 +58,6 @@ a img:hover {
 
 I'm a **high school student from Taiwan** passionate about **C++**, **web development**, and **cybersecurity**. I'm actively involved in tech communities and always exploring the intersection of code, security, and creativity.
 
----
 
 ## Bio
 
@@ -93,7 +93,7 @@ I'm a **high school student from Taiwan** passionate about **C++**, **web develo
 - **2025 Taiwan Medical Technology Exhibition**
 - **SITCON 2025**
 - **2025 Taipei City Microservices Hackathon**
-- **SCIST x SCAICT 2026 Joint Winter Training**
+- **SCIST x SCAICT 2026 Winter Camp**
 - **SITCON 2026**
 - **2026 g0v summit**
 - **2026 TWNOG Taiwan Network Operations Meeting**
@@ -101,16 +101,16 @@ I'm a **high school student from Taiwan** passionate about **C++**, **web develo
 # Community & Organizations
 
 ### Leadership Positions
-- **5th SCAICT Central Taiwan High School Information Technology Societies Alliance** — President
-- **SCIST x SCAICT 2026 Joint Winter Training Camp** — Vice Chief Organizer
-- **2nd Dali Senior High School Information Technology Team** — Team Captain
+- **5th SCAICT** — President
+- **SCIST x SCAICT 2026 Winter Camp** — Vice Chief Organizer
+- **2nd DLHIT** — Team Captain
 - **Dali Senior High School C# and Unity Game Design Camp** — Chief Organizer
 
 ### Community Involvement
-- **SCIST x SCAICT 2026 Joint Winter Training Camp** — Editorial Team Leader / IT Division
-- **3rd THJCC Taiwan High School Joint Cybersecurity Competition** — Network Administrator
-- **2nd SCINT Northern Taiwan Student Information Technology Community** — Art and Design
-- **2026 TWNOG Taiwan Network Operators Group Forum** — Design Division
+- **SCIST x SCAICT 2026 Winter Camp** — Editorial Team Leader / IT Division
+- **3rd THJCC** — Network Administrator
+- **2nd SCINT** — Art and Design
+- **2026 TWNOG** — Design Division
 - **2026 g0v Summit** — Venue Operations
 
 
