@@ -239,7 +239,6 @@ i18n:
 # Sitemap 配置
 sitemap:
   path: sitemap.xml
-  template: ./sitemap.xml
   rel: false
   tags: true
   categories: true
