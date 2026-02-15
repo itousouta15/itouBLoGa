@@ -260,4 +260,28 @@ comments: true
       <div class="friend-desc">中一中電神，前輩</div>
     </div>
   </div>
+  <div class="friend-item-wrap">
+    <a href="https://sanxian-4348.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4" data-sizes="auto" alt="Sanxian三線" class="lazyautosizes lazyloaded" sizes="70px" src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">Sanxian三線</div>
+      <div class="friend-desc">考古學家</div>
+    </div>
+  </div>
+  <div class="friend-item-wrap">
+    <a href="https://www.g4o2.com/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://avatars.githubusercontent.com/u/103299803" data-sizes="auto" alt="g4o2" class="lazyautosizes lazyloaded" sizes="70px" src="https://avatars.githubusercontent.com/u/103299803">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">g4o2</div>
+      <div class="friend-desc">我不是電神</div>
+    </div>
+  </div>
 </div>
