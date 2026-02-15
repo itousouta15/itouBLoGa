@@ -264,7 +264,7 @@ comments: true
     <a href="https://sanxian-4348.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
-        <img data-src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4" data-sizes="auto" alt="Sanxian三線" class="lazyautosizes lazyloaded" sizes="70px" src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4">
+        <img data-src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4" data-sizes="auto" alt="Sanxian三線" class="lazyautosizes lazyloaded" sizes="70px" src="https://sanxian-4348.github.io/images/qq.jpg">
       </div>
     </div>
     <div class="friend-info-wrap">
