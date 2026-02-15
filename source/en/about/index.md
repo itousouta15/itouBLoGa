@@ -23,21 +23,18 @@ a img:hover {
 <div align="center">
   <img src="/images/avatar.webp" alt="avatar" width="120" style="border-radius:50%;margin-bottom:1em;" />  
   <h1>Itou Souta</h1>  
-  <p>Cybersecurity & Front-End Development Enthusiast</p>  
-  <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.5em;">  
-    <!-- Social links omitted in translation -->
-  </div>  
+  <p>A Natural Bug Generator</p>  
   <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.5em;">
     <a href="https://x.com/itou_souta15" target="_blank">
       <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
     </a>
-    <a href="https://github.com/itousouta" target="_blank">
+    <a href="https://github.com/itousouta15" target="_blank">
       <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
     </a>
     <a href="https://www.threads.net/@itou.souta15" target="_blank">
       <img src="https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads" />
     </a>
-    <a href="https://discord.gg/sUu5TjhGTe" target="_blank">
+    <a href="https://discord.gg/uAX6h9VmA4" target="_blank">
       <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
     </a>
     <a href="https://instagram.com/itousouta15" target="_blank">
@@ -46,7 +43,7 @@ a img:hover {
   </div>
   <picture>
     <source srcset="/images/github-user-contributiond.svg" media="(prefers-color-scheme: dark)">
-    <img src="/images/github-user-contribution.svg" alt="GitHub 貢獻圖" style="max-width:100%;margin:1em auto;display:block;" />
+    <img src="/images/github-user-contribution.svg" alt="GitHub Contribution Graph" style="max-width:100%;margin:1em auto;display:block;" />
   </picture>
 </div>
 
@@ -55,32 +52,78 @@ a img:hover {
 ---
 
 # `cout<<"hello! world";`
-## Hi, I'm Itou Souta!
-> *“The world goes quiet when I write code.”*  
+## Hi, I'm 郭家睿
+> *"The world goes quiet when I write code."*
 
-I'm a **high school student from Taiwan** passionate about **C++**, **web development**, and **cybersecurity**.  
-Here, I share my projects, experiments, and learning notes. For me, every line of code is a step toward understanding both the world — and myself — a little better.  
+I'm a **high school student from Taiwan** passionate about **C++**, **web development**, and **cybersecurity**. I'm actively involved in tech communities and always exploring the intersection of code, security, and creativity.
+
+---
+
+## Bio
+
+**Taichung Municipal Dali Senior High School**
+- 2025 - 2027
+- High School
+
+## Contest & Competitions
+
+- **Scrapyard Taiwan Hackathon** — 9th Place
+- **AIS3 Pre-exam 2025** — NO.67
+- **Taipei City Microservices Hackathon** — Preliminary Round
+- **11401 FhCTF** — NO.1
+
+- **2025 National High School Medical Technology Competition** — In Progress
 
 
-## About Me
-- Enjoys challenging algorithmic & geometry problems, especially those with creative or visual twists  
-- Fascinated by the intersection of **code**, **security**, and **creativity**  
-- Passionate lifelong learner, always exploring new technical horizons  
+## Teaching & Mentoring
+
+- **DLHIT** — Web Fundamentals Course Instructor
+  - Academic Year 115 First Semester
+
+
+## Courses & Activities
+
+- **Feng Chia University** — Smart Electronic Technology - Smart Chip and Sensor Applications
+- **Feng Chia University** — As Long As You're Connected ~ You Can Also Do Simple AI Control and Design
+- **AIS3 2025** — Software, Web and ToI Security Course
+- **SCAICT 2025** — "Overcoming Information Barriers" Course
+- **AIS3 Club 2025**
+- **Faust Game Jam 2025**
+- **DayDream** — National Youth Game Creation Marathon
+- **2025 Taiwan Medical Technology Exhibition**
+- **SITCON 2025**
+- **2025 Taipei City Microservices Hackathon**
+- **SCIST x SCAICT 2026 Joint Winter Training**
+- **SITCON 2026**
+- **2026 g0v summit**
+- **2026 TWNOG Taiwan Network Operations Meeting**
+
+# Community & Organizations
+
+### Leadership Positions
+- **5th SCAICT Central Taiwan High School Information Technology Societies Alliance** — President
+- **SCIST x SCAICT 2026 Joint Winter Training Camp** — Vice Chief Organizer
+- **2nd Dali Senior High School Information Technology Team** — Team Captain
+- **Dali Senior High School C# and Unity Game Design Camp** — Chief Organizer
+
+### Community Involvement
+- **SCIST x SCAICT 2026 Joint Winter Training Camp** — Editorial Team Leader / IT Division
+- **3rd THJCC Taiwan High School Joint Cybersecurity Competition** — Network Administrator
+- **2nd SCINT Northern Taiwan Student Information Technology Community** — Art and Design
+- **2026 TWNOG Taiwan Network Operators Group Forum** — Design Division
+- **2026 g0v Summit** — Venue Operations
 
 
 ## Tech Toolbox
 
 [![My Skills](https://skillicons.dev/icons?i=c,cpp,cs,py,html,css,js,ts,git,github,vscode,docker,unity,godot,linux)](https://skillicons.dev)
 
-## Communities & Clubs
-- SCAICT — (https://scaict.org/)
-- SCINT — (https://scint.org/)
-- THJCC — (IG: @thjcc.tw)
-- DLHIT — (IG: @dlhit_)
 
 ## Connect
-- Blog: [GitHub Pages](https://itousouta15.tw) (My technical notes & learning journey)  
-- Instagram: [itou.souta15](https://www.instagram.com/itou.souta15) (Life & creativity)  
-- Threads: [@itou.souta15](https://www.threads.net/@itou.souta15)  
-- Discord https://discord.gg/WD6gVTRQWA
 
+- Blog: [GitHub Pages](https://blog.itousouta15.tw)
+- Instagram: [itou.souta15](https://www.instagram.com/itou.souta15)
+- Threads: [@itou.souta15](https://www.threads.net/@itou.souta15)
+- X (Twitter): [@itou_souta15](https://x.com/itou_souta15)
+- Discord: [Join Server](https://discord.gg/uAX6h9VmA4)
+- GitHub: [itousouta15](https://github.com/itousouta15)
