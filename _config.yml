@@ -235,3 +235,18 @@ i18n:
   type: [page, post]
   generator: [archive, category, tag, index]
   languages: [zh-TW, en]
+
+# Sitemap 配置
+sitemap:
+  path: sitemap.xml
+  template: ./sitemap.xml
+  rel: false
+  tags: true
+  categories: true
+
+# Robots.txt 配置
+robotstxt:
+  useragent: '*'
+  allow:
+    - /
+  sitemap: https://blog.itousouta15.tw/sitemap.xml

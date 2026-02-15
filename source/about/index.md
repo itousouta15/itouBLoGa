@@ -2,7 +2,7 @@
 title: 關於
 date: 2025-07-28 09:58:09
 ---
-
+<!-- more -->
 <style>
 a[target="_blank"]::after,
 a.external-link::after {
