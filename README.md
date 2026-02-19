@@ -1,7 +1,7 @@
 ﻿
 <div align="center">
 
-![網站圖片](https://raw.githubusercontent.com/itousouta15/itousouta15.github.io/main/source/img/Newweb.webp)
+![網站圖片]("https://blog.itousouta15.tw/images/mainweb.webp")
 
 # itousouta15.github.io
 
