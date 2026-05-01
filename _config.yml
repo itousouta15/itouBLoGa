@@ -238,6 +238,10 @@ sitemap:
   tags: true
   categories: true
 
+# Baidu Sitemap 配置（針對中文市場）
+baidusitemap:
+  path: baidusitemap.xml
+
 # Robots.txt 配置
 robotstxt:
   useragent: '*'
