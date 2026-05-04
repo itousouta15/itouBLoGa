@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html <% if (config.language) { %>lang="<%- config.language %>" <% } %> 
 <%_ if (theme.dark_mode.enable === true) { _%>
-  data-theme-mode="true"
+  data-theme-mode="true" data-theme="dark"
 <%_ } else if (theme.dark_mode.enable === 'auto') { _%>
   data-theme-mode="auto"
 <%_ } else if (theme.dark_mode.enable === false) { _%>
