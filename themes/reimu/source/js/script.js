@@ -99,8 +99,8 @@ window.throttle = (func, limit) => {
     );
   }
   const savedMode =
-    localStorage.getItem("dark_mode") ||
     document.documentElement.getAttribute("data-theme-mode") ||
+    localStorage.getItem("dark_mode") ||
     "auto";
   setTheme(savedMode);
 

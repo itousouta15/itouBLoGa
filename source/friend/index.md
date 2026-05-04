@@ -165,18 +165,6 @@ comments: true
     </div>
   </div>
   <div class="friend-item-wrap">
-    <a href="https://ya-ya-12.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://cdn.discordapp.com/avatars/1124954310527164456/66d8378f5e4b614d2a4c81e99c944468.png?size=512" data-sizes="auto" alt="鴨鴨" class="lazyautosizes lazyloaded" sizes="70px" src="https://ya-ya-12.github.io/image/head.png">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">鴨鴨</div>
-      <div class="friend-desc">我是一個小廢廢</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
     <a href="https://qwo877.github.io/me/" rel="external nofollow noopener noreferrer" target="_blank"></a>
     <div class="friend-icon-wrap">
       <div class="friend-icon">
