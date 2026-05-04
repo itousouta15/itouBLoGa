@@ -8,8 +8,6 @@ tags:
 cover: /images/SCAICTCamp.webp
 urlname: SCAICTCamp
 ---
-# 我當總召？拉完了
-
 因為在辦之前沒有事先考量狀況，
 加上一路以來諸事不順，
 現在是一個身心俱疲的狀態。
