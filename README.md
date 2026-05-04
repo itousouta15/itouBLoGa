@@ -1,14 +1,9 @@
 # itouBLoGa
+![alt text](source/images/mainweb.webp)
 
-個人技術部落格專案，使用 Hexo 靜態網站生成器與 Reimu 主題構建。
+個人技術部落格專案，使用 Hexo 靜態網站生成器基於 Reimu 主題構建。
 
-## 內容介紹
 
-- Blog 名稱：itouBLoGa
-- 作者：伊藤蒼太
-- 網址： https://blog.itousouta15.tw
-- 以中文為主，支援繁體與英文內容
-- 使用 Hexo + `themes/reimu` 主題進行客製化配置
 
 ## 專案結構
 
