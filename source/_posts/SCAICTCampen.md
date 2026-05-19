@@ -7,6 +7,7 @@ tags:
   - 暑訓
 cover: /images/SCAICTCamp.webp
 urlname: SCAICTCamp
+lang: en
 ---
 Because I did not anticipate the situation before organizing it,
 and everything has gone wrong along the way,
