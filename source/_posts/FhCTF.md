@@ -6,6 +6,7 @@ categories:
   - 技術分享
 tags:
   - 資安
+urlname: FhCTF
 ---
 Rank 1!!! 但我只能說拉完了
 

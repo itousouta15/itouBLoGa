@@ -2,7 +2,7 @@ title: itouBLoGa | 伊藤蒼太
 subtitle: '唯一的願望是睡滿8小時'
 description: '拉完了'
 keywords: '伊藤蒼太,郭家睿, Hexo, Blog, Coding, Learning, Life'
-author: 伊藤蒼太
+author: 伊藤蒼太 | 郭家睿
 language: zh-TW
 timezone: 'Asia/Taipei'
 
@@ -177,6 +177,12 @@ theme_config:
       rotate: true
       mask: true
 
+  # 多語系設定
+  i18n:
+    enable: true
+    type: [page, post]
+    generator: [archive, category, tag, index]
+    languages: [zh-TW, en, ja]
 
   # 預加載配置
   preloader:
@@ -229,7 +235,7 @@ i18n:
   enable: true
   type: [page, post]
   generator: [archive, category, tag, index]
-  languages: [zh-TW, en]
+  languages: [zh-TW, en, ja]
 
 # Sitemap 配置
 sitemap:
