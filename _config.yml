@@ -9,7 +9,7 @@ timezone: 'Asia/Taipei'
 # _config.yml
 url: https://blog.itousouta15.tw
 root: /                       
-permalink: :urlname/
+permalink: :year/:month/:day/:urlname/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # 設置為 false 以移除網址中的 'index.html'
