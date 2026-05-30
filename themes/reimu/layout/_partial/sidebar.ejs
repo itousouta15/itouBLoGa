@@ -53,6 +53,8 @@
         <%_ } else if (!showCommonSidebar) { _%>
           <%_ if (hasTocContent) { %>
             <div class="sidebar-toc-sidebar" style="margin-bottom: 10px;"><%- partial('sidebar/toc-sidebar', { tocHtml: tocContent }) %></div>
+          <%_ } else { %>
+            <div class="sidebar-common-sidebar"><%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
           <%_ } _%>
         <%_ } else { _%>
           <%_ if (hasTocContent) { %>

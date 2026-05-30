@@ -6,8 +6,21 @@
       <%_ } else if (post.toc !== true && theme.toc === false) { _%>
         <%- partial_lang('sidebar/common-sidebar', { mobile: true }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %>
       <%_ } else { _%>
-        <div class="sidebar-toc-sidebar"><%- partial('sidebar/toc-sidebar') %></div>
-        <div class="sidebar-common-sidebar hidden"><%- partial_lang('sidebar/common-sidebar', { mobile: true }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+        <%_ let tocContent = page.encrypt == true ? get_cached_toc(page.origin, page.slug) : get_cached_toc(page.content, page.slug); _%>
+        <%_ let hasMobileTocContent = false; _%>
+        <%_ if (typeof tocContent === 'string') { _%>
+          <%_ hasMobileTocContent = tocContent.trim().length > 0; _%>
+        <%_ } else if (tocContent && tocContent.length !== undefined) { _%>
+          <%_ hasMobileTocContent = tocContent.length > 0; _%>
+        <%_ } else { _%>
+          <%_ hasMobileTocContent = Boolean(tocContent); _%>
+        <%_ } _%>
+        <%_ if (hasMobileTocContent) { _%>
+          <div class="sidebar-toc-sidebar"><%- partial('sidebar/toc-sidebar') %></div>
+          <div class="sidebar-common-sidebar hidden"><%- partial_lang('sidebar/common-sidebar', { mobile: true }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+        <%_ } else { _%>
+          <div class="sidebar-common-sidebar"><%- partial_lang('sidebar/common-sidebar', { mobile: true }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+        <%_ } _%>
       <%_ } _%>
     <%_ } else { _%>
       <%- partial_lang('sidebar/common-sidebar', { mobile: true }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %>
@@ -17,10 +30,21 @@
     <%_ if (post.toc === false) { _%>
     <%_ } else if (post.toc !== true && theme.toc === false) { _%>
     <%_ } else { _%>
-      <div class="sidebar-btn-wrapper">
-        <div class="sidebar-toc-btn current"></div>
-        <div class="sidebar-common-btn"></div>
-      </div>
+      <%_ let tocContent = page.encrypt == true ? get_cached_toc(page.origin, page.slug) : get_cached_toc(page.content, page.slug); _%>
+      <%_ let hasMobileTocContent = false; _%>
+      <%_ if (typeof tocContent === 'string') { _%>
+        <%_ hasMobileTocContent = tocContent.trim().length > 0; _%>
+      <%_ } else if (tocContent && tocContent.length !== undefined) { _%>
+        <%_ hasMobileTocContent = tocContent.length > 0; _%>
+      <%_ } else { _%>
+        <%_ hasMobileTocContent = Boolean(tocContent); _%>
+      <%_ } _%>
+      <%_ if (hasMobileTocContent) { _%>
+        <div class="sidebar-btn-wrapper">
+          <div class="sidebar-toc-btn current"></div>
+          <div class="sidebar-common-btn"></div>
+        </div>
+      <%_ } _%>
     <%_ } _%>
   <%_ } _%>
 </nav>
