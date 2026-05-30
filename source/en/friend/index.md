@@ -18,7 +18,6 @@ Leave a comment on this page with the following format:
 ~~~
 
 ## friends
-## 夥伴們
 <div class="friend-wrap">
   <div class="friend-item-wrap">
     <a href="https://d-sketon.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>

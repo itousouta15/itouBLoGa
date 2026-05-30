@@ -1,8 +1,15 @@
-<h3 class="toc-title"><%= __('toc') %></h3>
-<div class="sidebar-toc-wrapper toc-div-class" <% if (page.encrypt == true) { %>style="display: none" <% } %>>
-  <%_ if (page.encrypt == true) { _%>
-    <%- get_cached_toc(page.origin, page.slug) %>
-  <%_ } else { _%>
-    <%- get_cached_toc(page.content, page.slug) %>
-  <%_ } _%>
-</div>
+<%_ let tocContent = typeof tocHtml !== 'undefined' ? tocHtml : (page.encrypt == true ? get_cached_toc(page.origin, page.slug) : get_cached_toc(page.content, page.slug)); _%>
+<%_ let hasTocContent = false; _%>
+<%_ if (typeof tocContent === 'string') { _%>
+  <%_ hasTocContent = tocContent.trim().length > 0; _%>
+<%_ } else if (tocContent && tocContent.length !== undefined) { _%>
+  <%_ hasTocContent = tocContent.length > 0; _%>
+<%_ } else { _%>
+  <%_ hasTocContent = Boolean(tocContent); _%>
+<%_ } _%>
+<%_ if (hasTocContent) { _%>
+  <h3 class="toc-title"><%= __('toc') %></h3>
+  <div class="sidebar-toc-wrapper toc-div-class" <% if (page.encrypt == true) { %>style="display: none" <% } %>>
+    <%- tocContent %>
+  </div>
+<%_ } _%>

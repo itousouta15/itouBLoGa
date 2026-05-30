@@ -33,16 +33,34 @@
   <%_ } _%>
   <div class="sidebar-wrapper">
     <div class="sidebar-wrap" data-aos="<%= theme.animation.options.home.sidebar %>">
+      <%_ let tocContent = ''; _%>
+      <%_ let hasTocContent = false; _%>
       <%_ if (is_post()) { _%>
+        <%_ if (post.toc !== false && !(post.toc !== true && theme.toc === false)) { _%>
+          <%_ tocContent = page.encrypt == true ? get_cached_toc(page.origin, page.slug) : get_cached_toc(page.content, page.slug); _%>
+          <%_ if (typeof tocContent === 'string') { _%>
+            <%_ hasTocContent = tocContent.trim().length > 0; _%>
+          <%_ } else if (tocContent && tocContent.length !== undefined) { _%>
+            <%_ hasTocContent = tocContent.length > 0; _%>
+          <%_ } else { _%>
+            <%_ hasTocContent = Boolean(tocContent); _%>
+          <%_ } _%>
+        <%_ } _%>
         <%_ if (post.toc === false) { _%>
           <%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %>
         <%_ } else if (post.toc !== true && theme.toc === false) { _%>
           <%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %>
         <%_ } else if (!showCommonSidebar) { _%>
-          <div class="sidebar-toc-sidebar" style="margin-bottom: 10px;"><%- partial('sidebar/toc-sidebar') %></div>
+          <%_ if (hasTocContent) { %>
+            <div class="sidebar-toc-sidebar" style="margin-bottom: 10px;"><%- partial('sidebar/toc-sidebar', { tocHtml: tocContent }) %></div>
+          <%_ } _%>
         <%_ } else { _%>
-          <div class="sidebar-toc-sidebar"><%- partial('sidebar/toc-sidebar') %></div>
-          <div class="sidebar-common-sidebar hidden"><%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+          <%_ if (hasTocContent) { %>
+            <div class="sidebar-toc-sidebar"><%- partial('sidebar/toc-sidebar', { tocHtml: tocContent }) %></div>
+            <div class="sidebar-common-sidebar hidden"><%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+          <%_ } else { %>
+            <div class="sidebar-common-sidebar"><%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %></div>
+          <%_ } _%>
         <%_ } _%>
       <%_ } else { _%>
         <%- partial_lang('sidebar/common-sidebar', { mobile: false }, { cache: !config.relative_link && theme.sidebar?.menu !== false, lang: page.lang }) %>
@@ -51,7 +69,7 @@
         <%_ if (post.toc === false) { _%>
         <%_ } else if (post.toc !== true && theme.toc === false) { _%>
         <%_ } else if (!showCommonSidebar) { _%>
-        <%_ } else { _%>
+        <%_ } else if (hasTocContent) { _%>
           <div class="sidebar-btn-wrapper" style="position:static">
             <div class="sidebar-toc-btn current"></div>
             <div class="sidebar-common-btn"></div>
