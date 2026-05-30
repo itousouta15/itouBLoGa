@@ -3,7 +3,7 @@ title: セーブポイント（v.26.05）
 date: 2026-05-29 14:32:32
 tags:
   - 生活
-cover: /images/save.webp
+cover: /images/05.webp
 urlname: point2605
 lang: ja
 ---

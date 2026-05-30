@@ -9,7 +9,7 @@ timezone: 'Asia/Taipei'
 # _config.yml
 url: https://blog.itousouta15.tw
 root: /                       
-permalink: :year/:month/:day/:urlname/
+permalink: :urlname/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # 設置為 false 以移除網址中的 'index.html'
@@ -196,7 +196,7 @@ theme_config:
 
   # 滑鼠指針配置
   reimu_cursor:
-    enable: true
+    enable: false
     cursor:
       default: /images/cursor/1.png
       pointer: /images/cursor/2.png

@@ -1,7 +1,7 @@
 ########################################
 # Basic Configuration
 ########################################
-theme_version_check: true
+theme_version_check: false
 theme_config_check: true
 # main menu navigation
 # for more icon information, please visit https://github.com/D-Sketon/hexo-theme-reimu/issues/30
@@ -87,7 +87,7 @@ footer:
   since: 2026
   powered: true
   count: true # 顯示字數和閱讀時間
-  busuanzi: true
+  busuanzi: false
   icon:
     url: "../images/taichi.svg" # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
     rotate: true
@@ -153,7 +153,7 @@ layout:
   max_width: 1350px # the max width of the main content area
 
 reimu_cursor:
-  enable: true
+  enable: false
   cursor:
     default: ../images/cursor/1.png  # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
     pointer: ../images/cursor/2.png
@@ -194,9 +194,6 @@ local_font:
     - sans-serif
   code:
     - Menlo
-    - Monaco
-    - Consolas
-    - monospace
 
 dark_mode:
   # true means that the dark mode is enabled by default
@@ -375,8 +372,8 @@ animation:
 
 # see https://github.com/D-Sketon/mouse-firework
 firework:
-  enable: true
-  disable_on_mobile: false
+  enable: false
+  disable_on_mobile: true
   options:
     excludeElements: ["a", "button"]
     particles:
@@ -424,7 +421,7 @@ quicklink:
 
 # https://github.com/CodeByZach/pace
 pace:
-  enable: true
+  enable: false
 
 # 實驗性功能
 service_worker:

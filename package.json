@@ -9,7 +9,7 @@
     "server": "hexo server"
   },
   "hexo": {
-    "version": "8.1.2"
+    "version": "8.1.1"
   },
   "dependencies": {
     "@reimujs/hexo-renderer-markdown-it-plus": "^1.2.3",
