@@ -155,10 +155,10 @@ summary:
 
 # Internationalization
 i18n:
-  enable: false
+  enable: true
   type: [page, post]
   generator: [archive, category, tag, index]
-  languages: [zh-TW, en]
+  languages: [zh-TW, en, ja]
 
 ########################################
 # CSS

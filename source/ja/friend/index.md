@@ -3,13 +3,13 @@ title: friend
 comments: true
 ---
 
-## About This Site
-- 站名： itouBLoGa
-- 站長： 伊藤蒼太
-- 網址： https://blog.itousouta15.tw
+## このサイトについて
+- サイト名： itouBLoGa
+- サイト管理者： 伊藤蒼太
+- URL： https://blog.itousouta15.tw
 
-## How to Apply
-Leave a comment on this page with the following format:
+## 申し込み方法
+以下の形式でこのページにコメントを残してください：
 ~~~yml
 - name:
   url:
@@ -17,7 +17,7 @@ Leave a comment on this page with the following format:
   image:
 ~~~
 
-## friends
+## パートナー
 <div class="friend-wrap">
   <div class="friend-item-wrap">
     <a href="https://d-sketon.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
@@ -199,77 +199,4 @@ Leave a comment on this page with the following format:
       <div class="friend-desc">A little trash (just kidding)</div>
     </div>
   </div>
-  <div class="friend-item-wrap">
-    <a href="https://justin0711.com/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://justin0711.com/static/images/profile.jpg" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://justin0711.com/static/img/profile.jpg">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">Justin</div>
-      <div class="friend-desc">Great electrical god</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://jackoha.github.io/about/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://jackoha.github.io/avatar/jackoha.webp" data-sizes="auto" alt="lemontea" class="lazyautosizes lazyloaded" sizes="70px" src="https://jackoha.github.io/avatar/jackoha.webp">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">jackoha</div>
-      <div class="friend-desc">Touhou enthusiast</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://casperlin100w.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://casperlin100w.github.io/image/sidebar/avatar.jpg" data-sizes="auto" alt="凡凡FanFan" class="lazyautosizes lazyloaded" sizes="70px" src="https://casperlin100w.github.io/image/sidebar/avatar.jpg">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">凡凡FanFan</div>
-      <div class="friend-desc">可愛小男娘</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://walnut8569.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://cdn.rafled.com/anime-icons/images/iWW9c1VjhALFAWMhNLsQ3VdPojw0O9J7.jpg" data-sizes="auto" alt="WalNut" class="lazyautosizes lazyloaded" sizes="70px" src="https://cdn.rafled.com/anime-icons/images/iWW9c1VjhALFAWMhNLsQ3VdPojw0O9J7.jpg">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">WalNut</div>
-      <div class="friend-desc">中一中店神</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://sanxian-4348.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://drive.google.com/uc?export=view&id=16C2GZdFzWv-JbEeuq7GQEB0U43zbh_B4" data-sizes="auto" alt="Sanxian三線" class="lazyautosizes lazyloaded" sizes="70px" src="https://sanxian-4348.github.io/avatar/avatar.webp">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">Sanxian三線</div>
-      <div class="friend-desc">An archaeologist</div>
-    </div>
-  </div>
-  <div class="friend-item-wrap">
-    <a href="https://www.g4o2.com/" rel="external nofollow noopener noreferrer" target="_blank"></a>
-    <div class="friend-icon-wrap">
-      <div class="friend-icon">
-        <img data-src="https://avatars.githubusercontent.com/u/103299803" data-sizes="auto" alt="g4o2" class="lazyautosizes lazyloaded" sizes="70px" src="https://avatars.githubusercontent.com/u/103299803">
-      </div>
-    </div>
-    <div class="friend-info-wrap">
-      <div class="friend-name">g4o2</div>
-      <div class="friend-desc">I'm not an gay</div>
-    </div>
-  </div>
-</div>
 </div>
