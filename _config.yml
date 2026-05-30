@@ -197,10 +197,6 @@ theme_config:
   # 滑鼠指針配置
   reimu_cursor:
     enable: false
-    cursor:
-      default: /images/cursor/1.png
-      pointer: /images/cursor/2.png
-      text: /images/cursor/3.png
 
   covers:
     enable: true

@@ -154,11 +154,6 @@ layout:
 
 reimu_cursor:
   enable: false
-  cursor:
-    default: ../images/cursor/1.png  # 此路徑相對於 css/style.css，因此需要向上一層到達 images 資料夾
-    pointer: ../images/cursor/2.png
-    text: ../images/cursor/3.png
-
 # set to false to enable fontawesome
 icon_font: false
 
