@@ -1,6 +1,8 @@
 ---
 title: Using GitHub Pages + Hexo to Set Up a Personal Blog
 date: 2025-08-27 14:32:32
+categories:
+  - 技術分享
 tags:
   - Hexo
 cover: /images/Hexo/hexo_github.webp

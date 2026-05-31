@@ -1,10 +1,10 @@
 ---
 title: 初めてのウェブサイト構築体験
 date: 2025-04-04 18:29:32
+categories:
+  - 技術分享
 tags:
   - Hexo
-categories:
-  - 前端
 sticky: false
 cover: /images/mainweb.webp
 urlname: firstblog

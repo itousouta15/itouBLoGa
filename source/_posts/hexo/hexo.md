@@ -1,6 +1,8 @@
 ---
 title: 使用 GitHub Pages + Hexo 架設個人BLOG
 date: 2025-08-27 14:32:32
+categories:
+  - 技術分享
 tags:
   - Hexo
 cover: /images/Hexo/hexo_github.webp

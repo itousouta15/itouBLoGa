@@ -1,6 +1,8 @@
 ---
 title: GitHub Pages + Hexoで個人ブログを立ち上げる
 date: 2025-08-27 14:32:32
+categories:
+  - 技術分享
 tags:
   - Hexo
 cover: /images/Hexo/hexo_github.webp

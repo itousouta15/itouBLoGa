@@ -1,6 +1,8 @@
 ---
 title: AIS3 2025
 date: 2025-08-29 13:32:32
+categories:
+  - 技術分享
 tags:
   - AIS3
 cover: /images/ais3_/AIS3.webp

@@ -1,6 +1,8 @@
 ---
 title: Am I the Chief Organizer? It's Over
 date: 2026-05-04 13:32:32
+categories:
+  - 生活感悟
 tags:
   - SCAICT
   - 中電會

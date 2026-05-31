@@ -1,6 +1,8 @@
 ---
 title: Save Point (v.26.05)
 date: 2026-05-29 14:32:32
+categories:
+  - 生活感悟
 tags:
   - 生活
 cover: /images/05.webp

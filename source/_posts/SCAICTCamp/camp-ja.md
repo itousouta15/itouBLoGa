@@ -1,6 +1,8 @@
 ---
 title: このキャンプのために尽力してくれたみんなに、いくつか言いたいことがあります。
 date: 2026-05-30 23:32:32
+categories:
+  - 生活感悟
 tags:
   - 碎碎念
 cover: images/meow.webp

@@ -1,10 +1,11 @@
 ---
 title: Zerojudge 
-cover: /images/ZJ.webp
 date: 2025-07-11 12:00:00
+categories:
+  - 技術分享
+cover: /images/ZJ.webp
 tags:
   - Zerojudge
-category: program
 urlname: Zerojudge
 ---
 一個放ZJ題解的地方
