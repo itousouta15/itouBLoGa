@@ -1,6 +1,8 @@
 ---
 title: 私が総召？もう無理
 date: 2026-05-04 13:32:32
+categories:
+  - 生活感悟
 tags:
   - SCAICT
   - 中電會

@@ -1,6 +1,8 @@
 ---
 title: There's Something I Want to Say to All of You Who Have Worked So Hard for This Camp.
 date: 2026-05-30 23:32:32
+categories:
+  - 生活感悟
 tags:
   - 碎碎念
 cover: images/meow.webp

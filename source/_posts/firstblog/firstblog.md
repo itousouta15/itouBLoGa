@@ -1,6 +1,8 @@
 ---
 title: 第一次架網站的心得
 date: 2025-04-04 18:29:32
+categories:
+  - 技術分享
 tags: 
   - Hexo
 sticky: false
