@@ -1,8 +1,7 @@
 # itouBLoGa
 ![alt text](source/images/mainweb.webp)
 
-個人技術部落格專案，使用 Hexo 靜態網站生成器基於 Reimu 主題構建。
-
+一個部落格。基於Hexo
 
 
 ## 專案結構
@@ -60,7 +59,3 @@ npm run deploy
 
 - `Cannot GET /atom.xml`：請先執行 `npm install`，再執行 `npm run build` 生成 feed。
 - 若想切換主題配置，請修改 `_config.reimu.yml`。
-
-## 版權與授權
-
-此專案主要為個人部落格範例，內容與樣式可依需求修改。
