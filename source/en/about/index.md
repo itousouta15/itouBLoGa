@@ -38,7 +38,7 @@ a img:hover {
     <a href="https://discord.gg/uAX6h9VmA4" target="_blank">
       <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
     </a>
-    <a href="https://instagram.com/itousouta15" target="_blank">
+    <a href="https://instagram.com/itou.souta15" target="_blank">
       <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
     </a>
   </div>
@@ -64,55 +64,6 @@ I'm a **high school student from Taiwan** passionate about **C++**, **web develo
 **Taichung Municipal Dali Senior High School**
 - 2025 - 2027
 - High School
-
-## Contest & Competitions
-
-- **Scrapyard Taiwan Hackathon** — 9th Place
-- **AIS3 Pre-exam 2025** — NO.67
-- **Taipei City Microservices Hackathon** — Preliminary Round
-- **11401 FhCTF** — NO.1
-
-- **2025 National High School Medical Technology Competition** — In Progress
-
-
-## Teaching & Mentoring
-
-- **DLHIT** — Web Fundamentals Course Instructor
-  - Academic Year 115 First Semester
-
-
-## Courses & Activities
-
-- **Feng Chia University** — Smart Electronic Technology - Smart Chip and Sensor Applications
-- **Feng Chia University** — As Long As You're Connected ~ You Can Also Do Simple AI Control and Design
-- **AIS3 2025** — Software, Web and ToI Security Course
-- **SCAICT 2025** — "Overcoming Information Barriers" Course
-- **AIS3 Club 2025**
-- **Faust Game Jam 2025**
-- **DayDream** — National Youth Game Creation Marathon
-- **2025 Taiwan Medical Technology Exhibition**
-- **SITCON 2025**
-- **2025 Taipei City Microservices Hackathon**
-- **SCIST x SCAICT 2026 Winter Camp**
-- **SITCON 2026**
-- **2026 g0v summit**
-- **2026 TWNOG Taiwan Network Operations Meeting**
-
-# Community & Organizations
-
-### Leadership Positions
-- **5th SCAICT** — President
-- **SCIST x SCAICT 2026 Winter Camp** — Vice Chief Organizer
-- **2nd DLHIT** — Team Captain
-- **Dali Senior High School C# and Unity Game Design Camp** — Chief Organizer
-
-### Community Involvement
-- **SCIST x SCAICT 2026 Winter Camp** — Editorial Team Leader / IT Division
-- **3rd THJCC** — Network Administrator
-- **2nd SCINT** — Art and Design
-- **2026 TWNOG** — Design Division
-- **2026 g0v Summit** — Venue Operations
-
 
 ## Tech Toolbox
 
