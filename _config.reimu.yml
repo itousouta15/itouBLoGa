@@ -85,7 +85,7 @@ copyright: # Inject code snippet right in the footer copyright
 
 footer:
   since: 2026
-  powered: true
+  powered: false
   count: true # 顯示字數和閱讀時間
   busuanzi: false
   icon:
