@@ -1,13 +1,153 @@
+// ─── Footer ──────────────────────────────────────────────────────────────────
+
 #footer {
-  background-color: linear-gradient(to top, var(--color-footer-background) 50%, transparent);
-  padding: 40px 0 20px;
+  padding: 40px 0 28px;
   color: var(--grey-9);
-  transition: 1s;
+  transition: color 1s;
+}
+
+.footer-line-wrap {
+  width: 100%;
+  overflow: hidden;
+}
+
+.footer-line {
+  margin: 20px 0 48px;
+  opacity: 0.3;
+  width: 200%;
+  height: 10px;
+  background: linear-gradient(to left, var(--red-1) 50%, transparent 0%) repeat-x 0 0 / 100px 10px;
+  transition: opacity 0.3s;
+  animation: transform-all 3s linear infinite;
+  filter: drop-shadow(0px 0px 2px var(--red-1));
+
+  #footer:hover & {
+    opacity: 0.5;
+  }
+}
+
+.footer-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+// ─── Projects row ─────────────────────────────────────────────────────────────
+
+.footer-projects {
+  padding: 8px 0 4px;
+}
+
+.footer-section-label {
+  font-size: 0.7em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-9);
+  opacity: 0.45;
+  margin-bottom: 18px;
+}
+
+.footer-project-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+
+  a {
+    color: var(--grey-9);
+    text-decoration: none;
+    font-size: 0.88em;
+    padding: 8px 20px;
+    border: 1px solid rgba(128, 128, 128, 0.22);
+    border-radius: 100px;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    line-height: 1;
+
+    &:hover {
+      color: var(--color-link);
+      border-color: var(--color-link);
+      background: rgba(128, 128, 128, 0.06);
+      text-decoration: none;
+    }
+  }
+}
+
+// ─── Divider ──────────────────────────────────────────────────────────────────
+
+.footer-divider {
+  width: 36px;
+  height: 1px;
+  background: rgba(128, 128, 128, 0.2);
+  margin: 30px auto;
+}
+
+// ─── Social icons ─────────────────────────────────────────────────────────────
+
+.footer-socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 20px;
+}
+
+.footer-si {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--grey-9);
+  text-decoration: none;
+  transition: color 0.22s, transform 0.22s;
+  min-width: 52px;
 
   &:hover {
-    .footer-line {
-      opacity: 0.5;
+    color: var(--color-link);
+    text-decoration: none;
+    transform: translateY(-4px);
+  }
+}
+
+.footer-si-icon {
+  display: block;
+  line-height: 1;
+
+  &::before {
+    display: block;
+    font-size: 1.45em;
+    if (hexo-config('icon_font')) {
+      font-family: font-icon;
+    } else {
+      font-family: var(--font-icon);
     }
+  }
+}
+
+.footer-si-label {
+  font-size: 0.7em;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+// Icon unicode values (Font Awesome 6 Brands / Solid)
+.si-instagram .footer-si-icon::before { content: '\f16d'; }
+.si-github    .footer-si-icon::before { content: '\f09b'; }
+.si-x         .footer-si-icon::before { content: '\e61b'; }
+.si-discord   .footer-si-icon::before { content: '\f392'; }
+.si-bahamut   .footer-si-icon::before { content: '\f11b'; font-weight: 900; }
+.si-telegram  .footer-si-icon::before { content: '\f2c6'; }
+
+// ─── Bottom bar ───────────────────────────────────────────────────────────────
+
+.footer-bottom {
+  font-size: 0.82em;
+
+  > div {
+    margin: 12px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
   }
 
   a {
@@ -18,39 +158,37 @@
       text-decoration: underline;
     }
   }
+}
 
-  .footer-beian {
-    a {
-      color: var(--grey-9);
+.footer-heart {
+  color: var(--red-1);
+  display: inline-block;
+  animation: pulse-heart 2.4s ease-in-out infinite;
+}
+
+.footer-powered,
+.footer-stats {
+  opacity: 0.7;
+}
+
+.footer-beian {
+  opacity: 0.7;
+
+  a {
+    color: var(--grey-9) !important;
+
+    &:hover {
+      text-decoration: underline;
     }
   }
 }
 
-.footer-line {
-  margin: 20px 0 40px;
-  opacity: 0.3;
-  width: 200%;
-  height: 10px;
-  background: linear-gradient(to left, var(--red-1) 50%, transparent 0%) repeat-x 0 0 / 100px 10px;
-  transition: opacity 0.3s;
-  animation: transform-all 3s linear infinite;
-  filter: drop-shadow(0px 0px 2px var(--red-1));
+@keyframes pulse-heart {
+  0%, 100% { transform: scale(1); }
+  50%       { transform: scale(1.2); }
 }
 
-#footer-info {
-  line-height: line-height;
-  font-size: 0.85em;
-
-  div {
-    margin: 8px 0;
-    display: flex;
-    justify-content: center;
-  }
-}
-
-.icon-brush, .icon-coffee, .icon-eye, .icon-user {
-  margin: 0 4px;
-}
+// ─── Footer icon separator (theme avatar between year and name) ───────────────
 
 .footer-info-sep {
   width: 24px;
@@ -76,7 +214,7 @@ if (hexo-config('footer.icon.mask')) {
     }
   }
 
-  @supports not ( (mask: var(--footer-icon) no-repeat center / 80%) and (-webkit-mask: var(--footer-icon) no-repeat center / 80%) ) {
+  @supports not ((mask: var(--footer-icon) no-repeat center / 80%) and (-webkit-mask: var(--footer-icon) no-repeat center / 80%)) {
     .footer-info-sep {
       background: var(--footer-icon) no-repeat center / 80%;
     }
@@ -86,6 +224,8 @@ if (hexo-config('footer.icon.mask')) {
     background: var(--footer-icon) no-repeat center / 80%;
   }
 }
+
+// ─── Post copyright block (used inside articles, not the footer) ───────────────
 
 if (post-has-copyright) {
   .article-copyright {
