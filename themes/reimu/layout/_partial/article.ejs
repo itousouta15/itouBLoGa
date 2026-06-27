@@ -1,4 +1,5 @@
-<article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+<%_ const isHuyan = post.categories && post.categories.toArray().some(c => c.name === '胡言亂語'); _%>
+<article id="<%= post.layout %>-<%= post.slug %>" class="h-entry article<%= isHuyan ? ' article-huyan' : '' %>" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="<%= theme.animation.options.article.whole %>">
     <div class="article-meta">
       <%- partial('post/date', {class_name: 'article-date', date_format: null}) %>

@@ -2,7 +2,7 @@
 title: SCAICTは大丈夫？
 date: 2026-02-24 14:32:32
 categories:
-  - 生活感悟
+  - 胡言亂語
 tags:
   - SCAICT
   - 中電會
