@@ -32,6 +32,17 @@
   <%_ if (theme.font?.enable) { _%>
     <%- tagCached('vendorGoogleFont', vendorGoogleFont) %>
   <%_ } _%>
+  <link href="https://font.emtech.cc/css/ChenYuLuoYan" rel="stylesheet">
+  <style>
+    .article-huyan .article-entry {
+      font-family: 'ChenYuLuoYan', cursive;
+      font-size: 1.8em;
+      line-height: 2.8;
+    }
+    .article-huyan .article-entry p {
+      margin: 1.3em 0;
+    }
+  </style>
   <%_ if (!theme.icon_font) { _%>
     <%- css(theme.vendor.css.fontawesome.high_priority.map(i => ({href: vendorCdn(i)[0], integrity: vendorCdnIntegrity(i)[0], crossorigin: "anonymous"}))) %>
     <%- asyncCss(theme.vendor.css.fontawesome.low_priority.map(i => ({href: vendorCdn(i)[0], integrity: vendorCdnIntegrity(i)[0], crossorigin: "anonymous"}))) %>

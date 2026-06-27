@@ -2,7 +2,7 @@
 title: 我當總召？拉完了(上)
 date: 2026-05-04 13:32:32
 categories:
-  - 生活感悟
+  - 胡言亂語
 tags:
   - SCAICT
   - 中電會

@@ -2,7 +2,7 @@
 title: 有一些話想跟一路以來的各位說。
 date: 2026-05-30 23:32:32
 categories:
-  - 生活感悟
+  - 胡言亂語
 tags:
   - 碎碎念
 cover: images/meow.webp
