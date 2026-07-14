@@ -35,7 +35,7 @@ a img:hover {
     <a href="https://www.threads.net/@itou.souta15" target="_blank">
       <img src="https://img.shields.io/badge/Threads-000000?style=for-the-badge&logo=threads&logoColor=white" alt="Threads" />
     </a>
-    <a href="https://dc.itousouta15.tw" target="_blank">
+    <a href="https://dc.itousouta.me" target="_blank">
       <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
     </a>
     <a href="https://instagram.com/itou.souta15" target="_blank">
@@ -73,7 +73,7 @@ a img:hover {
 
 ## 聯絡方式
 
-- 部落格：[https://blog.itousouta15.tw](https://blog.itousouta15.tw)
+- 部落格：[https://blog.itousouta.me](https://blog.itousouta.me)
 - Instagram：[itou.souta15](https://www.instagram.com/itou.souta15)
 - Threads：[@itou.souta15](https://www.threads.net/@itou.souta15)
 - X (Twitter)：[@itou_souta15](https://x.com/itou_souta15)

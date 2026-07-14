@@ -6,7 +6,7 @@ comments: true
 ## About This Site
 - 站名： itouBLoGa
 - 站長： 伊藤蒼太
-- 網址： https://blog.itousouta15.tw
+- 網址： https://blog.itousouta.me
 
 ## How to Apply
 Leave a comment on this page with the following format:

@@ -6,7 +6,7 @@ comments: true
 ## 本站資訊
 - 站名： itouBLoGa
 - 站長： 伊藤蒼太
-- 網址： https://blog.itousouta15.tw
+- 網址： https://blog.itousouta.me
 
 ## 申請方法
 - 增加本站後，在本頁留言，格式如下

@@ -120,7 +120,7 @@ a img:hover {
 
 ## つながり
 
-- ブログ: [GitHub Pages](https://blog.itousouta15.tw)
+- ブログ: [GitHub Pages](https://blog.itousouta.me)
 - Instagram: [itou.souta15](https://www.instagram.com/itou.souta15)
 - Threads: [@itou.souta15](https://www.threads.net/@itou.souta15)
 - X (Twitter): [@itou_souta15](https://x.com/itou_souta15)
