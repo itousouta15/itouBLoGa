@@ -7,7 +7,7 @@ language: zh-TW
 timezone: 'Asia/Taipei'
 
 # _config.yml
-url: https://blog.itousouta15.tw
+url: https://blog.itousouta.me
 root: /                       
 permalink: :year/:month/:day/:urlname/
 permalink_defaults:
@@ -249,4 +249,4 @@ robotstxt:
   useragent: '*'
   allow:
     - /
-  sitemap: https://blog.itousouta15.tw/sitemap.xml
+  sitemap: https://blog.itousouta.me/sitemap.xml

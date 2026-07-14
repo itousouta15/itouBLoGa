@@ -6,7 +6,7 @@ comments: true
 ## このサイトについて
 - サイト名： itouBLoGa
 - サイト管理者： 伊藤蒼太
-- URL： https://blog.itousouta15.tw
+- URL： https://blog.itousouta.me
 
 ## 申し込み方法
 以下の形式でこのページにコメントを残してください：
