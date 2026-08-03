@@ -22,9 +22,9 @@ a img:hover {
 </style>
 <br>
 <div align="center">
-  <img src="/images/avatar.webp" alt="avatar" width="120" style="border-radius:50%;margin-bottom:1em;" />  
-  <h1>Itou Souta</h1>  
-  <p>A Natural Bug Generator</p>  
+  <img src="/images/avatar.webp" alt="avatar" width="120" style="border-radius:50%;margin-bottom:1em;" />
+  <h1>Itou Souta</h1>
+  <p>A Natural Bug Generator</p>
   <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:0.5em;">
     <a href="https://x.com/itou_souta15" target="_blank">
       <img src="https://img.shields.io/badge/X-000000?style=for-the-badge&logo=x&logoColor=white" alt="X" />
@@ -53,25 +53,22 @@ a img:hover {
 ---
 
 # `cout<<"hello! world";`
-## Hi, I'm 郭家睿
-> *"The world goes quiet when I write code."*
+## Hi, I'm 郭家睿 (Itou Souta)
 
-I'm a **high school student from Taiwan** passionate about **C++**, **web development**, and **cybersecurity**. I'm actively involved in tech communities and always exploring the intersection of code, security, and creativity.
-
+A **high school student from Taiwan** who loves coding, cybersecurity, and learning new tech.
 
 ## Bio
 
 **Taichung Municipal Dali Senior High School**
 - 2025 - 2027
-- High School
 
-## Tech Toolbox
+## Skills
 
 [![My Skills](https://skillicons.dev/icons?i=c,cpp,cs,py,html,css,js,ts,git,github,vscode,docker,unity,godot,linux)](https://skillicons.dev)
 
-
 ## Connect
 
+- Website: [https://itousouta.me](https://itousouta.me)
 - Blog: [GitHub Pages](https://blog.itousouta.me)
 - Instagram: [itou.souta15](https://www.instagram.com/itou.souta15)
 - Threads: [@itou.souta15](https://www.threads.net/@itou.souta15)
