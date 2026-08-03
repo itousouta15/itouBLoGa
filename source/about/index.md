@@ -48,34 +48,30 @@ a img:hover {
   </picture>
 </div>
 
-</br>
+<br>
 
 ---
 
 # `cout<<"hello! world";`
-## 嗨，我叫郭家睿
+## 嗨，我是郭家睿（伊藤蒼太）
 
-我是一位來自台灣的**普通高中生**
+來自台灣的**普通高中生**，對程式、安全與新技術充滿好奇。
 
-
-## 簡介
+## 關於我
 
 **臺中市立大里高級中學**
-- 高二
 - 2025 - 2027
 
-
-## 技術工具箱
+## 技能
 
 [![My Skills](https://skillicons.dev/icons?i=c,cpp,cs,py,html,css,js,ts,git,github,vscode,docker,unity,godot,linux)](https://skillicons.dev)
 
-
-
 ## 聯絡方式
 
+- 官網：[https://itousouta.me](https://itousouta.me)
 - 部落格：[https://blog.itousouta.me](https://blog.itousouta.me)
 - Instagram：[itou.souta15](https://www.instagram.com/itou.souta15)
 - Threads：[@itou.souta15](https://www.threads.net/@itou.souta15)
 - X (Twitter)：[@itou_souta15](https://x.com/itou_souta15)
-- Discord：[加入伺服器](https://discord.gg/uAX6h9VmA4)
+- Discord：[加入伺服器](https://dc.itousouta.me)
 - GitHub：[itousouta15](https://github.com/itousouta15)
