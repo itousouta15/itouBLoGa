@@ -27,12 +27,12 @@
   <%_ } _%>
   <%_ if (page.lang) { _%>
     <%_ let i = 0; _%>
-    <%_ for (const post of get_posts_by_lang(page.posts, page.lang)) { _%>
+    <%_ for (const post of get_posts_by_lang(page.posts.filter((p) => !p.hidden), page.lang)) { _%>
       <%- partial('post', {post: post, even: i % 2 === 0}) %>
       <%_ i++; _%>
     <%_ } _%>
   <%_ } else { _%>
-    <%_ page.posts.forEach((post, i) => { _%>
+    <%_ page.posts.filter((p) => !p.hidden).forEach((post, i) => { _%>
       <%- partial('post', {post: post, even: i % 2 === 0}) %>
     <%_ }) _%>
   <%_ } _%>
