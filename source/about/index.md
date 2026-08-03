@@ -44,7 +44,7 @@ a img:hover {
   </div>
   <picture>
     <source srcset="/images/github-user-contributiond.svg" media="(prefers-color-scheme: dark)">
-    <img src="/images/github-user-contribution.svg" alt="GitHub 貢獻圖" style="max-width:100%;margin:1em auto;display:block;" />
+    <img src="https://camo.githubusercontent.com/737f5320a432c74bc100aea87e9210d7656087794a9af91a56b0f991f69dafe0/68747470733a2f2f69746f75736f7574612e6d652f6173736574732f736f6369616c2f6769746875622d757365722d636f6e747269627574696f6e2d6461726b2e737667" alt="GitHub 貢獻圖" style="max-width:100%;margin:1em auto;display:block;" />
   </picture>
 </div>
 
