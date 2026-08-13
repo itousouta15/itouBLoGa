@@ -1,7 +1,7 @@
 # itouBLoGa
 ![alt text](source/images/mainweb.webp)
 
-一個部落格。基於Hexo
+一個普通的部落格。基於Hexo建構
 
 
 ## 專案結構
