@@ -271,5 +271,17 @@ Leave a comment on this page with the following format:
       <div class="friend-desc">I'm not an gay</div>
     </div>
   </div>
+  <div class="friend-item-wrap">
+    <a href="https://theoyu314159.github.io/" rel="external nofollow noopener noreferrer" target="_blank"></a>
+    <div class="friend-icon-wrap">
+      <div class="friend-icon">
+        <img data-src="https://i.meee.com.tw/advB1xa.png" data-sizes="auto" alt="yuyoru" class="lazyautosizes lazyloaded" sizes="70px" src="https://i.meee.com.tw/advB1xa.png">
+      </div>
+    </div>
+    <div class="friend-info-wrap">
+      <div class="friend-name">yuyoru</div>
+      <div class="friend-desc">一個喜歡寫程式的半宅男</div>
+    </div>
+  </div>
 </div>
 </div>
