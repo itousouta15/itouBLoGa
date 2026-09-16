@@ -1,6 +1,6 @@
 ---
 title: SCAICT 還好嗎? 
-date: 2026-09-16 21:32:32
+date: 2026-02-24 14:32:32
 categories:
   - 胡言亂語
 tags:
