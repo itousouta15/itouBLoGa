@@ -1,4 +1,13 @@
 <div id="header-nav">
+  <div class="migration-notice" role="status">
+    <% if (post.lang === 'en') { %>
+      This site will close once the migration to <a href="https://itousouta.me">itousouta.me</a> is complete.
+    <% } else if (post.lang === 'ja') { %>
+      このサイトは <a href="https://itousouta.me">itousouta.me</a> への移行が完了次第、閉鎖します。
+    <% } else { %>
+      此網站在完整遷移至 <a href="https://itousouta.me">itousouta.me</a> 後將關閉。
+    <% } %>
+  </div>
   <nav id="main-nav">
     <% if (!Array.isArray(theme.menu)) { %>
       <% for (let i in theme.menu) { %>
