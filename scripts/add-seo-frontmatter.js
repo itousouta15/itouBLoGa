@@ -34,7 +34,7 @@ hexo.extend.filter.register('before_post_render', function(data) {
   
   // 確保有 canonical URL
   if (!data.canonical && hexo.config.url) {
-    data.canonical = hexo.config.url + '/' + data.path;
+    data.canonical = hexo.extend.helper.get('writing_url')(data) || hexo.config.url + '/' + data.path;
   }
   
   return data;
@@ -71,7 +71,7 @@ hexo.extend.filter.register('after_render:html', function(str, data) {
       },
       "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": config.url + '/' + page.path
+        "@id": hexo.extend.helper.get('writing_url')(page) || config.url + '/' + page.path
       }
     };
     

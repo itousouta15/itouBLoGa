@@ -31,7 +31,10 @@ hexo.extend.generator.register("json", function (locals) {
       if (post.title) {
         temp_post.title = post.title;
       }
-      if (post.path) {
+       const writingUrl = hexo.extend.helper.get("writing_url")(post);
+       if (writingUrl) {
+         temp_post.url = writingUrl;
+       } else if (post.path) {
         if (post.lang) {
           temp_post.url = `${hexoConfig.root}${post.lang}/${post.path}`;
         } else {

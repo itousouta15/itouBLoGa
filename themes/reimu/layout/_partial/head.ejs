@@ -3,6 +3,10 @@
     <%- render(theme.injector.head_begin, 'html'); %>
   <%_ } _%>
   <meta charset="utf-8">
+  <%_ if (is_post() && writing_url(page)) { _%>
+    <link rel="canonical" href="<%- writing_url(page) %>">
+    <meta http-equiv="refresh" content="0; url=<%- writing_url(page) %>">
+  <%_ } _%>
   <%- partial('analytics/google-analytics', null, { cache: true }) %>
   <%- partial('analytics/clarity', null, { cache: true }) %>
   <%- partial('analytics/baidu-analytics', null, { cache: true }) %>

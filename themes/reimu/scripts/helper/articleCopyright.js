@@ -17,6 +17,7 @@ hexo.extend.helper.register("articleCopyright", function (post) {
   } else {
     permalink = post.permalink;
   }
+  permalink = hexo.extend.helper.get("writing_url")(post) || permalink;
   const {
     author,
     link,

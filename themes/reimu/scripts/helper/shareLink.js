@@ -16,7 +16,7 @@ const shareMap = {
 const { stripHTML } = require("hexo-util");
 
 hexo.extend.helper.register("shareLink", (post, key) => {
-  const url = encodeURIComponent(post.permalink);
+   const url = encodeURIComponent(hexo.extend.helper.get("writing_url")(post) || post.permalink);
   const title = encodeURIComponent(post.title);
   const desc = encodeURIComponent(
     post.excerpt ? stripHTML(post.excerpt) : post.description || post.title

@@ -105,7 +105,7 @@
         window.REIMU_POST = {
           author: "<%= post.author || config.author %>",
           title: "<%= post.title %>",
-          url: "<%= post.permalink %>",
+          url: "<%= writing_url(post) || post.permalink %>",
           excerpt: "<%= excerpt %>",
           description: "<%= post.description %>",
           stripContent: "<%= content %>",

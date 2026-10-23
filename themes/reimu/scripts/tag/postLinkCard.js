@@ -45,11 +45,12 @@ hexo.extend.tag.register("postLinkCard", (args) => {
   const attrTitle = escapeHTML(title);
   if (escape === "true") title = escapeHTML(title);
 
-  const link = url_for.call(
+  const postUrl = hexo.extend.helper.get("writing_url")(post) || url_for.call(
     hexo,
-    `/${post.lang ? post.lang + "/" : ""}${post.path}${hash ? "#" + hash : ""}`,
+    `/${post.lang ? post.lang + "/" : ""}${post.path}`,
     { relative: false }
   );
+  const link = postUrl + (hash ? "#" + hash : "");
   if (cover === "auto") cover = url_for.call(hexo, hexo.theme.config.banner);
   const coverDom = cover
     ? `<div class="post-link-card-cover-wrap"><img src="${cover}" class="no-lightbox" title="${attrTitle}" alt="${attrTitle}"/></div>`
